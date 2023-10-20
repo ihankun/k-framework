@@ -31,6 +31,7 @@
         <module>kun-job</module>
         <module>kun-lock</module>
         <module>kun-log</module>
+        <module>kun-mq</module>
     </modules>
 
     <repositories>
