@@ -32,6 +32,7 @@
         <module>kun-lock</module>
         <module>kun-log</module>
         <module>kun-mq</module>
+        <module>kun-spring</module>
     </modules>
 
     <repositories>
