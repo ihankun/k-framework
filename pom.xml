@@ -30,6 +30,7 @@
         <module>kun-db</module>
         <module>kun-job</module>
         <module>kun-lock</module>
+        <module>kun-log</module>
     </modules>
 
     <repositories>
