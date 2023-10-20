@@ -27,6 +27,7 @@
     <modules>
         <module>kun-common</module>
         <module>kun-cache</module>
+        <module>kun-db</module>
     </modules>
 
     <repositories>
