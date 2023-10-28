@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.remote;
+package io.ihankun.framework.common.http;
 
 /**
  * @author hankun

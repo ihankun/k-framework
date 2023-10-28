@@ -1,8 +1,9 @@
-package io.ihankun.framework.common.remote;
+package io.ihankun.framework.common.http;
 
 
 import io.ihankun.framework.common.error.CommonErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
+import io.ihankun.framework.common.http.RemoteCallBack;
 import io.ihankun.framework.common.response.ResponseResult;
 
 /**
