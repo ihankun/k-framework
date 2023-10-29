@@ -108,7 +108,61 @@
         <dependencies>
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-cache</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
                 <artifactId>kun-common</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-db</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-job</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-lock</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-log</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-mq</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>kun-ribbon</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-api</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-server</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 

@@ -17,4 +17,21 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.ihankun.framework</groupId>
+            <artifactId>kun-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ihankun.framework</groupId>
+            <artifactId>kun-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ihankun.framework</groupId>
+            <artifactId>spring-api</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
