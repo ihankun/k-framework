@@ -42,7 +42,6 @@ public class CommentInterceptor implements Interceptor {
                 return invocation.proceed();
             }
 
-
             StatementHandler statementHandler = PluginUtils.realTarget(invocation.getTarget());
 
             String applicationName = SpringHelpers.context().getEnvironment().getProperty("spring.application.name", "default");
@@ -52,7 +51,6 @@ public class CommentInterceptor implements Interceptor {
             String userId = userInfo == null ? "" : (userInfo.getUserId() == null ? "" : userInfo.getUserId().toString());
             String userName = userInfo == null ? "" : (StrUtil.isEmpty(userInfo.getUserName()) ? "" : userInfo.getUserName());
 
-            //格式：/*SQL_COMMENT_START#服务名^客户端IP^用户ID^用户名称#MSUN_COMMENT_END*/
             String sql = String.format("/*SQL_COMMENT_START#%s^%s^%s^%s#SQL_COMMENT_END*/\n", applicationName, deviceIp, userId, userName);
 
             sql = sql + statementHandler.getBoundSql().getSql();
