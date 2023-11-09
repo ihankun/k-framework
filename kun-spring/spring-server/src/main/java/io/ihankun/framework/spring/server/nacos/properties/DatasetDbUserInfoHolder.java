@@ -22,9 +22,9 @@ package io.ihankun.framework.spring.server.nacos.properties;//package com.ihanku
 //@Component
 //public class DatasetDbUserInfoHolder {
 //
-//    public static final String NEW_PRIVATE_KEY = "msun.ds.private.key.";
-//    public static final String PUBLIC_KEY = "MSUN_DS_PUBLIC_KEY";
-//    private static final String DS_PREFIX = "msun.ds.db.";
+//    public static final String NEW_PRIVATE_KEY = "kun.ds.private.key.";
+//    public static final String PUBLIC_KEY = "KUN_DS_PUBLIC_KEY";
+//    private static final String DS_PREFIX = "kun.ds.db.";
 //    private static final String DS_POINT = ".";
 //
 //    private static final String CDR_READ_USER = "cdrappread";
@@ -38,9 +38,9 @@ package io.ihankun.framework.spring.server.nacos.properties;//package com.ihanku
 //    private static final String DATASET = "DATASET";
 //    public static final String CDRAPP = "cdrapp";
 //
-//    public static final String DB_BUILD_PRE = "msun.ds.key.";
+//    public static final String DB_BUILD_PRE = "kun.ds.key.";
 //
-//    public static final String USE_ENV_KEY = "msun.ds.disable.env.key";
+//    public static final String USE_ENV_KEY = "kun.ds.disable.env.key";
 //    public static final String CHIS = "chis";
 //    public static final String CHISAPP = "chisapp";
 //    public static final String HIS_MASTER = "HIS_MASTER";
@@ -93,7 +93,7 @@ package io.ihankun.framework.spring.server.nacos.properties;//package com.ihanku
 //    private void init() {
 //        Class<?> clazz = null;
 //        try {
-//            clazz = Class.forName("com.msun.core.db.dynamic.DataSourceCacheCreator");
+//            clazz = Class.forName("com.ihankun.core.db.dynamic.DataSourceCacheCreator");
 //        } catch (ClassNotFoundException e) {
 //            log.error("DatasetDbUserInfoHolder.init.load.DataSourceCacheCreator.fail,e={}", e.getMessage());
 //        }

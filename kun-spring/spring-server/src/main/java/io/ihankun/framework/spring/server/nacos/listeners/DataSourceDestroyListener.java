@@ -26,7 +26,7 @@ public class DataSourceDestroyListener extends PropertiesListener implements App
 
     public static final String GROUP = "DEFAULT_GROUP";
 
-    public static final String PREFIX = "msun.ds.destroy.";
+    public static final String PREFIX = "kun.ds.destroy.";
 
 
     @Autowired(required = false)

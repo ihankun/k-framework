@@ -15,7 +15,7 @@ public class KunWaitPolicy implements RejectedExecutionHandler {
         try {
             queue.put(r);
         } catch (InterruptedException e) {
-            log.error("MsunWaitPolicy.queue.put.exception", e);
+            log.error("WaitPolicy.queue.put.exception", e);
             throw new RuntimeException(e);
         }
     }
