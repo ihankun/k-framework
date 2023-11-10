@@ -128,13 +128,13 @@ public class JobService {
         if (config.isGrayActive()) {
             switch (jobStrategyClass) {
                 case "com.dangdang.ddframe.job.lite.api.strategy.impl.OdevitySortByNameJobShardingStrategy":
-                    jobStrategyClass = "com.msun.core.job.strategy.SortByNameShardingGrayStrategy";
+                    jobStrategyClass = "io.ihankun.framework.job.strategy.SortByNameShardingGrayStrategy";
                     break;
                 case "com.dangdang.ddframe.job.lite.api.strategy.impl.RotateServerByNameJobShardingStrategy":
-                    jobStrategyClass = "com.msun.core.job.strategy.RotateByNameShardingStrategy";
+                    jobStrategyClass = "io.ihankun.framework.job.strategy.RotateByNameShardingStrategy";
                     break;
                 default:
-                    jobStrategyClass = "com.msun.core.job.strategy.AverageShardingGrayStrategy";
+                    jobStrategyClass = "io.ihankun.framework.job.strategy.AverageShardingGrayStrategy";
                     break;
             }
             log.info("JobService.addJob.switch.to.gray.job.mode,source={},strategy={}",

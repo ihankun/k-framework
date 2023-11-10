@@ -7,6 +7,9 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 public class KunWaitPolicy implements RejectedExecutionHandler {
     @Override

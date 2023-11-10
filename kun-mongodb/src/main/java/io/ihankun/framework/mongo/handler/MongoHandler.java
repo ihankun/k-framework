@@ -793,7 +793,7 @@ public class MongoHandler {
                 executor.invoke(model);
             }
         } catch (Exception e) {
-            log.error("MsunMongoHandler.extCursorQueryExe error {}", e.getMessage(), e);
+            log.error("MongoHandler.extCursorQueryExe error {}", e.getMessage(), e);
             throw e;
         }
     }

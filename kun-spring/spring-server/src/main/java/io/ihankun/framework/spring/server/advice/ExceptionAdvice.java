@@ -95,10 +95,6 @@ public class ExceptionAdvice {
 
     /**
      * 处理业务异常
-     *
-     * @param request
-     * @param e
-     * @return
      */
     @ExceptionHandler(value = BusinessException.class)
     @ResponseStatus(HttpStatus.OK)
@@ -149,10 +145,6 @@ public class ExceptionAdvice {
 
     /**
      * 处理异常
-     *
-     * @param request
-     * @param e
-     * @return
      */
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.OK)

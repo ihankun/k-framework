@@ -27,6 +27,10 @@ public enum CommonErrorCode implements IErrorCode {
      * 当前用户未登录
      */
     USER_NOT_LOGIN("0004", "当前用户未登录"),
+    /**
+     * 请求限流
+     */
+    TOMCAT_RATE_LIMITED("0007", "接口请求频率过高，触发限流策略，释放时间:$1"),
 
 
     ;

@@ -85,7 +85,7 @@ public class GzCompressAction extends AbstractPathAction {
     }
 
     @PluginFactory
-    public static GzCompressAction createMsunGzCompressAction(
+    public static GzCompressAction createGzCompressAction(
             @PluginAttribute("basePath") final String basePath,
             @PluginAttribute(value = "followLinks") final boolean followLinks,
             @PluginAttribute(value = "maxDepth", defaultInt = 1) final int maxDepth,
