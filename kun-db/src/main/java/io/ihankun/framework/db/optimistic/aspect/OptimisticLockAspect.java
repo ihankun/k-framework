@@ -114,7 +114,7 @@ public class OptimisticLockAspect {
      */
     @Getter
     @Setter
-    private class LockInfo {
+    private static class LockInfo {
 
         /**
          * 表名
@@ -131,12 +131,12 @@ public class OptimisticLockAspect {
      * 获取参数内部类
      */
     @Getter
-    private class ParameterHandler {
+    private static class ParameterHandler {
 
         /**
          * 连接点
          */
-        private ProceedingJoinPoint point;
+        private final ProceedingJoinPoint point;
 
         /**
          * 乐观锁标识
@@ -169,9 +169,7 @@ public class OptimisticLockAspect {
             Parameter[] parameters = signature.getMethod().getParameters();
 
             //遍历方法参数类型列表
-            for (int i = 0; i < parameters.length; i++) {
-                Parameter parameter = parameters[i];
-
+            for (Parameter parameter : parameters) {
                 //只有标有LockParam注解的类，才可以执行
                 if (parameter.getAnnotation(LockParam.class) == null) {
                     continue;

@@ -5,6 +5,9 @@ import lombok.Data;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author hankun
+ */
 @Data
 public class SeataControlConfigData {
 

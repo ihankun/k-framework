@@ -33,8 +33,8 @@ public enum CommonDbErrorCode implements IErrorCode {
     PK_SET_ERROR("0005", "没有使用@TableId注解指定主键,$1"),
     ;
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
 
     @Override
