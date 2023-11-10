@@ -13,11 +13,11 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @Configuration
 @ConfigurationProperties(prefix = "kun.job")
-@ComponentScan(basePackageClasses = JobAutoConfiguration.class)
-public class JobAutoConfiguration {
+@ComponentScan(basePackageClasses = ElasticJobAutoConfiguration.class)
+public class ElasticJobAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        log.info("JobAutoConfiguration.init");
+        log.info("ElasticJobAutoConfiguration.init");
     }
 }

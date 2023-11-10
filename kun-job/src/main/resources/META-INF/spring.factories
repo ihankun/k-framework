@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.ihankun.framework.job.JobAutoConfiguration
+  io.ihankun.framework.job.ElasticJobAutoConfiguration
