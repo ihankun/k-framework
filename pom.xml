@@ -27,6 +27,7 @@
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
 
+        <commons-collections.version>4.1</commons-collections.version>
         <curator.version>2.12.0</curator.version>
         <elastic.job.version>2.1.5</elastic.job.version>
         <disruptor.version>3.4.2</disruptor.version>
@@ -60,6 +61,7 @@
         <module>kun-mq</module>
         <module>kun-spring</module>
         <module>kun-ribbon</module>
+        <module>kun-mongodb</module>
     </modules>
 
     <dependencies>
@@ -103,6 +105,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections.version}</version>
         </dependency>
 
         <dependency>
