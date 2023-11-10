@@ -5,10 +5,13 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * @author hankun
+ */
 @NoArgsConstructor
 @Data
 public class DatasetDbUserInfo {
-    
+
     private String envName;
 
     private List<HospitalDTO> hospital;

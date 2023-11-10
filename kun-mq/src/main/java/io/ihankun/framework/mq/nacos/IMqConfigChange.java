@@ -3,6 +3,9 @@ package io.ihankun.framework.mq.nacos;
 
 import io.ihankun.framework.mq.config.MqProperties;
 
+/**
+ * @author hankun
+ */
 public interface IMqConfigChange {
 
     /**

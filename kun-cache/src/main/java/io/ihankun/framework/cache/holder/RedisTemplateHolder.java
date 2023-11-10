@@ -4,6 +4,9 @@ import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import io.ihankun.framework.common.utils.SpringHelpers;
 import org.springframework.data.redis.core.RedisTemplate;
 
+/**
+ * @author hankun
+ */
 public class RedisTemplateHolder {
 
     private static class RedisTemplateHolderHolder{

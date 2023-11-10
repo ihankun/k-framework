@@ -3,6 +3,9 @@ package io.ihankun.framework.db.dynamic;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.NamedThreadLocal;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 public class DbCreateErrorContext {
     public static final String ERROR_MESSAGE = "message";

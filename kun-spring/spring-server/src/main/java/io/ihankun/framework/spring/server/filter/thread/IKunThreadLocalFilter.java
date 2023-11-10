@@ -4,6 +4,9 @@ import feign.RequestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author hankun
+ */
 public interface IKunThreadLocalFilter {
 
     /**

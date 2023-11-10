@@ -2,6 +2,9 @@ package io.ihankun.framework.spring.server.utils;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 public class RequestLogUtil {
 

@@ -6,6 +6,9 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 public class HttpConnectionUtil {
 

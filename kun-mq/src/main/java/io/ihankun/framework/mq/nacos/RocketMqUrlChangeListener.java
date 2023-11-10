@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.Properties;
 
-
+/**
+ * @author hankun
+ */
 @Slf4j
 @Component
 public class RocketMqUrlChangeListener implements INacosConfigChangeListener {

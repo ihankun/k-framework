@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 @Component
 public class KunInnerApiThreadLocal implements IKunThreadLocalFilter {

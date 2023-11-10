@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
+/**
+ * @author hankun
+ */
 @Data
 @Slf4j
 @Configuration

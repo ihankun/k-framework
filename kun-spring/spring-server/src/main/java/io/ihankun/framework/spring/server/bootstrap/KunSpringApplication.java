@@ -9,8 +9,7 @@ import org.springframework.util.StopWatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: hankun
- * @date: 2023/9/27
+ * @author hankun
  */
 @Slf4j
 public class KunSpringApplication {

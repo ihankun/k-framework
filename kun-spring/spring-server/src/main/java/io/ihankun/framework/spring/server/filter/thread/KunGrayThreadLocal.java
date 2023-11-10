@@ -8,6 +8,9 @@ import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 @Component
 public class KunGrayThreadLocal implements IKunThreadLocalFilter {

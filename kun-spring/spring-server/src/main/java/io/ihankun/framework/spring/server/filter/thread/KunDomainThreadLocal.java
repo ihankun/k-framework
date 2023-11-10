@@ -9,6 +9,9 @@ import org.springframework.util.StringUtils;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Base64;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 @Component
 public class KunDomainThreadLocal implements IKunThreadLocalFilter {

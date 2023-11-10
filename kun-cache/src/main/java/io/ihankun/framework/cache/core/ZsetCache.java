@@ -5,6 +5,9 @@ import org.springframework.data.redis.core.ZSetOperations;
 
 import java.util.Set;
 
+/**
+ * @author hankun
+ */
 public interface ZsetCache<V> {
 
     /**

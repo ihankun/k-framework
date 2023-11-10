@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 @Component
 public class KunTraceIdThreadLocal implements IKunThreadLocalFilter {

@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Comparator;
 
+/**
+ * @author hankun
+ */
 @Configuration
 @ConditionalOnClass(FeignClient.class)
 @Slf4j

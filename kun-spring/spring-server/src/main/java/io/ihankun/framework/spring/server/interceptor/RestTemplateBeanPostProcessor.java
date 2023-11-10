@@ -6,6 +6,9 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 @Component
 public class RestTemplateBeanPostProcessor implements BeanPostProcessor {

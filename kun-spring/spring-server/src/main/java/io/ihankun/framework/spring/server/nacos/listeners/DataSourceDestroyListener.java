@@ -17,6 +17,9 @@ import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * @author hankun
+ */
 @ConditionalOnClass(NacosConfigManager.class)
 @Slf4j
 @Component

@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.nio.charset.StandardCharsets;
 
+/**
+ * @author hankun
+ */
 public class Sw8Util {
 
     /**

@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 public class RestTemplateLoggingInterceptor implements ClientHttpRequestInterceptor {
 

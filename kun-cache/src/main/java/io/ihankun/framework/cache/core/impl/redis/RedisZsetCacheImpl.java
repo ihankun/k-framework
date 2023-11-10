@@ -7,6 +7,9 @@ import org.springframework.data.redis.core.ZSetOperations;
 
 import java.util.Set;
 
+/**
+ * @author hankun
+ */
 public class RedisZsetCacheImpl<V> extends AbstractRedisCache implements ZsetCache<V> {
     @Override
     public Boolean add(CacheKey key, V value, double score) {

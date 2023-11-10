@@ -1,6 +1,8 @@
 package io.ihankun.framework.cache.comm;
 
-
+/**
+ * @author hankun
+ */
 public enum RedisSizeControlMode {
 
     /**
