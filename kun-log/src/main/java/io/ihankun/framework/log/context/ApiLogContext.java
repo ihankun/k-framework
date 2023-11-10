@@ -23,10 +23,9 @@ public class ApiLogContext {
     public static void reset() {
         INHERITABLE_CONTEXT_HOLDER.remove();
     }
+
     /**
      * 将ApiLog设置到线程上
-     *
-     * @param apiLog 跟踪id
      */
     public static void set(ApiLog apiLog) {
         INHERITABLE_CONTEXT_HOLDER.set(apiLog);
@@ -34,8 +33,6 @@ public class ApiLogContext {
 
     /**
      * 从线程的上下文中获取ApiLog
-     *
-     * @return
      */
     public static ApiLog get() {
         return INHERITABLE_CONTEXT_HOLDER.get();

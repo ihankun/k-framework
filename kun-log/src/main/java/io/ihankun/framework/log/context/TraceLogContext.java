@@ -39,8 +39,6 @@ public class TraceLogContext {
 
     /**
      * 从线程的上下文中获取traceId
-     *
-     * @return
      */
     public static String get() {
         return INHERITABLE_CONTEXT_HOLDER.get();

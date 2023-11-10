@@ -29,8 +29,6 @@ public class TraceLogApiInfoContext {
 
     /**
      * 从线程的上下文中获取traceId
-     *
-     * @return
      */
     public static ApiInfo get() {
         return INHERITABLE_CONTEXT_HOLDER.get();

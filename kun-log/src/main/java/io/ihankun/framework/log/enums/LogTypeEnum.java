@@ -35,7 +35,7 @@ public enum LogTypeEnum {
     /**
      * 日志类型的值
      */
-    private String value;
+    private final String value;
 
     LogTypeEnum(String value) {
         this.value = value;
