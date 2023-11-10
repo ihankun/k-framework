@@ -7,8 +7,6 @@ public interface CacheKey {
 
     /**
      * 获取key
-     *
-     * @return
      */
     String get();
 }

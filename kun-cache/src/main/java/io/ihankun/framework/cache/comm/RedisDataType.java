@@ -1,4 +1,4 @@
-package io.ihankun.framework.cache;
+package io.ihankun.framework.cache.comm;
 
 /**
  * @author hankun
@@ -12,7 +12,7 @@ public enum RedisDataType {
     ZSET("zset"),
     ;
 
-    private String value;
+    private final String value;
 
     RedisDataType(String value) {
         this.value = value;

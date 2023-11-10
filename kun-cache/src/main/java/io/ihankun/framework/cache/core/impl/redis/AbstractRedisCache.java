@@ -1,14 +1,23 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
-import io.ihankun.framework.cache.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisSizeControlMode;
+import io.ihankun.framework.cache.config.RedisConfigProperties;
+import io.ihankun.framework.cache.holder.RedisTemplateHolder;
 import io.ihankun.framework.cache.key.CacheKey;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.common.utils.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+import static io.ihankun.framework.cache.comm.CacheErrorCodeEnum.*;
 
 /**
  * @author hankun
@@ -16,68 +25,28 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public abstract class AbstractRedisCache {
 
-    /**
-     * redis template
-     */
-    private static RedisTemplate redisTemplate;
-    //private RedisSizeCheckProperties sizeCheckProperties;
-
-    /**
-     * 缓存最长有效时间
-     * 缓存默认有效时间
-     */
-    protected static final Long MAX_EXPIRE = 3L;
-
-    /**
-     * 缓存KEY最大长度
-     */
-    private static final int MAX_CACHE_KEY_SIZE = 256;
-
-    /**
-     * 缓存VALUE最大长度
-     */
-    private static final int MAX_CACHE_VALUE_SIZE = 1024 * 1024;
-
-
     protected RedisTemplate getRedisTemplate() {
-        if (redisTemplate != null) {
-            return redisTemplate;
-        }
-
-        synchronized (this) {
-            if (redisTemplate != null) {
-                return redisTemplate;
-            }
-
-            RedisTemplate template = SpringHelpers.context().getBean("redisTemplate", RedisTemplate.class);
-            FastJsonRedisSerializer<Object> serializer = new FastJsonRedisSerializer<>(Object.class);
-            template.setKeySerializer(serializer);
-            template.setValueSerializer(serializer);
-            template.setHashKeySerializer(serializer);
-            template.setHashValueSerializer(serializer);
-            redisTemplate = template;
-
-            //sizeCheckProperties = SpringHelpers.context().getBean("RuleRedisSizeCheckProperties", RedisSizeCheckProperties.class);
-        }
-        return redisTemplate;
+        return RedisTemplateHolder.ins().getRedisTemplate();
     }
 
     /**
      * 大小
-     *
-     * @param key
-     * @return
-     * @throws BusinessException
      */
     protected abstract Long size(CacheKey key);
 
     /**
      * 数据类型
-     *
-     * @return
      */
     protected abstract RedisDataType dataType();
 
+
+    /**
+     * 获取最大过期时间
+     */
+    protected long getMaxExpireTime() {
+        RedisConfigProperties config = SpringHelpers.context().getBean(RedisConfigProperties.class);
+        return config.getMaxExpireTime();
+    }
 
     /**
      * 校验kv
@@ -86,55 +55,113 @@ public abstract class AbstractRedisCache {
      * @param value 缓存value
      */
     protected void validate(CacheKey key, Object value, Long expire, TimeUnit timeUnit) {
-        if (expire == null || timeUnit == null) {
-            throw BusinessException.build("cache", "003", "cache.key.size.not.allowed.no_expire,key:" + key.get());
-        }
 
-        if (expire.compareTo(timeUnit.convert(MAX_EXPIRE, TimeUnit.DAYS)) > 0) {
-            throw BusinessException.build("cache", "004", "cache.key.size.not.allowed.greater.than.MAX_EXPIRE,timeUnit:" + timeUnit + ",expire:" + expire + ",MAX_EXPIRE:" + MAX_EXPIRE);
-        }
-
-        int keyContentSize = key.get().getBytes().length;
-        if (keyContentSize > MAX_CACHE_KEY_SIZE) {
-            throw BusinessException.build("cache", "001", "cache.key.size.not.allowed.greater.than.MAX_CACHE_KEY_SIZE,keySize:" + keyContentSize + ",MAX_CACHE_KEY_SIZE:" + MAX_CACHE_KEY_SIZE);
-        }
         if (value == null) {
             return;
         }
 
-        int valueContentSize = value.toString().getBytes().length;
-        if (valueContentSize > MAX_CACHE_VALUE_SIZE) {
-            throw BusinessException.build("cache", "002", "cache.value.size.not.allowed.greater.than.MAX_CACHE_VALUE_SIZE,valueSize:" + valueContentSize + ",MAX_CACHE_VALUE_SIZE:" + MAX_CACHE_VALUE_SIZE);
+        RedisConfigProperties config = null;
+        RuntimeException controlException = null;
+        try {
+            //获取配置
+            config = SpringHelpers.context().getBean(RedisConfigProperties.class);
+
+            //是否开启，默认关闭状态
+            boolean controlEnable = config.isSizeControlEnable();
+            if (controlEnable) {
+                sizeControl(config, key, value, expire, timeUnit);
+            }
+
+        } catch (RuntimeException e) {
+            controlException = e;
+            log.error("Redis.sizeControl.exception config={}", JSON.toJSONString(config), e);
         }
 
-        //检查实际大小
-        //checkSize(key);
+        //如果配置不为空，且为限制模式，且检查返回有异常，则阻断流程，其他所有情况均放行
+        if (config != null && config.getSizeControlMode().equals(RedisSizeControlMode.LIMIT) && controlException != null) {
+            log.error("Redis.sizeControl.LIMIT.exception config={}", JSON.toJSONString(config));
+            throw controlException;
+        }
+
     }
 
+
     /**
-     * 检查value大小
-     * 防止出现超大的value
-     *
-     * @param key
+     * 大小限制
      */
-//    private void checkSize(CacheKey key) {
-//        if(RedisDataType.STRING.equals(dataType())){
-//            return;
-//        }
-//        if (sizeCheckProperties == null || !sizeCheckProperties.isEnabled() || CollectionUtils.isEmpty(sizeCheckProperties.getConfigs())) {
-//            return;
-//        }
-//        if (!sizeCheckProperties.getConfigs().containsKey(dataType().getValue())) {
-//            return;
-//        }
-//
-//        Long size = size(key);
-//        if (size == null || size == 0) {
-//            return;
-//        }
-//        if (size.compareTo(sizeCheckProperties.getConfigs().get(dataType().getValue())) > 0) {
-//            throw BusinessException.build("cache", "005", "cache.value.actual.size.greater.than.MAX_CACHE_VALUE_SIZE,valueSize:" + size + ",MAX_CACHE_VALUE_SIZE:" + sizeCheckProperties.getConfigs().get(dataType().getValue()));
-//        }
-//
-//    }
+    private void sizeControl(RedisConfigProperties config, CacheKey key, Object value, Long expire, TimeUnit timeUnit) {
+        //未设置过期时间
+        if (expire == null || timeUnit == null) {
+            throw BusinessException.build(NOT_SET_EXPIRE_TIME, key.get());
+        }
+
+
+        //超时时间过长
+        if (expire.compareTo(timeUnit.convert(config.getMaxExpireTime(), TimeUnit.MINUTES)) > 0) {
+            throw BusinessException.build(EXPIRE_TOO_LONG, key.get(), config.getMaxExpireTime() + "分钟");
+        }
+
+
+        //key长度太长
+        int keyContentSize = key.get().getBytes().length;
+        if (keyContentSize > config.getMaxKeySize()) {
+            throw BusinessException.build(KEY_LENGTH_TOO_LONG, key.get(), String.valueOf(config.getMaxKeySize()), String.valueOf(keyContentSize));
+        }
+
+
+        //根据数据类型，判断是否超界
+        RedisDataType dataType = dataType();
+        Integer controlSize = config.getSizeControlMap().get(dataType);
+        if (controlSize != null) {
+
+            switch (dataType) {
+                case STRING: {
+                    int current = value.toString().length();
+                    if (current > controlSize) {
+                        throw BusinessException.build(VALUE_LENGTH_TOO_LONG, key.get(), dataType.getValue(), controlSize + "byte", current + "byte");
+                    }
+                }
+                break;
+                case LIST: {
+                    int current;
+                    if (value instanceof List) {
+                        current = ((List<?>) value).size();
+                    } else {
+                        current = 1;
+                    }
+                    long old = size(key);
+                    if (current + old > controlSize) {
+                        throw BusinessException.build(VALUE_LENGTH_TOO_LONG, key.get(), dataType.getValue(), String.valueOf(controlSize), String.valueOf(current + old));
+                    }
+                }
+                break;
+                case MAP: {
+                    int current;
+                    if (value instanceof Map) {
+                        current = ((Map<?, ?>) value).size();
+                    } else {
+                        current = 1;
+                    }
+                    long old = size(key);
+                    if (current + old > controlSize) {
+                        throw BusinessException.build(VALUE_LENGTH_TOO_LONG, key.get(), dataType.getValue(), String.valueOf(controlSize), String.valueOf(current + old));
+                    }
+                }
+                break;
+                case SET: {
+                    int current;
+                    if (value instanceof Set) {
+                        current = ((Set<?>) value).size();
+                    } else {
+                        current = 1;
+                    }
+                    long old = size(key);
+                    if (current + old > controlSize) {
+                        throw BusinessException.build(VALUE_LENGTH_TOO_LONG, key.get(), dataType.getValue(), String.valueOf(controlSize), String.valueOf(current + old));
+                    }
+                }
+                break;
+            }
+        }
+    }
 }

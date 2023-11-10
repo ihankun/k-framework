@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisDataType;
 import io.ihankun.framework.cache.core.MapCache;
 import io.ihankun.framework.cache.key.CacheKey;
 import lombok.extern.slf4j.Slf4j;
@@ -18,8 +18,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     public V getValue(CacheKey key, K mapKey) {
 
         try {
-            V value = (V) getRedisTemplate().opsForHash().entries(key.get()).get(mapKey);
-            return value;
+            return (V) getRedisTemplate().opsForHash().entries(key.get()).get(mapKey);
 
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -29,7 +28,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
 
     @Override
     public boolean put(CacheKey key, K mapKey, V value) {
-        return put(key, mapKey, value, MAX_EXPIRE, TimeUnit.DAYS);
+        return put(key, mapKey, value, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -59,8 +58,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     @Override
     public Long size(CacheKey key) {
         try {
-            Long size = getRedisTemplate().opsForHash().size(key.get());
-            return size;
+            return getRedisTemplate().opsForHash().size(key.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return 0L;
@@ -74,7 +72,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
 
     @Override
     public boolean putAll(CacheKey key, Map<K, V> map) {
-        return putAll(key, map, MAX_EXPIRE, TimeUnit.DAYS);
+        return putAll(key, map, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -107,8 +105,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     @Override
     public Map<K, V> get(CacheKey key) {
         try {
-            Map<K, V> map = getRedisTemplate().opsForHash().entries(key.get());
-            return map;
+            return (Map<K, V>) getRedisTemplate().opsForHash().entries(key.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -128,7 +125,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
 
     @Override
     public boolean update(CacheKey key, Map<K, V> value) {
-        return update(key,value,MAX_EXPIRE,TimeUnit.DAYS);
+        return update(key,value,getMaxExpireTime(),TimeUnit.DAYS);
     }
 
     @Override
@@ -160,7 +157,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     public boolean exits(CacheKey key) {
         try {
             Long size = getRedisTemplate().opsForHash().size(key.get());
-            if (size == null || size == 0) {
+            if (size == 0) {
                 return false;
             }
         } catch (Exception e) {

@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisDataType;
 import io.ihankun.framework.cache.core.SetCache;
 import io.ihankun.framework.cache.key.CacheKey;
 import lombok.extern.slf4j.Slf4j;
@@ -19,8 +19,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     public List<String> pop(CacheKey key, int size) {
 
         try {
-            List<String> list = getRedisTemplate().opsForSet().pop(key.get(), size);
-            return list;
+            return (List<String>) getRedisTemplate().opsForSet().pop(key.get(), size);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -30,8 +29,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     @Override
     public boolean contain(CacheKey key, V value) {
         try {
-            boolean contains = getRedisTemplate().opsForSet().members(key.get()).contains(value);
-            return contains;
+            return getRedisTemplate().opsForSet().members(key.get()).contains(value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -40,7 +38,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
 
     @Override
     public boolean put(CacheKey key, V value) {
-        return put(key, value, MAX_EXPIRE, TimeUnit.DAYS);
+        return put(key, value, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -58,7 +56,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
 
     @Override
     public boolean putAll(CacheKey key, Set<V> values) {
-        return putAll(key, values, MAX_EXPIRE, TimeUnit.DAYS);
+        return putAll(key, values, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -90,8 +88,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     @Override
     public Long size(CacheKey key) {
         try {
-            Long size = getRedisTemplate().opsForSet().size(key.get());
-            return size;
+            return getRedisTemplate().opsForSet().size(key.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return 0L;
@@ -122,8 +119,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     @Override
     public Set<V> get(CacheKey key) {
         try {
-            Set<V> set = getRedisTemplate().opsForSet().members(key.get());
-            return set;
+            return (Set<V>) getRedisTemplate().opsForSet().members(key.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -143,7 +139,7 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
 
     @Override
     public boolean update(CacheKey key, Set<V> value) {
-        return update(key,value,MAX_EXPIRE,TimeUnit.DAYS);
+        return update(key,value,getMaxExpireTime(),TimeUnit.DAYS);
     }
 
     @Override

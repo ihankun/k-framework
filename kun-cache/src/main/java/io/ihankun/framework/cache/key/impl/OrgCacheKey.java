@@ -1,16 +1,17 @@
 package io.ihankun.framework.cache.key.impl;
 
 
+import io.ihankun.framework.cache.key.AbstractCacheKey;
 import io.ihankun.framework.cache.key.CacheKey;
 
 /**
  * @author hankun
  */
-public class OrgCacheKey implements CacheKey {
+public class OrgCacheKey extends AbstractCacheKey implements CacheKey {
 
     private static final String SPLIT = ":";
 
-    private String businessCode;
+    private final String businessCode;
 
     private String orgId;
 
@@ -20,9 +21,8 @@ public class OrgCacheKey implements CacheKey {
         this.businessCode = businessCode;
     }
 
-    public static final OrgCacheKey build(String businessCode) {
-        OrgCacheKey key = new OrgCacheKey(businessCode);
-        return key;
+    public static OrgCacheKey build(String businessCode) {
+        return new OrgCacheKey(businessCode);
     }
 
     public OrgCacheKey orgId(String orgId) {
@@ -37,8 +37,6 @@ public class OrgCacheKey implements CacheKey {
 
     @Override
     public String get() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(businessCode).append(SPLIT).append(orgId).append(SPLIT).append(key);
-        return builder.toString();
+        return formatKey(businessCode + SPLIT + orgId + SPLIT + key);
     }
 }

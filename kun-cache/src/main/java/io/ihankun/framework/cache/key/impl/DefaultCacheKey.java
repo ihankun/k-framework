@@ -1,16 +1,17 @@
 package io.ihankun.framework.cache.key.impl;
 
 
+import io.ihankun.framework.cache.key.AbstractCacheKey;
 import io.ihankun.framework.cache.key.CacheKey;
 
 /**
  * @author hankun
  */
-public class DefaultCacheKey implements CacheKey {
+public class DefaultCacheKey extends AbstractCacheKey implements CacheKey {
 
     private static final String SPLIT = ":";
 
-    private String businessCode;
+    private final String businessCode;
 
 
     private String key;
@@ -20,9 +21,8 @@ public class DefaultCacheKey implements CacheKey {
     }
 
 
-    public static final DefaultCacheKey build(String businessCode) {
-        DefaultCacheKey key = new DefaultCacheKey(businessCode);
-        return key;
+    public static DefaultCacheKey build(String businessCode) {
+        return new DefaultCacheKey(businessCode);
     }
 
     public DefaultCacheKey key(String key) {
@@ -32,8 +32,6 @@ public class DefaultCacheKey implements CacheKey {
 
     @Override
     public String get() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(businessCode).append(SPLIT).append(key);
-        return builder.toString();
+        return formatKey(businessCode + SPLIT + key);
     }
 }

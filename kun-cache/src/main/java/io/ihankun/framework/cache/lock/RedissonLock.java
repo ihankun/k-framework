@@ -1,6 +1,7 @@
 package io.ihankun.framework.cache.lock;
 
 import io.ihankun.framework.cache.error.CacheErrorCode;
+import io.ihankun.framework.cache.holder.RedissonClientHolder;
 import io.ihankun.framework.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
@@ -22,6 +23,11 @@ public class RedissonLock {
     public void init() {
         log.info("init RedissonLock");
     }
+
+    /**
+     * 存储当前线程的分布式锁key，用于异常下打印key
+     */
+    private static final ThreadLocal<String> LOC_KEY_THREAD_LOCAL = new ThreadLocal<>();
 
     /**
      * 分布式锁的前缀
@@ -68,7 +74,8 @@ public class RedissonLock {
      */
     public <T> T lock(String key, long waitTime, long leaseTime, TimeUnit timeUnit, LockCallback<T> callback) {
         String locKey = LOCK_KEY_PREFIX + key;
-        RLock rLock = redissonClient.getLock(locKey);
+        LOC_KEY_THREAD_LOCAL.set(locKey);
+        RLock rLock = RedissonClientHolder.ins().getRedissonClient().getLock(locKey);
         try {
             boolean locked = rLock.tryLock(waitTime, leaseTime, timeUnit);
 
@@ -87,6 +94,11 @@ public class RedissonLock {
             if (rLock.isHeldByCurrentThread()) {
                 rLock.unlock();
             }
+            LOC_KEY_THREAD_LOCAL.remove();
         }
+    }
+
+    public static String getCurrentLocKey() {
+        return LOC_KEY_THREAD_LOCAL.get();
     }
 }

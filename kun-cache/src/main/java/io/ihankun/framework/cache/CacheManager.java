@@ -8,13 +8,13 @@ import io.ihankun.framework.cache.core.*;
  */
 public class CacheManager<K, V> {
 
-    private StringCache stringCache;
-    private MapCache<K, V> mapCache;
-    private ListCache<V> listCache;
-    private SetCache<V> setCache;
-    private ZsetCache<V> zsetCache;
+    private final StringCache stringCache;
+    private final MapCache<K, V> mapCache;
+    private final ListCache<V> listCache;
+    private final SetCache<V> setCache;
+    private final ZsetCache<V> zsetCache;
 
-    public CacheManager(StringCache stringCache, MapCache mapCache, ListCache listCache, SetCache setCache, ZsetCache zsetCache) {
+    public CacheManager(StringCache stringCache, MapCache<K, V> mapCache, ListCache<V> listCache, SetCache<V> setCache, ZsetCache<V> zsetCache) {
         this.stringCache = stringCache;
         this.mapCache = mapCache;
         this.listCache = listCache;
@@ -37,6 +37,7 @@ public class CacheManager<K, V> {
     public ListCache<V> list() {
         return listCache;
     }
+
     public ZsetCache<V> zset() {
         return zsetCache;
     }

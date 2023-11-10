@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisDataType;
 import io.ihankun.framework.cache.core.StringCache;
 import io.ihankun.framework.cache.key.CacheKey;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
 
     @Override
     public boolean setIfAbsent(CacheKey key, String value) {
-        return setIfAbsent(key, value, MAX_EXPIRE, TimeUnit.DAYS);
+        return setIfAbsent(key, value, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
 
     @Override
     public boolean update(CacheKey key, String value) {
-        return update(key, value, MAX_EXPIRE, TimeUnit.DAYS);
+        return update(key, value, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -101,10 +101,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     public boolean exits(CacheKey key) {
         try {
             Object value = getRedisTemplate().opsForValue().get(key.get());
-            if (ObjectUtils.isEmpty(value)) {
-                return false;
-            }
-            return true;
+            return !ObjectUtils.isEmpty(value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -113,7 +110,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
 
     @Override
     public Long atomic(CacheKey key, Long num) {
-        return atomic(key, num, MAX_EXPIRE, TimeUnit.DAYS);
+        return atomic(key, num, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -127,13 +124,13 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
 
             if (num > 0) {
                 Long increment = getRedisTemplate().opsForValue().increment(key.get(), num);
-                getRedisTemplate().expire(key.get(), MAX_EXPIRE, TimeUnit.DAYS);
+                getRedisTemplate().expire(key.get(), getMaxExpireTime(), TimeUnit.DAYS);
                 return increment;
             }
 
 
             Long decrement = getRedisTemplate().opsForValue().decrement(key.get(), Math.abs(num));
-            getRedisTemplate().expire(key.get(), MAX_EXPIRE, TimeUnit.DAYS);
+            getRedisTemplate().expire(key.get(), getMaxExpireTime(), TimeUnit.DAYS);
             return decrement;
 
         } catch (Exception e) {

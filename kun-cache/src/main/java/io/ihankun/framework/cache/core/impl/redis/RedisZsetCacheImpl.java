@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisDataType;
 import io.ihankun.framework.cache.core.ZsetCache;
 import io.ihankun.framework.cache.key.CacheKey;
 import org.springframework.data.redis.core.ZSetOperations;

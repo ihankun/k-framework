@@ -20,8 +20,8 @@ public enum CacheErrorCode implements IErrorCode {
      */
     GET_REDISSON_EX("0002", "获取分布式锁发生错误,$1");
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
     @Override
     public String prefix() {

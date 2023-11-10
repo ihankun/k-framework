@@ -9,9 +9,6 @@ public class CacheBuilder {
 
     /**
      * 构造不同类型的cache管理器
-     *
-     * @param type
-     * @return
      */
     public static CacheManager build(CacheType type) {
         CacheManager manager = null;

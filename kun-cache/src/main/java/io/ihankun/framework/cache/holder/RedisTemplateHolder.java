@@ -7,10 +7,10 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class RedisTemplateHolder {
 
     private static class RedisTemplateHolderHolder{
-        private static RedisTemplateHolder INSTANCE = new RedisTemplateHolder();
+        private static final RedisTemplateHolder INSTANCE = new RedisTemplateHolder();
     }
 
-    private RedisTemplate redisTemplate;
+    private volatile RedisTemplate redisTemplate;
     private RedisTemplateHolder() {}
 
     public static RedisTemplateHolder ins() {

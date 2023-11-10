@@ -5,16 +5,14 @@ import io.ihankun.framework.common.utils.SpringHelpers;
 import org.redisson.api.RedissonClient;
 
 /**
- * 功能描述:
- * @author: hankun
- * @date: 2023/9/27
+ * @author hankun
  */
 public class RedissonClientHolder {
     private static class RedissonClientHolderInstance {
-        private static RedissonClientHolder INSTANCE = new RedissonClientHolder();
+        private static final RedissonClientHolder INSTANCE = new RedissonClientHolder();
     }
 
-    private RedissonClient redissonClient;
+    private volatile RedissonClient redissonClient;
     private RedissonClientHolder() {}
 
     public static RedissonClientHolder ins() {

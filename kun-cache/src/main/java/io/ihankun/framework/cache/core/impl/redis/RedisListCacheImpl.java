@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.RedisDataType;
+import io.ihankun.framework.cache.comm.RedisDataType;
 import io.ihankun.framework.cache.core.ListCache;
 import io.ihankun.framework.cache.key.CacheKey;
 import lombok.extern.slf4j.Slf4j;
@@ -22,10 +22,7 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
 
             List<V> list = new ArrayList<>();
 
-            while (true) {
-                if (size == 0) {
-                    break;
-                }
+            while (size != 0) {
 
                 V pop = (V) getRedisTemplate().opsForList().leftPop(key.get());
                 list.add(pop);
@@ -42,7 +39,7 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
 
     @Override
     public boolean add(CacheKey key, V value) {
-        return add(key, value, MAX_EXPIRE, TimeUnit.DAYS);
+        return add(key, value, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
@@ -102,7 +99,7 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
 
     @Override
     public boolean update(CacheKey key, List<V> value) {
-        return update(key, value, MAX_EXPIRE, TimeUnit.DAYS);
+        return update(key, value, getMaxExpireTime(), TimeUnit.DAYS);
     }
 
     @Override
