@@ -1,5 +1,6 @@
-package io.ihankun.framework.common.error;
+package io.ihankun.framework.common.error.impl;
 
+import io.ihankun.framework.common.error.IErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -8,7 +9,7 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 @Getter
-public enum CommonErrorCode implements IErrorCode{
+public enum CommonErrorCode implements IErrorCode {
 
     /**
      * 上级不存在

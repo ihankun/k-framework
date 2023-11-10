@@ -2,7 +2,7 @@ package io.ihankun.framework.common.tree.level.service;
 
 
 import io.ihankun.framework.common.base.BaseService;
-import io.ihankun.framework.common.error.CommonErrorCode;
+import io.ihankun.framework.common.error.impl.CommonErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.common.tree.level.IBaseLevelDTO;
 import io.ihankun.framework.common.tree.level.IBaseLevelVO;

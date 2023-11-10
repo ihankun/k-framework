@@ -3,7 +3,7 @@ package io.ihankun.framework.common.response;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.ihankun.framework.common.enums.ResponseLevelEnum;
-import io.ihankun.framework.common.error.BaseErrorCode;
+import io.ihankun.framework.common.error.impl.BaseErrorCode;
 import io.ihankun.framework.common.error.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.swagger.annotations.ApiModelProperty;

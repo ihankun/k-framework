@@ -1,7 +1,7 @@
 package io.ihankun.framework.common.utils;
 
 
-import io.ihankun.framework.common.error.CommonErrorCode;
+import io.ihankun.framework.common.error.impl.CommonErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 
 import java.util.Calendar;

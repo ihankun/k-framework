@@ -1,5 +1,6 @@
-package io.ihankun.framework.common.error;
+package io.ihankun.framework.common.error.impl;
 
+import io.ihankun.framework.common.error.IErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -8,7 +9,7 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 @Getter
-public enum BaseErrorCode implements IErrorCode{
+public enum BaseErrorCode implements IErrorCode {
 
     /**
      * 成功
