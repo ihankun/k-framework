@@ -90,7 +90,7 @@ public final class IpUtil {
             }
         }
         cachedIpAddress = localIpAddress;
-        log.info("ihankun-common.iputil.ip:{}", cachedIpAddress);
+        log.info("ipUtil.ip:{}", cachedIpAddress);
         return localIpAddress;
     }
 
