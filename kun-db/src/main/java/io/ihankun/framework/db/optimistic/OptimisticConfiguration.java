@@ -9,5 +9,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan(OptimisticConfiguration.SCANER_CLASS_PATH)
 public class OptimisticConfiguration {
-    public static final String SCANER_CLASS_PATH = "com.ihankun.core.db.optimistic";
+    public static final String SCANER_CLASS_PATH = "io.ihankun.framework.db.optimistic";
 }
