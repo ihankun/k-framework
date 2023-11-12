@@ -25,7 +25,7 @@
 
         <dependency>
             <groupId>io.ihankun.framework</groupId>
-            <artifactId>kun-common</artifactId>
+            <artifactId>spring-commons</artifactId>
         </dependency>
 
         <dependency>

@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>kun-common</artifactId>
+    <artifactId>spring-commons</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
