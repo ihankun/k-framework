@@ -30,7 +30,7 @@
 
         <dependency>
             <groupId>io.ihankun.framework</groupId>
-            <artifactId>kun-log</artifactId>
+            <artifactId>spring-log-starter</artifactId>
         </dependency>
 
         <dependency>
