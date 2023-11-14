@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>kun-lock</artifactId>
+    <artifactId>spring-mongodb-starter</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,18 +19,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.ihankun.framework</groupId>
-            <artifactId>spring-commons</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.ihankun.framework</groupId>
-            <artifactId>spring-cache-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.ihankun.framework</groupId>
-            <artifactId>spring-cloud-starter-api</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
     </dependencies>
 
