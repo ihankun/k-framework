@@ -54,15 +54,15 @@
 
     <modules>
         <module>spring-commons</module>
-        <module>kun-cache</module>
-        <module>kun-db</module>
-        <module>kun-job</module>
-        <module>kun-lock</module>
+        <module>spring-cache-starter</module>
+        <module>spring-db-starter</module>
+        <module>spring-job-starter</module>
+        <module>spring-lock-starter</module>
         <module>spring-log-starter</module>
-        <module>kun-mq</module>
-        <module>kun-spring</module>
-        <module>kun-ribbon</module>
-        <module>kun-mongodb</module>
+        <module>spring-mq-starter</module>
+        <module>spring-cloud-starter</module>
+        <module>spring-ribbon</module>
+        <module>spring-mongodb-starter</module>
     </modules>
 
     <dependencies>
@@ -209,7 +209,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-cache</artifactId>
+                <artifactId>spring-cache-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
@@ -221,19 +221,19 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-db</artifactId>
+                <artifactId>spring-db-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-job</artifactId>
+                <artifactId>spring-job-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-lock</artifactId>
+                <artifactId>spring-lock-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
@@ -245,25 +245,31 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-mq</artifactId>
+                <artifactId>spring-mq-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-ribbon</artifactId>
+                <artifactId>spring-ribbon</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-api</artifactId>
+                <artifactId>spring-cloud-starter-api</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-server</artifactId>
+                <artifactId>spring-cloud-starter-server</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-mongodb-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 

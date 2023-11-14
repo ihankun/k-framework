@@ -9,17 +9,19 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>kun-spring</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>spring-api</module>
-        <module>spring-server</module>
-    </modules>
+    <artifactId>spring-ribbon</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.ihankun.framework</groupId>
+            <artifactId>spring-commons</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
