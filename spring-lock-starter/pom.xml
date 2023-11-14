@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>spring-lock-starter</artifactId>
