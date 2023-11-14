@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 时间工具类
  *
- * @author 芋道源码
+ * @author hankun
  */
 public class Date2Utils {
 

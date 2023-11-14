@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * 字符串工具类
  *
- * @author 芋道源码
+ * @author hankun
  */
 public class StrUtils {
 

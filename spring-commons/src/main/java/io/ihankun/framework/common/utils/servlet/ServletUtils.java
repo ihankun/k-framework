@@ -18,7 +18,7 @@ import java.net.URLEncoder;
 /**
  * 客户端工具类
  *
- * @author 芋道源码
+ * @author hankun
  */
 public class ServletUtils {
 
