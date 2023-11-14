@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache.holder;
 
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import org.springframework.data.redis.core.RedisTemplate;
 
 /**

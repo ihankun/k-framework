@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import io.ihankun.framework.cache.config.RedisConfigProperties;
 import io.ihankun.framework.common.context.DomainContext;
 import io.ihankun.framework.common.exception.BusinessException;
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 
 import java.util.List;
 

@@ -1,14 +1,13 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import io.ihankun.framework.cache.comm.RedisDataType;
 import io.ihankun.framework.cache.comm.RedisSizeControlMode;
 import io.ihankun.framework.cache.config.RedisConfigProperties;
 import io.ihankun.framework.cache.holder.RedisTemplateHolder;
 import io.ihankun.framework.cache.key.CacheKey;
 import io.ihankun.framework.common.exception.BusinessException;
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 

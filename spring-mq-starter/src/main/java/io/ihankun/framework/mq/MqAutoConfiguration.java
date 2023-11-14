@@ -1,6 +1,6 @@
 package io.ihankun.framework.mq;
 
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import io.ihankun.framework.mq.config.MqProperties;
 import io.ihankun.framework.mq.constants.MqTypeEnum;
 import io.ihankun.framework.mq.consumer.ConsumerListener;
@@ -10,7 +10,6 @@ import io.ihankun.framework.mq.consumer.impl.RocketMqConsumer;
 import io.ihankun.framework.mq.producer.IMqProducer;
 import io.ihankun.framework.mq.producer.impl.KafkaMqProducer;
 import io.ihankun.framework.mq.producer.impl.RocketMqProducer;
-import io.ihankun.framework.mq.rocketmq.producer.MqProducer;
 import io.ihankun.framework.mq.rule.MqAccessRule;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

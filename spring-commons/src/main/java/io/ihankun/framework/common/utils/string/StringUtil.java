@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.utils;
+package io.ihankun.framework.common.utils.string;
 
 /**
  * @author hankun
