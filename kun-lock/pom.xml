@@ -30,7 +30,7 @@
 
         <dependency>
             <groupId>io.ihankun.framework</groupId>
-            <artifactId>spring-api</artifactId>
+            <artifactId>spring-cloud-starter-api</artifactId>
         </dependency>
     </dependencies>
 

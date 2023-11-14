@@ -60,7 +60,7 @@
         <module>kun-lock</module>
         <module>spring-log-starter</module>
         <module>kun-mq</module>
-        <module>kun-spring</module>
+        <module>spring-cloud-starter</module>
         <module>kun-ribbon</module>
         <module>kun-mongodb</module>
     </modules>
@@ -257,13 +257,13 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-api</artifactId>
+                <artifactId>spring-cloud-starter-api</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-server</artifactId>
+                <artifactId>spring-cloud-starter-server</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
