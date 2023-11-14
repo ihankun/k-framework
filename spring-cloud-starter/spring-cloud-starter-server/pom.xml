@@ -35,7 +35,7 @@
 
         <dependency>
             <groupId>io.ihankun.framework</groupId>
-            <artifactId>kun-db</artifactId>
+            <artifactId>spring-db-starter</artifactId>
         </dependency>
 
         <dependency>
