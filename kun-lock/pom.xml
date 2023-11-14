@@ -25,7 +25,7 @@
 
         <dependency>
             <groupId>io.ihankun.framework</groupId>
-            <artifactId>kun-cache</artifactId>
+            <artifactId>spring-cache-starter</artifactId>
         </dependency>
 
         <dependency>
