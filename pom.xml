@@ -59,9 +59,9 @@
         <module>spring-job-starter</module>
         <module>spring-lock-starter</module>
         <module>spring-log-starter</module>
-        <module>kun-mq</module>
+        <module>spring-mq-starter</module>
         <module>spring-cloud-starter</module>
-        <module>kun-ribbon</module>
+        <module>spring-ribbon</module>
         <module>spring-mongodb-starter</module>
     </modules>
 
@@ -245,13 +245,13 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-mq</artifactId>
+                <artifactId>spring-mq-starter</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>kun-ribbon</artifactId>
+                <artifactId>spring-ribbon</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
 
