@@ -22,6 +22,8 @@ import java.util.concurrent.ConcurrentMap;
  * 2. 异常提示信息，写在 .properties 等等配置文件
  * 3. 异常提示信息，写在 Apollo 等等配置中心中，从而实现可动态刷新
  * 4. 异常提示信息，存储在 db 等等数据库中，从而实现可动态刷新
+ *
+ * @author hankun
  */
 @Slf4j
 public class ServiceExceptionUtil {

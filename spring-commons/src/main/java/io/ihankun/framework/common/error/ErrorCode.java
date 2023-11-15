@@ -3,6 +3,9 @@ package io.ihankun.framework.common.error;
 import lombok.Data;
 
 
+/**
+ * @author hankun
+ */
 @Data
 public class ErrorCode {
 

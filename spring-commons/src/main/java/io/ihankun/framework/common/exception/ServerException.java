@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 服务器异常 Exception
+ * @author hankun
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

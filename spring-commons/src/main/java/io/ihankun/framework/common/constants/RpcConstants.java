@@ -2,9 +2,6 @@ package io.ihankun.framework.common.constants;
 
 /**
  * RPC 相关的枚举
- *
- * 虽然放在 yudao-spring-boot-starter-rpc 会相对合适，但是每个 API 模块需要使用到，所以暂时只好放在此处
- *
  * @author hankun
  */
 public class RpcConstants {
