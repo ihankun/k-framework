@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.utils;
+package io.ihankun.framework.common.utils.spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
