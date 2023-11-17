@@ -6,5 +6,5 @@ import lombok.Data;
  * @author hankun
  */
 @Data
-public class BasePageDTO extends BasePageReq{
+public class BasePageDTO extends BasePageParam {
 }

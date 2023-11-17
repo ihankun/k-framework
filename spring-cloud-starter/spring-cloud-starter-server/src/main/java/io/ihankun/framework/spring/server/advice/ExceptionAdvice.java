@@ -2,7 +2,7 @@ package io.ihankun.framework.spring.server.advice;
 
 import io.ihankun.framework.common.context.*;
 import io.ihankun.framework.common.enums.ResponseLevelEnum;
-import io.ihankun.framework.common.error.IErrorCode;
+import io.ihankun.framework.common.exception.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.common.response.ResponseResult;
 import io.ihankun.framework.log.context.TraceLogContext;
