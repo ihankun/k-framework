@@ -7,6 +7,10 @@ import io.ihankun.framework.cache.core.impl.redis.*;
  */
 public class CacheBuilder {
 
+    public static CacheManager build() {
+        return new CacheManager(new RedisStringCacheImpl(), new RedisMapCacheImpl(), new RedisListCacheImpl(), new RedisSetCacheImpl(),new RedisZsetCacheImpl());;
+    }
+
     /**
      * 构造不同类型的cache管理器
      */
