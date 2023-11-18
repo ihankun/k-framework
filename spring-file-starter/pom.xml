@@ -31,32 +31,32 @@
         <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId> <!-- 解决 ftp 连接 -->
-            <version>3.8.0</version>
+            <version>${commons-net.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId> <!-- 解决 sftp 连接 -->
-            <version>0.1.55</version>
+            <version>${jsch.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-core</artifactId> <!-- 文件类型的识别 -->
-            <version>2.7.0</version>
+            <version>${tika.version}</version>
         </dependency>
 
         <!-- 三方云服务相关 -->
         <dependency>
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
-            <version>8.5.2</version>
+            <version>${minio.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>transmittable-thread-local</artifactId> <!-- 解决 ThreadLocal 父子线程的传值问题 -->
-            <version>2.14.2</version>
+            <version>${transmittable.version}</version>
         </dependency>
     </dependencies>
 
