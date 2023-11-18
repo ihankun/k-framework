@@ -1,4 +1,4 @@
-package io.ihankun.framework.cache.core;
+package io.ihankun.framework.cache.core.type;
 
 
 import io.ihankun.framework.cache.key.CacheKey;
