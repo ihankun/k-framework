@@ -34,3 +34,5 @@ build/
 
 ### Electron ###
 /out/
+
+/logs/
