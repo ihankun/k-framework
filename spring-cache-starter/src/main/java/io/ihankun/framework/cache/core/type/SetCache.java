@@ -1,15 +1,16 @@
-package io.ihankun.framework.cache.core;
+package io.ihankun.framework.cache.core.type;
 
 
 import io.ihankun.framework.cache.key.CacheKey;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author hankun
  */
-public interface ListCache<V> {
+public interface SetCache<V> {
 
     /**
      * 保存
@@ -19,7 +20,7 @@ public interface ListCache<V> {
      * @param expire 过期时间
      * @return
      */
-    boolean save(CacheKey key, List<V> value, Long expire);
+    boolean save(CacheKey key, Set<V> value, Long expire);
 
     /**
      * 获取所有缓存数据
@@ -27,7 +28,7 @@ public interface ListCache<V> {
      * @param key
      * @return
      */
-    List<V> get(CacheKey key);
+    Set<V> get(CacheKey key);
 
     /**
      * 删除缓存
@@ -45,7 +46,7 @@ public interface ListCache<V> {
      * @return
      */
     @Deprecated
-    boolean update(CacheKey key, List<V> value);
+    boolean update(CacheKey key, Set<V> value);
 
     /**
      * 更新缓存
@@ -56,7 +57,7 @@ public interface ListCache<V> {
      * @param timeUnit
      * @return
      */
-    boolean update(CacheKey key, List<V> value, Long expire, TimeUnit timeUnit);
+    boolean update(CacheKey key, Set<V> value, Long expire, TimeUnit timeUnit);
 
     /**
      * 修改过期时间
@@ -78,34 +79,61 @@ public interface ListCache<V> {
     //---------- 通用方法结束 ----------//
 
     /**
-     * 弹出所有元素
+     * 弹出元素
      *
      * @param key
      * @param size
      * @return
      */
-    List<V> pop(CacheKey key, int size);
+    List<String> pop(CacheKey key, int size);
 
     /**
-     * 追加元素
+     * 是否包含某个元素
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    boolean contain(CacheKey key, V value);
+
+    /**
+     * 插入元素
      *
      * @param key
      * @param value
      * @return
      */
     @Deprecated
-    boolean add(CacheKey key, V value);
+    boolean put(CacheKey key, V value);
 
     /**
-     * 追加元素
+     * 插入元素
      *
      * @param key
      * @param value
-     * @param expire
-     * @param timeUnit
+     *
      * @return
      */
-    boolean add(CacheKey key, V value, Long expire, TimeUnit timeUnit);
+    boolean put(CacheKey key, V value, Long expire, TimeUnit timeUnit);
+
+    /**
+     * 插入全部元素
+     *
+     * @param key
+     * @param values
+     * @return
+     */
+    @Deprecated
+    boolean putAll(CacheKey key, Set<V> values);
+
+    /**
+     * 插入全部元素
+     *
+     * @param key
+     * @param values
+     * @return
+     */
+    boolean putAll(CacheKey key, Set<V> values, Long expire, TimeUnit timeUnit);
 
     /**
      * 移除元素
@@ -115,4 +143,12 @@ public interface ListCache<V> {
      * @return
      */
     boolean remove(CacheKey key, V value);
+
+    /**
+     * 元素个数
+     *
+     * @param key
+     * @return
+     */
+    Long size(CacheKey key);
 }

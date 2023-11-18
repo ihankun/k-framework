@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun.framework</groupId>
     <artifactId>ihank-spring-framework</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -42,7 +42,7 @@
         <mysql.version>8.0.28</mysql.version>
         <openfeign.version>10.10.1</openfeign.version>
         <postgresql.version>42.2.27</postgresql.version>
-        <redisson.version>3.17.1</redisson.version>
+        <redisson.version>3.18.0</redisson.version>
         <seata.version>1.4.2</seata.version>
         <security.version>1.0.10.RELEASE</security.version>
         <skywalking.version>8.9.0</skywalking.version>
