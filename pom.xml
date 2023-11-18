@@ -63,6 +63,7 @@
         <module>spring-cloud-starter</module>
         <module>spring-ribbon</module>
         <module>spring-mongodb-starter</module>
+        <module>spring-file-starter</module>
     </modules>
 
     <dependencies>
