@@ -3,8 +3,8 @@ package io.ihankun.framework.common.response;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.ihankun.framework.common.enums.ResponseLevelEnum;
-import io.ihankun.framework.common.error.impl.BaseErrorCode;
-import io.ihankun.framework.common.error.IErrorCode;
+import io.ihankun.framework.common.exception.impl.BaseErrorCode;
+import io.ihankun.framework.common.exception.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -46,9 +46,11 @@ public class ResponseResult<T> implements Serializable {
     private String exceptionName;
 
     @ApiModelProperty("级别，正常返回为info,业务异常为warn,未捕获异常为error")
+    @Getter(onMethod = @__( @JsonIgnore))
     private String level;
 
     @ApiModelProperty("当前服务")
+    @Getter(onMethod = @__( @JsonIgnore))
     private String service;
 
     private static final String REPLACE_STR = "$";
@@ -101,12 +103,12 @@ public class ResponseResult<T> implements Serializable {
         return JSON.toJSONString(this);
     }
 
-    /**
-     * 判断是否为业务异常
-     */
-    public boolean isBusinessException() {
-        return BusinessException.class.getName().equals(getExceptionName());
-    }
+//    /**
+//     * 判断是否为业务异常
+//     */
+//    public boolean isBusinessException() {
+//        return BusinessException.class.getName().equals(getExceptionName());
+//    }
 
     /**
      * 重新构造消息
@@ -213,29 +215,29 @@ public class ResponseResult<T> implements Serializable {
         return build(BaseErrorCode.FALLBACK, null, new String[]{throwable.getMessage()});
     }
 
-    /**
-     * 获取业务异常的ErrorCode
-     */
-    public IErrorCode convertErrorCode() {
-        if (isBusinessException()) {
-            String code = getCode();
-            return new IErrorCode() {
-                @Override
-                public String prefix() {
-                    return "BusinessExceptionErrorCode";
-                }
-
-                @Override
-                public String getCode() {
-                    return code;
-                }
-
-                @Override
-                public String getMsg() {
-                    return getMessage();
-                }
-            };
-        }
-        return convert();
-    }
+//    /**
+//     * 获取业务异常的ErrorCode
+//     */
+//    public IErrorCode convertErrorCode() {
+//        if (isBusinessException()) {
+//            String code = getCode();
+//            return new IErrorCode() {
+//                @Override
+//                public String prefix() {
+//                    return "BusinessExceptionErrorCode";
+//                }
+//
+//                @Override
+//                public String getCode() {
+//                    return code;
+//                }
+//
+//                @Override
+//                public String getMsg() {
+//                    return getMessage();
+//                }
+//            };
+//        }
+//        return convert();
+//    }
 }

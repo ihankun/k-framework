@@ -13,12 +13,12 @@ import java.util.Arrays;
  */
 @Getter
 @AllArgsConstructor
-public enum CommonStatusEnum implements IntArrayValuable {
+public enum SwitchStatusEnum implements IntArrayValuable {
 
     ENABLE(0, "开启"),
     DISABLE(1, "关闭");
 
-    public static final int[] ARRAYS = Arrays.stream(values()).mapToInt(CommonStatusEnum::getStatus).toArray();
+    public static final int[] ARRAYS = Arrays.stream(values()).mapToInt(SwitchStatusEnum::getStatus).toArray();
 
     /**
      * 状态值

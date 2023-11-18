@@ -1,7 +1,7 @@
 package io.ihankun.framework.common.http;
 
 
-import io.ihankun.framework.common.error.impl.CommonErrorCode;
+import io.ihankun.framework.common.exception.impl.CommonErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.common.response.ResponseResult;
 

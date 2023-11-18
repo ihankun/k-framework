@@ -6,7 +6,7 @@ import io.ihankun.framework.cache.key.CacheKey;
 import io.ihankun.framework.cache.key.impl.OrgCacheKey;
 import io.ihankun.framework.common.base.BaseService;
 import io.ihankun.framework.common.context.LoginUserContext;
-import io.ihankun.framework.common.error.IErrorCode;
+import io.ihankun.framework.common.exception.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.lock.annotation.RequestLock;
 import lombok.extern.slf4j.Slf4j;
