@@ -1,6 +1,6 @@
 package io.ihankun.framework.common.thread;
 
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.LinkedBlockingDeque;

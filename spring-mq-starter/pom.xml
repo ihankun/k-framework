@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.2</version>
     </parent>
 
     <artifactId>spring-mq-starter</artifactId>
@@ -36,13 +36,23 @@
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
-            <version>4.4.0</version>
+            <version>${rocketmq.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-tools</artifactId>
-            <version>4.4.0</version>
+            <version>${rocketmq.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

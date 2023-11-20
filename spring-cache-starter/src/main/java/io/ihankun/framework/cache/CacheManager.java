@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache;
 
 
-import io.ihankun.framework.cache.core.*;
+import io.ihankun.framework.cache.core.type.*;
 
 /**
  * @author hankun

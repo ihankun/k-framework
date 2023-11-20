@@ -1,7 +1,7 @@
 package io.ihankun.framework.spring.server.convert;
 
 import com.github.pagehelper.PageInfo;
-import io.ihankun.framework.common.base.BasePageVO;
+import io.ihankun.framework.common.base.BasePageResult;
 
 /**
  * @author hankun
@@ -14,9 +14,9 @@ public class PageInfoToVoUtils {
      * @param <T>
      * @return
      */
-    public static <T> BasePageVO<T> convert(PageInfo<T> pageInfo) {
+    public static <T> BasePageResult<T> convert(PageInfo<T> pageInfo) {
 
-        BasePageVO vo = new BasePageVO<>();
+        BasePageResult vo = new BasePageResult<>();
 
         vo.setTotal(pageInfo.getTotal());
         vo.setPageSize(pageInfo.getPageSize());

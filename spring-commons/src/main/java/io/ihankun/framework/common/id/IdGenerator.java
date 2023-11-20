@@ -1,7 +1,7 @@
 package io.ihankun.framework.common.id;
 
 import io.ihankun.framework.common.id.impl.SnowflakeUpperGenerator;
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;

@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
 import io.ihankun.framework.cache.comm.RedisDataType;
-import io.ihankun.framework.cache.core.SetCache;
+import io.ihankun.framework.cache.core.type.SetCache;
 import io.ihankun.framework.cache.key.CacheKey;
 import lombok.extern.slf4j.Slf4j;
 

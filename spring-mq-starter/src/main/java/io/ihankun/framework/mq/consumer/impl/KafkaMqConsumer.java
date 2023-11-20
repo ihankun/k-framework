@@ -3,7 +3,7 @@ package io.ihankun.framework.mq.consumer.impl;
 import cn.hutool.core.map.MapUtil;
 import com.alibaba.fastjson.JSON;
 import io.ihankun.framework.common.thread.NamedThreadFactory;
-import io.ihankun.framework.common.utils.SpringHelpers;
+import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import io.ihankun.framework.mq.config.MqProperties;
 import io.ihankun.framework.mq.consumer.AbstractConsumer;
 import io.ihankun.framework.mq.consumer.ConsumerListener;

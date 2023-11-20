@@ -1,7 +1,7 @@
 package io.ihankun.framework.common.http;
 
 
-import io.ihankun.framework.common.error.impl.CommonErrorCode;
+import io.ihankun.framework.common.exception.impl.CommonErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.common.response.ResponseResult;
 
@@ -17,7 +17,7 @@ public class RemoteService {
      * @param callBack 回调接口
      * @return ResponseResult的数据
      */
-    public static final <T> T invoke(ResponseResult<T> result, RemoteCallBack<T> callBack) {
+    public static <T> T invoke(ResponseResult<T> result, RemoteCallBack<T> callBack) {
         if (result == null) {
             callBack.onFailure(BusinessException.build(CommonErrorCode.RESULT_NULL));
             return null;

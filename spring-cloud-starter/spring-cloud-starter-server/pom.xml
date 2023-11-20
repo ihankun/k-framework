@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>spring-cloud-starter</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.2</version>
     </parent>
 
     <artifactId>spring-cloud-starter-server</artifactId>
@@ -41,6 +41,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -58,13 +64,13 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.2.5.RELEASE</version>
+            <version>${spring-boot.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-openfeign-core</artifactId>
-            <version>2.2.5.RELEASE</version>
+            <version>${spring-boot.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -101,7 +107,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-            <version>2.2.2.RELEASE</version>
+            <version>${hystrix.version}</version>
         </dependency>
 
         <dependency>

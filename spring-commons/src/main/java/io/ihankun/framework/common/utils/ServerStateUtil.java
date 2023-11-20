@@ -5,9 +5,9 @@ package io.ihankun.framework.common.utils;
  */
 public class ServerStateUtil {
 
-    private static final String GRAY_MARK = "spring.kun.config.gray";
-    private static final String SINGLE_MARK = "spring.kun.config.single";
-    private static final String VERSION = "spring.kun.config.version";
+    private static final String GRAY_MARK = "kun.config.gray";
+    private static final String SINGLE_MARK = "kun.config.single";
+    private static final String VERSION = "kun.config.version";
 
     private static String version = null;
     private static Boolean singlePoint = null;
