@@ -86,6 +86,7 @@
         <module>spring-mongodb-starter</module>
         <module>spring-file-starter</module>
         <module>spring-sso-starter</module>
+        <module>spring-captcha-strater</module>
     </modules>
 
     <dependencies>
