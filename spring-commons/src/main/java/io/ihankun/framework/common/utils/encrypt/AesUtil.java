@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.utils;
+package io.ihankun.framework.common.utils.encrypt;
 
 import cn.hutool.core.codec.Base64;
 import lombok.extern.slf4j.Slf4j;

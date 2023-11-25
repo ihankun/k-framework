@@ -1,5 +1,6 @@
-package io.ihankun.framework.common.utils;
+package io.ihankun.framework.common.utils.exception;
 
+import io.ihankun.framework.common.utils.log.LogFormat;
 import lombok.extern.apachecommons.CommonsLog;
 
 import java.io.IOException;
