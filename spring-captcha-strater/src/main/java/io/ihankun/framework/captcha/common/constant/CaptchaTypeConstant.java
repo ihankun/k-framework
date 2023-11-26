@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha.constant;
+package io.ihankun.framework.captcha.common.constant;
 
 
 public interface CaptchaTypeConstant {

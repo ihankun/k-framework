@@ -1,6 +1,6 @@
-package io.ihankun.framework.captcha.annotation;
+package io.ihankun.framework.captcha.spring.annotation;
 
-import io.ihankun.framework.captcha.constant.CaptchaTypeConstant;
+import io.ihankun.framework.captcha.common.constant.CaptchaTypeConstant;
 import org.springframework.core.annotation.AliasFor;
 
 import java.lang.annotation.Documented;
