@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.utils;
+package io.ihankun.framework.common.utils.token;
 
 import com.alibaba.fastjson.JSON;
 import io.ihankun.framework.common.context.LoginUserInfo;
