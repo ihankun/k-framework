@@ -1,6 +1,6 @@
-package io.ihankun.framework.common.exception.impl;
+package io.ihankun.framework.common.error.impl;
 
-import io.ihankun.framework.common.exception.IErrorCode;
+import io.ihankun.framework.common.error.IErrorCode;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

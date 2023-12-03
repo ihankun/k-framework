@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.exception;
+package io.ihankun.framework.common.error;
 
 /**
  * @author hankun

@@ -5,7 +5,7 @@ import io.ihankun.framework.cache.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.lock.LockCallback;
 import io.ihankun.framework.cache.lock.RedissonLock;
 import io.ihankun.framework.common.base.BaseService;
-import io.ihankun.framework.common.exception.IErrorCode;
+import io.ihankun.framework.common.error.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.lock.annotation.Lock;
 import io.ihankun.framework.spring.api.LockKey;

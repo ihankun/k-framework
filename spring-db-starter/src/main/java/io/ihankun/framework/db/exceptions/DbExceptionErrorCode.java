@@ -1,6 +1,6 @@
 package io.ihankun.framework.db.exceptions;
 
-import io.ihankun.framework.common.exception.IErrorCode;
+import io.ihankun.framework.common.error.IErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

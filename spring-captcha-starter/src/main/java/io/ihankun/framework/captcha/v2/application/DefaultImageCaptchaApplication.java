@@ -1,6 +1,6 @@
 package io.ihankun.framework.captcha.v2.application;
 
-import io.ihankun.framework.common.exception.impl.CaptchaErrorCode;
+import io.ihankun.framework.common.error.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
 import io.ihankun.framework.captcha.v1.generator.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.generator.entity.ImageCaptchaInfo;

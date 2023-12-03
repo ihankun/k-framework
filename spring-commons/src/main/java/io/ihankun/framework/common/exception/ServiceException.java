@@ -1,8 +1,9 @@
 package io.ihankun.framework.common.exception;
 
+import io.ihankun.framework.common.error.ErrorCode;
+import io.ihankun.framework.common.error.IErrorCode;
 import io.ihankun.framework.common.response.ResponseResult;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.springframework.lang.Nullable;
 
 /**

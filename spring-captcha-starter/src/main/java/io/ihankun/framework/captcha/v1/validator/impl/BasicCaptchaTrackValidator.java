@@ -1,7 +1,7 @@
 package io.ihankun.framework.captcha.v1.validator.impl;
 
 
-import io.ihankun.framework.common.exception.impl.CaptchaErrorCode;
+import io.ihankun.framework.common.error.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.common.response.ResponseResult;
 import io.ihankun.framework.common.utils.CaptchaTypeClassifier;

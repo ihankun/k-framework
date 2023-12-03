@@ -2,7 +2,7 @@ package io.ihankun.framework.common.utils.exception;
 
 
 import com.google.common.annotations.VisibleForTesting;
-import io.ihankun.framework.common.exception.ErrorCode;
+import io.ihankun.framework.common.error.ErrorCode;
 import io.ihankun.framework.common.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 
