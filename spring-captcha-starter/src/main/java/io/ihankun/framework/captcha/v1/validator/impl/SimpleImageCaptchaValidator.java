@@ -6,9 +6,9 @@ import io.ihankun.framework.captcha.v1.generator.entity.ClickImageCheckDefinitio
 import io.ihankun.framework.captcha.v1.generator.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.validator.ImageCaptchaValidator;
 import io.ihankun.framework.captcha.v1.validator.SliderCaptchaPercentageValidator;
-import io.ihankun.framework.common.constants.TrackTypeConstant;
+import io.ihankun.framework.common.constants.base.TrackTypeConstant;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
-import io.ihankun.framework.common.constants.CaptchaTypeConstant;
+import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
 import io.ihankun.framework.common.utils.CaptchaTypeClassifier;
 import io.ihankun.framework.common.utils.ObjectUtils;
 import lombok.Getter;

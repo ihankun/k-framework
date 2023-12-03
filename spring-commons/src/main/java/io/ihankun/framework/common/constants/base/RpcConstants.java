@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.constants;
+package io.ihankun.framework.common.constants.base;
 
 /**
  * RPC 相关的枚举

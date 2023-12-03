@@ -4,7 +4,7 @@ package io.ihankun.framework.captcha.v1.resource.impl;
 import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.resource.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.entity.ResourceMap;
-import io.ihankun.framework.common.constants.CommonConstant;
+import io.ihankun.framework.common.constants.captcha.CaptchaCommConstant;
 import io.ihankun.framework.common.utils.ObjectUtils;
 import org.springframework.util.CollectionUtils;
 
@@ -26,7 +26,7 @@ public class LocalMemoryResourceStore implements ResourceStore {
     @Override
     public void addResource(String type, Resource resource) {
         if (ObjectUtils.isEmpty(resource.getTag())) {
-            resource.setTag(CommonConstant.DEFAULT_TAG);
+            resource.setTag(CaptchaCommConstant.DEFAULT_TAG);
         }
         resourceTagMap.computeIfAbsent(mergeTypeAndTag(type, resource.getTag()), k -> new ArrayList<>(20)).add(resource);
     }
@@ -34,7 +34,7 @@ public class LocalMemoryResourceStore implements ResourceStore {
     @Override
     public void addTemplate(String type, ResourceMap template) {
         if (ObjectUtils.isEmpty(template.getTag())) {
-            template.setTag(CommonConstant.DEFAULT_TAG);
+            template.setTag(CaptchaCommConstant.DEFAULT_TAG);
         }
         templateResourceTagMap.computeIfAbsent(mergeTypeAndTag(type, template.getTag()), k -> new ArrayList<>(2)).add(template);
     }
@@ -67,7 +67,7 @@ public class LocalMemoryResourceStore implements ResourceStore {
 
     public String mergeTypeAndTag(String type, String tag) {
         if (tag == null) {
-            tag = CommonConstant.DEFAULT_TAG;
+            tag = CaptchaCommConstant.DEFAULT_TAG;
         }
         return type + TYPE_TAG_SPLIT_FLAG + tag;
     }

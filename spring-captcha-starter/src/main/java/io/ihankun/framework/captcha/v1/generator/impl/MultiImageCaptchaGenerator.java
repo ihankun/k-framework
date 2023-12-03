@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static io.ihankun.framework.common.constants.CaptchaTypeConstant.*;
+import static io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant.*;
 
 /**
  * @Author: hankun

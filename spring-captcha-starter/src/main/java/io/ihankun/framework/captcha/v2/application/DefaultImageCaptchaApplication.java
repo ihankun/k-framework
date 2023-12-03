@@ -12,7 +12,7 @@ import io.ihankun.framework.captcha.v1.validator.impl.SimpleImageCaptchaValidato
 import io.ihankun.framework.captcha.v2.autoconfig.ImageCaptchaProperties;
 import io.ihankun.framework.captcha.v2.enums.CaptchaImageType;
 import io.ihankun.framework.captcha.v2.store.CacheStore;
-import io.ihankun.framework.common.constants.CaptchaTypeConstant;
+import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
 import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.common.exception.CaptchaValidException;
 import io.ihankun.framework.common.exception.ImageCaptchaException;

@@ -1,6 +1,6 @@
-package io.ihankun.framework.common.constants;
+package io.ihankun.framework.common.constants.captcha;
 
-public interface CommonConstant {
+public interface CaptchaCommConstant {
 
     String DEFAULT_TAG = "default";
     /** 图标点选资源存储类型. */

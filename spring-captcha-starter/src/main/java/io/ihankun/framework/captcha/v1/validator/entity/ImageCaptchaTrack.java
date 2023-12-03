@@ -1,6 +1,6 @@
 package io.ihankun.framework.captcha.v1.validator.entity;
 
-import io.ihankun.framework.common.constants.TrackTypeConstant;
+import io.ihankun.framework.common.constants.base.TrackTypeConstant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

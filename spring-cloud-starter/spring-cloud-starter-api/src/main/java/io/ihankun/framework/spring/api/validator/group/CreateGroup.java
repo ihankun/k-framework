@@ -1,9 +1,13 @@
 package io.ihankun.framework.spring.api.validator.group;
 
+
 import javax.validation.groups.Default;
 
 /**
- * @author hankun
+ * Validated Create group.
+ *
+ * @author L.cm
  */
-public interface DeleteGroup extends Default {
+public interface CreateGroup extends Default {
+
 }

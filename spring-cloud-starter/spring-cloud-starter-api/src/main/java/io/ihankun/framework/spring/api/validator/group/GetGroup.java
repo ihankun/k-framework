@@ -3,7 +3,10 @@ package io.ihankun.framework.spring.api.validator.group;
 import javax.validation.groups.Default;
 
 /**
- * @author hankun
+ * Validated Get group.
+ *
+ * @author L.cm
  */
-public interface DeleteGroup extends Default {
+public interface GetGroup extends Default {
+
 }

@@ -8,14 +8,14 @@ import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.resource.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.entity.ResourceMap;
 import io.ihankun.framework.captcha.v1.resource.impl.provider.ClassPathResourceProvider;
-import io.ihankun.framework.common.constants.CaptchaTypeConstant;
+import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
 import io.ihankun.framework.common.utils.CaptchaImageUtils;
 import lombok.SneakyThrows;
 
 import java.awt.image.BufferedImage;
 import java.util.Optional;
 
-import static io.ihankun.framework.common.constants.CommonConstant.*;
+import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.*;
 
 
 /**

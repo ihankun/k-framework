@@ -1,6 +1,6 @@
 package io.ihankun.framework.captcha.v1.generator.entity;
 
-import io.ihankun.framework.common.constants.CaptchaTypeConstant;
+import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
 import lombok.*;
 
 import java.util.HashMap;
