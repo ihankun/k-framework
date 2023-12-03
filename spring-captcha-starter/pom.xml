@@ -6,10 +6,10 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
     </parent>
 
-    <artifactId>spring-captcha-strater</artifactId>
+    <artifactId>spring-captcha-starter</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
