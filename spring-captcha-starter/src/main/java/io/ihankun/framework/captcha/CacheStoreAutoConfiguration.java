@@ -1,8 +1,8 @@
 package io.ihankun.framework.captcha;
 
-import io.ihankun.framework.captcha.spring.store.CacheStore;
-import io.ihankun.framework.captcha.spring.store.impl.LocalCacheStore;
-import io.ihankun.framework.captcha.spring.store.impl.RedisCacheStore;
+import io.ihankun.framework.captcha.v2.store.CacheStore;
+import io.ihankun.framework.captcha.v2.store.impl.LocalCacheStore;
+import io.ihankun.framework.captcha.v2.store.impl.RedisCacheStore;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
