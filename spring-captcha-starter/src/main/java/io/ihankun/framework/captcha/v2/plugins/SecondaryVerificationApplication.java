@@ -1,10 +1,10 @@
 package io.ihankun.framework.captcha.v2.plugins;
 
-import io.ihankun.framework.common.response.ApiResponse;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.captcha.v2.application.FilterImageCaptchaApplication;
 import io.ihankun.framework.captcha.v2.application.ImageCaptchaApplication;
 import io.ihankun.framework.captcha.v2.autoconfig.SecondaryVerificationProperties;
+import io.ihankun.framework.common.response.ResponseResult;
 
 import java.util.Collections;
 import java.util.Map;
@@ -20,8 +20,8 @@ public class SecondaryVerificationApplication extends FilterImageCaptchaApplicat
     }
 
     @Override
-    public ApiResponse<?> matching(String id, ImageCaptchaTrack imageCaptchaTrack) {
-        ApiResponse<?>  match = super.matching(id, imageCaptchaTrack);
+    public ResponseResult<?> matching(String id, ImageCaptchaTrack imageCaptchaTrack) {
+        ResponseResult<?>  match = super.matching(id, imageCaptchaTrack);
         if (match.isSuccess()) {
             // 如果匹配成功， 添加二次验证记录
             addSecondaryVerification(id, imageCaptchaTrack);

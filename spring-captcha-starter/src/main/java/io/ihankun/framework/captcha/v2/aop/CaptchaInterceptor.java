@@ -1,11 +1,11 @@
 package io.ihankun.framework.captcha.v2.aop;
 
-import io.ihankun.framework.common.response.ApiResponse;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.captcha.v2.annotation.Captcha;
 import io.ihankun.framework.captcha.v2.application.ImageCaptchaApplication;
 import io.ihankun.framework.captcha.v2.entity.CaptchaRequest;
 import io.ihankun.framework.common.exception.CaptchaValidException;
+import io.ihankun.framework.common.response.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
@@ -47,12 +47,12 @@ public class CaptchaInterceptor implements MethodInterceptor, BeanFactoryAware {
             throw new CaptchaValidException(type, "ImageCaptchaTrack 不能为空");
         }
 
-        ApiResponse<?> matching = getSliderCaptchaApplication().matching(id, captchaTrack);
+        ResponseResult<?> matching = getSliderCaptchaApplication().matching(id, captchaTrack);
         if (matching.isSuccess()) {
             return invocation.proceed();
         }
 
-        throw new CaptchaValidException(type, matching.getCode(), matching.getMsg());
+        throw new CaptchaValidException(type,Integer.valueOf(matching.getCode()) , matching.getMessage());
     }
 
     public ImageCaptchaApplication getSliderCaptchaApplication() {

@@ -5,7 +5,7 @@ import javax.validation.groups.Default;
 /**
  * Validated Get group.
  *
- * @author L.cm
+ * @author hankun
  */
 public interface GetGroup extends Default {
 

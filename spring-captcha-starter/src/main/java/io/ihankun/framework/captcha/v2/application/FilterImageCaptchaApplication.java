@@ -1,6 +1,5 @@
 package io.ihankun.framework.captcha.v2.application;
 
-import io.ihankun.framework.common.response.ApiResponse;
 import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
 import io.ihankun.framework.captcha.v1.generator.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
@@ -10,6 +9,7 @@ import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.captcha.v2.enums.CaptchaImageType;
 import io.ihankun.framework.captcha.v2.store.CacheStore;
 import io.ihankun.framework.common.response.CaptchaResponse;
+import io.ihankun.framework.common.response.ResponseResult;
 
 public class FilterImageCaptchaApplication implements ImageCaptchaApplication{
 
@@ -45,7 +45,7 @@ public class FilterImageCaptchaApplication implements ImageCaptchaApplication{
     }
 
     @Override
-    public ApiResponse<?> matching(String id, ImageCaptchaTrack ImageCaptchaTrack) {
+    public ResponseResult<?> matching(String id, ImageCaptchaTrack ImageCaptchaTrack) {
         return target.matching(id, ImageCaptchaTrack);
     }
 

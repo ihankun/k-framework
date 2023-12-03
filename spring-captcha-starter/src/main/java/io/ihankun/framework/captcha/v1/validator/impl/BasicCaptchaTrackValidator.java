@@ -1,9 +1,9 @@
 package io.ihankun.framework.captcha.v1.validator.impl;
 
 
-import io.ihankun.framework.common.response.ApiResponse;
-import io.ihankun.framework.common.response.CodeDefinition;
+import io.ihankun.framework.common.exception.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
+import io.ihankun.framework.common.response.ResponseResult;
 import io.ihankun.framework.common.utils.CaptchaTypeClassifier;
 import io.ihankun.framework.common.utils.ObjectUtils;
 import org.springframework.util.CollectionUtils;
@@ -17,7 +17,6 @@ import java.util.Map;
  * @Description 基本的行为轨迹校验
  */
 public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
-    public static final CodeDefinition DEFINITION = new CodeDefinition(50001, "basic check fail");
 
     public BasicCaptchaTrackValidator() {
     }
@@ -27,17 +26,17 @@ public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
     }
 
     @Override
-    public ApiResponse<?> beforeValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
+    public ResponseResult<?> beforeValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
         // 校验参数
         checkParam(imageCaptchaTrack);
-        return ApiResponse.ofSuccess();
+        return ResponseResult.success();
     }
 
     @Override
-    public ApiResponse<?> afterValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
+    public ResponseResult<?> afterValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
         if (!CaptchaTypeClassifier.isSliderCaptcha(type)) {
             // 不是滑动验证码的话暂时跳过，点选验证码行为轨迹还没做
-            return ApiResponse.ofSuccess();
+            return ResponseResult.success();
         }
         // 进行行为轨迹检测
         long startSlidingTime = imageCaptchaTrack.getStartSlidingTime().getTime();
@@ -55,16 +54,16 @@ public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
 
         // 检测1
         if (startSlidingTime + 300 > endSlidingTime) {
-            return ApiResponse.ofMessage(DEFINITION);
+            return ResponseResult.error(CaptchaErrorCode.DEFINITION);
         }
         // 检测2
         if (trackList.size() < 10 || trackList.size() > bgImageWidth * 5) {
-            return ApiResponse.ofMessage(DEFINITION);
+            return ResponseResult.error(CaptchaErrorCode.DEFINITION);
         }
         // 检测3
         ImageCaptchaTrack.Track firstTrack = trackList.get(0);
         if (firstTrack.getX() > 10 || firstTrack.getX() < -10 || firstTrack.getY() > 10 || firstTrack.getY() < -10) {
-            return ApiResponse.ofMessage(DEFINITION);
+            return ResponseResult.error(CaptchaErrorCode.DEFINITION);
         }
         int check4 = 0;
         int check7 = 0;
@@ -83,11 +82,11 @@ public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
             // check5
             ImageCaptchaTrack.Track preTrack = trackList.get(i - 1);
             if ((track.getX() - preTrack.getX()) > 50 || (track.getY() - preTrack.getY()) > 50) {
-                return ApiResponse.ofMessage(DEFINITION);
+                return ResponseResult.error(CaptchaErrorCode.DEFINITION);
             }
         }
         if (check4 == trackList.size() || check7 > 200) {
-            return ApiResponse.ofMessage(DEFINITION);
+            return ResponseResult.error(CaptchaErrorCode.DEFINITION);
         }
 
         // check6
@@ -101,9 +100,9 @@ public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
 
         boolean check = endAvgPosTime > startAvgPosTime;
         if (check) {
-            return ApiResponse.ofSuccess();
+            return ResponseResult.success();
         }
-        return ApiResponse.ofMessage(DEFINITION);
+        return ResponseResult.error(CaptchaErrorCode.DEFINITION);
     }
 
     public void checkParam(ImageCaptchaTrack imageCaptchaTrack) {

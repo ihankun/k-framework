@@ -1,9 +1,8 @@
 package io.ihankun.framework.captcha.v1.validator;
 
-
-import io.ihankun.framework.common.response.ApiResponse;
 import io.ihankun.framework.captcha.v1.generator.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
+import io.ihankun.framework.common.response.ResponseResult;
 
 import java.util.Map;
 
@@ -29,5 +28,5 @@ public interface ImageCaptchaValidator {
      * @param imageCaptchaValidData generateImageCaptchaValidData(生成的数据)
      * @return ApiResponse<?>
      */
-    ApiResponse<?> valid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> imageCaptchaValidData);
+    ResponseResult<?> valid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> imageCaptchaValidData);
 }

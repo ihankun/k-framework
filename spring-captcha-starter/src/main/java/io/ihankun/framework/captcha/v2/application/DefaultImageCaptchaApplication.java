@@ -1,7 +1,6 @@
 package io.ihankun.framework.captcha.v2.application;
 
-import io.ihankun.framework.common.response.ApiResponse;
-import io.ihankun.framework.common.response.ApiResponseStatusConstant;
+import io.ihankun.framework.common.exception.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
 import io.ihankun.framework.captcha.v1.generator.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.generator.entity.ImageCaptchaInfo;
@@ -17,6 +16,7 @@ import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.common.exception.CaptchaValidException;
 import io.ihankun.framework.common.exception.ImageCaptchaException;
 import io.ihankun.framework.common.response.CaptchaResponse;
+import io.ihankun.framework.common.response.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
@@ -116,10 +116,10 @@ public class DefaultImageCaptchaApplication implements ImageCaptchaApplication{
     }
 
     @Override
-    public ApiResponse<?> matching(String id, ImageCaptchaTrack imageCaptchaTrack) {
+    public ResponseResult<?> matching(String id, ImageCaptchaTrack imageCaptchaTrack) {
         Map<String, Object> cachePercentage = getVerification(id);
         if (cachePercentage == null) {
-            return ApiResponse.ofMessage(ApiResponseStatusConstant.EXPIRED);
+            return ResponseResult.error(CaptchaErrorCode.EXPIRED);
         }
         return getImageCaptchaValidator().valid(imageCaptchaTrack, cachePercentage);
     }

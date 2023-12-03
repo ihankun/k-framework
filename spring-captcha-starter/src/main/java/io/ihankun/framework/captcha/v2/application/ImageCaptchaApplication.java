@@ -1,6 +1,5 @@
 package io.ihankun.framework.captcha.v2.application;
 
-import io.ihankun.framework.common.response.ApiResponse;
 import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
 import io.ihankun.framework.captcha.v1.generator.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
@@ -10,6 +9,7 @@ import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.captcha.v2.enums.CaptchaImageType;
 import io.ihankun.framework.captcha.v2.store.CacheStore;
 import io.ihankun.framework.common.response.CaptchaResponse;
+import io.ihankun.framework.common.response.ResponseResult;
 
 public interface ImageCaptchaApplication {
 
@@ -61,7 +61,7 @@ public interface ImageCaptchaApplication {
      * @param imageCaptchaTrack 滑动轨迹
      * @return 匹配成功返回true， 否则返回false
      */
-    ApiResponse<?> matching(String id, ImageCaptchaTrack imageCaptchaTrack);
+    ResponseResult<?> matching(String id, ImageCaptchaTrack imageCaptchaTrack);
 
     /**
      * 兼容一下旧版本，新版本建议使用 {@link ImageCaptchaApplication#matching(String, ImageCaptchaTrack)}

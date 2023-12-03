@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 缓存 spEl 提高性能
  *
- * @author L.cm
+ * @author hankun
  */
 public class ExpressionEvaluator extends CachedExpressionEvaluator {
 	private final Map<ExpressionKey, Expression> expressionCache = new ConcurrentHashMap<>(64);

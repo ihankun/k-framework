@@ -1,7 +1,6 @@
 package io.ihankun.framework.captcha.v1.validator.impl;
 
-import io.ihankun.framework.common.response.ApiResponse;
-import io.ihankun.framework.common.response.ApiResponseStatusConstant;
+import io.ihankun.framework.common.exception.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.generator.entity.ClickImageCheckDefinition;
 import io.ihankun.framework.captcha.v1.generator.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.validator.ImageCaptchaValidator;
@@ -9,6 +8,7 @@ import io.ihankun.framework.captcha.v1.validator.SliderCaptchaPercentageValidato
 import io.ihankun.framework.common.constants.base.TrackTypeConstant;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
+import io.ihankun.framework.common.response.ResponseResult;
 import io.ihankun.framework.common.utils.CaptchaTypeClassifier;
 import io.ihankun.framework.common.utils.ObjectUtils;
 import lombok.Getter;
@@ -154,36 +154,36 @@ public class SimpleImageCaptchaValidator implements ImageCaptchaValidator, Slide
     }
 
     @Override
-    public ApiResponse<?> valid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> imageCaptchaValidData) {
+    public ResponseResult<?> valid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> imageCaptchaValidData) {
         // 读容错值
         Float tolerant = getFloatParam(TOLERANT_KEY, imageCaptchaValidData, defaultTolerant);
         // 读验证码类型
         String type = getStringParam(TYPE_KEY, imageCaptchaValidData, CaptchaTypeConstant.SLIDER);
         // 验证前
         // 在验证前必须读取 容错值 和验证码类型
-        ApiResponse<?> beforeValid = beforeValid(imageCaptchaTrack, imageCaptchaValidData, tolerant, type);
+        ResponseResult<?> beforeValid = beforeValid(imageCaptchaTrack, imageCaptchaValidData, tolerant, type);
         if (!beforeValid.isSuccess()) {
             return beforeValid;
         }
         Integer bgImageWidth = imageCaptchaTrack.getBgImageWidth();
         if (bgImageWidth == null || bgImageWidth < 1) {
             // 没有背景图片宽度
-            return ApiResponse.ofCheckError("验证码背景图片宽度参数错误");
+            return ResponseResult.error(CaptchaErrorCode.NOT_VALID_PARAM,"验证码背景图片宽度参数错误");
         }
         List<ImageCaptchaTrack.Track> trackList = imageCaptchaTrack.getTrackList();
         if (CollectionUtils.isEmpty(trackList)) {
             // 没有滑动轨迹
-            return ApiResponse.ofCheckError("没有解析到滑动轨迹");
+            return ResponseResult.error(CaptchaErrorCode.NOT_VALID_PARAM,"没有解析到滑动轨迹");
         }
         // 验证
-        ApiResponse<?> response;
+        ResponseResult<?> response;
         boolean valid = doValid(imageCaptchaTrack, imageCaptchaValidData, tolerant, type);
         if (valid) {
             // 验证后
             response = afterValid(imageCaptchaTrack, imageCaptchaValidData, tolerant, type);
         } else {
             // 缺口位置校验失败
-            response = ApiResponse.ofMessage(ApiResponseStatusConstant.BASIC_CHECK_FAIL);
+            response = ResponseResult.error(CaptchaErrorCode.BASIC_CHECK_FAIL);
         }
         return response;
     }
@@ -197,8 +197,8 @@ public class SimpleImageCaptchaValidator implements ImageCaptchaValidator, Slide
      * @param type              type
      * @return boolean
      */
-    public ApiResponse<?> beforeValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
-        return ApiResponse.ofSuccess();
+    public ResponseResult<?> beforeValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
+        return ResponseResult.success();
     }
 
     /**
@@ -210,8 +210,8 @@ public class SimpleImageCaptchaValidator implements ImageCaptchaValidator, Slide
      * @param type              type
      * @return boolean
      */
-    public ApiResponse<?> afterValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
-        return ApiResponse.ofSuccess();
+    public ResponseResult<?> afterValid(ImageCaptchaTrack imageCaptchaTrack, Map<String, Object> captchaValidData, Float tolerant, String type) {
+        return ResponseResult.success();
     }
 
     public boolean doValid(ImageCaptchaTrack imageCaptchaTrack,

@@ -6,7 +6,7 @@ import javax.validation.groups.Default;
 /**
  * Validated Create group.
  *
- * @author L.cm
+ * @author hankun
  */
 public interface CreateGroup extends Default {
 

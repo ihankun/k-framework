@@ -1,7 +1,6 @@
 package io.ihankun.framework.common.exception;
 
-import io.ihankun.framework.common.response.IResultCode;
-import io.ihankun.framework.common.response.R;
+import io.ihankun.framework.common.response.ResponseResult;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.lang.Nullable;
@@ -25,7 +24,7 @@ public class ServiceException extends RuntimeException {
     private String message;
 
     @Nullable
-    private R<?> result;
+    private ResponseResult<?> result;
 
     /**
      * 空构造方法，避免反序列化问题
@@ -62,18 +61,18 @@ public class ServiceException extends RuntimeException {
         return this;
     }
 
-    public ServiceException(R<?> result) {
-        super(result.getMsg());
+    public ServiceException(ResponseResult<?> result) {
+        super(result.getMessage());
         this.result = result;
     }
 
-    public ServiceException(IResultCode rCode) {
+    public ServiceException(IErrorCode rCode) {
         this(rCode, rCode.getMsg());
     }
 
-    public ServiceException(IResultCode rCode, String message) {
+    public ServiceException(IErrorCode rCode, String message) {
         super(message);
-        this.result = R.fail(rCode, message);
+        this.result = ResponseResult.error(rCode, message);
     }
 
     public ServiceException(String message) {
@@ -93,8 +92,8 @@ public class ServiceException extends RuntimeException {
 
     @Nullable
     @SuppressWarnings("unchecked")
-    public <T> R<T> getResult() {
-        return (R<T>) result;
+    public <T> ResponseResult<T> getResult() {
+        return (ResponseResult<T>) result;
     }
 
     /**
