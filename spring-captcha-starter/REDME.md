@@ -5,7 +5,7 @@
 <!-- maven导入 -->
 <dependency>
     <groupId>io.ihankun.framework</groupId>
-    <artifactId>spring-captcha-strater</artifactId>
+    <artifactId>spring-captcha-starter</artifactId>
     <version>1.2.0</version>
 </dependency>
 ```

@@ -86,7 +86,7 @@
         <module>spring-mongodb-starter</module>
         <module>spring-file-starter</module>
         <module>spring-sso-starter</module>
-        <module>spring-captcha-strater</module>
+        <module>spring-captcha-starter</module>
     </modules>
 
     <dependencies>
@@ -321,7 +321,7 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-captcha-strater</artifactId>
+                <artifactId>spring-captcha-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
