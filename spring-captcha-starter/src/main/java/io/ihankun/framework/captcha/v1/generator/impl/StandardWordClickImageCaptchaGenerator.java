@@ -7,7 +7,7 @@ import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.resource.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.impl.provider.ClassPathResourceProvider;
 import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
-import io.ihankun.framework.common.utils.CaptchaImageUtils;
+import io.ihankun.framework.common.utils.captcha.CaptchaImageUtils;
 import io.ihankun.framework.common.utils.FontUtils;
 import lombok.Getter;
 import lombok.Setter;

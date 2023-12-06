@@ -3,7 +3,7 @@ package io.ihankun.framework.captcha.v1.resource.impl;
 import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.resource.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.entity.ResourceMap;
-import io.ihankun.framework.common.utils.ObjectUtils;
+import io.ihankun.framework.common.utils.object.AbsObjectUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
@@ -24,7 +24,7 @@ public class DefaultResourceStore implements ResourceStore {
         ((List)this.resourceMap.computeIfAbsent(type, (k) -> {
             return new ArrayList(20);
         })).add(resource);
-        if (!ObjectUtils.isEmpty(resource.getTag())) {
+        if (!AbsObjectUtils.isEmpty(resource.getTag())) {
             ((List)this.resourceTagMap.computeIfAbsent(this.mergeTypeAndTag(type, resource.getTag()), (k) -> {
                 return new ArrayList(20);
             })).add(resource);
@@ -36,7 +36,7 @@ public class DefaultResourceStore implements ResourceStore {
         ((List)this.templateResourceMap.computeIfAbsent(type, (k) -> {
             return new ArrayList(2);
         })).add(template);
-        if (!ObjectUtils.isEmpty(template.getTag())) {
+        if (!AbsObjectUtils.isEmpty(template.getTag())) {
             ((List)this.templateResourceTagMap.computeIfAbsent(this.mergeTypeAndTag(type, template.getTag()), (k) -> {
                 return new ArrayList(2);
             })).add(template);
@@ -46,7 +46,7 @@ public class DefaultResourceStore implements ResourceStore {
 
     public Resource randomGetResourceByTypeAndTag(String type, String tag) {
         List resources;
-        if (ObjectUtils.isEmpty(tag)) {
+        if (AbsObjectUtils.isEmpty(tag)) {
             resources = (List)this.resourceMap.get(type);
         } else {
             resources = (List)this.resourceTagMap.get(this.mergeTypeAndTag(type, tag));
@@ -64,7 +64,7 @@ public class DefaultResourceStore implements ResourceStore {
 
     public ResourceMap randomGetTemplateByTypeAndTag(String type, String tag) {
         List templateList;
-        if (ObjectUtils.isEmpty(tag)) {
+        if (AbsObjectUtils.isEmpty(tag)) {
             templateList = (List)this.templateResourceMap.get(type);
         } else {
             templateList = (List)this.templateResourceTagMap.get(this.mergeTypeAndTag(type, tag));

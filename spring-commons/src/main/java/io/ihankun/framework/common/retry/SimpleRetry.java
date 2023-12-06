@@ -1,6 +1,6 @@
 package io.ihankun.framework.common.retry;
 
-import io.ihankun.framework.common.utils.ThreadUtil;
+import io.ihankun.framework.common.utils.thead.ThreadUtil;
 import io.ihankun.framework.common.utils.exception.Exceptions;
 import lombok.extern.slf4j.Slf4j;
 

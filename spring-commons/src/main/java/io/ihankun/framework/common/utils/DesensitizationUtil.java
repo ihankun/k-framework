@@ -1,6 +1,7 @@
 package io.ihankun.framework.common.utils;
 
 
+import io.ihankun.framework.common.utils.string.CharPool;
 import io.ihankun.framework.common.utils.string.StringPool;
 import io.ihankun.framework.common.utils.string.StringUtil;
 import org.springframework.lang.Nullable;

@@ -9,7 +9,7 @@ import io.ihankun.framework.captcha.v1.generator.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.generator.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.generator.impl.provider.CommonImageCaptchaGeneratorProvider;
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
-import io.ihankun.framework.common.utils.ObjectUtils;
+import io.ihankun.framework.common.utils.object.AbsObjectUtils;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -85,7 +85,7 @@ public class MultiImageCaptchaGenerator extends AbstractImageCaptchaGenerator {
     @Override
     public ImageCaptchaInfo generateCaptchaImage(GenerateParam param) {
         String type = param.getType();
-        if (ObjectUtils.isEmpty(type)) {
+        if (AbsObjectUtils.isEmpty(type)) {
             param.setType(defaultCaptcha);
             type = defaultCaptcha;
         }

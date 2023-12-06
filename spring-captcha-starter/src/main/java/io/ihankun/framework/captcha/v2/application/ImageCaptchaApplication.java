@@ -8,7 +8,7 @@ import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.captcha.v2.enums.CaptchaImageType;
 import io.ihankun.framework.captcha.v2.store.CacheStore;
-import io.ihankun.framework.common.response.CaptchaResponse;
+import io.ihankun.framework.common.response.ResponseCaptcha;
 import io.ihankun.framework.common.response.ResponseResult;
 
 public interface ImageCaptchaApplication {
@@ -18,7 +18,7 @@ public interface ImageCaptchaApplication {
      *
      * @return
      */
-    CaptchaResponse<ImageCaptchaVO> generateCaptcha();
+    ResponseCaptcha<ImageCaptchaVO> generateCaptcha();
 
     /**
      * 生成滑块验证码
@@ -26,7 +26,7 @@ public interface ImageCaptchaApplication {
      * @param type type类型
      * @return CaptchaResponse<SliderCaptchaVO>
      */
-    CaptchaResponse<ImageCaptchaVO> generateCaptcha(String type);
+    ResponseCaptcha<ImageCaptchaVO> generateCaptcha(String type);
 
     /**
      * 生成滑块验证码
@@ -34,7 +34,7 @@ public interface ImageCaptchaApplication {
      * @param captchaImageType 要生成webp还是jpg类型的图片
      * @return CaptchaResponse<SliderCaptchaVO>
      */
-    CaptchaResponse<ImageCaptchaVO> generateCaptcha(CaptchaImageType captchaImageType);
+    ResponseCaptcha<ImageCaptchaVO> generateCaptcha(CaptchaImageType captchaImageType);
 
     /**
      * 生成验证码
@@ -43,7 +43,7 @@ public interface ImageCaptchaApplication {
      * @param captchaImageType CaptchaImageType
      * @return CaptchaResponse<ImageCaptchaVO>
      */
-    CaptchaResponse<ImageCaptchaVO> generateCaptcha(String type, CaptchaImageType captchaImageType);
+    ResponseCaptcha<ImageCaptchaVO> generateCaptcha(String type, CaptchaImageType captchaImageType);
 
 
     /**
@@ -52,7 +52,7 @@ public interface ImageCaptchaApplication {
      * @param param param
      * @return CaptchaResponse<SliderCaptchaVO>
      */
-    CaptchaResponse<ImageCaptchaVO> generateCaptcha(GenerateParam param);
+    ResponseCaptcha<ImageCaptchaVO> generateCaptcha(GenerateParam param);
 
     /**
      * 匹配

@@ -15,7 +15,7 @@ import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
 import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.common.exception.CaptchaValidException;
 import io.ihankun.framework.common.exception.ImageCaptchaException;
-import io.ihankun.framework.common.response.CaptchaResponse;
+import io.ihankun.framework.common.response.ResponseCaptcha;
 import io.ihankun.framework.common.response.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 
@@ -53,30 +53,30 @@ public class DefaultImageCaptchaApplication implements ImageCaptchaApplication{
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha() {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha() {
         // 生成滑块验证码
         return generateCaptcha(CaptchaTypeConstant.SLIDER);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(String type) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(String type) {
         ImageCaptchaInfo slideImageInfo = getImageCaptchaTemplate().generateCaptchaImage(type);
         return afterGenerateSliderCaptcha(slideImageInfo);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(GenerateParam param) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(GenerateParam param) {
         ImageCaptchaInfo slideImageInfo = getImageCaptchaTemplate().generateCaptchaImage(param);
         return afterGenerateSliderCaptcha(slideImageInfo);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(CaptchaImageType captchaImageType) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(CaptchaImageType captchaImageType) {
         return generateCaptcha(CaptchaTypeConstant.SLIDER, captchaImageType);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(String type, CaptchaImageType captchaImageType) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(String type, CaptchaImageType captchaImageType) {
         GenerateParam param = new GenerateParam();
         if (CaptchaImageType.WEBP.equals(captchaImageType)) {
             param.setBackgroundFormatName("webp");
@@ -90,7 +90,7 @@ public class DefaultImageCaptchaApplication implements ImageCaptchaApplication{
     }
 
 
-    public CaptchaResponse<ImageCaptchaVO> afterGenerateSliderCaptcha(ImageCaptchaInfo slideImageInfo) {
+    public ResponseCaptcha<ImageCaptchaVO> afterGenerateSliderCaptcha(ImageCaptchaInfo slideImageInfo) {
         if (slideImageInfo == null) {
             // 要是生成失败
             throw new ImageCaptchaException("生成滑块验证码失败，验证码生成为空");
@@ -112,7 +112,7 @@ public class DefaultImageCaptchaApplication implements ImageCaptchaApplication{
         verificationVO.setTemplateImageWidth(slideImageInfo.getTemplateImageWidth());
         verificationVO.setTemplateImageHeight(slideImageInfo.getTemplateImageHeight());
         verificationVO.setData(slideImageInfo.getData() == null ? null : slideImageInfo.getData().getViewData());
-        return CaptchaResponse.of(id, verificationVO);
+        return ResponseCaptcha.of(id, verificationVO);
     }
 
     @Override

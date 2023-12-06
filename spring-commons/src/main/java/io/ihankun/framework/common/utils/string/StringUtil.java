@@ -1,7 +1,7 @@
 package io.ihankun.framework.common.utils.string;
 
 import io.ihankun.framework.common.utils.*;
-import io.ihankun.framework.common.utils.ObjectUtils;
+import io.ihankun.framework.common.utils.object.AbsObjectUtils;
 import io.ihankun.framework.common.utils.plus.NumberUtil;
 import org.springframework.lang.Nullable;
 import org.springframework.util.*;
@@ -124,7 +124,7 @@ public class StringUtil {
      * @return boolean
      */
     public static boolean isAnyBlank(final CharSequence... css) {
-        if (ObjectUtils.isEmpty(css)) {
+        if (AbsObjectUtils.isEmpty(css)) {
             return true;
         }
         return Stream.of(css).anyMatch(StringUtil::isBlank);
@@ -150,7 +150,7 @@ public class StringUtil {
      * @return boolean
      */
     public static boolean isNoneBlank(final CharSequence... css) {
-        if (ObjectUtils.isEmpty(css)) {
+        if (AbsObjectUtils.isEmpty(css)) {
             return false;
         }
         return Stream.of(css).allMatch(StringUtil::isNotBlank);
@@ -176,7 +176,7 @@ public class StringUtil {
      * @return boolean
      */
     public static boolean isAnyNotBlank(CharSequence... css) {
-        if (ObjectUtils.isEmpty(css)) {
+        if (AbsObjectUtils.isEmpty(css)) {
             return false;
         }
         return Stream.of(css).anyMatch(StringUtil::isNotBlank);

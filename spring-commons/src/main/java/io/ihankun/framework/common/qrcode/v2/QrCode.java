@@ -7,9 +7,9 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import io.ihankun.framework.common.utils.Base64Util;
-import io.ihankun.framework.common.utils.CharPool;
-import io.ihankun.framework.common.utils.ImageUtil;
+import io.ihankun.framework.common.utils.encrypt.Base64Util;
+import io.ihankun.framework.common.utils.string.CharPool;
+import io.ihankun.framework.common.utils.image.ImageUtil;
 import io.ihankun.framework.common.utils.exception.Exceptions;
 
 import java.awt.*;

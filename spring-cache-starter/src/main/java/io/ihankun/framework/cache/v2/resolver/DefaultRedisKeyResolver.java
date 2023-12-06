@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache.v2.resolver;
 
 import io.ihankun.framework.cache.v2.config.MicaRedisProperties;
-import io.ihankun.framework.common.utils.CharPool;
+import io.ihankun.framework.common.utils.string.CharPool;
 import io.ihankun.framework.common.utils.string.StringUtil;
 import lombok.RequiredArgsConstructor;
 

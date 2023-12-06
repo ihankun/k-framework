@@ -9,8 +9,8 @@ import io.ihankun.framework.common.constants.base.TrackTypeConstant;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
 import io.ihankun.framework.common.response.ResponseResult;
-import io.ihankun.framework.common.utils.CaptchaTypeClassifier;
-import io.ihankun.framework.common.utils.ObjectUtils;
+import io.ihankun.framework.common.utils.captcha.CaptchaTypeClassifier;
+import io.ihankun.framework.common.utils.object.AbsObjectUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -98,7 +98,7 @@ public class SimpleImageCaptchaValidator implements ImageCaptchaValidator, Slide
         }
         // 类型
         String type = imageCaptchaInfo.getType();
-        if (ObjectUtils.isEmpty(type)) {
+        if (AbsObjectUtils.isEmpty(type)) {
             type = CaptchaTypeConstant.SLIDER;
         }
         map.put(TYPE_KEY, type);
@@ -256,7 +256,7 @@ public class SimpleImageCaptchaValidator implements ImageCaptchaValidator, Slide
                                        Float tolerant,
                                        String type) {
         String validStr = getStringParam(PERCENTAGE_KEY, imageCaptchaValidData, null);
-        if (ObjectUtils.isEmpty(validStr)) {
+        if (AbsObjectUtils.isEmpty(validStr)) {
             return false;
         }
         String[] splitArr = validStr.split(";");

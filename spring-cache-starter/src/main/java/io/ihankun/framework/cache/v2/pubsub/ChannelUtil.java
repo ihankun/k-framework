@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.v2.pubsub;
 
-import io.ihankun.framework.common.utils.CharPool;
+import io.ihankun.framework.common.utils.string.CharPool;
 import lombok.experimental.UtilityClass;
 import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.data.redis.listener.PatternTopic;

@@ -1,6 +1,6 @@
 //package io.ihankun.framework.cache.v2.config;
 //
-//import io.ihankun.framework.common.utils.CharPool;
+//import io.ihankun.framework.common.utils.string.CharPool;
 //import io.ihankun.framework.common.utils.string.StringPool;
 //import org.springframework.beans.factory.ObjectProvider;
 //import org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers;

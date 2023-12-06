@@ -4,8 +4,8 @@ package io.ihankun.framework.captcha.v1.validator.impl;
 import io.ihankun.framework.common.error.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.common.response.ResponseResult;
-import io.ihankun.framework.common.utils.CaptchaTypeClassifier;
-import io.ihankun.framework.common.utils.ObjectUtils;
+import io.ihankun.framework.common.utils.captcha.CaptchaTypeClassifier;
+import io.ihankun.framework.common.utils.object.AbsObjectUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -106,16 +106,16 @@ public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
     }
 
     public void checkParam(ImageCaptchaTrack imageCaptchaTrack) {
-        if (ObjectUtils.isEmpty(imageCaptchaTrack.getBgImageWidth())) {
+        if (AbsObjectUtils.isEmpty(imageCaptchaTrack.getBgImageWidth())) {
             throw new IllegalArgumentException("bgImageWidth must not be null");
         }
-        if (ObjectUtils.isEmpty(imageCaptchaTrack.getBgImageHeight())) {
+        if (AbsObjectUtils.isEmpty(imageCaptchaTrack.getBgImageHeight())) {
             throw new IllegalArgumentException("bgImageHeight must not be null");
         }
-        if (ObjectUtils.isEmpty(imageCaptchaTrack.getStartSlidingTime())) {
+        if (AbsObjectUtils.isEmpty(imageCaptchaTrack.getStartSlidingTime())) {
             throw new IllegalArgumentException("startSlidingTime must not be null");
         }
-        if (ObjectUtils.isEmpty(imageCaptchaTrack.getEndSlidingTime())) {
+        if (AbsObjectUtils.isEmpty(imageCaptchaTrack.getEndSlidingTime())) {
             throw new IllegalArgumentException("endSlidingTime must not be null");
         }
         if (CollectionUtils.isEmpty(imageCaptchaTrack.getTrackList())) {
@@ -126,7 +126,7 @@ public class BasicCaptchaTrackValidator extends SimpleImageCaptchaValidator {
             Float y = track.getY();
             Float t = track.getT();
             String type = track.getType();
-            if (x == null || y == null || t == null || ObjectUtils.isEmpty(type)) {
+            if (x == null || y == null || t == null || AbsObjectUtils.isEmpty(type)) {
                 throw new IllegalArgumentException("track[x,y,t,type] must not be null");
             }
         }

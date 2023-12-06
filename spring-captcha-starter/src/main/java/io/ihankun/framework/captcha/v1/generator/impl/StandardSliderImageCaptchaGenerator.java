@@ -9,7 +9,7 @@ import io.ihankun.framework.captcha.v1.resource.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.entity.ResourceMap;
 import io.ihankun.framework.captcha.v1.resource.impl.provider.ClassPathResourceProvider;
 import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
-import io.ihankun.framework.common.utils.CaptchaImageUtils;
+import io.ihankun.framework.common.utils.captcha.CaptchaImageUtils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 

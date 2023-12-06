@@ -14,8 +14,8 @@ import java.awt.image.BufferedImage;
 
 import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.DEFAULT_SLIDER_IMAGE_RESOURCE_PATH;
 import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.DEFAULT_TAG;
-import static io.ihankun.framework.common.utils.CaptchaImageUtils.concatImage;
-import static io.ihankun.framework.common.utils.CaptchaImageUtils.splitImage;
+import static io.ihankun.framework.common.utils.captcha.CaptchaImageUtils.concatImage;
+import static io.ihankun.framework.common.utils.captcha.CaptchaImageUtils.splitImage;
 
 
 /**

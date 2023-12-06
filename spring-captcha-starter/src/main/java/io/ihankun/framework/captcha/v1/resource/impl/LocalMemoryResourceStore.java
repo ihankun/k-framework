@@ -5,7 +5,7 @@ import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.resource.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.entity.ResourceMap;
 import io.ihankun.framework.common.constants.captcha.CaptchaCommConstant;
-import io.ihankun.framework.common.utils.ObjectUtils;
+import io.ihankun.framework.common.utils.object.AbsObjectUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
@@ -25,7 +25,7 @@ public class LocalMemoryResourceStore implements ResourceStore {
 
     @Override
     public void addResource(String type, Resource resource) {
-        if (ObjectUtils.isEmpty(resource.getTag())) {
+        if (AbsObjectUtils.isEmpty(resource.getTag())) {
             resource.setTag(CaptchaCommConstant.DEFAULT_TAG);
         }
         resourceTagMap.computeIfAbsent(mergeTypeAndTag(type, resource.getTag()), k -> new ArrayList<>(20)).add(resource);
@@ -33,7 +33,7 @@ public class LocalMemoryResourceStore implements ResourceStore {
 
     @Override
     public void addTemplate(String type, ResourceMap template) {
-        if (ObjectUtils.isEmpty(template.getTag())) {
+        if (AbsObjectUtils.isEmpty(template.getTag())) {
             template.setTag(CaptchaCommConstant.DEFAULT_TAG);
         }
         templateResourceTagMap.computeIfAbsent(mergeTypeAndTag(type, template.getTag()), k -> new ArrayList<>(2)).add(template);

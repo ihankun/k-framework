@@ -8,7 +8,7 @@ import io.ihankun.framework.captcha.v1.validator.entity.ImageCaptchaTrack;
 import io.ihankun.framework.captcha.v2.entity.ImageCaptchaVO;
 import io.ihankun.framework.captcha.v2.enums.CaptchaImageType;
 import io.ihankun.framework.captcha.v2.store.CacheStore;
-import io.ihankun.framework.common.response.CaptchaResponse;
+import io.ihankun.framework.common.response.ResponseCaptcha;
 import io.ihankun.framework.common.response.ResponseResult;
 
 public class FilterImageCaptchaApplication implements ImageCaptchaApplication{
@@ -20,27 +20,27 @@ public class FilterImageCaptchaApplication implements ImageCaptchaApplication{
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha() {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha() {
         return target.generateCaptcha();
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(String type) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(String type) {
         return target.generateCaptcha(type);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(CaptchaImageType captchaImageType) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(CaptchaImageType captchaImageType) {
         return target.generateCaptcha(captchaImageType);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(String type, CaptchaImageType captchaImageType) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(String type, CaptchaImageType captchaImageType) {
         return target.generateCaptcha(type, captchaImageType);
     }
 
     @Override
-    public CaptchaResponse<ImageCaptchaVO> generateCaptcha(GenerateParam param) {
+    public ResponseCaptcha<ImageCaptchaVO> generateCaptcha(GenerateParam param) {
         return target.generateCaptcha(param);
     }
 

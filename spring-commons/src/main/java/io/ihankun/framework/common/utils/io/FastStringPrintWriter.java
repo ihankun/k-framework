@@ -1,6 +1,6 @@
 package io.ihankun.framework.common.utils.io;
 
-import io.ihankun.framework.common.utils.CharPool;
+import io.ihankun.framework.common.utils.string.CharPool;
 
 import java.io.PrintWriter;
 
