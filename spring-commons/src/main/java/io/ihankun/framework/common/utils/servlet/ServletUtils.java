@@ -3,7 +3,7 @@ package io.ihankun.framework.common.utils.servlet;
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;
-import io.ihankun.framework.common.utils.json.JsonUtils;
+import io.ihankun.framework.common.utils.json.JsonUtil;
 import org.springframework.http.MediaType;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -30,7 +30,7 @@ public class ServletUtils {
      */
     @SuppressWarnings("deprecation") // 必须使用 APPLICATION_JSON_UTF8_VALUE，否则会乱码
     public static void writeJSON(HttpServletResponse response, Object object) {
-        String content = JsonUtils.toJsonString(object);
+        String content = JsonUtil.toJsonString(object);
         ServletUtil.write(response, content, MediaType.APPLICATION_JSON_UTF8_VALUE);
     }
 

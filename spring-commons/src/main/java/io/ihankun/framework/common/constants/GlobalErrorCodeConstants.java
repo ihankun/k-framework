@@ -1,7 +1,7 @@
 package io.ihankun.framework.common.constants;
 
 
-import io.ihankun.framework.common.exception.ErrorCode;
+import io.ihankun.framework.common.error.ErrorCode;
 
 /**
  * 全局错误码枚举
