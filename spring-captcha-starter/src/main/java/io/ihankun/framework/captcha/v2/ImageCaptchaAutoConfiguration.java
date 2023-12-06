@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha;
+package io.ihankun.framework.captcha.v2;
 
 import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
 import io.ihankun.framework.captcha.v1.generator.ImageTransform;
@@ -10,6 +10,7 @@ import io.ihankun.framework.captcha.v1.resource.impl.DefaultImageCaptchaResource
 import io.ihankun.framework.captcha.v1.resource.impl.DefaultResourceStore;
 import io.ihankun.framework.captcha.v1.validator.ImageCaptchaValidator;
 import io.ihankun.framework.captcha.v1.validator.impl.BasicCaptchaTrackValidator;
+import io.ihankun.framework.captcha.v2.CacheStoreAutoConfiguration;
 import io.ihankun.framework.captcha.v2.aop.CaptchaAdvisor;
 import io.ihankun.framework.captcha.v2.aop.CaptchaInterceptor;
 import io.ihankun.framework.captcha.v2.application.DefaultImageCaptchaApplication;

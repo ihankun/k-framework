@@ -6,7 +6,7 @@
 <dependency>
     <groupId>io.ihankun.framework</groupId>
     <artifactId>spring-captcha-starter</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
 </dependency>
 ```
 ## 调用方式1

@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha;
+package io.ihankun.framework.captcha.v2;
 
 import io.ihankun.framework.captcha.v2.store.CacheStore;
 import io.ihankun.framework.captcha.v2.store.impl.LocalCacheStore;
