@@ -332,6 +332,13 @@
             </dependency>
 
             <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-file-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-context</artifactId>
                 <version>${spring-boot.version}</version>
