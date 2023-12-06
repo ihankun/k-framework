@@ -1,7 +1,7 @@
 package io.ihankun.framework.lock.annotation;
 
 
-import io.ihankun.framework.cache.lock.RedissonLock;
+import io.ihankun.framework.cache.v1.lock.RedissonLock;
 
 import java.lang.annotation.*;
 

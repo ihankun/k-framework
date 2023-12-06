@@ -1,9 +1,9 @@
 package io.ihankun.framework.lock.aspect;
 
-import io.ihankun.framework.cache.key.CacheKey;
-import io.ihankun.framework.cache.key.impl.OrgCacheKey;
-import io.ihankun.framework.cache.lock.LockCallback;
-import io.ihankun.framework.cache.lock.RedissonLock;
+import io.ihankun.framework.cache.v1.key.CacheKey;
+import io.ihankun.framework.cache.v1.key.impl.OrgCacheKey;
+import io.ihankun.framework.cache.v1.lock.LockCallback;
+import io.ihankun.framework.cache.v1.lock.RedissonLock;
 import io.ihankun.framework.common.base.BaseService;
 import io.ihankun.framework.common.error.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;

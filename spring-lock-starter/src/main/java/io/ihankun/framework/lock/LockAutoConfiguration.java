@@ -1,8 +1,8 @@
 package io.ihankun.framework.lock;
 
-import io.ihankun.framework.cache.CacheBuilder;
-import io.ihankun.framework.cache.CacheManager;
-import io.ihankun.framework.cache.CacheType;
+import io.ihankun.framework.cache.v1.CacheBuilder;
+import io.ihankun.framework.cache.v1.CacheManager;
+import io.ihankun.framework.cache.v1.CacheType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;

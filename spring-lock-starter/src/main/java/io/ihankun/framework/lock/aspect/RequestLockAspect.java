@@ -1,9 +1,9 @@
 package io.ihankun.framework.lock.aspect;
 
 import com.alibaba.fastjson.JSON;
-import io.ihankun.framework.cache.CacheManager;
-import io.ihankun.framework.cache.key.CacheKey;
-import io.ihankun.framework.cache.key.impl.OrgCacheKey;
+import io.ihankun.framework.cache.v1.CacheManager;
+import io.ihankun.framework.cache.v1.key.CacheKey;
+import io.ihankun.framework.cache.v1.key.impl.OrgCacheKey;
 import io.ihankun.framework.common.base.BaseService;
 import io.ihankun.framework.common.context.LoginUserContext;
 import io.ihankun.framework.common.error.IErrorCode;

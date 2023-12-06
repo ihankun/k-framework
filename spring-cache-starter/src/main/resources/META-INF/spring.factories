@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.ihankun.framework.cache.CacheAutoConfiguration,\
-  io.ihankun.framework.cache.config.RedisAutoConfiguration,\
-  io.ihankun.framework.cache.config.RedisCacheAutoConfiguration
+  io.ihankun.framework.cache.v1.CacheAutoConfiguration,\
+  io.ihankun.framework.cache.v1.config.RedisAutoConfiguration,\
+  io.ihankun.framework.cache.v1.config.RedisCacheAutoConfiguration
