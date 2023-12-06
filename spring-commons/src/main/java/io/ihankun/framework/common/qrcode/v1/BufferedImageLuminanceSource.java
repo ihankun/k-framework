@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.qrcode;
+package io.ihankun.framework.common.qrcode.v1;
 
 import com.google.zxing.LuminanceSource;
 
