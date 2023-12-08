@@ -78,7 +78,6 @@
         <module>spring-cache-starter</module>
         <module>spring-db-starter</module>
         <module>spring-job-starter</module>
-        <module>spring-lock-starter</module>
         <module>spring-log-starter</module>
         <module>spring-mq-starter</module>
         <module>spring-cloud-starter</module>
@@ -274,12 +273,6 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-job-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-lock-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
