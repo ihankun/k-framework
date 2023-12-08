@@ -20,15 +20,15 @@ import javax.annotation.PostConstruct;
 @ComponentScan(basePackageClasses = LockAutoConfiguration.class)
 public class LockAutoConfiguration {
 
-    /**
-     * 为请求锁的接口声明通用的缓存管理器
-     */
-    @ConditionalOnMissingBean
-    @Order
-    @Bean
-    public CacheManager<String, String> RequestLockCacheManager() {
-        return CacheBuilder.build(CacheType.REDIS);
-    }
+//    /**
+//     * 为请求锁的接口声明通用的缓存管理器
+//     */
+//    @ConditionalOnMissingBean
+//    @Order
+//    @Bean
+//    public CacheManager<String, String> RequestLockCacheManager() {
+//        return CacheBuilder.build(CacheType.REDIS);
+//    }
 
 
     @PostConstruct

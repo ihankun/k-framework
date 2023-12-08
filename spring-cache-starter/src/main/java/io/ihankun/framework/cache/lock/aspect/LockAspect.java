@@ -49,7 +49,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
     @Resource
     private RedissonLock redissonLock;
 
-    @Around("@annotation(io.ihankun.framework.lock.annotation.Lock)")
+    @Around("@annotation(io.ihankun.framework.cache.lock.annotation.Lock)")
     public Object around(ProceedingJoinPoint point) {
         MethodSignature methodSignature = (MethodSignature) point.getSignature();
         Method method = methodSignature.getMethod();

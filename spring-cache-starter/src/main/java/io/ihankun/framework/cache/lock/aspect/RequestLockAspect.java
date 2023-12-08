@@ -1,7 +1,9 @@
 package io.ihankun.framework.cache.lock.aspect;
 
 import com.alibaba.fastjson.JSON;
+import io.ihankun.framework.cache.CacheBuilder;
 import io.ihankun.framework.cache.CacheManager;
+import io.ihankun.framework.cache.enums.CacheType;
 import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.lock.annotation.RequestLock;
@@ -60,10 +62,10 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
     /**
      * 缓存管理器
      */
-    @Resource
-    private CacheManager<String, String> cacheManager;
+//    @Resource
+    private CacheManager<String, String> cacheManager = CacheBuilder.build();
 
-    @Pointcut("@annotation(io.ihankun.framework.lock.annotation.RequestLock)")
+    @Pointcut("@annotation(io.ihankun.framework.cache.lock.annotation.RequestLock)")
     public void lockPointcut() {
 
     }
