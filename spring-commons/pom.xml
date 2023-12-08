@@ -6,11 +6,10 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.2.5</version>
+        <version>1.2.6</version>
     </parent>
 
     <artifactId>spring-commons</artifactId>
-    <version>1.2.5</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
