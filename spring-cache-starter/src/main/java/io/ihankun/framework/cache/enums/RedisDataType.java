@@ -7,9 +7,12 @@ public enum RedisDataType {
 
     STRING("string"),
     LIST("list"),
+    HASH("Hash"),
     SET("set"),
     MAP("map"),
     ZSET("zset"),
+    STREAM("Stream"),
+    PUBSUB("Pub/Sub"),
     ;
 
     private final String value;

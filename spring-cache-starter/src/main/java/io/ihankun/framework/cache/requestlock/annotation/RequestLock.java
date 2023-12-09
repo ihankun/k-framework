@@ -1,4 +1,4 @@
-package io.ihankun.framework.cache.lock.annotation;
+package io.ihankun.framework.cache.requestlock.annotation;
 
 import java.lang.annotation.*;
 

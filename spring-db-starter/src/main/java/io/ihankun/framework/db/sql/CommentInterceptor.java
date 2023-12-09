@@ -30,7 +30,6 @@ public class CommentInterceptor implements Interceptor {
     @Resource
     private DbConfig config;
 
-
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
 

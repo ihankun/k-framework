@@ -23,7 +23,7 @@ import java.util.Map;
 @RefreshScope
 public class RedisConfigProperties {
 
-    public static final String PREFIX = "ihank.redis";
+    public static final String PREFIX = "redis";
 
     /**
      * 域名前缀开关,默认关闭
@@ -40,23 +40,26 @@ public class RedisConfigProperties {
      */
     private RedisSizeControlMode sizeControlMode = RedisSizeControlMode.RECORD;
 
-
     /**
      * redis key 前缀
      */
     private String keyPrefix;
+
     /**
      * 序列化方式
      */
     private RedisConfigProperties.SerializerType serializerType = RedisConfigProperties.SerializerType.JSON;
+
     /**
      * key 过期事件
      */
     private RedisConfigProperties.KeyExpiredEvent keyExpiredEvent = new RedisConfigProperties.KeyExpiredEvent();
+
     /**
      * 限流配置
      */
     private RedisConfigProperties.RateLimiter rateLimiter = new RedisConfigProperties.RateLimiter();
+
     /**
      * stream
      */
@@ -119,6 +122,7 @@ public class RedisConfigProperties {
          */
         Duration pollTimeout;
     }
+
     /**
      * 字符串类型最大限制
      */

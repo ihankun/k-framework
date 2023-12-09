@@ -18,6 +18,7 @@ public class RedisSizeCheckProperties {
      * 是否开启
      */
     private boolean enabled = false;
+
     /**
      * 配置
      */

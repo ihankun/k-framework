@@ -1,6 +1,6 @@
 //package io.ihankun.framework.cache.config;
 //
-//import io.ihankun.framework.cache.cache.RedisCache;
+//import io.ihankun.framework.cache.RedisCache;
 //import io.ihankun.framework.cache.pubsub.RPubSubListenerDetector;
 //import io.ihankun.framework.cache.pubsub.RPubSubPublisher;
 //import io.ihankun.framework.cache.pubsub.RedisPubSubPublisher;

@@ -1,12 +1,11 @@
-package io.ihankun.framework.cache.lock.aspect;
+package io.ihankun.framework.cache.requestlock.aspect;
 
 import com.alibaba.fastjson.JSON;
 import io.ihankun.framework.cache.CacheBuilder;
 import io.ihankun.framework.cache.CacheManager;
-import io.ihankun.framework.cache.enums.CacheType;
 import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.key.impl.OrgCacheKey;
-import io.ihankun.framework.cache.lock.annotation.RequestLock;
+import io.ihankun.framework.cache.requestlock.annotation.RequestLock;
 import io.ihankun.framework.common.base.BaseService;
 import io.ihankun.framework.common.context.LoginUserContext;
 import io.ihankun.framework.common.error.IErrorCode;
@@ -24,7 +23,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -65,7 +63,7 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
 //    @Resource
     private CacheManager<String, String> cacheManager = CacheBuilder.build();
 
-    @Pointcut("@annotation(io.ihankun.framework.cache.lock.annotation.RequestLock)")
+    @Pointcut("@annotation(io.ihankun.framework.cache.requestlock.annotation.RequestLock)")
     public void lockPointcut() {
 
     }

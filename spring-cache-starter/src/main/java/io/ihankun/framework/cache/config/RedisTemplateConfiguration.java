@@ -4,7 +4,7 @@
 //import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.fasterxml.jackson.databind.ObjectMapper.DefaultTyping;
-//import io.ihankun.framework.cache.cache.RedisCache;
+//import io.ihankun.framework.cache.RedisCache;
 //import io.ihankun.framework.cache.resolver.DefaultRedisKeyResolver;
 //import io.ihankun.framework.cache.resolver.RedisKeyResolver;
 //import io.ihankun.framework.cache.resolver.RedisKeyResolverSerializer;

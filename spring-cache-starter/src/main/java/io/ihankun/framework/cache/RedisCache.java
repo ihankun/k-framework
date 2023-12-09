@@ -1,5 +1,6 @@
-package io.ihankun.framework.cache.cache;
+package io.ihankun.framework.cache;
 
+import io.ihankun.framework.cache.enums.RedisCommand;
 import io.ihankun.framework.cache.key.CacheKey;
 import io.ihankun.framework.common.utils.json.JsonUtil;
 import io.ihankun.framework.common.utils.plus.CollectionUtil;

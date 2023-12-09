@@ -1,10 +1,10 @@
-package io.ihankun.framework.cache.lock.aspect;
+package io.ihankun.framework.cache.requestlock.aspect;
 
 import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.lock.LockCallback;
 import io.ihankun.framework.cache.lock.RedissonLock;
-import io.ihankun.framework.cache.lock.annotation.Lock;
+import io.ihankun.framework.cache.requestlock.annotation.Lock;
 import io.ihankun.framework.common.base.BaseService;
 import io.ihankun.framework.common.error.IErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
@@ -49,7 +49,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
     @Resource
     private RedissonLock redissonLock;
 
-    @Around("@annotation(io.ihankun.framework.cache.lock.annotation.Lock)")
+    @Around("@annotation(io.ihankun.framework.cache.requestlock.annotation.Lock)")
     public Object around(ProceedingJoinPoint point) {
         MethodSignature methodSignature = (MethodSignature) point.getSignature();
         Method method = methodSignature.getMethod();
