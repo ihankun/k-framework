@@ -9,7 +9,7 @@
         <version>1.2.8</version>
     </parent>
 
-    <artifactId>spring-ribbon</artifactId>
+    <artifactId>spring-nats-starter</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -21,6 +21,17 @@
         <dependency>
             <groupId>io.ihankun.framework</groupId>
             <artifactId>spring-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ihankun.framework</groupId>
+            <artifactId>spring-cache-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.nats</groupId>
+            <artifactId>jnats</artifactId>
+            <version>2.16.13</version>
         </dependency>
     </dependencies>
 
