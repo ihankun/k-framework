@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9</version>
     </parent>
 
     <artifactId>spring-commons</artifactId>
@@ -83,20 +83,6 @@
             <artifactId>jakarta.validation-api</artifactId>
             <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>com.squareup.okhttp3</groupId>-->
-<!--            <artifactId>okhttp</artifactId>-->
-<!--            <version>4.12.0</version>-->
-<!--            <scope>provided</scope> &lt;!&ndash; 设置为 provided，只有工具类需要使用到 &ndash;&gt;-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>com.squareup.okhttp3</groupId>-->
-<!--            <artifactId>logging-interceptor</artifactId>-->
-<!--            <version>4.12.0</version>-->
-<!--            <scope>provided</scope> &lt;!&ndash; 设置为 provided，只有工具类需要使用到 &ndash;&gt;-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>

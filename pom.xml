@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun.framework</groupId>
     <artifactId>ihank-spring-framework</artifactId>
-    <version>1.2.8</version>
+    <version>1.2.9</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>1.2.8</framework.version>
+        <framework.version>1.2.9</framework.version>
 
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
@@ -88,6 +88,7 @@
         <module>spring-captcha-starter</module>
         <module>spring-http-starter</module>
         <module>spring-nats-starter</module>
+        <module>spring-spider-starter</module>
     </modules>
 
     <dependencies>
@@ -341,6 +342,12 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-nats-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-spider-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
