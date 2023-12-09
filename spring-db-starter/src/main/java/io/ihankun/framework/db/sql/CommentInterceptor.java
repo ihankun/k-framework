@@ -20,7 +20,7 @@ import java.sql.Connection;
 
 /**
  * 功能描述:
- * @author: hankun
+ * @author hankun
  * @date: 2023/9/27
  */
 @Component

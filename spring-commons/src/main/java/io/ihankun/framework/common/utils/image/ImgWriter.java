@@ -15,9 +15,9 @@ import java.io.OutputStream;
 import java.util.Iterator;
 
 /**
- * @Author: hankun
+ * @author hankun
  * @date 2022/5/9 11:47
- * @Description 拷贝from hutool(https://gitee.com/dromara/hutool/blob/v5-master/hutool-core/src/main/java/cn/hutool/core/img/ImgUtil.java)
+ * 拷贝from hutool(https://gitee.com/dromara/hutool/blob/v5-master/hutool-core/src/main/java/cn/hutool/core/img/ImgUtil.java)
  * 为了不依赖更多无用包， 单独拷贝出来
  */
 public class ImgWriter {

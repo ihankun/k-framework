@@ -1,9 +1,9 @@
 package io.ihankun.framework.common.constants.base;
 
 /**
- * @Author: hankun
+ * @author hankun
  * @date 2022/4/29 8:33
- * @Description 滑动轨迹类型
+ * 滑动轨迹类型
  */
 public class TrackTypeConstant {
 

@@ -5,9 +5,9 @@ import lombok.SneakyThrows;
 import java.util.Random;
 
 /**
- * @Author: hankun
+ * @author hankun
  * @date 2022/4/27 11:34
- * @Description 字体工具包
+ * 字体工具包
  */
 public class FontUtils {
 

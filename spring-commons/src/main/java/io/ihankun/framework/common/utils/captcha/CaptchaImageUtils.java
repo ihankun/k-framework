@@ -16,9 +16,9 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * @Author: hankun
+ * @author hankun
  * @date 2022/2/16 9:46
- * @Description image Utils
+ * image Utils
  */
 public class CaptchaImageUtils {
 

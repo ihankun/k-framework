@@ -4,9 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @Author: hankun
+ * @author hankun
  * @date 2023/11/2 9:22
- * @Description 验证码类型分类
+ * 验证码类型分类
  */
 public class CaptchaTypeClassifier {
 
