@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http;
+package io.ihankun.framework.http;
 
 /**
  * http method
