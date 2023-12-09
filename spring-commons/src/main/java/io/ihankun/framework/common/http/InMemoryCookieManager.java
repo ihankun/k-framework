@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v2;
+package io.ihankun.framework.common.http;
 
 import okhttp3.Cookie;
 import okhttp3.CookieJar;

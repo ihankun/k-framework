@@ -1,7 +1,5 @@
-package io.ihankun.framework.common.http.v1;
+package io.ihankun.framework.common.http;
 
-import io.ihankun.framework.common.http.v1.enums.HttpType;
-import io.ihankun.framework.common.http.v1.impl.RestTemplateHttp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;

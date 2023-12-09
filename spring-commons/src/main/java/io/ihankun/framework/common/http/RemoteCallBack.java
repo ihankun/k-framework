@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v1;
+package io.ihankun.framework.common.http;
 
 /**
  * @author hankun

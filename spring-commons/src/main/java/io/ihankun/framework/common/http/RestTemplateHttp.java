@@ -1,7 +1,7 @@
-package io.ihankun.framework.common.http.v1.impl;
+package io.ihankun.framework.common.http;
 
 import cn.hutool.json.JSONUtil;
-import io.ihankun.framework.common.http.v1.HttpInterface;
+import io.ihankun.framework.common.http.HttpInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;

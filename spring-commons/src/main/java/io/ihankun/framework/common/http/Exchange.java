@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v2;
+package io.ihankun.framework.common.http;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;

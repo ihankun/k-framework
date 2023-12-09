@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v2;
+package io.ihankun.framework.common.http;
 
 import io.ihankun.framework.common.utils.exception.Exceptions;
 import okhttp3.Headers;

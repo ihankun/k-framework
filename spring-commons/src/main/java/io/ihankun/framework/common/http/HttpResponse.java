@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v2;
+package io.ihankun.framework.common.http;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -8,29 +8,29 @@ import okhttp3.*;
 import okhttp3.internal.Util;
 
 import javax.annotation.Nullable;
-import java.io.*;
+import java.io.Closeable;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
 /**
- * body 使用 bytes 避免流关闭的问题，同时为了更好的支持异步
+ * ok http 封装，相应结构体
  *
  * @author hankun
  */
-public class BytesResponse implements ResponseSpec, Closeable {
+public class HttpResponse implements ResponseSpec, Closeable {
 	private final Request request;
 	private final Response response;
-	private final ResponseBody responseBody;
-	private final byte[] body;
+	private final ResponseBody body;
 
-	public BytesResponse(Response response) {
+	HttpResponse(final Response response) {
 		this.request = response.request();
 		this.response = response;
-		this.responseBody = HttpResponse.ifNullBodyToEmpty(response.body());
 		this.body = ifNullBodyToEmpty(response.body());
 	}
 
@@ -40,13 +40,13 @@ public class BytesResponse implements ResponseSpec, Closeable {
 	}
 
 	@Override
-	public boolean isOk() {
-		return response.isSuccessful();
+	public String message() {
+		return response.message();
 	}
 
 	@Override
-	public String message() {
-		return response.message();
+	public boolean isOk() {
+		return response.isSuccessful();
 	}
 
 	@Override
@@ -65,55 +65,76 @@ public class BytesResponse implements ResponseSpec, Closeable {
 	}
 
 	@Override
+	public Request rawRequest() {
+		return this.request;
+	}
+
+	@Override
+	public Response rawResponse() {
+		return this.response;
+	}
+
+	@Override
+	public ResponseBody rawBody() {
+		return this.body;
+	}
+
+	@Override
 	public String asString() {
-		return asString(StandardCharsets.UTF_8);
+		try {
+			return body.string();
+		} catch (IOException e) {
+			throw Exceptions.unchecked(e);
+		}
 	}
 
 	@Override
 	public String asString(Charset charset) {
-		return new String(body, charset);
+		return new String(asBytes(), charset);
 	}
 
 	@Override
 	public byte[] asBytes() {
-		return body;
+		try {
+			return body.bytes();
+		} catch (IOException e) {
+			throw Exceptions.unchecked(e);
+		}
 	}
 
 	@Override
 	public InputStream asStream() {
-		return new ByteArrayInputStream(body);
+		return body.byteStream();
 	}
 
 	@Override
 	public JsonNode asJsonNode() {
-		return JsonUtil.readTree(body);
+		return JsonUtil.readTree(asBytes());
 	}
 
-	@Nullable
 	@Override
 	public <T> T asValue(Class<T> valueType) {
-		return JsonUtil.readValue(body, valueType);
+		return JsonUtil.readValue(asBytes(), valueType);
 	}
 
-	@Nullable
 	@Override
 	public <T> T asValue(TypeReference<T> typeReference) {
-		return JsonUtil.readValue(body, typeReference);
+		return JsonUtil.readValue(asBytes(), typeReference);
 	}
 
 	@Override
 	public <T> List<T> asList(Class<T> valueType) {
-		return JsonUtil.readList(body, valueType);
+		return JsonUtil.readList(asBytes(), valueType);
 	}
 
 	@Override
 	public <K, V> Map<K, V> asMap(Class<?> keyClass, Class<?> valueType) {
-		return JsonUtil.readMap(body, keyClass, valueType);
+		return JsonUtil.readMap(asBytes(), keyClass, valueType);
 	}
 
 	@Override
 	public <V> Map<String, V> asMap(Class<?> valueType) {
-		return JsonUtil.readMap(body, String.class, valueType);
+		return this.asMap(String.class, valueType);
 	}
 
 	@Override
@@ -125,37 +146,21 @@ public class BytesResponse implements ResponseSpec, Closeable {
 	@Override
 	public Path toFile(Path path) {
 		try {
-			return Files.write(path, body);
+			Files.copy(this.asStream(), path);
+			return path;
 		} catch (IOException e) {
 			throw Exceptions.unchecked(e);
 		}
 	}
 
-	@Nullable
 	@Override
 	public MediaType contentType() {
-		return responseBody.contentType();
+		return body.contentType();
 	}
 
 	@Override
 	public long contentLength() {
-		return responseBody.contentLength();
-	}
-
-	@Override
-	public Request rawRequest() {
-		return request;
-	}
-
-	@Override
-	public Response rawResponse() {
-		return response;
-	}
-
-	@Nullable
-	@Override
-	public ResponseBody rawBody() {
-		return responseBody;
+		return body.contentLength();
 	}
 
 	@Override
@@ -163,20 +168,12 @@ public class BytesResponse implements ResponseSpec, Closeable {
 		return response.toString();
 	}
 
-	static byte[] ifNullBodyToEmpty(@Nullable ResponseBody body) {
-		if (body == null) {
-			return Util.EMPTY_BYTE_ARRAY;
-		}
-		try {
-			return body.bytes();
-		} catch (IOException e) {
-			throw Exceptions.unchecked(e);
-		}
+	static ResponseBody ifNullBodyToEmpty(@Nullable ResponseBody body) {
+		return body == null ? Util.EMPTY_RESPONSE : body;
 	}
 
 	@Override
 	public void close() throws IOException {
-		Util.closeQuietly(response);
+		Util.closeQuietly(this.response);
 	}
-
 }

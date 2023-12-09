@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v2;
+package io.ihankun.framework.common.http;
 
 import lombok.RequiredArgsConstructor;
 import okhttp3.*;

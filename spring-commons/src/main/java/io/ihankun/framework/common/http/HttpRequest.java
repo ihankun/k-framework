@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.http.v2;
+package io.ihankun.framework.common.http;
 
 import io.ihankun.framework.common.retry.IRetry;
 import io.ihankun.framework.common.retry.SimpleRetry;
@@ -12,7 +12,6 @@ import okhttp3.*;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.logging.HttpLoggingInterceptor;
-import org.springframework.cloud.commons.httpclient.OkHttpClientFactory;
 
 import javax.annotation.Nullable;
 import javax.net.ssl.HostnameVerifier;
