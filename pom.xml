@@ -82,7 +82,7 @@
         <module>spring-mq-starter</module>
         <module>spring-cloud-starter</module>
         <module>spring-ribbon</module>
-        <module>spring-mongodb-starter</module>
+        <module>spring-mongo-starter</module>
         <module>spring-file-starter</module>
         <module>spring-sso-starter</module>
         <module>spring-captcha-starter</module>
@@ -311,7 +311,7 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-mongodb-starter</artifactId>
+                <artifactId>spring-mongo-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
