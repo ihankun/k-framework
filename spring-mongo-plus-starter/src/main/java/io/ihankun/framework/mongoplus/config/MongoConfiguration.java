@@ -1,7 +1,7 @@
-package io.ihankun.framework.mongo.config;
+package io.ihankun.framework.mongoplus.config;
 
 import com.mongodb.WriteConcern;
-import io.ihankun.framework.mongo.properties.AccountConfigProperties;
+import io.ihankun.framework.mongoplus.property.AccountConfigProperties;
 import lombok.Data;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;

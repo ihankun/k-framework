@@ -1,4 +1,4 @@
-package io.ihankun.framework.mongo.base;
+package io.ihankun.framework.mongoplus.base;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

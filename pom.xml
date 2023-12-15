@@ -84,7 +84,6 @@
         <module>spring-mq-starter</module>
         <module>spring-cloud-starter</module>
         <module>spring-ribbon</module>
-        <module>spring-mongo-starter</module>
         <module>spring-file-starter</module>
         <module>spring-sso-starter</module>
         <module>spring-captcha-starter</module>
@@ -309,12 +308,6 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-cloud-starter-server</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-mongo-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 

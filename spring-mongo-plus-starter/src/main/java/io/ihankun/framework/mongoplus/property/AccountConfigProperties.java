@@ -1,4 +1,4 @@
-package io.ihankun.framework.mongo.properties;
+package io.ihankun.framework.mongoplus.property;
 
 import lombok.Data;
 
