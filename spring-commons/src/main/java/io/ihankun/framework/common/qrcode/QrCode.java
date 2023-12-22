@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.qrcode.v2;
+package io.ihankun.framework.common.qrcode;
 
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;

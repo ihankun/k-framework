@@ -1,4 +1,4 @@
-package io.ihankun.framework.common.qrcode.v1;
+package io.ihankun.framework.common.qrcode;
 
 import cn.hutool.core.codec.Base64;
 import com.google.zxing.BarcodeFormat;
