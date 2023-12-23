@@ -1,4 +1,4 @@
-package io.ihankun.framework.ribbon;
+package io.ihankun.framework.common.ribbon;
 
 import lombok.Data;
 

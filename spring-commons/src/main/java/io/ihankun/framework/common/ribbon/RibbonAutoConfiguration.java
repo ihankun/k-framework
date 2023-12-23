@@ -1,4 +1,4 @@
-package io.ihankun.framework.ribbon;
+package io.ihankun.framework.common.ribbon;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;

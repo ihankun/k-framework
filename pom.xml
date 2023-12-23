@@ -29,6 +29,8 @@
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
 
+        <assertj.version>3.24.2</assertj.version>
+        <aspectjweaver.version>1.9.20.1</aspectjweaver.version>
         <commons-collections.version>4.1</commons-collections.version>
         <commons-net.version>3.8.0</commons-net.version>
         <curator.version>2.12.0</curator.version>
@@ -40,7 +42,10 @@
         <hutool-all.version>5.8.11</hutool-all.version>
         <hystrix.version>2.2.2.RELEASE</hystrix.version>
         <jackson-databind.version>2.12.7.1</jackson-databind.version>
+        <jnats.version>2.16.13</jnats.version>
         <jsch.version>0.1.55</jsch.version>
+        <jsoup.version>1.17.1</jsoup.version>
+        <jsr311.version>1.1.1</jsr311.version>
         <lombok.version>1.18.22</lombok.version>
         <mapstruct.version>1.3.0.Final</mapstruct.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -49,11 +54,12 @@
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <minio.version>8.5.2</minio.version>
-        <mongodb-driver-sync.version>4.9.0</mongodb-driver-sync.version>
+        <mongodb.version>4.9.0</mongodb.version>
         <mybatis.version>1.3.2</mybatis.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <mysql.version>8.0.28</mysql.version>
         <netty.version>4.1.86.Final</netty.version>
+        <okhttp.version>4.12.0</okhttp.version>
         <openfeign.version>10.10.1</openfeign.version>
         <pagehelper.version>5.3.1</pagehelper.version>
         <pagehelper-spring.version>1.4.2</pagehelper-spring.version>
@@ -83,7 +89,6 @@
         <module>spring-log-starter</module>
         <module>spring-mq-starter</module>
         <module>spring-cloud-starter</module>
-        <module>spring-ribbon</module>
         <module>spring-file-starter</module>
         <module>spring-sso-starter</module>
         <module>spring-captcha-starter</module>
@@ -290,12 +295,6 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-mq-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-ribbon</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
