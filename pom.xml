@@ -107,7 +107,6 @@
         <module>spring-sso-starter</module>
         <module>spring-captcha-starter</module>
         <module>spring-network-starter</module>
-        <module>spring-nats-starter</module>
         <module>spring-mongo-plus-starter</module>
         <module>spring-pdf-starter</module>
         <module>spring-poi-starter</module>
@@ -352,12 +351,6 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-network-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-nats-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
