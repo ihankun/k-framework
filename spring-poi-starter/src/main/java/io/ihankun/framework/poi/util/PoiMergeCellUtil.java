@@ -17,8 +17,7 @@ import java.util.*;
 /**
  * 纵向合并单元格工具类
  *
- * @author JueYue
- * 2015年6月21日 上午11:21:40
+ * @author hankun
  */
 public final class PoiMergeCellUtil {
 

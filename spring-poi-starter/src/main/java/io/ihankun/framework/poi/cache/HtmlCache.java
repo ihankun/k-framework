@@ -6,8 +6,7 @@ import io.ihankun.framework.poi.excel.html.ExcelToHtmlService;
 /**
  * Excel 转变成为Html 的缓存
  *
- * @author JueYue
- *         2015年8月7日 下午1:29:47
+ * @author hankun
  */
 public class HtmlCache {
 

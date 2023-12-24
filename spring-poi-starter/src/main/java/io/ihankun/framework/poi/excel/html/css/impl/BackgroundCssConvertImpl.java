@@ -13,6 +13,9 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 
+/**
+ * @author hankun
+ */
 public class BackgroundCssConvertImpl implements ICssConvertToExcel, ICssConvertToHtml {
 
     @Override

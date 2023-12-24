@@ -5,9 +5,7 @@ import lombok.Data;
 /**
  * 特殊符号
  *
- * @author JueYue
- * @date 2021-03-21-3-16
- * @since 1.0
+ * @author hankun
  */
 @Data
 public class SpecialSymbolsEntity {

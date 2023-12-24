@@ -3,9 +3,7 @@ package io.ihankun.framework.poi.handler.inter;
 /**
  * 批注接口
  *
- * @author jueyue
- * @date 2021年2月20日
- * @since 4.4
+ * @author hankun
  */
 public interface ICommentHandler {
 

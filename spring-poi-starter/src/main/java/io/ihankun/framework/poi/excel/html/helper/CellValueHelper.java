@@ -16,8 +16,8 @@ import java.util.Map;
 
 /**
  * Cell值帮助类
- * @author JueYue
- *  2015年5月9日 下午10:31:32
+ *
+ * @author hankun
  */
 public class CellValueHelper {
     /**

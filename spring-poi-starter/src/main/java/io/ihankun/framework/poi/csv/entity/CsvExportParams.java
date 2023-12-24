@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * CSV 导入参数
  *
- * @author by jueyue on 18-10-3.
+ * @author hankun
  */
 @Data
 public class CsvExportParams extends ExcelBaseParams {

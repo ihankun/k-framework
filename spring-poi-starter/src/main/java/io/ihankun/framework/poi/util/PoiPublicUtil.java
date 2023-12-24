@@ -1,18 +1,3 @@
-/**
- * Copyright 2013-2015 JueYue (qrb.jueyue@gmail.com)
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package io.ihankun.framework.poi.util;
 
 import io.ihankun.framework.poi.cache.ImageCache;
@@ -48,8 +33,7 @@ import static io.ihankun.framework.poi.util.PoiElUtil.START_STR;
 /**
  * EASYPOI 的公共基础类
  *
- * @author JueYue
- * 2015年4月5日 上午12:59:22
+ * @author hankun
  */
 public final class PoiPublicUtil {
 
@@ -316,7 +300,7 @@ public final class PoiPublicUtil {
      * @param entity
      * @return (byte[]) isAndType[0],(Integer)isAndType[1]
      * @throws Exception
-     * @author JueYue
+     * @author hankun
      * 2013-11-20
      */
     public static Object[] getIsAndType(ImageEntity entity) throws Exception {
@@ -355,7 +339,7 @@ public final class PoiPublicUtil {
      * 解析数据
      *
      * @return
-     * @author JueYue
+     * @author hankun
      * 2013-11-16
      */
     public static Object getRealValue(String currentText,

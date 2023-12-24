@@ -1,18 +1,3 @@
-/**
- * Copyright 2013-2015 JueYue (qrb.jueyue@gmail.com)
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package io.ihankun.framework.poi.excel.imports;
 
 import io.ihankun.framework.poi.excel.entity.params.ExcelImportEntity;
@@ -48,8 +33,7 @@ import java.util.Map;
  * Cell 取值服务
  * 判断类型处理数据 1.判断Excel中的类型 2.根据replace替换值 3.handler处理数据 4.判断返回类型转化数据返回
  *
- * @author JueYue
- * 2014年6月26日 下午10:42:28
+ * @author hankun
  */
 public class CellValueService {
 
@@ -169,7 +153,7 @@ public class CellValueService {
      * @param entity
      * @param value
      * @return
-     * @author JueYue
+     * @author hankun
      * 2013年11月26日
      */
     private Date getDateData(ExcelImportEntity entity, String value) {

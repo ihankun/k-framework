@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 统计对象
  *
- * @author JueYue
+ * @author hankun
  */
 @Data
 public class TemplateSumEntity {

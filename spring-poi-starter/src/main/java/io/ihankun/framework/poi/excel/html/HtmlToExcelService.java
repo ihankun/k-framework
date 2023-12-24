@@ -27,8 +27,8 @@ import java.util.Map;
 
 /**
  * 读取Table数据生成Excel
- * @author JueYue
- * 2017年3月19日
+ *
+ * @author hankun
  */
 public class HtmlToExcelService {
     private final Logger                          LOGGER         = LoggerFactory

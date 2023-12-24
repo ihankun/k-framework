@@ -5,7 +5,7 @@ import java.util.Collection;
 /**
  * 大数据写出服务接口
  *
- * @author jueyue on 19-11-25.
+ * @author hankun on 19-11-25.
  */
 public interface IWriter<T> {
     /**

@@ -1,7 +1,7 @@
 package io.ihankun.framework.poi.excel.entity.sax;
 
 /**
- * @author by jueyue on 19-6-20.
+ * @author hankun
  */
 public interface SaxConstant {
 

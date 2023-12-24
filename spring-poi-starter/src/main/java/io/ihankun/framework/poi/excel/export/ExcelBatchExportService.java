@@ -24,8 +24,7 @@ import static io.ihankun.framework.poi.excel.ExcelExportUtil.USE_SXSSF_LIMIT;
 /**
  * 提供批次插入服务
  *
- * @author JueYue
- * 2016年8月29日
+ * @author hankun
  */
 public class ExcelBatchExportService extends ExcelExportService implements IWriter<Workbook> {
 

@@ -26,7 +26,7 @@ import java.util.concurrent.RecursiveTask;
  * 不支持图片
  * 不支持集合
  *
- * @author by jueyue on 19-6-9.
+ * @author hankun
  */
 public class ExcelImportForkJoinWork extends RecursiveTask<ExcelImportResult> {
 

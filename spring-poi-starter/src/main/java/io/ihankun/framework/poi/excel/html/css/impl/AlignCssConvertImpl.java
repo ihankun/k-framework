@@ -9,6 +9,9 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 
+/**
+ * @author hankun
+ */
 public class AlignCssConvertImpl implements ICssConvertToExcel, ICssConvertToHtml {
 
     @Override

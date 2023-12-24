@@ -19,7 +19,7 @@ import static io.ihankun.framework.poi.excel.html.entity.HtmlCssConstant.*;
 import static org.apache.poi.ss.usermodel.IndexedColors.BLACK;
 
 /**
- * @author jueyue
+ * @author hankun
  */
 public class TextCssConvertImpl implements ICssConvertToExcel, ICssConvertToHtml {
 

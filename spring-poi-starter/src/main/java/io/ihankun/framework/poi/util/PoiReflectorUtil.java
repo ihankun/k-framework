@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 反射工具类,缓存读取的class信息,省的一直获取
  *
- * @author JueYue
+ * @author hankun
  *         参考的 mybatis的Reflector
  */
 public final class PoiReflectorUtil {

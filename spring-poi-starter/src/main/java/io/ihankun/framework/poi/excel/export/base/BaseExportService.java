@@ -1,16 +1,3 @@
-/**
- * Copyright 2013-2015 JueYue (qrb.jueyue@gmail.com)
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
 package io.ihankun.framework.poi.excel.export.base;
 
 import io.ihankun.framework.poi.cache.ImageCache;
@@ -42,7 +29,7 @@ import java.util.*;
 /**
  * 提供POI基础操作服务
  *
- * @author JueYue 2014年6月17日 下午6:15:13
+ * @author hankun
  */
 @SuppressWarnings("unchecked")
 public abstract class BaseExportService extends ExportCommonService {
@@ -459,7 +446,7 @@ public abstract class BaseExportService extends ExportCommonService {
     /**
      * 获取图片类型,设置图片插入类型
      *
-     * @author JueYue 2013年11月25日
+     * @author hankun 2013年11月25日
      */
     public int getImageType(byte[] value) {
         String type = PoiPublicUtil.getFileExtendName(value);

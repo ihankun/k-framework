@@ -15,6 +15,8 @@ import org.apache.pdfbox.pdmodel.PDDocument;
  * 去除PDF文件中的斜体文字水印
  * https://blog.csdn.net/weixin_44214515/article/details/120863569
  * 主要是最后两篇的介绍内容
+ *
+ * @author hankun
  */
 public interface IWatermarkProcessor {
 

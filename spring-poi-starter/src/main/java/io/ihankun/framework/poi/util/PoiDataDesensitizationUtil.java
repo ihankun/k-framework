@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 辅助脱敏工具类
  *
- * @author jueyue on 21-2-7.
+ * @author hankun
  */
 public class PoiDataDesensitizationUtil {
 

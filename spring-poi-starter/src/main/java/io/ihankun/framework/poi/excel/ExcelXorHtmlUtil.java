@@ -16,8 +16,8 @@ import java.io.InputStream;
 
 /**
  * Excel 变成界面
- * @author JueYue
- *  2015年5月10日 上午11:51:48
+ *
+ * @author hankun
  */
 public class ExcelXorHtmlUtil {
 

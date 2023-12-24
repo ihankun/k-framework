@@ -1,14 +1,9 @@
-/**
- *
- */
 package io.ihankun.framework.poi.entity;
 
 /**
  * 基础类型
- * @author xfworld
- * @since 2015-12-28
- * @version 1.0
- * @see BaseTypeConstants
+ *
+ * @author hankun
  *
  */
 public interface BaseTypeConstants {

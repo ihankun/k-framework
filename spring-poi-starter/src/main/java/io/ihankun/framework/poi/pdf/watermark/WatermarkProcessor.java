@@ -9,6 +9,9 @@ import java.io.OutputStream;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * @author hankun
+ */
 public class WatermarkProcessor implements IWatermarkProcessor {
 
     public PDDocument document = null;

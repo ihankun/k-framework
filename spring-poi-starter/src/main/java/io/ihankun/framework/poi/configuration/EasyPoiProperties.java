@@ -3,7 +3,7 @@ package io.ihankun.framework.poi.configuration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Created by xfworld on 2017-11-22.
+ * Created by hankun
  **/
 @ConfigurationProperties(prefix = "easy.poi.base")
 public class EasyPoiProperties {

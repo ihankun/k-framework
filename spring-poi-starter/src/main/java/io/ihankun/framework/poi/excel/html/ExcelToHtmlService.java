@@ -20,8 +20,7 @@ import java.util.*;
 /**
  * Excel转换成Html 服务
  *
- * @author JueYue
- * 2015年5月10日 上午11:41:15
+ * @author hankun
  */
 public class ExcelToHtmlService {
 

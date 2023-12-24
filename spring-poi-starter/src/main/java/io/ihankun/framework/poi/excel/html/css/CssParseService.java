@@ -20,8 +20,8 @@ import static io.ihankun.framework.poi.excel.html.entity.HtmlCssConstant.*;
 
 /**
  * 把Css样式解析成对应的Model
- * @author JueYue
- * 2017年3月19日
+ *
+ * @author hankun
  */
 public class CssParseService {
 

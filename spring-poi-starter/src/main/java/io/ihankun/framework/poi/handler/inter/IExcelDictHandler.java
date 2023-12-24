@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author jueyue on 18-2-2.
- * @version 3.0.4
+ * @author hankun
  */
 public interface IExcelDictHandler {
 

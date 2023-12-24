@@ -13,9 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Shaun Chyxion
- * @author JueYue
- * @version 2.0.1
+ * @author hankun
  */
 public class PoiCssUtils {
     private static final Logger log = LoggerFactory

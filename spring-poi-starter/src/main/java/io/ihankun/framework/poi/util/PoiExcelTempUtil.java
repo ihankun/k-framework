@@ -12,7 +12,7 @@ import java.util.Map;
  * cell还是复用的原来的cell,导致wb输出的时候没有输出值
  * 等待修复的时候删除这个问题
  *
- * @author by jueyue on 19-6-17.
+ * @author by hankun on 19-6-17.
  */
 public class PoiExcelTempUtil {
 

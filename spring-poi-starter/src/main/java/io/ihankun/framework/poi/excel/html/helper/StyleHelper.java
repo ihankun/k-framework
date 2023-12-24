@@ -19,8 +19,7 @@ import java.util.*;
 /**
  * 样式帮助类
  *
- * @author JueYue
- * 2015年5月9日 下午4:04:24
+ * @author hankun
  */
 public class StyleHelper {
 

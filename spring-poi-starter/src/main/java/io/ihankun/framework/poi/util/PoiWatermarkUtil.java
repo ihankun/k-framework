@@ -28,7 +28,7 @@ import static org.apache.poi.ooxml.POIXMLTypeLoader.DEFAULT_XML_OPTIONS;
  * 水印工具类,WPS仅支持打印水印
  * 参考 https://jingyan.baidu.com/article/6d704a137cd29d28db51ca87.html
  *
- * @author jueyue on 20-4-29.
+ * @author hankun
  */
 public class PoiWatermarkUtil {
 

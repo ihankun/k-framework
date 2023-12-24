@@ -6,10 +6,7 @@ package io.ihankun.framework.poi.entity.vo;
 
 
 /**
- * @author xfworld
- * @since 2015-12-31
- * @version 1.0
- *
+ * @author hankun
  */
 public interface MapExcelGraphConstants extends MapExcelConstants
 {

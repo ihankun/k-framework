@@ -1,6 +1,3 @@
-/**
- *
- */
 package io.ihankun.framework.poi.util;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -10,11 +7,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 /**
- * @author xfworld
- * @version 1.0
- * @see io.ihankun.framework.poi.util.PoiCellUtil
- * 获取单元格的值
- * @since 2015-12-28
+ * @author hankun
  */
 public class PoiCellUtil {
     /**

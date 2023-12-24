@@ -13,6 +13,9 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author hankun
+ */
 public class WatermarkScanner extends PDFStreamEngine {
     Logger logger = LoggerFactory.getLogger(WatermarkScanner.class);
 

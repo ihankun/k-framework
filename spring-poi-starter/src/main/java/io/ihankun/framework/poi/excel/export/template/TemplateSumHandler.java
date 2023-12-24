@@ -19,8 +19,8 @@ import static io.ihankun.framework.poi.util.PoiElUtil.*;
  * 1.处理模板之前统计需要SUM的数据以及位置
  * 2.遍历时统计数据
  * 3.遍历后设置数据
- * @author JueYue
- * 2016年6月19日
+ *
+ * @author hankun
  */
 public class TemplateSumHandler {
 

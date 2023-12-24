@@ -1,13 +1,7 @@
-/**
- *
- */
 package io.ihankun.framework.poi.excel.graph.constant;
 
 /**
- * @author xfworld
- * @since 2015-12-30
- * @version 1.0
- * 定义元素类型
+ * @author hankun
  */
 public interface ExcelGraphElementType
 {

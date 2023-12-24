@@ -1,18 +1,3 @@
-/**
- * Copyright 2013-2015 xfworld (xfworld@gmail.com)
- *   
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package io.ihankun.framework.poi.view;
 
 import io.ihankun.framework.poi.entity.vo.MapExcelGraphConstants;
@@ -31,14 +16,13 @@ import java.util.Map;
 
 /**
  * Map 对象接口
- * 
- * @author xfworld
- * @since  2016-01-04
+ *
+ * @author hankun
  */
 @SuppressWarnings("unchecked")
 @Controller(MapExcelGraphConstants.MAP_GRAPH_EXCEL_VIEW)
 public class MapGraphExcelView extends MiniAbstractExcelView {
-	
+
     public MapGraphExcelView() {
         super();
     }
@@ -54,7 +38,7 @@ public class MapGraphExcelView extends MiniAbstractExcelView {
         //构建数据
         Workbook workbook = ExcelExportUtil.exportExcel(params,entityList,mapList);
         ExcelChartBuildService.createExcelChart(workbook,graphDefinedList, params.isDynamicData(), params.isAppendGraph());
-        
+
         if (model.containsKey(MapExcelGraphConstants.FILE_NAME)) {
             codedFileName = (String) model.get(MapExcelGraphConstants.FILE_NAME);
         }

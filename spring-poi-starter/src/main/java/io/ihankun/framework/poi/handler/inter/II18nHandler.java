@@ -2,8 +2,8 @@ package io.ihankun.framework.poi.handler.inter;
 
 /**
  * 国际化接口
- * @author jueyue on 18-2-2.
- * @version 3.0.4
+ *
+ * @author hankun
  */
 public interface II18nHandler {
 

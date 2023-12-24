@@ -2,7 +2,8 @@ package io.ihankun.framework.poi.handler.inter;
 
 /**
  * Excel 本身数据文件
- * @author by jueyue on 18-4-8.
+ *
+ * @author hankun
  */
 public interface IExcelDataModel {
 

@@ -6,9 +6,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
 
-/**根据RFC 5987规范生成disposition值, 解决浏览器兼容以及中文乱码问题
- * @author halfdo
- * @date 6/25/2019
+/**
+ * 根据RFC 5987规范生成disposition值, 解决浏览器兼容以及中文乱码问题
+ *
+ * @author hankun
  */
 public class WebFilenameUtils {
 

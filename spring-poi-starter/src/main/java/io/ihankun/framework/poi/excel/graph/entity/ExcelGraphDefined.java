@@ -1,6 +1,3 @@
-/**
- *
- */
 package io.ihankun.framework.poi.excel.graph.entity;
 
 import io.ihankun.framework.poi.excel.graph.constant.ExcelGraphType;
@@ -9,9 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author xfworld
- * @since 2015-12-30
- * @version 1.0
+ * @author hankun
  *
  */
 public class ExcelGraphDefined implements ExcelGraph

@@ -10,13 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 
 /**
- * @author  xfworld on 2017-11-22.
+ * @author hankun
  **/
 @Configuration
-//@AutoConfigureAfter(WebMvcAutoConfiguration.class)
 @EnableConfigurationProperties(EasyPoiProperties.class)
-//@ConditionalOnClass
-//easy.poi.base.enable 不存在默认为true，若存在==true则创建，否则==false不创建
 @ConditionalOnProperty(prefix = "easy.poi.base", name = "enable", matchIfMissing = true)
 public class EasyPoiAutoConfiguration {
 

@@ -1,16 +1,9 @@
-/**
- *
- */
 package io.ihankun.framework.poi.excel.graph.entity;
 
 import java.util.List;
 
 /**
- * @author xfworld
- * @since 2016-1-7
- * @version 1.0
- * @see com.dawnpro.core.export.excel.model.ExcelGraph
- *
+ * @author hankun
  */
 public interface ExcelGraph
 {

@@ -6,7 +6,7 @@ import io.ihankun.framework.poi.handler.inter.IExcelVerifyHandler;
 /**
  * CSV 导入参数
  *
- * @author by jueyue on 18-10-3.
+ * @author hankun
  */
 public class CsvImportParams extends ExcelBaseParams {
 

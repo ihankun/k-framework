@@ -1,13 +1,7 @@
-/**
- *
- */
 package io.ihankun.framework.poi.excel.graph.entity;
 
 /**
- * @author xfowrld
- * @since 2015-12-30
- * @version 1.0
- *
+ * @author hankun
  */
 public class ExcelTitleCell
 {

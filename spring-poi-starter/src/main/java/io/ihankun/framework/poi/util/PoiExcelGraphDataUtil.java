@@ -1,6 +1,3 @@
-/**
- *
- */
 package io.ihankun.framework.poi.util;
 
 import io.ihankun.framework.poi.excel.graph.entity.ExcelGraph;
@@ -11,9 +8,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import java.util.List;
 
 /**
- * @author xfworld
- * @since 2016-1-4
- * @version 1.0
+ * @author hankun
+ *
  * 构建特殊数据结构
  */
 public class PoiExcelGraphDataUtil {

@@ -10,8 +10,7 @@ import java.util.Stack;
 /**
  * 模板for each是的参数
  *
- * @author JueYue
- * 2015年4月29日 下午9:22:48
+ * @author hankun
  */
 @Data
 public class ExcelForEachParams implements Serializable {

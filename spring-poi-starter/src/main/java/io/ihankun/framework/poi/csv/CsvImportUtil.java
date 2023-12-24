@@ -12,7 +12,7 @@ import java.util.List;
  * 具体和Excel类似,但是比Excel简单
  * 需要处理一些字符串的处理
  *
- * @author by jueyue on 18-10-3.
+ * @author hankun
  */
 public final class CsvImportUtil {
 

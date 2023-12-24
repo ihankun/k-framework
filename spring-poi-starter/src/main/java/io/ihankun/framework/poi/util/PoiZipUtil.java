@@ -12,7 +12,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * 方便压缩文件使用
  *
- * @author jueyue on 19-10-31.
+ * @author hankun
  */
 public class PoiZipUtil {
     private static final int BUFFER_SIZE = 2 * 1024;

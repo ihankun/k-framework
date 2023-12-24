@@ -24,8 +24,7 @@ import java.util.*;
  * Excel 导入服务
  * 参考 https://blog.csdn.net/gengzhy/article/details/128386973
  *
- * @author JueYue
- * @dete 2023年7月17日
+ * @author hankun
  */
 public class PdfImportService extends ImportBaseService {
 
