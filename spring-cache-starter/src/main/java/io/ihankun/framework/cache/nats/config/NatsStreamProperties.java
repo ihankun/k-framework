@@ -1,6 +1,9 @@
-package io.ihankun.framework.nats.config;
+package io.ihankun.framework.cache.nats.config;
 
-import io.nats.client.api.*;
+import io.nats.client.api.DeliverPolicy;
+import io.nats.client.api.DiscardPolicy;
+import io.nats.client.api.RetentionPolicy;
+import io.nats.client.api.StorageType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

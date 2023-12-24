@@ -1,11 +1,11 @@
-package io.ihankun.framework.nats.core;
+package io.ihankun.framework.cache.nats.core;
 
+import io.ihankun.framework.cache.nats.annotation.NatsStreamListener;
+import io.ihankun.framework.cache.nats.config.NatsStreamCustomizer;
+import io.ihankun.framework.cache.nats.config.NatsStreamProperties;
+import io.ihankun.framework.cache.nats.utils.StreamConfigurationUtil;
 import io.ihankun.framework.common.utils.exception.Exceptions;
 import io.ihankun.framework.common.utils.string.StringUtil;
-import io.ihankun.framework.nats.annotation.NatsStreamListener;
-import io.ihankun.framework.nats.config.NatsStreamCustomizer;
-import io.ihankun.framework.nats.config.NatsStreamProperties;
-import io.ihankun.framework.nats.utils.StreamConfigurationUtil;
 import io.nats.client.*;
 import io.nats.client.api.ConsumerConfiguration;
 import lombok.RequiredArgsConstructor;

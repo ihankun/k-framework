@@ -1,8 +1,8 @@
-package io.ihankun.framework.nats.config;
+package io.ihankun.framework.cache.nats.config;
 
-import io.ihankun.framework.nats.core.DefaultNatsStreamTemplate;
-import io.ihankun.framework.nats.core.NatsStreamListenerDetector;
-import io.ihankun.framework.nats.core.NatsStreamTemplate;
+import io.ihankun.framework.cache.nats.core.DefaultNatsStreamTemplate;
+import io.ihankun.framework.cache.nats.core.NatsStreamListenerDetector;
+import io.ihankun.framework.cache.nats.core.NatsStreamTemplate;
 import io.nats.client.Connection;
 import io.nats.client.JetStream;
 import io.nats.client.Options;

@@ -1,10 +1,10 @@
-package io.ihankun.framework.nats.config;
+package io.ihankun.framework.cache.nats.config;
 
+import io.ihankun.framework.cache.nats.core.DefaultNatsTemplate;
+import io.ihankun.framework.cache.nats.core.NatsListenerDetector;
+import io.ihankun.framework.cache.nats.core.NatsTemplate;
 import io.ihankun.framework.common.utils.plus.ResourceUtil;
 import io.ihankun.framework.common.utils.string.StringUtil;
-import io.ihankun.framework.nats.core.DefaultNatsTemplate;
-import io.ihankun.framework.nats.core.NatsListenerDetector;
-import io.ihankun.framework.nats.core.NatsTemplate;
 import io.nats.client.Connection;
 import io.nats.client.ConnectionListener;
 import io.nats.client.Nats;

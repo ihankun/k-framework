@@ -1,4 +1,4 @@
-package io.ihankun.framework.nats.core;
+package io.ihankun.framework.cache.nats.core;
 
 import io.nats.client.Message;
 import io.nats.client.MessageHandler;

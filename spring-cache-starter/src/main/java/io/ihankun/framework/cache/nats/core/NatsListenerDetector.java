@@ -1,6 +1,6 @@
-package io.ihankun.framework.nats.core;
+package io.ihankun.framework.cache.nats.core;
 
-import io.ihankun.framework.nats.annotation.NatsListener;
+import io.ihankun.framework.cache.nats.annotation.NatsListener;
 import io.nats.client.Connection;
 import io.nats.client.Dispatcher;
 import io.nats.client.MessageHandler;

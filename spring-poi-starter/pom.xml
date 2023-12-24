@@ -24,11 +24,13 @@
             <artifactId>poi</artifactId>
             <version>${poi.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml-schemas</artifactId>
@@ -40,6 +42,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- read excel by sax used -->
         <dependency>
             <groupId>xerces</groupId>
@@ -47,6 +50,7 @@
             <version>${xerces.version}</version>
             <optional>true</optional>
         </dependency>
+
         <!-- read word by sax used -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -54,12 +58,7 @@
             <version>${poi.version}</version>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-scratchpad</artifactId>
-            <version>${poi.version}</version>
-            <optional>true</optional>
-        </dependency>
+
         <dependency>
             <groupId>org.apache.xmlbeans</groupId>
             <artifactId>xmlbeans</artifactId>
@@ -81,6 +80,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- 导出table 基于pdfbox的简化组件 -->
         <dependency>
             <groupId>com.github.vandeseer</groupId>
@@ -106,21 +106,25 @@
             <artifactId>spring-web</artifactId>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>

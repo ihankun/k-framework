@@ -1,4 +1,4 @@
-package io.ihankun.framework.nats.config;
+package io.ihankun.framework.cache.nats.config;
 
 import io.nats.client.Options;
 import lombok.Getter;

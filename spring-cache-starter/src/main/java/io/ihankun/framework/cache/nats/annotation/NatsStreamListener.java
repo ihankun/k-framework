@@ -1,4 +1,4 @@
-package io.ihankun.framework.nats.annotation;
+package io.ihankun.framework.cache.nats.annotation;
 
 import io.nats.client.Consumer;
 

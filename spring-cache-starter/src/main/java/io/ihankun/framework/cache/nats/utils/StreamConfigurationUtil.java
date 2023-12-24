@@ -1,7 +1,7 @@
-package io.ihankun.framework.nats.utils;
+package io.ihankun.framework.cache.nats.utils;
 
-import io.ihankun.framework.nats.config.NatsStreamCustomizer;
-import io.ihankun.framework.nats.config.NatsStreamProperties;
+import io.ihankun.framework.cache.nats.config.NatsStreamCustomizer;
+import io.ihankun.framework.cache.nats.config.NatsStreamProperties;
 import io.nats.client.api.StreamConfiguration;
 import lombok.experimental.UtilityClass;
 import org.springframework.beans.factory.ObjectProvider;
