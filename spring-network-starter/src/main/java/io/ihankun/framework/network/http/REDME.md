@@ -8,25 +8,6 @@
 </dependency>
 ```
 
-注意：**已经不再需要** spring-retry 为可选依赖，用来对 http 结果断言重试。
-```xml
-<dependency>
-    <groupId>org.springframework.retry</groupId>
-    <artifactId>spring-retry</artifactId>
-    <version>${spring-retry.version}</version>
-</dependency>
-```
-
-### gradle
-```groovy
-compile("net.dreamlu:mica-http:${version}")
-```
-
-spring-retry 为可选依赖，用来对 http 结果断言重试。
-```groovy
-compile("org.springframework.retry:spring-retry:${springRetryVersion}")
-```
-
 ## 基础用法
 ```java
 // 设定全局日志级别 NONE，BASIC，HEADERS，BODY， 默认：NONE 和 self4
