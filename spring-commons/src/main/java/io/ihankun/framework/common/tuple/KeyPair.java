@@ -1,6 +1,6 @@
 package io.ihankun.framework.common.tuple;
 
-import io.ihankun.framework.common.utils.RsaUtil;
+import io.ihankun.framework.common.utils.encrypt.RsaUtil;
 import lombok.RequiredArgsConstructor;
 
 import java.security.PrivateKey;

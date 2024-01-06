@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun.framework</groupId>
     <artifactId>ihank-spring-framework</artifactId>
-    <version>1.2.2</version>
+    <version>1.4.0</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,12 +23,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>1.2.2</framework.version>
+        <framework.version>1.4.0</framework.version>
 
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
 
+        <assertj.version>3.24.2</assertj.version>
+        <aspectjweaver.version>1.9.20.1</aspectjweaver.version>
+        <batik.version>1.16</batik.version>
+        <bouncycastle.version>1.72</bouncycastle.version>
         <commons-collections.version>4.1</commons-collections.version>
         <commons-net.version>3.8.0</commons-net.version>
         <curator.version>2.12.0</curator.version>
@@ -36,11 +40,17 @@
         <disruptor.version>3.4.2</disruptor.version>
         <druid.version>1.1.22</druid.version>
         <fastjson.version>1.2.83</fastjson.version>
+        <fop.version>2.8</fop.version>
+        <freemarker.version>2.3.31</freemarker.version>
         <guava.version>30.0-jre</guava.version>
         <hutool-all.version>5.8.11</hutool-all.version>
         <hystrix.version>2.2.2.RELEASE</hystrix.version>
         <jackson-databind.version>2.12.7.1</jackson-databind.version>
+        <jnats.version>2.16.13</jnats.version>
         <jsch.version>0.1.55</jsch.version>
+        <jsoup.version>1.17.1</jsoup.version>
+        <jsr311.version>1.1.1</jsr311.version>
+        <jte.version>2.2.4</jte.version>
         <lombok.version>1.18.22</lombok.version>
         <mapstruct.version>1.3.0.Final</mapstruct.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -49,27 +59,39 @@
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <minio.version>8.5.2</minio.version>
+        <mongodb.version>4.9.0</mongodb.version>
         <mybatis.version>1.3.2</mybatis.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <mysql.version>8.0.28</mysql.version>
         <netty.version>4.1.86.Final</netty.version>
+        <okhttp.version>4.12.0</okhttp.version>
         <openfeign.version>10.10.1</openfeign.version>
         <pagehelper.version>5.3.1</pagehelper.version>
         <pagehelper-spring.version>1.4.2</pagehelper-spring.version>
+        <pdfbox.version>2.0.27</pdfbox.version>
+        <poi.version>4.1.1</poi.version>
         <postgresql.version>42.2.27</postgresql.version>
         <redisson.version>3.18.0</redisson.version>
         <rocketmq.version>4.4.0</rocketmq.version>
         <seata.version>1.4.2</seata.version>
         <security.version>1.0.10.RELEASE</security.version>
+        <servlet.version>2.5</servlet.version>
         <skywalking.version>8.9.0</skywalking.version>
+        <solon-api.version>2.5.11</solon-api.version>
         <spring-bootstrap.version>3.1.5</spring-bootstrap.version>
         <spring-openfeign.version>3.1.1</spring-openfeign.version>
         <springfox-swagger.version>2.8.0</springfox-swagger.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger.bootstrap.ui.version>2.0.2</swagger.bootstrap.ui.version>
+        <tabula.version>1.0.5</tabula.version>
+        <thymeleaf.version>3.1.0.RELEASE</thymeleaf.version>
         <tika.version>2.7.0</tika.version>
         <transmittable.version>2.14.2</transmittable.version>
-        <zxing.version>3.3.3</zxing.version>
+        <vandeseer.easytable.version>0.8.5</vandeseer.easytable.version>
+        <xerces.version>2.9.1</xerces.version>
+        <xmlbeans.version>3.1.0</xmlbeans.version>
+        <xmlgraphics-commons.version>2.8</xmlgraphics-commons.version>
+        <zxing.version>3.5.1</zxing.version>
 
     </properties>
 
@@ -78,15 +100,16 @@
         <module>spring-cache-starter</module>
         <module>spring-db-starter</module>
         <module>spring-job-starter</module>
-        <module>spring-lock-starter</module>
         <module>spring-log-starter</module>
         <module>spring-mq-starter</module>
         <module>spring-cloud-starter</module>
-        <module>spring-ribbon</module>
-        <module>spring-mongodb-starter</module>
         <module>spring-file-starter</module>
         <module>spring-sso-starter</module>
         <module>spring-captcha-starter</module>
+        <module>spring-network-starter</module>
+        <module>spring-mongo-plus-starter</module>
+        <module>spring-pdf-starter</module>
+        <module>spring-poi-starter</module>
     </modules>
 
     <dependencies>
@@ -279,12 +302,6 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-lock-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-log-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
@@ -292,12 +309,6 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-mq-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-ribbon</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
@@ -315,7 +326,7 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-mongodb-starter</artifactId>
+                <artifactId>spring-mongo-plus-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
@@ -330,6 +341,31 @@
                 <artifactId>spring-sso-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-file-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-network-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-pdf-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-poi-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

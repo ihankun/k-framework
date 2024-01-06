@@ -1,11 +1,11 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
 import com.alibaba.fastjson.JSON;
-import io.ihankun.framework.cache.comm.RedisDataType;
-import io.ihankun.framework.cache.comm.RedisSizeControlMode;
+import io.ihankun.framework.cache.key.ICacheKey;
+import io.ihankun.framework.cache.enums.RedisDataType;
+import io.ihankun.framework.cache.enums.RedisSizeControlMode;
 import io.ihankun.framework.cache.config.RedisConfigProperties;
 import io.ihankun.framework.cache.holder.RedisTemplateHolder;
-import io.ihankun.framework.cache.key.CacheKey;
 import io.ihankun.framework.common.exception.BusinessException;
 import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import static io.ihankun.framework.cache.comm.CacheErrorCodeEnum.*;
+import static io.ihankun.framework.cache.error.CacheErrorCodeEnum.*;
 
 /**
  * @author hankun
@@ -31,7 +31,7 @@ public abstract class AbstractRedisCache {
     /**
      * 大小
      */
-    protected abstract Long size(CacheKey key);
+    protected abstract Long size(ICacheKey key);
 
     /**
      * 数据类型
@@ -53,7 +53,7 @@ public abstract class AbstractRedisCache {
      * @param key   缓存key
      * @param value 缓存value
      */
-    protected void validate(CacheKey key, Object value, Long expire, TimeUnit timeUnit) {
+    protected void validate(ICacheKey key, Object value, Long expire, TimeUnit timeUnit) {
 
         if (value == null) {
             return;
@@ -88,7 +88,7 @@ public abstract class AbstractRedisCache {
     /**
      * 大小限制
      */
-    private void sizeControl(RedisConfigProperties config, CacheKey key, Object value, Long expire, TimeUnit timeUnit) {
+    private void sizeControl(RedisConfigProperties config, ICacheKey key, Object value, Long expire, TimeUnit timeUnit) {
         //未设置过期时间
         if (expire == null || timeUnit == null) {
             throw BusinessException.build(NOT_SET_EXPIRE_TIME, key.get());

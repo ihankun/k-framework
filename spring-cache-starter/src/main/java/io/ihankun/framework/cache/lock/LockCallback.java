@@ -1,7 +1,6 @@
 package io.ihankun.framework.cache.lock;
 
-
-import io.ihankun.framework.cache.error.CacheErrorCode;
+import io.ihankun.framework.cache.error.RedissonLockErrorCode;
 import io.ihankun.framework.common.exception.BusinessException;
 
 /**
@@ -18,6 +17,6 @@ public interface LockCallback<T> {
      * 默认加锁失败时执行方法。
      */
     default T fail() {
-        throw BusinessException.build(CacheErrorCode.NOT_FOUND_REDISSON ,RedissonLock.getCurrentLocKey());
+        throw BusinessException.build(RedissonLockErrorCode.NOT_FOUND_REDISSON ,RedissonLock.get());
     }
 }

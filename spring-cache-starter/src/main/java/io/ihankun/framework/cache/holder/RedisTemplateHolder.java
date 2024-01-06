@@ -14,6 +14,7 @@ public class RedisTemplateHolder {
     }
 
     private volatile RedisTemplate redisTemplate;
+
     private RedisTemplateHolder() {}
 
     public static RedisTemplateHolder ins() {

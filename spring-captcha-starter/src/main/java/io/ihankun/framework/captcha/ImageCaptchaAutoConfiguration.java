@@ -1,25 +1,26 @@
 package io.ihankun.framework.captcha;
 
-import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
-import io.ihankun.framework.captcha.v1.generator.ImageTransform;
-import io.ihankun.framework.captcha.v1.generator.impl.CacheImageCaptchaGenerator;
-import io.ihankun.framework.captcha.v1.generator.impl.transform.Base64ImageTransform;
-import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
-import io.ihankun.framework.captcha.v1.resource.ResourceStore;
-import io.ihankun.framework.captcha.v1.resource.impl.DefaultImageCaptchaResourceManager;
-import io.ihankun.framework.captcha.v1.resource.impl.DefaultResourceStore;
-import io.ihankun.framework.captcha.v1.validator.ImageCaptchaValidator;
-import io.ihankun.framework.captcha.v1.validator.impl.BasicCaptchaTrackValidator;
-import io.ihankun.framework.captcha.v2.aop.CaptchaAdvisor;
-import io.ihankun.framework.captcha.v2.aop.CaptchaInterceptor;
-import io.ihankun.framework.captcha.v2.application.DefaultImageCaptchaApplication;
-import io.ihankun.framework.captcha.v2.application.ImageCaptchaApplication;
-import io.ihankun.framework.captcha.v2.autoconfig.CacheCaptchaTemplateListener;
-import io.ihankun.framework.captcha.v2.autoconfig.ImageCaptchaProperties;
-import io.ihankun.framework.captcha.v2.autoconfig.SliderCaptchaCacheProperties;
-import io.ihankun.framework.captcha.v2.plugins.SecondaryVerificationApplication;
-import io.ihankun.framework.captcha.v2.plugins.SpringMultiImageCaptchaGenerator;
-import io.ihankun.framework.captcha.v2.store.CacheStore;
+import io.ihankun.framework.captcha.CacheStoreAutoConfiguration;
+import io.ihankun.framework.captcha.generator.ImageCaptchaGenerator;
+import io.ihankun.framework.captcha.generator.ImageTransform;
+import io.ihankun.framework.captcha.generator.impl.CacheImageCaptchaGenerator;
+import io.ihankun.framework.captcha.generator.impl.transform.Base64ImageTransform;
+import io.ihankun.framework.captcha.resource.ImageCaptchaResourceManager;
+import io.ihankun.framework.captcha.resource.ResourceStore;
+import io.ihankun.framework.captcha.resource.impl.DefaultImageCaptchaResourceManager;
+import io.ihankun.framework.captcha.resource.impl.DefaultResourceStore;
+import io.ihankun.framework.captcha.validator.ImageCaptchaValidator;
+import io.ihankun.framework.captcha.validator.impl.BasicCaptchaTrackValidator;
+import io.ihankun.framework.captcha.aop.CaptchaAdvisor;
+import io.ihankun.framework.captcha.aop.CaptchaInterceptor;
+import io.ihankun.framework.captcha.application.DefaultImageCaptchaApplication;
+import io.ihankun.framework.captcha.application.ImageCaptchaApplication;
+import io.ihankun.framework.captcha.listener.CacheCaptchaTemplateListener;
+import io.ihankun.framework.captcha.config.ImageCaptchaProperties;
+import io.ihankun.framework.captcha.config.SliderCaptchaCacheProperties;
+import io.ihankun.framework.captcha.plugins.SecondaryVerificationApplication;
+import io.ihankun.framework.captcha.plugins.SpringMultiImageCaptchaGenerator;
+import io.ihankun.framework.captcha.store.CacheStore;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -30,6 +31,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Role;
 import org.springframework.core.annotation.Order;
 
+/**
+ * @author hankun
+ */
 @Order
 @Configuration
 @AutoConfigureAfter(CacheStoreAutoConfiguration.class)

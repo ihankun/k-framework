@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.2.2</version>
+        <version>1.4.0</version>
     </parent>
 
     <artifactId>spring-captcha-starter</artifactId>
@@ -36,6 +36,11 @@
         <dependency>
             <groupId>io.ihankun.framework</groupId>
             <artifactId>spring-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
 

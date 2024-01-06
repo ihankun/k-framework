@@ -20,7 +20,7 @@ import java.sql.Connection;
 
 /**
  * 功能描述:
- * @author: hankun
+ * @author hankun
  * @date: 2023/9/27
  */
 @Component
@@ -29,7 +29,6 @@ import java.sql.Connection;
 public class CommentInterceptor implements Interceptor {
     @Resource
     private DbConfig config;
-
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {

@@ -1,6 +1,6 @@
 package io.ihankun.framework.common.utils;
 
-import io.ihankun.framework.common.convert.MicaConversionService;
+import io.ihankun.framework.common.convert.ConversionService;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.support.GenericConversionService;
 import org.springframework.lang.Nullable;
@@ -32,7 +32,7 @@ public class ConvertUtil {
 		if (ClassUtils.isAssignableValue(targetType, source)) {
 			return (T) source;
 		}
-		GenericConversionService conversionService = MicaConversionService.getInstance();
+		GenericConversionService conversionService = ConversionService.getInstance();
 		return conversionService.convert(source, targetType);
 	}
 
@@ -53,7 +53,7 @@ public class ConvertUtil {
 		if (source == null) {
 			return null;
 		}
-		GenericConversionService conversionService = MicaConversionService.getInstance();
+		GenericConversionService conversionService = ConversionService.getInstance();
 		return (T) conversionService.convert(source, sourceType, targetType);
 	}
 
@@ -75,7 +75,7 @@ public class ConvertUtil {
 		if (source == null) {
 			return null;
 		}
-		GenericConversionService conversionService = MicaConversionService.getInstance();
+		GenericConversionService conversionService = ConversionService.getInstance();
 		return (T) conversionService.convert(source, targetType);
 	}
 

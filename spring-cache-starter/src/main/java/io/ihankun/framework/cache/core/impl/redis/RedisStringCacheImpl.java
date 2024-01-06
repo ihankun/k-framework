@@ -1,8 +1,8 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.comm.RedisDataType;
+import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.core.type.StringCache;
-import io.ihankun.framework.cache.key.CacheKey;
+import io.ihankun.framework.cache.enums.RedisDataType;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -15,17 +15,12 @@ import java.util.concurrent.TimeUnit;
 public class RedisStringCacheImpl extends AbstractRedisCache implements StringCache {
 
     @Override
-    public boolean save(CacheKey key, String value, Long expire) {
+    public boolean save(ICacheKey key, String value, Long expire) {
         return save(key, value, expire, TimeUnit.SECONDS);
     }
 
     @Override
-    public boolean setIfAbsent(CacheKey key, String value) {
-        return setIfAbsent(key, value, getMaxExpireTime(), TimeUnit.DAYS);
-    }
-
-    @Override
-    public boolean setIfAbsent(CacheKey key, String value, long timeout, TimeUnit unit) {
+    public boolean setIfAbsent(ICacheKey key, String value, long timeout, TimeUnit unit) {
         validate(key, value, timeout, unit);
         return getRedisTemplate().opsForValue().setIfAbsent(key.get(), value, timeout, unit);
     }
@@ -40,7 +35,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
      * @return 是否设置成功
      */
     @Override
-    public boolean save(CacheKey key, String value, Long expire, TimeUnit timeUnit) {
+    public boolean save(ICacheKey key, String value, Long expire, TimeUnit timeUnit) {
         validate(key, value, expire, timeUnit);
         try {
             getRedisTemplate().opsForValue().set(key.get(), value, expire, timeUnit);
@@ -52,13 +47,13 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public String get(CacheKey key) {
+    public String get(ICacheKey key) {
         Object value = getRedisTemplate().opsForValue().get(key.get());
         return value == null ? null : value.toString();
     }
 
     @Override
-    public boolean del(CacheKey key) {
+    public boolean del(ICacheKey key) {
         try {
             getRedisTemplate().delete(key.get());
         } catch (Exception e) {
@@ -69,12 +64,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean update(CacheKey key, String value) {
-        return update(key, value, getMaxExpireTime(), TimeUnit.DAYS);
-    }
-
-    @Override
-    public boolean update(CacheKey key, String value, Long expire, TimeUnit timeUnit) {
+    public boolean update(ICacheKey key, String value, Long expire, TimeUnit timeUnit) {
         validate(key, value, expire, timeUnit);
         try {
             getRedisTemplate().opsForValue().set(key.get(), value, expire, timeUnit);
@@ -86,7 +76,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean expire(CacheKey key, Long expire) {
+    public boolean expire(ICacheKey key, Long expire) {
         validate(key, null, expire, TimeUnit.SECONDS);
         try {
             getRedisTemplate().expire(key.get(), expire, TimeUnit.SECONDS);
@@ -98,7 +88,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean exits(CacheKey key) {
+    public boolean exits(ICacheKey key) {
         try {
             Object value = getRedisTemplate().opsForValue().get(key.get());
             return !ObjectUtils.isEmpty(value);
@@ -109,12 +99,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public Long atomic(CacheKey key, Long num) {
-        return atomic(key, num, getMaxExpireTime(), TimeUnit.DAYS);
-    }
-
-    @Override
-    public Long atomic(CacheKey key, Long num, Long expire, TimeUnit timeUnit) {
+    public Long atomic(ICacheKey key, Long num, Long expire, TimeUnit timeUnit) {
         validate(key, num, expire, timeUnit);
         try {
 
@@ -140,7 +125,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    protected Long size(CacheKey key) {
+    protected Long size(ICacheKey key) {
         try {
             return getRedisTemplate().opsForValue().size(key.get());
         } catch (Exception e) {

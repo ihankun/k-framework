@@ -1,9 +1,9 @@
 package io.ihankun.framework.common.exception;
 
 /**
- * @Author: hankun
+ * @author hankun
  * @date 2022/5/7 9:04
- * @Description  图片验证码异常
+ *  图片验证码异常
  */
 public class ImageCaptchaException extends RuntimeException{
     public ImageCaptchaException() {

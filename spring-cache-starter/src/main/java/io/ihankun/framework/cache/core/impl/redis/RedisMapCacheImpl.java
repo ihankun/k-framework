@@ -1,8 +1,8 @@
 package io.ihankun.framework.cache.core.impl.redis;
 
-import io.ihankun.framework.cache.comm.RedisDataType;
+import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.core.type.MapCache;
-import io.ihankun.framework.cache.key.CacheKey;
+import io.ihankun.framework.cache.enums.RedisDataType;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
@@ -15,11 +15,9 @@ import java.util.concurrent.TimeUnit;
 public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapCache<K, V> {
 
     @Override
-    public V getValue(CacheKey key, K mapKey) {
-
+    public V getValue(ICacheKey key, K mapKey) {
         try {
             return (V) getRedisTemplate().opsForHash().entries(key.get()).get(mapKey);
-
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -27,12 +25,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public boolean put(CacheKey key, K mapKey, V value) {
-        return put(key, mapKey, value, getMaxExpireTime(), TimeUnit.DAYS);
-    }
-
-    @Override
-    public boolean put(CacheKey key, K mapKey, V value, Long expire, TimeUnit timeUnit) {
+    public boolean put(ICacheKey key, K mapKey, V value, Long expire, TimeUnit timeUnit) {
         validate(key, value, expire, timeUnit);
         try {
             getRedisTemplate().opsForHash().put(key.get(), mapKey, value);
@@ -45,7 +38,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public boolean remove(CacheKey key, K mapKey) {
+    public boolean remove(ICacheKey key, K mapKey) {
         try {
             getRedisTemplate().opsForHash().delete(key.get(), mapKey);
         } catch (Exception e) {
@@ -56,7 +49,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public Long size(CacheKey key) {
+    public Long size(ICacheKey key) {
         try {
             return getRedisTemplate().opsForHash().size(key.get());
         } catch (Exception e) {
@@ -71,12 +64,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public boolean putAll(CacheKey key, Map<K, V> map) {
-        return putAll(key, map, getMaxExpireTime(), TimeUnit.DAYS);
-    }
-
-    @Override
-    public boolean putAll(CacheKey key, Map<K, V> map, Long expire, TimeUnit timeUnit) {
+    public boolean putAll(ICacheKey key, Map<K, V> map, Long expire, TimeUnit timeUnit) {
         validate(key, map, expire, timeUnit);
         try {
             getRedisTemplate().opsForHash().putAll(key.get(), map);
@@ -90,7 +78,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
 
 
     @Override
-    public boolean save(CacheKey key, Map<K, V> value, Long expire) {
+    public boolean save(ICacheKey key, Map<K, V> value, Long expire) {
         validate(key, value,expire,TimeUnit.SECONDS);
         try {
             getRedisTemplate().opsForHash().putAll(key.get(), value);
@@ -103,7 +91,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public Map<K, V> get(CacheKey key) {
+    public Map<K, V> get(ICacheKey key) {
         try {
             return (Map<K, V>) getRedisTemplate().opsForHash().entries(key.get());
         } catch (Exception e) {
@@ -113,7 +101,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public boolean del(CacheKey key) {
+    public boolean del(ICacheKey key) {
         try {
             getRedisTemplate().delete(key.get());
         } catch (Exception e) {
@@ -124,12 +112,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public boolean update(CacheKey key, Map<K, V> value) {
-        return update(key,value,getMaxExpireTime(),TimeUnit.DAYS);
-    }
-
-    @Override
-    public boolean update(CacheKey key, Map<K, V> value, Long expire, TimeUnit timeUnit) {
+    public boolean update(ICacheKey key, Map<K, V> value, Long expire, TimeUnit timeUnit) {
         validate(key, value,expire,timeUnit);
         try {
             value.entrySet().forEach(item -> getRedisTemplate().opsForHash().put(key.get(), item.getKey(), item.getValue()));
@@ -143,7 +126,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
 
 
     @Override
-    public boolean expire(CacheKey key, Long expire) {
+    public boolean expire(ICacheKey key, Long expire) {
         try {
             getRedisTemplate().expire(key.get(), expire, TimeUnit.SECONDS);
         } catch (Exception e) {
@@ -154,7 +137,7 @@ public class RedisMapCacheImpl <K, V> extends AbstractRedisCache implements MapC
     }
 
     @Override
-    public boolean exits(CacheKey key) {
+    public boolean exits(ICacheKey key) {
         try {
             Long size = getRedisTemplate().opsForHash().size(key.get());
             if (size == 0) {

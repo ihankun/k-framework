@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    io.ihankun.framework.mongoplus.config.MongoPlusConfiguration,\
+    io.ihankun.framework.mongoplus.config.MongoPlusAutoConfiguration,\
+    io.ihankun.framework.mongoplus.config.OverrideMongoConfiguration,\
+    io.ihankun.framework.mongoplus.property.MongoTransactionProperty,\
+    io.ihankun.framework.mongoplus.property.MongoDBFieldProperty,\
+    io.ihankun.framework.mongoplus.transactional.MongoTransactionManagerAutoConfiguration,\
+    io.ihankun.framework.mongoplus.config.MongoConfiguration

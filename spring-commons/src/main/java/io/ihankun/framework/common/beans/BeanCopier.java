@@ -1,6 +1,6 @@
 package io.ihankun.framework.common.beans;
 
-import io.ihankun.framework.common.utils.BeanUtil;
+import io.ihankun.framework.common.utils.bean.BeanUtil;
 import io.ihankun.framework.common.utils.plus.CollectionUtil;
 import io.ihankun.framework.common.utils.plus.ReflectUtil;
 import io.ihankun.framework.common.utils.string.StringUtil;
@@ -40,9 +40,6 @@ public abstract class BeanCopier {
 	private static final Type CLASS_UTILS = TypeUtils.parseType(ClassUtils.class.getName());
 	private static final Signature IS_ASSIGNABLE_VALUE = TypeUtils.parseSignature("boolean isAssignableValue(Class, Object)");
 	private static final String BEAN_NAME_PREFIX = BeanCopier.class.getName();
-	/**
-	 * The map to store {@link BeanCopier} of source type and class type for copy.
-	 */
 	private static final ConcurrentMap<BeanCopierKey, BeanCopier> BEAN_COPIER_MAP = new ConcurrentHashMap<>();
 
 	public static BeanCopier create(Class source, Class target, boolean useConverter) {
@@ -108,7 +105,6 @@ public abstract class BeanCopier {
 
 		@Override
 		protected ClassLoader getDefaultClassLoader() {
-			// hankun 保证 和 返回使用同一个 ClassLoader
 			return target.getClassLoader();
 		}
 
@@ -143,7 +139,6 @@ public abstract class BeanCopier {
 				return;
 			}
 
-			// 2018.12.27 by hankun 支持链式 bean
 			// 注意：此处需兼容链式bean 使用了 spring 的方法，比较耗时
 			PropertyDescriptor[] getters = ReflectUtil.getBeanGetters(source);
 			PropertyDescriptor[] setters = ReflectUtil.getBeanSetters(target);
@@ -191,12 +186,10 @@ public abstract class BeanCopier {
 				Class<?> getterPropertyType = getter.getPropertyType();
 				Class<?> setterPropertyType = setter.getPropertyType();
 
-				// hankun 2019.01.12 优化逻辑，先判断类型，类型一致直接 set，不同再判断 是否 类型转换
 				// nonNull Label
 				Label l0 = e.make_label();
 				// 判断类型是否一致，包括 包装类型
 				if (ClassUtils.isAssignable(setterPropertyType, getterPropertyType)) {
-					// 2018.12.27 by hankun 支持链式 bean
 					e.load_local(targetLocal);
 					e.load_local(sourceLocal);
 					e.invoke(read);
@@ -225,10 +218,6 @@ public abstract class BeanCopier {
 							e.unbox_or_zero(setterType);
 						}
 					}
-					// TODO hankun 支持 list，另外优化这块代码，目前太乱
-//					if (List.class.isAssignableFrom(setterPropertyType)) {
-//
-//					}
 					// 构造 set 方法
 					invokeWrite(e, write, writeMethod, nonNull, l0);
 				} else if (useConverter) {
@@ -294,7 +283,6 @@ public abstract class BeanCopier {
 		 * @param targetType targetType
 		 */
 		private void generateClassFormMap(ClassEmitter ce, CodeEmitter e, Type sourceType, Type targetType) {
-			// 2018.12.27 by hankun 支持链式 bean
 			PropertyDescriptor[] setters = ReflectUtil.getBeanSetters(target);
 
 			// 入口变量

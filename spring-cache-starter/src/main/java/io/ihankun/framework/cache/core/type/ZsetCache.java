@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.core.type;
 
-import io.ihankun.framework.cache.key.CacheKey;
+import io.ihankun.framework.cache.key.ICacheKey;
 import org.springframework.data.redis.core.ZSetOperations;
 
 import java.util.Set;
@@ -12,39 +12,26 @@ public interface ZsetCache<V> {
 
     /**
      * 增加元素
-     * @param key
-     * @param value
-     * @param score
      */
-    Boolean add(CacheKey key, V value, double score);
+    Boolean add(ICacheKey key, V value, double score);
 
     /**
      * 根据分数获取值
-     * @param key
-     * @param begin
-     * @param size
-     * @return
      */
-    Set<ZSetOperations.TypedTuple<V>> rangeWithScores(CacheKey key, long begin, long size);
+    Set<ZSetOperations.TypedTuple<V>> rangeWithScores(ICacheKey key, long begin, long size);
 
     /**
      * 删除元素
-     * @param key
-     * @param value
-     * @return
      */
-    Long remove(CacheKey key,V value);
+    Long remove(ICacheKey key,V value);
 
     /**
-     * 删除ZSET
-     * @param key
-     * @return
+     * 删除
      */
-    Boolean delete(CacheKey key);
+    Boolean del(ICacheKey key);
+
     /**
      * 获取元素个数
-     * @param key
-     * @return
      */
-    Long size(CacheKey key);
+    Long size(ICacheKey key);
 }
