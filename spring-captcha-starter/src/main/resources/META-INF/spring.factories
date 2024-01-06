@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  io.ihankun.framework.captcha.CacheStoreAutoConfiguration,\
+  io.ihankun.framework.captcha.ImageCaptchaAutoConfiguration

@@ -11,13 +11,14 @@ import java.util.Map;
  */
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "kun.rule.redis.size.check")
+@ConfigurationProperties(prefix = "redis.config.size.check")
 public class RedisSizeCheckProperties {
 
     /**
      * 是否开启
      */
     private boolean enabled = false;
+
     /**
      * 配置
      */

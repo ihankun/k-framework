@@ -1,6 +1,7 @@
 package io.ihankun.framework.cache;
 
 import io.ihankun.framework.cache.core.impl.redis.*;
+import io.ihankun.framework.cache.enums.CacheType;
 
 /**
  * @author hankun

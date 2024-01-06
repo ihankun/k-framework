@@ -1,5 +1,6 @@
 package io.ihankun.framework.common.exception;
 
+import io.ihankun.framework.common.error.ErrorCode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

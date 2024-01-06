@@ -1,15 +1,13 @@
 package io.ihankun.framework.cache.key.impl;
 
-
+import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.key.AbstractCacheKey;
-import io.ihankun.framework.cache.key.CacheKey;
+import io.ihankun.framework.common.utils.string.StringPool;
 
 /**
  * @author hankun
  */
-public class OrgCacheKey extends AbstractCacheKey implements CacheKey {
-
-    private static final String SPLIT = ":";
+public class OrgCacheKey extends AbstractCacheKey implements ICacheKey {
 
     private final String businessCode;
 
@@ -37,6 +35,11 @@ public class OrgCacheKey extends AbstractCacheKey implements CacheKey {
 
     @Override
     public String get() {
-        return formatKey(businessCode + SPLIT + orgId + SPLIT + key);
+        return domainFormatKey(businessCode + StringPool.COLON + orgId + StringPool.COLON + key);
+    }
+
+    @Override
+    public String getPrefix() {
+        return "";
     }
 }

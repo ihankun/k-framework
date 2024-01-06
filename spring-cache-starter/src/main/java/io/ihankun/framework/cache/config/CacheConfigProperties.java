@@ -1,7 +1,6 @@
 package io.ihankun.framework.cache.config;
 
-
-import io.ihankun.framework.cache.CacheType;
+import io.ihankun.framework.cache.enums.CacheType;
 
 /**
  * @author hankun

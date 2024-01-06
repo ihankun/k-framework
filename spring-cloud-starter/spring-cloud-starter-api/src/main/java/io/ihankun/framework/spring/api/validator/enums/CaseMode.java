@@ -13,4 +13,6 @@ public enum CaseMode {
     /**
      * 小写
      */
+    LOWER,
+    ;
 }

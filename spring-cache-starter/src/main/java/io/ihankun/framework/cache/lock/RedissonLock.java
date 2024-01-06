@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.lock;
 
-import io.ihankun.framework.cache.error.CacheErrorCode;
+import io.ihankun.framework.cache.error.RedissonLockErrorCode;
 import io.ihankun.framework.cache.holder.RedissonClientHolder;
 import io.ihankun.framework.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
@@ -89,7 +89,7 @@ public class RedissonLock {
         } catch (InterruptedException e) {
             log.error("获取分布式锁时出现异常，lockKey = {},errorMsg = {}, error stack = {}", locKey, e.getMessage(), e);
             Thread.currentThread().interrupt();
-            throw BusinessException.build(CacheErrorCode.GET_REDISSON_EX, e.getMessage());
+            throw BusinessException.build(RedissonLockErrorCode.GET_REDISSON_EX, e.getMessage());
         } finally {
             if (rLock.isHeldByCurrentThread()) {
                 rLock.unlock();
@@ -98,7 +98,7 @@ public class RedissonLock {
         }
     }
 
-    public static String getCurrentLocKey() {
+    public static String get() {
         return LOC_KEY_THREAD_LOCAL.get();
     }
 }

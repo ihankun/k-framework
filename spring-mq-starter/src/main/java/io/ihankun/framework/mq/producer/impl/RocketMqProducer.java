@@ -9,7 +9,7 @@ import io.ihankun.framework.common.context.GrayContext;
 import io.ihankun.framework.common.context.LoginUserContext;
 import io.ihankun.framework.common.context.LoginUserInfo;
 import io.ihankun.framework.common.id.IdGenerator;
-import io.ihankun.framework.common.utils.ServerStateUtil;
+import io.ihankun.framework.common.utils.spring.ServerStateUtil;
 import io.ihankun.framework.common.utils.spring.SpringHelpers;
 import io.ihankun.framework.log.constant.TraceLogConstant;
 import io.ihankun.framework.log.context.TraceLogContext;
