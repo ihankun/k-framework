@@ -110,6 +110,7 @@
         <module>spring-mongo-plus-starter</module>
         <module>spring-pdf-starter</module>
         <module>spring-poi-starter</module>
+        <module>spring-token-starter</module>
     </modules>
 
     <dependencies>
