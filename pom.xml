@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun.framework</groupId>
     <artifactId>ihank-spring-framework</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>1.4.1</framework.version>
+        <framework.version>1.4.2</framework.version>
 
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
@@ -107,7 +107,7 @@
         <module>spring-sso-starter</module>
         <module>spring-captcha-starter</module>
         <module>spring-network-starter</module>
-        <module>spring-mongo-plus-starter</module>
+        <module>spring-mongo-starter</module>
         <module>spring-pdf-starter</module>
         <module>spring-poi-starter</module>
         <module>spring-token-starter</module>
@@ -327,7 +327,7 @@
 
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-mongo-plus-starter</artifactId>
+                <artifactId>spring-mongo-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 

@@ -6,10 +6,10 @@
     <parent>
         <groupId>io.ihankun.framework</groupId>
         <artifactId>ihank-spring-framework</artifactId>
-        <version>1.4.1</version>
+        <version>1.4.2</version>
     </parent>
 
-    <artifactId>spring-mongo-plus-starter</artifactId>
+    <artifactId>spring-mongo-starter</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
