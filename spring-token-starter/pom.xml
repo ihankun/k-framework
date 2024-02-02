@@ -9,7 +9,7 @@
         <version>1.4.2</version>
     </parent>
 
-    <artifactId>spring-sso-starter</artifactId>
+    <artifactId>spring-token-starter</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
