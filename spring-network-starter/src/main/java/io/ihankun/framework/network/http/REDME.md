@@ -4,7 +4,7 @@
 ```xml
 <dependency>
     <groupId>io.ihankun.framework</groupId>
-    <artifactId>spring-http-starter</artifactId>
+    <artifactId>spring-network-starter</artifactId>
 </dependency>
 ```
 
