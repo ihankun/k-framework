@@ -1,10 +1,13 @@
 package io.ihankun.framework.captcha.v2;
 
 import io.ihankun.framework.captcha.v2.generator.GeneratorInterface;
-import io.ihankun.framework.captcha.v2.generator.entity.CaptchaReturnVO;
+import io.ihankun.framework.captcha.v2.generator.entity.CaptchaGeneratorVO;
 import io.ihankun.framework.captcha.v2.generator.impl.SliderGeneratorImpl;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author hankun
+ */
 @Slf4j
 public class CaptchaGenerator {
 
@@ -22,7 +25,7 @@ public class CaptchaGenerator {
         this.generatorInterface = new SliderGeneratorImpl();
     }
 
-    public CaptchaReturnVO generator() {
+    public CaptchaGeneratorVO generator() {
         return generatorInterface.generator();
     }
 }
