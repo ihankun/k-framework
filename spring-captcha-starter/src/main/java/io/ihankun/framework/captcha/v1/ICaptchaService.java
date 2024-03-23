@@ -1,8 +1,8 @@
 package io.ihankun.framework.captcha.v1;
 
 import io.ihankun.framework.captcha.v1.entity.CaptchaVo;
-import io.ihankun.framework.common.utils.encrypt.Base64Util;
-import io.ihankun.framework.common.utils.string.StringUtil;
+import io.ihankun.framework.common.v1.utils.encrypt.Base64Util;
+import io.ihankun.framework.common.v1.utils.string.StringUtil;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;

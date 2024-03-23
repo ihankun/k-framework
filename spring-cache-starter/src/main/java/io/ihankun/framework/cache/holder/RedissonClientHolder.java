@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.holder;
 
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
 import org.redisson.api.RedissonClient;
 
 /**

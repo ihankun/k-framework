@@ -2,7 +2,7 @@ package io.ihankun.framework.file.client.impl.sftp;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.extra.ssh.Sftp;
-import io.ihankun.framework.common.utils.io.FileUtils;
+import io.ihankun.framework.common.v1.utils.io.FileUtils;
 import io.ihankun.framework.file.client.AbstractFileClient;
 
 import java.io.File;

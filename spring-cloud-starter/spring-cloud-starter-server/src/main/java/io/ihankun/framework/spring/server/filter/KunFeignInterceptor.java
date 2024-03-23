@@ -2,7 +2,7 @@ package io.ihankun.framework.spring.server.filter;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
 import io.ihankun.framework.spring.server.filter.thread.IKunThreadLocalFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

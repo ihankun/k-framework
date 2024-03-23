@@ -6,8 +6,8 @@ import io.ihankun.framework.cache.enums.RedisDataType;
 import io.ihankun.framework.cache.enums.RedisSizeControlMode;
 import io.ihankun.framework.cache.config.RedisConfigProperties;
 import io.ihankun.framework.cache.holder.RedisTemplateHolder;
-import io.ihankun.framework.common.exception.BusinessException;
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.exception.BusinessException;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 

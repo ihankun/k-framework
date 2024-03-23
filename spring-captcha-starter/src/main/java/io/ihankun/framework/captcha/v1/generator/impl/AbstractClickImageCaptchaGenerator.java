@@ -6,7 +6,7 @@ import io.ihankun.framework.captcha.v1.entity.ClickImageCheckDefinition;
 import io.ihankun.framework.captcha.v1.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
 import io.ihankun.framework.captcha.v1.entity.Resource;
-import io.ihankun.framework.common.utils.captcha.CaptchaImageUtils;
+import io.ihankun.framework.common.v1.utils.captcha.CaptchaImageUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

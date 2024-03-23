@@ -2,7 +2,7 @@ package io.ihankun.framework.cache.lock;
 
 import io.ihankun.framework.cache.error.RedissonLockErrorCode;
 import io.ihankun.framework.cache.holder.RedissonClientHolder;
-import io.ihankun.framework.common.exception.BusinessException;
+import io.ihankun.framework.common.v1.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;

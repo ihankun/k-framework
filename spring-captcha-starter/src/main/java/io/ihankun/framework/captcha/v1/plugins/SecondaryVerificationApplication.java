@@ -4,7 +4,7 @@ import io.ihankun.framework.captcha.v1.entity.ImageCaptchaTrack;
 import io.ihankun.framework.captcha.v1.application.FilterImageCaptchaApplication;
 import io.ihankun.framework.captcha.v1.application.ImageCaptchaApplication;
 import io.ihankun.framework.captcha.v1.config.SecondaryVerificationProperties;
-import io.ihankun.framework.common.response.ResponseResult;
+import io.ihankun.framework.common.v1.response.ResponseResult;
 
 import java.util.Collections;
 import java.util.Map;

@@ -2,8 +2,8 @@ package io.ihankun.framework.cache;
 
 import io.ihankun.framework.cache.enums.RedisCommand;
 import io.ihankun.framework.cache.key.CacheKey;
-import io.ihankun.framework.common.utils.json.JsonUtil;
-import io.ihankun.framework.common.utils.plus.CollectionUtil;
+import io.ihankun.framework.common.v1.utils.json.JsonUtil;
+import io.ihankun.framework.common.v1.utils.plus.CollectionUtil;
 import lombok.Getter;
 import org.springframework.data.domain.Range;
 import org.springframework.data.redis.connection.BitFieldSubCommands;

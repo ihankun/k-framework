@@ -1,9 +1,9 @@
 package io.ihankun.framework.network.http;
 
 
-import io.ihankun.framework.common.error.impl.CommonErrorCode;
-import io.ihankun.framework.common.exception.BusinessException;
-import io.ihankun.framework.common.response.ResponseResult;
+import io.ihankun.framework.common.v1.error.impl.CommonErrorCode;
+import io.ihankun.framework.common.v1.exception.BusinessException;
+import io.ihankun.framework.common.v1.response.ResponseResult;
 
 /**
  * @author hankun

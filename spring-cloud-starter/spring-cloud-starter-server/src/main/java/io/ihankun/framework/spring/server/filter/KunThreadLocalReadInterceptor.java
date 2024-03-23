@@ -1,6 +1,6 @@
 package io.ihankun.framework.spring.server.filter;
 
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
 import io.ihankun.framework.spring.server.filter.thread.IKunThreadLocalFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;

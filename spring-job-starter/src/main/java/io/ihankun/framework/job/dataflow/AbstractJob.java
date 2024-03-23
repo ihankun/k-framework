@@ -1,6 +1,6 @@
 package io.ihankun.framework.job.dataflow;
 
-import io.ihankun.framework.common.utils.spring.ServerStateUtil;
+import io.ihankun.framework.common.v1.utils.spring.ServerStateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 

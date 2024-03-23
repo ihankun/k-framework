@@ -3,10 +3,10 @@ package io.ihankun.framework.cache.key;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import io.ihankun.framework.cache.config.RedisConfigProperties;
-import io.ihankun.framework.common.context.DomainContext;
-import io.ihankun.framework.common.exception.BusinessException;
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
-import io.ihankun.framework.common.utils.string.StringPool;
+import io.ihankun.framework.common.v1.context.DomainContext;
+import io.ihankun.framework.common.v1.exception.BusinessException;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.utils.string.StringPool;
 
 import java.util.List;
 

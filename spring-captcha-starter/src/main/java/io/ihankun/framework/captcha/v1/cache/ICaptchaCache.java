@@ -1,7 +1,7 @@
 package io.ihankun.framework.captcha.v1.cache;
 
 import io.ihankun.framework.captcha.v1.utils.CaptchaUtil;
-import io.ihankun.framework.common.utils.string.CharPool;
+import io.ihankun.framework.common.v1.utils.string.CharPool;
 import org.springframework.lang.Nullable;
 
 /**

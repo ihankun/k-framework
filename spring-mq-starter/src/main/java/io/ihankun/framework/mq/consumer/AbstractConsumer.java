@@ -2,7 +2,7 @@ package io.ihankun.framework.mq.consumer;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

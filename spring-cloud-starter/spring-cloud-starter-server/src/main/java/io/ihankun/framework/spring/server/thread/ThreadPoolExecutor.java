@@ -1,8 +1,8 @@
 package io.ihankun.framework.spring.server.thread;
 
-import io.ihankun.framework.common.context.DomainContext;
-import io.ihankun.framework.common.context.LoginUserContext;
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.common.v1.context.DomainContext;
+import io.ihankun.framework.common.v1.context.LoginUserContext;
+import io.ihankun.framework.common.v1.id.IdGenerator;
 import io.ihankun.framework.spring.server.utils.ThreadContextHolder;
 import lombok.extern.slf4j.Slf4j;
 

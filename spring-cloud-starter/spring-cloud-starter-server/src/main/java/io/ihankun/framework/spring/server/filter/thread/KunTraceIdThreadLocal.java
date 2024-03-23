@@ -1,7 +1,8 @@
 package io.ihankun.framework.spring.server.filter.thread;
 
+import cn.hutool.core.lang.UUID;
 import feign.RequestTemplate;
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.common.v1.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
 import io.ihankun.framework.spring.server.utils.RequestLogUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -41,7 +42,7 @@ public class KunTraceIdThreadLocal implements IKunThreadLocalFilter {
             traceId = IdGenerator.ins().generator().toString();
         }
         template.header(TraceLogContext.TRACE_HEADER_NAME, traceId);
-        log.info("TraceIdThreadLocal.readHeader,traceId={}", traceId);
+        log.info("TraceIdThreadLocal.writeHeader,traceId={}", traceId);
         return traceId;
     }
 
@@ -67,7 +68,8 @@ public class KunTraceIdThreadLocal implements IKunThreadLocalFilter {
         }
         //如果获取不到traceId，则尝试主动生成一个ID
         if (StringUtils.isEmpty(traceId)) {
-            traceId = IdGenerator.ins().generator().toString();
+            //traceId = IdGenerator.ins().generator().toString();
+            traceId = UUID.fastUUID().toString();
             log.info("TraceIdThreadLocal.readHeader.generator,traceId={}", traceId);
         }
         //放入log4j2的线程上下文中，打印日志时会用到

@@ -1,6 +1,6 @@
 package io.ihankun.framework.spring.server.advice;
 
-import io.ihankun.framework.common.response.ResponseResult;
+import io.ihankun.framework.common.v1.response.ResponseResult;
 import io.ihankun.framework.spring.server.utils.RequestLogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

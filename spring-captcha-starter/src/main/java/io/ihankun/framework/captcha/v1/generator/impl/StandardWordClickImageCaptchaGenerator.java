@@ -6,9 +6,9 @@ import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.impl.provider.ClassPathResourceProvider;
 import io.ihankun.framework.captcha.v1.entity.*;
-import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
-import io.ihankun.framework.common.utils.captcha.CaptchaImageUtils;
-import io.ihankun.framework.common.utils.FontUtils;
+import io.ihankun.framework.common.v1.constants.captcha.CaptchaTypeConstant;
+import io.ihankun.framework.common.v1.utils.captcha.CaptchaImageUtils;
+import io.ihankun.framework.common.v1.utils.FontUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
-import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.DEFAULT_SLIDER_IMAGE_RESOURCE_PATH;
-import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.DEFAULT_TAG;
+import static io.ihankun.framework.common.v1.constants.captcha.CaptchaCommConstant.DEFAULT_SLIDER_IMAGE_RESOURCE_PATH;
+import static io.ihankun.framework.common.v1.constants.captcha.CaptchaCommConstant.DEFAULT_TAG;
 
 
 /**

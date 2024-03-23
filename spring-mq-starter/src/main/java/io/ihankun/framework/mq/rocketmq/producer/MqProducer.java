@@ -1,7 +1,7 @@
 package io.ihankun.framework.mq.rocketmq.producer;
 
-import io.ihankun.framework.common.utils.ip.IpUtil;
-import io.ihankun.framework.common.utils.spring.ServerStateUtil;
+import io.ihankun.framework.common.v1.utils.ip.IpUtil;
+import io.ihankun.framework.common.v1.utils.spring.ServerStateUtil;
 import io.ihankun.framework.mq.constants.EnvMark;
 import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;

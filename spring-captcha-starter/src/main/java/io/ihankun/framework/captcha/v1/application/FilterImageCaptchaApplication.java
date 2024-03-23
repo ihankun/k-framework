@@ -8,8 +8,8 @@ import io.ihankun.framework.captcha.v1.entity.ImageCaptchaVO;
 import io.ihankun.framework.captcha.v1.enums.CaptchaImageType;
 import io.ihankun.framework.captcha.v1.store.CacheStore;
 import io.ihankun.framework.captcha.v1.validator.ImageCaptchaValidator;
-import io.ihankun.framework.common.response.ResponseCaptcha;
-import io.ihankun.framework.common.response.ResponseResult;
+import io.ihankun.framework.common.v1.response.ResponseCaptcha;
+import io.ihankun.framework.common.v1.response.ResponseResult;
 
 /**
  * @author hankun

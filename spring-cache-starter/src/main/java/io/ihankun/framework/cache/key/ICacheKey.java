@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache.key;
 
-import io.ihankun.framework.common.utils.string.StringPool;
-import io.ihankun.framework.common.utils.string.StringUtil;
+import io.ihankun.framework.common.v1.utils.string.StringPool;
+import io.ihankun.framework.common.v1.utils.string.StringUtil;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Nullable;

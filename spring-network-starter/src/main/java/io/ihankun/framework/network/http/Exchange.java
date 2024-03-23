@@ -2,8 +2,8 @@ package io.ihankun.framework.network.http;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
-import io.ihankun.framework.common.utils.exception.Exceptions;
-import io.ihankun.framework.common.utils.json.JsonUtil;
+import io.ihankun.framework.common.v1.utils.exception.Exceptions;
+import io.ihankun.framework.common.v1.utils.json.JsonUtil;
 import okhttp3.Call;
 import okhttp3.Request;
 import okhttp3.Response;

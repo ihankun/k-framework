@@ -3,7 +3,7 @@ package io.ihankun.framework.job.dataflow;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.dataflow.DataflowJob;
 import com.google.common.collect.Lists;
-import io.ihankun.framework.common.context.GrayContext;
+import io.ihankun.framework.common.v1.context.GrayContext;
 import io.ihankun.framework.job.dynamic.JobThread;
 import io.ihankun.framework.log.context.TraceLogContext;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.ratelimiter;
 
-import io.ihankun.framework.common.utils.string.CharPool;
+import io.ihankun.framework.common.v1.utils.string.CharPool;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.StringRedisTemplate;

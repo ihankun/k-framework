@@ -3,7 +3,7 @@ package io.ihankun.framework.spring.server.nacos.listeners;
 import com.alibaba.cloud.nacos.NacosConfigManager;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.client.config.listener.impl.PropertiesListener;
-import io.ihankun.framework.common.event.DataSourceRefreshEvent;
+import io.ihankun.framework.common.v1.event.DataSourceRefreshEvent;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

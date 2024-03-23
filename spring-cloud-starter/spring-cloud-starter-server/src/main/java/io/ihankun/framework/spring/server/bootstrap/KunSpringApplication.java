@@ -1,6 +1,6 @@
 package io.ihankun.framework.spring.server.bootstrap;
 
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.common.v1.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;

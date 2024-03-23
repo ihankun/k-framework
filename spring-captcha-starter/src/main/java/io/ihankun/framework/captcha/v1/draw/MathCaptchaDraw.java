@@ -2,7 +2,7 @@ package io.ihankun.framework.captcha.v1.draw;
 
 
 import io.ihankun.framework.captcha.v1.utils.CaptchaUtil;
-import io.ihankun.framework.common.utils.string.StringUtil;
+import io.ihankun.framework.common.v1.utils.string.StringUtil;
 
 import java.awt.*;
 import java.util.Random;

@@ -2,12 +2,10 @@ package io.ihankun.framework.job.dataflow;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
-import io.ihankun.framework.common.context.GrayContext;
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.common.v1.context.GrayContext;
+import io.ihankun.framework.common.v1.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.List;
 
 /**
  * 简单job(不支持分片)

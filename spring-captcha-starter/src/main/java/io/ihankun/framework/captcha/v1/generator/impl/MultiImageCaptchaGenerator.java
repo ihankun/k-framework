@@ -9,7 +9,7 @@ import io.ihankun.framework.captcha.v1.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.generator.impl.provider.CommonImageCaptchaGeneratorProvider;
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
-import io.ihankun.framework.common.utils.object.AbsObjectUtils;
+import io.ihankun.framework.common.v1.utils.object.AbsObjectUtils;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant.*;
+import static io.ihankun.framework.common.v1.constants.captcha.CaptchaTypeConstant.*;
 
 /**
  * @author hankun

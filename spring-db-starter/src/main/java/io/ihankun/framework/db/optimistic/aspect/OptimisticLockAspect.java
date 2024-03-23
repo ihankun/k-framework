@@ -1,10 +1,10 @@
 package io.ihankun.framework.db.optimistic.aspect;
 
-import io.ihankun.framework.common.exception.BusinessException;
-import io.ihankun.framework.common.optimistic.Lock;
-import io.ihankun.framework.common.optimistic.LockId;
-import io.ihankun.framework.common.optimistic.LockParam;
-import io.ihankun.framework.common.optimistic.LockVersion;
+import io.ihankun.framework.common.v1.exception.BusinessException;
+import io.ihankun.framework.common.v1.optimistic.Lock;
+import io.ihankun.framework.common.v1.optimistic.LockId;
+import io.ihankun.framework.common.v1.optimistic.LockParam;
+import io.ihankun.framework.common.v1.optimistic.LockVersion;
 import io.ihankun.framework.db.error.CommonDbErrorCode;
 import io.ihankun.framework.db.optimistic.dao.OptimisticLockMapper;
 import lombok.Getter;
@@ -42,7 +42,7 @@ public class OptimisticLockAspect {
     @Resource
     private OptimisticLockMapper lockService;
 
-    @Pointcut("@annotation(io.ihankun.framework.common.optimistic.Lock)")
+    @Pointcut("@annotation(io.ihankun.framework.common.v1.optimistic.Lock)")
     public void lockPointcut() {
 
     }

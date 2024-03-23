@@ -2,7 +2,7 @@ package io.ihankun.framework.cache.key.impl;
 
 import io.ihankun.framework.cache.key.ICacheKey;
 import io.ihankun.framework.cache.key.AbstractCacheKey;
-import io.ihankun.framework.common.utils.string.StringPool;
+import io.ihankun.framework.common.v1.utils.string.StringPool;
 
 /**
  * @author hankun

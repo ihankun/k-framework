@@ -2,7 +2,7 @@ package io.ihankun.framework.captcha.v1.validator;
 
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaTrack;
-import io.ihankun.framework.common.response.ResponseResult;
+import io.ihankun.framework.common.v1.response.ResponseResult;
 
 import java.util.Map;
 

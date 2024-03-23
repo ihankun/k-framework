@@ -1,7 +1,7 @@
 package io.ihankun.framework.spring.server.convert;
 
 import com.github.pagehelper.PageInfo;
-import io.ihankun.framework.common.base.BasePageResult;
+import io.ihankun.framework.common.v1.base.BasePageResult;
 
 /**
  * @author hankun

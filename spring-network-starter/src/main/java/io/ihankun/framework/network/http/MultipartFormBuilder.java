@@ -1,6 +1,6 @@
 package io.ihankun.framework.network.http;
 
-import io.ihankun.framework.common.utils.exception.Exceptions;
+import io.ihankun.framework.common.v1.utils.exception.Exceptions;
 import okhttp3.Headers;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;

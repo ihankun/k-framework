@@ -1,6 +1,6 @@
 package io.ihankun.framework.captcha.v1.utils;
 
-import io.ihankun.framework.common.utils.string.StringPool;
+import io.ihankun.framework.common.v1.utils.string.StringPool;
 import org.springframework.boot.convert.DurationStyle;
 
 import java.awt.*;

@@ -1,6 +1,6 @@
 package io.ihankun.framework.spring.server.thread;
 
-import io.ihankun.framework.common.thread.NamedThreadFactory;
+import io.ihankun.framework.common.v1.thread.NamedThreadFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Lazy;

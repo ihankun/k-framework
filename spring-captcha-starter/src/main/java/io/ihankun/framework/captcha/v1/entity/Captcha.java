@@ -2,8 +2,8 @@ package io.ihankun.framework.captcha.v1.entity;
 
 import io.ihankun.framework.captcha.v1.draw.*;
 import io.ihankun.framework.captcha.v1.enums.CaptchaType;
-import io.ihankun.framework.common.utils.Holder;
-import io.ihankun.framework.common.utils.exception.Exceptions;
+import io.ihankun.framework.common.v1.utils.Holder;
+import io.ihankun.framework.common.v1.utils.exception.Exceptions;
 import lombok.SneakyThrows;
 import org.springframework.core.io.ClassPathResource;
 

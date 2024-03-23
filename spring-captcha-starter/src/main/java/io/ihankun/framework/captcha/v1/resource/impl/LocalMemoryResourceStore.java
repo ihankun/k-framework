@@ -4,8 +4,8 @@ package io.ihankun.framework.captcha.v1.resource.impl;
 import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.entity.Resource;
 import io.ihankun.framework.captcha.v1.entity.ResourceMap;
-import io.ihankun.framework.common.constants.captcha.CaptchaCommConstant;
-import io.ihankun.framework.common.utils.object.AbsObjectUtils;
+import io.ihankun.framework.common.v1.constants.captcha.CaptchaCommConstant;
+import io.ihankun.framework.common.v1.utils.object.AbsObjectUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
