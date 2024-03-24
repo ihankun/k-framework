@@ -10,6 +10,15 @@ public class SliderGeneratorImpl implements GeneratorInterface {
 
     @Override
     public CaptchaGeneratorVO generator() {
-        return null;
+        CaptchaGeneratorVO captchaVO = new CaptchaGeneratorVO();
+
+
+
+
+
+
+
+
+        return captchaVO;
     }
 }
