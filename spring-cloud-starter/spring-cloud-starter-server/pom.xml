@@ -25,6 +25,11 @@
 
         <dependency>
             <groupId>io.ihankun.framework</groupId>
+            <artifactId>spring-web-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ihankun.framework</groupId>
             <artifactId>spring-commons</artifactId>
         </dependency>
 
@@ -38,16 +43,6 @@
             <artifactId>spring-db-starter</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

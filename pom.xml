@@ -111,6 +111,8 @@
         <module>spring-pdf-starter</module>
         <module>spring-poi-starter</module>
         <module>spring-token-starter</module>
+        <module>spring-web-starter</module>
+        <module>spring-redis-starter</module>
     </modules>
 
     <dependencies>
@@ -364,6 +366,18 @@
             <dependency>
                 <groupId>io.ihankun.framework</groupId>
                 <artifactId>spring-poi-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-web-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.framework</groupId>
+                <artifactId>spring-redis-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
