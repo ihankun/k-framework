@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.pubsub;
 
-import io.ihankun.framework.cache.RedisCache;
+import io.ihankun.framework.redis.RedisCache;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;

@@ -1,7 +1,6 @@
-package io.ihankun.framework.cache;
+package io.ihankun.framework.redis;
 
-import io.ihankun.framework.cache.enums.RedisCommand;
-import io.ihankun.framework.cache.key.CacheKey;
+import io.ihankun.framework.redis.key.CacheKey;
 import io.ihankun.framework.common.v1.utils.json.JsonUtil;
 import io.ihankun.framework.common.v1.utils.plus.CollectionUtil;
 import lombok.Getter;
@@ -1489,9 +1488,9 @@ public class RedisCache {
 	 * @return 位图统计个数
 	 */
 	@Nullable
-	public Long bitCount(String key, long start, long end, RedisCommand.BitMapModel model) {
+	public Long bitCount(String key, long start, long end, io.ihankun.framework.redis.enums.RedisCommand.BitMapModel model) {
 		return redisTemplate.execute((RedisCallback<Long>) redis ->
-			(Long) redis.execute(RedisCommand.BITCOUNT, keySerialize(key),
+			(Long) redis.execute(io.ihankun.framework.redis.enums.RedisCommand.BITCOUNT, keySerialize(key),
 				keySerialize(Long.toString(start)), keySerialize(Long.toString(end)),
 				keySerialize(model.name()))
 		);

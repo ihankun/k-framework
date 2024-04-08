@@ -1,10 +1,10 @@
 package io.ihankun.framework.cache.requestlock.aspect;
 
 import com.alibaba.fastjson.JSON;
-import io.ihankun.framework.cache.CacheBuilder;
-import io.ihankun.framework.cache.CacheManager;
-import io.ihankun.framework.cache.key.ICacheKey;
-import io.ihankun.framework.cache.key.impl.OrgCacheKey;
+import io.ihankun.framework.redis.CacheBuilder;
+import io.ihankun.framework.redis.CacheManager;
+import io.ihankun.framework.redis.key.ICacheKey;
+import io.ihankun.framework.redis.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.requestlock.annotation.RequestLock;
 import io.ihankun.framework.common.v1.base.BaseService;
 import io.ihankun.framework.common.v1.context.LoginUserContext;

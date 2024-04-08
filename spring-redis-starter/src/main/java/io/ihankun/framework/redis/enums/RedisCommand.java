@@ -1,4 +1,4 @@
-package io.ihankun.framework.cache.enums;
+package io.ihankun.framework.redis.enums;
 
 /**
  * redis常量

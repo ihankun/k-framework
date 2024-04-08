@@ -17,6 +17,6 @@ public interface LockCallback<T> {
      * 默认加锁失败时执行方法。
      */
     default T fail() {
-        throw BusinessException.build(RedissonLockErrorCode.NOT_FOUND_REDISSON ,RedissonLock.get());
+        throw BusinessException.build(RedissonLockErrorCode.NOT_FOUND_REDISSON , RedissonLock.get());
     }
 }

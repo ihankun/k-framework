@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache.core;
 
-import io.ihankun.framework.cache.enums.RedisDataType;
 import io.ihankun.framework.cache.enums.TimeoutTypeEnum;
+import io.ihankun.framework.redis.enums.RedisDataType;
 import lombok.Data;
 
 import java.time.Duration;
