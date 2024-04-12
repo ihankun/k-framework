@@ -102,7 +102,6 @@
         <module>framework-cache-starter</module>
         <module>framework-db-starter</module>
         <module>framework-job-starter</module>
-        <module>framework-log-starter</module>
         <module>framework-mq-starter</module>
         <module>framework-spring-cloud</module>
         <module>framework-file-starter</module>
@@ -298,6 +297,12 @@
                 <version>${framework.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.ihankun.starter</groupId>
+                <artifactId>framework-log-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
 
 
 
@@ -320,11 +325,7 @@
                 <version>${framework.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.ihankun</groupId>
-                <artifactId>framework-log-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
+
 
             <dependency>
                 <groupId>io.ihankun</groupId>

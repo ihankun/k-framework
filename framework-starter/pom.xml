@@ -21,6 +21,7 @@
 
     <modules>
         <module>framework-redis-starter</module>
+        <module>framework-log-starter</module>
     </modules>
 
 </project>
