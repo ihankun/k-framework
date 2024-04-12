@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <!-- 第一全局参数信息 -->
+    <Properties>
+        <!--          <Property name="LOG_PATTERN"> -->
+        <!--           {"appName": "${spring:spring.application.name}","time": "%date{yyyy-MM-dd HH:mm:ss.SSS}","level": "%level","pid": "%pid","thread": "%thread","class": "%logger","method": "%method","line": "%line","message": "%enc{%message}{JSON}","traceId":"%X{traceId}","orgId":"%X{orgId}","hospitalId":"%X{hospitalId}","hospitalName":"%X{hospitalName}","userId":"%X{userId}","userName":"%X{userName}","deptId":"%X{deptId}","deptName":"%X{deptName}","userSysId":"%X{userSysId}","systemId":"%X{systemId}","stackTrace":"%ex"}%n -->
+        <!--          </Property> -->
+        <property name="LOG_PATTERN"
+                  value="%d{DEFAULT} -- pid:%pid -- traceId:%X{traceId} -- [%thread] %-5level %logger{1.}.%M - %maxLen{%msg}{5120} %n"/>
+        <property name="CONSOLE_LOG_PATTERN"
+                  value="%d{DEFAULT} -- pid:%pid -- traceId:%X{traceId} -- [%thread] %highlight{%-5level}{ERROR=Bright RED, WARN=Bright Yellow, INFO=Bright Green, DEBUG=Bright Cyan, TRACE=Bright White} %logger{1.}.%M - %maxLen{%msg}{5120} %n"/>
+
+
+        <!-- 全量 日志文件位置及名称，在rollFile的时候老文件的生成规则 -->
+        <property name="ALL_FILE_PATH_ING" value="logs/o2o.log"/>
+        <property name="ALL_FILE_PATH_ED" value="logs/o2o.log.%d{yyyy-MM-dd}.%i.gz"/>
+
+        <!-- error 日志文件位置及名称，在rollFile的时候老文件的生成规则 -->
+        <property name="ERROR_FILE_PATH_ING" value="logs/error.log"/>
+        <property name="ERROR_FILE_PATH_ED" value="logs/err.log.%d{yyyy-MM-dd}.%i.gz"/>
+
+        <!-- 日志文件最大文件大小全局配置，一天之内最大文件产生数量全局配置 -->
+        <property name="MAX_FILE_SIZE" value="500MB"/>
+        <property name="MAX_FILE_NUM" value="1000"/>
+    </Properties>
+
+    <appenders>
+        <!-- trace日志,服务引入kun-middle-base-log后，
+        代码中使用例如 log.info(xxx)时，会调用TraceLogConsoleLog4j2Appender将日志发送到kafka中
+        代码实现在kun-middle-base-log模块`中class="com.ihankun.his.base.log.api.appender.TraceLogConsoleLog4j2Appender"。
+        -->
+<!--        <TraceKafkaAppender name="TRACE"/>-->
+
+        <!-- 控制台输出日志信息 -->
+        <console name="Console_Log" target="SYSTEM_OUT">
+            <PatternLayout pattern="${CONSOLE_LOG_PATTERN}"/>
+        </console>
+
+        <!-- 全量日志文件输出日志信息 -->
+        <RollingFile name="All_File" fileName="${ALL_FILE_PATH_ING}" filePattern="${ALL_FILE_PATH_ED}">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${MAX_FILE_SIZE}"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="${MAX_FILE_NUM}"/>
+        </RollingFile>
+
+        <!-- error日志文件输出日志信息 -->
+        <RollingFile name="Error_File" fileName="${ERROR_FILE_PATH_ING}" filePattern="${ERROR_FILE_PATH_ED}">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${MAX_FILE_SIZE}"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="${MAX_FILE_NUM}"/>
+        </RollingFile>
+    </appenders>
+
+    <!--配置总的日志监听级别-->
+    <loggers>
+        <root level="INFO">
+            <appender-ref ref="Console_Log"/>
+            <appender-ref ref="All_File"/>
+            <appender-ref ref="Error_File"/>
+<!--            <appender-ref ref="TRACE"/>-->
+        </root>
+        <!-- 日志过滤 -->
+        <logger name="com.alibaba.nacos.client.config.impl" level="WARN"/>
+        <logger name="com.alibaba.druid.pool" level="WARN"/>
+        <logger name="org.apache.kafka" level="OFF"/>
+        <logger name="io.ihankun" level="DEBUG"/>
+        <logger name="com.alibaba.nacos.client.naming" level="WARN"/>
+        <logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
+        <logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"/>
+        <logger name="org.apache.coyote.http11.Http11NioProtocol" level="WARN"/>
+        <logger name="org.apache.sshd.common.util.SecurityUtils" level="WARN"/>
+        <logger name="org.apache.tomcat.util.net.NioSelectorPool" level="WARN"/>
+        <logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="ERROR"/>
+        <logger name="org.hibernate.validator.internal.util.Version" level="WARN"/>
+    </loggers>
+</configuration>
