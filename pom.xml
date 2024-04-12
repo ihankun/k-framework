@@ -9,8 +9,8 @@
         <version>2.2.5.RELEASE</version>
     </parent>
 
-    <groupId>io.ihankun.framework</groupId>
-    <artifactId>ihank-spring-framework</artifactId>
+    <groupId>io.ihankun</groupId>
+    <artifactId>framework-parent</artifactId>
     <version>2.0.0</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
@@ -96,23 +96,23 @@
     </properties>
 
     <modules>
-        <module>spring-commons</module>
-        <module>spring-cache-starter</module>
-        <module>spring-db-starter</module>
-        <module>spring-job-starter</module>
-        <module>spring-log-starter</module>
-        <module>spring-mq-starter</module>
-        <module>spring-cloud-starter</module>
-        <module>spring-file-starter</module>
-        <module>spring-sso-starter</module>
-        <module>spring-captcha-starter</module>
-        <module>spring-network-starter</module>
-        <module>spring-mongo-starter</module>
-        <module>spring-pdf-starter</module>
-        <module>spring-poi-starter</module>
-        <module>spring-token-starter</module>
-        <module>spring-web-starter</module>
-        <module>spring-redis-starter</module>
+        <module>framework-commons</module>
+        <module>framework-cache-starter</module>
+        <module>framework-db-starter</module>
+        <module>framework-job-starter</module>
+        <module>framework-log-starter</module>
+        <module>framework-mq-starter</module>
+        <module>framework-spring-cloud</module>
+        <module>framework-file-starter</module>
+        <module>framework-sso-starter</module>
+        <module>framework-captcha-starter</module>
+        <module>framework-network-starter</module>
+        <module>framework-mongo-starter</module>
+        <module>framework-pdf-starter</module>
+        <module>framework-poi-starter</module>
+        <module>framework-token-starter</module>
+        <module>framework-web-starter</module>
+        <module>framework-redis-starter</module>
     </modules>
 
     <dependencies>
@@ -280,104 +280,104 @@
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-cache-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-cache-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-commons</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-commons</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-db-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-db-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-job-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-job-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-log-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-log-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-mq-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-mq-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-cloud-starter-api</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-cloud-api</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-cloud-starter-server</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-cloud-server</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-mongo-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-mongo-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-captcha-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-captcha-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-sso-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-sso-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-file-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-file-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-network-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-network-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-pdf-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-pdf-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-poi-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-poi-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-web-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-web-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.framework</groupId>
-                <artifactId>spring-redis-starter</artifactId>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-redis-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
