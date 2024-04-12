@@ -2,9 +2,9 @@ package io.ihankun.framework.db.sql;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
-import io.ihankun.framework.common.context.LoginUserContext;
-import io.ihankun.framework.common.context.LoginUserInfo;
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.core.context.LoginUserContext;
+import io.ihankun.framework.core.context.LoginUserInfo;
+import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import io.ihankun.framework.db.config.DbConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;

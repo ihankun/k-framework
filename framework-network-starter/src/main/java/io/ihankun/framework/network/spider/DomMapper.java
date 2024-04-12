@@ -1,6 +1,6 @@
 package io.ihankun.framework.network.spider;
 
-import io.ihankun.framework.common.utils.exception.Exceptions;
+import io.ihankun.framework.core.utils.exception.Exceptions;
 import io.ihankun.framework.network.http.ResponseSpec;
 import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;

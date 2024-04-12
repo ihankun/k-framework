@@ -1,8 +1,8 @@
 package io.ihankun.framework.cache.ratelimiter;
 
 
-import io.ihankun.framework.common.function.CheckedSupplier;
-import io.ihankun.framework.common.utils.exception.Exceptions;
+import io.ihankun.framework.core.function.CheckedSupplier;
+import io.ihankun.framework.core.utils.exception.Exceptions;
 
 import java.util.concurrent.TimeUnit;
 

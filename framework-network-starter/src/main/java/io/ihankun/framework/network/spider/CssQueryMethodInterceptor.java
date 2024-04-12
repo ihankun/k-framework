@@ -1,7 +1,7 @@
 package io.ihankun.framework.network.spider;
 
-import io.ihankun.framework.common.utils.ConvertUtil;
-import io.ihankun.framework.common.utils.string.StringUtil;
+import io.ihankun.framework.core.utils.ConvertUtil;
+import io.ihankun.framework.core.utils.string.StringUtil;
 import lombok.RequiredArgsConstructor;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.TextNode;

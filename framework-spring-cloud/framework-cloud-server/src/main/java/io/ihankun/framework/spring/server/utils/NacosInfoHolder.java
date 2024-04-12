@@ -2,8 +2,8 @@ package io.ihankun.framework.spring.server.utils;
 
 import com.alibaba.cloud.nacos.ConditionalOnNacosDiscoveryEnabled;
 import com.alibaba.cloud.nacos.NacosDiscoveryProperties;
-import io.ihankun.framework.common.utils.date.DateUtils;
-import io.ihankun.framework.common.utils.spring.ServerStateUtil;
+import io.ihankun.framework.core.utils.date.DateUtils;
+import io.ihankun.framework.core.utils.spring.ServerStateUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

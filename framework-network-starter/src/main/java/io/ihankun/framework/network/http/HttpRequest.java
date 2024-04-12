@@ -1,13 +1,13 @@
 package io.ihankun.framework.network.http;
 
-import io.ihankun.framework.common.retry.IRetry;
-import io.ihankun.framework.common.retry.SimpleRetry;
-import io.ihankun.framework.common.ssl.DisableValidationTrustManager;
-import io.ihankun.framework.common.ssl.TrustAllHostNames;
-import io.ihankun.framework.common.utils.Holder;
-import io.ihankun.framework.common.utils.exception.Exceptions;
-import io.ihankun.framework.common.utils.json.JsonUtil;
-import io.ihankun.framework.common.utils.string.StringPool;
+import io.ihankun.framework.core.retry.IRetry;
+import io.ihankun.framework.core.retry.SimpleRetry;
+import io.ihankun.framework.core.ssl.DisableValidationTrustManager;
+import io.ihankun.framework.core.ssl.TrustAllHostNames;
+import io.ihankun.framework.core.utils.Holder;
+import io.ihankun.framework.core.utils.exception.Exceptions;
+import io.ihankun.framework.core.utils.json.JsonUtil;
+import io.ihankun.framework.core.utils.string.StringPool;
 import okhttp3.*;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.HttpMethod;

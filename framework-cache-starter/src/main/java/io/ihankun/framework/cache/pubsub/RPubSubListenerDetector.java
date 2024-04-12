@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.pubsub;
 
-import io.ihankun.framework.common.utils.plus.ReflectUtil;
+import io.ihankun.framework.core.utils.plus.ReflectUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;

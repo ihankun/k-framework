@@ -4,7 +4,7 @@ import io.ihankun.framework.captcha.v1.generator.ImageCaptchaGenerator;
 import io.ihankun.framework.captcha.v1.generator.ImageCaptchaPostProcessor;
 import io.ihankun.framework.captcha.v1.entity.CaptchaExchange;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaInfo;
-import io.ihankun.framework.common.exception.ImageCaptchaException;
+import io.ihankun.framework.core.exception.ImageCaptchaException;
 import lombok.Getter;
 
 import java.util.LinkedList;

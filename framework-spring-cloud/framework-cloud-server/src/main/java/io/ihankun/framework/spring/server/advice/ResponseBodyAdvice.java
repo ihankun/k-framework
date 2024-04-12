@@ -1,7 +1,7 @@
 package io.ihankun.framework.spring.server.advice;
 
-import io.ihankun.framework.common.enums.ResponseLevelEnum;
-import io.ihankun.framework.common.response.ResponseResult;
+import io.ihankun.framework.core.enums.ResponseLevelEnum;
+import io.ihankun.framework.core.response.ResponseResult;
 import io.ihankun.framework.log.context.TraceLogContext;
 import io.ihankun.framework.spring.server.error.AdviceErrorCode;
 import org.apache.commons.lang3.StringUtils;

@@ -1,7 +1,7 @@
 package io.ihankun.framework.mq.producer.impl;
 
-import io.ihankun.framework.common.context.DomainContext;
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.core.context.DomainContext;
+import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.mq.config.MqProperties;
 import io.ihankun.framework.mq.constants.MqSendResult;
 import io.ihankun.framework.mq.message.MqMsg;

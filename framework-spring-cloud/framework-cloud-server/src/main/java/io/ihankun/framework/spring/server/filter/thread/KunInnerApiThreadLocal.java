@@ -2,7 +2,7 @@ package io.ihankun.framework.spring.server.filter.thread;
 
 import feign.RequestTemplate;
 import feign.Target;
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import io.ihankun.framework.log.context.TraceLogApiInfoContext;
 import io.ihankun.framework.log.entity.ApiInfo;
 import lombok.extern.slf4j.Slf4j;

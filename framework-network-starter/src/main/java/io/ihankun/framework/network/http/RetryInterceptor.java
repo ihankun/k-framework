@@ -1,6 +1,6 @@
 package io.ihankun.framework.network.http;
 
-import io.ihankun.framework.common.retry.IRetry;
+import io.ihankun.framework.core.retry.IRetry;
 import lombok.RequiredArgsConstructor;
 import okhttp3.Interceptor;
 import okhttp3.Request;

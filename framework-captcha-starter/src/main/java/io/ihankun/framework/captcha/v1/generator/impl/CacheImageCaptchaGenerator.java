@@ -5,7 +5,7 @@ import io.ihankun.framework.captcha.v1.generator.ImageTransform;
 import io.ihankun.framework.captcha.v1.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
-import io.ihankun.framework.common.thread.NamedThreadFactory;
+import io.ihankun.framework.core.thread.NamedThreadFactory;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;

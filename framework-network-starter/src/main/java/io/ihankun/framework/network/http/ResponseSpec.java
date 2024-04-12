@@ -3,7 +3,7 @@ package io.ihankun.framework.network.http;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.type.CollectionLikeType;
-import io.ihankun.framework.common.utils.json.JsonUtil;
+import io.ihankun.framework.core.utils.json.JsonUtil;
 import okhttp3.*;
 
 import javax.annotation.Nullable;

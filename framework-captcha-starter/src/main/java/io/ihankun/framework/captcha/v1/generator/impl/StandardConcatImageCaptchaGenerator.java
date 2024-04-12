@@ -7,15 +7,15 @@ import io.ihankun.framework.captcha.v1.resource.ResourceStore;
 import io.ihankun.framework.captcha.v1.entity.Resource;
 import io.ihankun.framework.captcha.v1.resource.impl.provider.ClassPathResourceProvider;
 import io.ihankun.framework.captcha.v1.entity.*;
-import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
+import io.ihankun.framework.core.constants.captcha.CaptchaTypeConstant;
 import lombok.SneakyThrows;
 
 import java.awt.image.BufferedImage;
 
-import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.DEFAULT_SLIDER_IMAGE_RESOURCE_PATH;
-import static io.ihankun.framework.common.constants.captcha.CaptchaCommConstant.DEFAULT_TAG;
-import static io.ihankun.framework.common.utils.captcha.CaptchaImageUtils.concatImage;
-import static io.ihankun.framework.common.utils.captcha.CaptchaImageUtils.splitImage;
+import static io.ihankun.framework.core.constants.captcha.CaptchaCommConstant.DEFAULT_SLIDER_IMAGE_RESOURCE_PATH;
+import static io.ihankun.framework.core.constants.captcha.CaptchaCommConstant.DEFAULT_TAG;
+import static io.ihankun.framework.core.utils.captcha.CaptchaImageUtils.concatImage;
+import static io.ihankun.framework.core.utils.captcha.CaptchaImageUtils.splitImage;
 
 
 /**

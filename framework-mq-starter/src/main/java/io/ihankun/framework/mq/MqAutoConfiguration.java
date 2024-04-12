@@ -1,6 +1,6 @@
 package io.ihankun.framework.mq;
 
-import io.ihankun.framework.common.utils.spring.SpringHelpers;
+import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import io.ihankun.framework.mq.config.MqProperties;
 import io.ihankun.framework.mq.constants.MqTypeEnum;
 import io.ihankun.framework.mq.consumer.ConsumerListener;

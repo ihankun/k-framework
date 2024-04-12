@@ -1,9 +1,9 @@
 package io.ihankun.framework.cache.requestlock.aspect;
 
 import io.ihankun.framework.cache.requestlock.annotation.Lock;
-import io.ihankun.framework.common.base.BaseService;
-import io.ihankun.framework.common.error.IErrorCode;
-import io.ihankun.framework.common.exception.BusinessException;
+import io.ihankun.framework.core.base.BaseService;
+import io.ihankun.framework.core.error.IErrorCode;
+import io.ihankun.framework.core.exception.BusinessException;
 import io.ihankun.framework.redis.key.ICacheKey;
 import io.ihankun.framework.redis.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.lock.LockCallback;

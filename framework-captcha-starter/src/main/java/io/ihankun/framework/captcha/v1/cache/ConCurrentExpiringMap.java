@@ -1,6 +1,6 @@
 package io.ihankun.framework.captcha.v1.cache;
 
-import io.ihankun.framework.common.thread.NamedThreadFactory;
+import io.ihankun.framework.core.thread.NamedThreadFactory;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 

@@ -4,8 +4,8 @@ import io.ihankun.framework.captcha.v1.generator.ImageTransform;
 import io.ihankun.framework.captcha.v1.entity.CustomData;
 import io.ihankun.framework.captcha.v1.entity.GenerateParam;
 import io.ihankun.framework.captcha.v1.entity.ImageTransformData;
-import io.ihankun.framework.common.utils.captcha.CaptchaImageUtils;
-import io.ihankun.framework.common.utils.image.ImgWriter;
+import io.ihankun.framework.core.utils.captcha.CaptchaImageUtils;
+import io.ihankun.framework.core.utils.image.ImgWriter;
 import lombok.SneakyThrows;
 
 import javax.imageio.ImageIO;

@@ -96,7 +96,9 @@
     </properties>
 
     <modules>
-        <module>framework-commons</module>
+        <module>framework-core</module>
+        <module>framework-starter</module>
+
         <module>framework-cache-starter</module>
         <module>framework-db-starter</module>
         <module>framework-job-starter</module>
@@ -112,7 +114,6 @@
         <module>framework-poi-starter</module>
         <module>framework-token-starter</module>
         <module>framework-web-starter</module>
-        <module>framework-redis-starter</module>
     </modules>
 
     <dependencies>
@@ -281,13 +282,29 @@
 
             <dependency>
                 <groupId>io.ihankun</groupId>
-                <artifactId>framework-cache-starter</artifactId>
+                <artifactId>framework-core</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>io.ihankun</groupId>
-                <artifactId>framework-commons</artifactId>
+                <artifactId>framework-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.starter</groupId>
+                <artifactId>framework-redis-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+
+
+
+
+            <dependency>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-cache-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
@@ -375,11 +392,9 @@
                 <version>${framework.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.ihankun</groupId>
-                <artifactId>framework-redis-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
+
+
+
 
 
             <dependency>

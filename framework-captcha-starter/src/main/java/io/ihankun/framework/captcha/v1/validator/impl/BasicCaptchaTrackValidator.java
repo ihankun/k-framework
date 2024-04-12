@@ -1,11 +1,11 @@
 package io.ihankun.framework.captcha.v1.validator.impl;
 
 
-import io.ihankun.framework.common.error.impl.CaptchaErrorCode;
+import io.ihankun.framework.core.error.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaTrack;
-import io.ihankun.framework.common.response.ResponseResult;
-import io.ihankun.framework.common.utils.captcha.CaptchaTypeClassifier;
-import io.ihankun.framework.common.utils.object.AbsObjectUtils;
+import io.ihankun.framework.core.response.ResponseResult;
+import io.ihankun.framework.core.utils.captcha.CaptchaTypeClassifier;
+import io.ihankun.framework.core.utils.object.AbsObjectUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;

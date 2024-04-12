@@ -30,7 +30,7 @@
 
         <dependency>
             <groupId>io.ihankun</groupId>
-            <artifactId>framework-commons</artifactId>
+            <artifactId>framework-core</artifactId>
         </dependency>
 
         <dependency>

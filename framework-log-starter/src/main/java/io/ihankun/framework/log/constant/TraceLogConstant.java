@@ -1,7 +1,7 @@
 package io.ihankun.framework.log.constant;
 
 
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
 import org.apache.commons.lang3.StringUtils;
 

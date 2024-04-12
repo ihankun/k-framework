@@ -2,7 +2,7 @@ package io.ihankun.framework.spring.server.filter.thread;
 
 import cn.hutool.core.lang.UUID;
 import feign.RequestTemplate;
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
 import io.ihankun.framework.spring.server.utils.RequestLogUtil;
 import lombok.extern.slf4j.Slf4j;

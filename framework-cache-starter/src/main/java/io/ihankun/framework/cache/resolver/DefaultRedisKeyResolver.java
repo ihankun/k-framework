@@ -1,7 +1,7 @@
 package io.ihankun.framework.cache.resolver;
 
-import io.ihankun.framework.common.utils.string.CharPool;
-import io.ihankun.framework.common.utils.string.StringUtil;
+import io.ihankun.framework.core.utils.string.CharPool;
+import io.ihankun.framework.core.utils.string.StringUtil;
 import io.ihankun.framework.redis.config.RedisConfigProperties;
 import lombok.RequiredArgsConstructor;
 

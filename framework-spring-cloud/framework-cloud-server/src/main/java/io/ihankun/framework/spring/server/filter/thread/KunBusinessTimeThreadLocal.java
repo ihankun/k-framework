@@ -1,7 +1,7 @@
 package io.ihankun.framework.spring.server.filter.thread;
 
 import feign.RequestTemplate;
-import io.ihankun.framework.common.context.BusinessTimeContext;
+import io.ihankun.framework.core.context.BusinessTimeContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;

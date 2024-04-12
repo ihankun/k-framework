@@ -2,8 +2,8 @@ package io.ihankun.framework.job.dataflow;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
-import io.ihankun.framework.common.context.GrayContext;
-import io.ihankun.framework.common.id.IdGenerator;
+import io.ihankun.framework.core.context.GrayContext;
+import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
 import lombok.extern.slf4j.Slf4j;
 

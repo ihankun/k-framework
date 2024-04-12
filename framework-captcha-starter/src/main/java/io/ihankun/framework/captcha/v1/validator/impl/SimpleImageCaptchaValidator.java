@@ -1,16 +1,16 @@
 package io.ihankun.framework.captcha.v1.validator.impl;
 
 import io.ihankun.framework.captcha.v1.validator.SliderCaptchaPercentageValidator;
-import io.ihankun.framework.common.error.impl.CaptchaErrorCode;
+import io.ihankun.framework.core.error.impl.CaptchaErrorCode;
 import io.ihankun.framework.captcha.v1.entity.ClickImageCheckDefinition;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaInfo;
 import io.ihankun.framework.captcha.v1.validator.ImageCaptchaValidator;
-import io.ihankun.framework.common.constants.base.TrackTypeConstant;
+import io.ihankun.framework.core.constants.base.TrackTypeConstant;
 import io.ihankun.framework.captcha.v1.entity.ImageCaptchaTrack;
-import io.ihankun.framework.common.constants.captcha.CaptchaTypeConstant;
-import io.ihankun.framework.common.response.ResponseResult;
-import io.ihankun.framework.common.utils.captcha.CaptchaTypeClassifier;
-import io.ihankun.framework.common.utils.object.AbsObjectUtils;
+import io.ihankun.framework.core.constants.captcha.CaptchaTypeConstant;
+import io.ihankun.framework.core.response.ResponseResult;
+import io.ihankun.framework.core.utils.captcha.CaptchaTypeClassifier;
+import io.ihankun.framework.core.utils.object.AbsObjectUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

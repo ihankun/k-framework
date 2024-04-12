@@ -1,6 +1,6 @@
 package io.ihankun.framework.cache.nats.core;
 
-import io.ihankun.framework.common.utils.exception.Exceptions;
+import io.ihankun.framework.core.utils.exception.Exceptions;
 import io.nats.client.JetStream;
 import io.nats.client.Message;
 import io.nats.client.PublishOptions;

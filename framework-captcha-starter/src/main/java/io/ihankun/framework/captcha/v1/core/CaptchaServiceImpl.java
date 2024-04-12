@@ -4,7 +4,7 @@ import io.ihankun.framework.captcha.v1.ICaptchaService;
 import io.ihankun.framework.captcha.v1.cache.ICaptchaCache;
 import io.ihankun.framework.captcha.v1.config.CaptchaProperties;
 import io.ihankun.framework.captcha.v1.entity.Captcha;
-import io.ihankun.framework.common.utils.string.StringUtil;
+import io.ihankun.framework.core.utils.string.StringUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

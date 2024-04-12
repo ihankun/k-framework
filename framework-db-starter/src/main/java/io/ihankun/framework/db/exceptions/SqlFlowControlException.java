@@ -1,7 +1,7 @@
 package io.ihankun.framework.db.exceptions;
 
 
-import io.ihankun.framework.common.exception.BusinessException;
+import io.ihankun.framework.core.exception.BusinessException;
 
 /**
  * @author hankun

@@ -8,8 +8,8 @@ import io.ihankun.framework.captcha.v1.generator.impl.transform.Base64ImageTrans
 import io.ihankun.framework.captcha.v1.resource.ImageCaptchaResourceManager;
 import io.ihankun.framework.captcha.v1.entity.Resource;
 import io.ihankun.framework.captcha.v1.entity.ResourceMap;
-import io.ihankun.framework.common.exception.ImageCaptchaException;
-import io.ihankun.framework.common.utils.captcha.CaptchaImageUtils;
+import io.ihankun.framework.core.exception.ImageCaptchaException;
+import io.ihankun.framework.core.utils.captcha.CaptchaImageUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
