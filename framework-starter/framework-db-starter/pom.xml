@@ -5,10 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.ihankun</groupId>
-        <artifactId>framework-parent</artifactId>
+        <artifactId>framework-starter</artifactId>
         <version>2.0.0</version>
     </parent>
 
+    <groupId>io.ihankun.starter</groupId>
     <artifactId>framework-db-starter</artifactId>
 
     <properties>

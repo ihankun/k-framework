@@ -39,7 +39,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.ihankun</groupId>
+            <groupId>io.ihankun.starter</groupId>
             <artifactId>framework-db-starter</artifactId>
         </dependency>
 

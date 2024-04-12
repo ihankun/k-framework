@@ -22,6 +22,18 @@
     <modules>
         <module>framework-redis-starter</module>
         <module>framework-log-starter</module>
+        <module>framework-token-starter</module>
+        <module>framework-sso-starter</module>
+        <module>framework-poi-starter</module>
+        <module>framework-pdf-starter</module>
+        <module>framework-mq-starter</module>
+        <module>framework-network-starter</module>
+        <module>framework-mongo-starter</module>
+        <module>framework-job-starter</module>
+        <module>framework-file-starter</module>
+        <module>framework-db-starter</module>
+        <module>framework-captcha-starter</module>
+        <module>framework-cache-starter</module>
     </modules>
 
 </project>
