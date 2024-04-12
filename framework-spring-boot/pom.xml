@@ -8,7 +8,7 @@
         <version>2.0.0</version>
     </parent>
 
-    <artifactId>framework-web-starter</artifactId>
+    <artifactId>framework-spring-boot</artifactId>
     <packaging>jar</packaging>
 
     <properties>
