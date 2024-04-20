@@ -358,6 +358,12 @@
 
             <dependency>
                 <groupId>io.ihankun.starter</groupId>
+                <artifactId>framework-captcha2-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.ihankun.starter</groupId>
                 <artifactId>framework-cache-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
@@ -385,6 +391,14 @@
                 <artifactId>framework-spring-boot</artifactId>
                 <version>${framework.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.ihankun</groupId>
+                <artifactId>framework-spring-boot</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+
 
 
             <dependency>

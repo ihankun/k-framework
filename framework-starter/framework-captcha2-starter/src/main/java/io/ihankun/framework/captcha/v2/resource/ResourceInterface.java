@@ -1,8 +1,7 @@
 package io.ihankun.framework.captcha.v2.resource;
 
-import io.ihankun.framework.captcha.v1.entity.Resource;
-import io.ihankun.framework.captcha.v1.entity.ResourceMap;
-import io.ihankun.framework.captcha.v1.resource.ResourceStore;
+import io.ihankun.framework.captcha.v2.generator.entity.Resource;
+import io.ihankun.framework.captcha.v2.generator.entity.ResourceMap;
 
 import java.io.InputStream;
 

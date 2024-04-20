@@ -7,7 +7,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * 用于解决高并发下System.currentTimeMillis卡顿
- * @author lry
+ *
+ * @author hankun
  */
 public class SystemClock {
 

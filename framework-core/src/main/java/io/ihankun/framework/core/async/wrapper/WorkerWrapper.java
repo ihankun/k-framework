@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 对每个worker及callback进行包装，一对一
  *
- * @author hankun wrote on 2019-11-19.
+ * @author hankun 
  */
 public class WorkerWrapper<T, V> {
     /**
