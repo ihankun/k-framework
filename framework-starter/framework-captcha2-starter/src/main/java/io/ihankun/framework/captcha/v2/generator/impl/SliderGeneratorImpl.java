@@ -1,11 +1,9 @@
 package io.ihankun.framework.captcha.v2.generator.impl;
 
-import com.alibaba.fastjson.JSON;
 import io.ihankun.framework.captcha.v2.generator.AbstractGenerator;
 import io.ihankun.framework.captcha.v2.generator.entity.CaptchaGeneratorVO;
-import io.ihankun.framework.captcha.v2.utils.captcha.CaptchaImageUtils;
+import io.ihankun.framework.core.utils.captcha.CaptchaImageUtils;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.ResourceLoader;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha.v2.utils.captcha;
+package io.ihankun.framework.core.utils.captcha;
 
 import lombok.SneakyThrows;
 
