@@ -18,13 +18,7 @@ public class CaptchaGeneratorVO {
     /** 模板图. */
     private String tmpImage;
 
-    /** 随机值. */
-    private Integer randomX;
-
-    /** 容错值, 可以为空 默认 0.02容错,校验的时候用. */
-    private Float tolerant;
-
-    /** 百分比 */
-    private Float percentage;
+    /** x轴百分比 */
+    private Float x;
 
 }

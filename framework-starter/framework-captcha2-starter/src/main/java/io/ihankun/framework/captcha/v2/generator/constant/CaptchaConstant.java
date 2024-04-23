@@ -11,10 +11,10 @@ public class CaptchaConstant {
     /**
      * 默认的resource资源文件路径.
      */
-    public static final String DEFAULT_SLIDER_IMAGE_RESOURCE_PATH = "captcha-image/resource";
+    public static final String DEFAULT_SLIDER_IMAGE_RESOURCE_PATH = "image/resource";
 
     /**
      * 默认的template资源文件路径.
      */
-    public static final String DEFAULT_SLIDER_IMAGE_TEMPLATE_PATH = "captcha-image/template";
+    public static final String DEFAULT_SLIDER_IMAGE_TEMPLATE_PATH = "image/template";
 }
