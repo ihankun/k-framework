@@ -18,9 +18,9 @@ public class EnvRibbonRouteStrategy extends AbstractRibbonRouteStrategy implemen
 
         log.debug("EnvRibbonRouteStrategy.choose.start,traceId={},serviceName={},targetMark={},domain={},", traceId, serviceName, targetMark, domain);
         ServiceHolder holder = formatServiceInstanceMap(traceId, instanceList);
-//        if("dev".equals(targetMark)) {
-//            return chooseDevService(traceId, serviceName, holder, config, balancer);
-//        }
+        if("dev".equals(targetMark)) {
+            return chooseDevService(traceId, serviceName, holder, config, balancer);
+        }
 
         return chooseAllService(traceId, serviceName, holder, config, balancer);
     }

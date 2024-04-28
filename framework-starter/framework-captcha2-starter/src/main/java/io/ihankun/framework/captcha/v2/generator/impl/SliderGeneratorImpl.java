@@ -41,7 +41,7 @@ public class SliderGeneratorImpl extends AbstractGenerator {
             BufferedImage maskTemplate = fixedTemplate;
 
             // 获取随机的 x 和 y 轴
-            int randomX = randomInt(fixedTemplate.getWidth() + 5, background.getWidth() - fixedTemplate.getWidth() - 10);
+            int randomX = randomInt(fixedTemplate.getWidth() + 10, background.getWidth() - fixedTemplate.getWidth() - 15);
             int randomY = randomInt(background.getHeight() - fixedTemplate.getHeight());
 
             BufferedImage cutImage = CaptchaImageUtils.cutImage(background, maskTemplate, randomX, randomY);
