@@ -9,13 +9,7 @@
         <version>2.0.1</version>
     </parent>
 
-    <artifactId>framework-spring-cloud</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>framework-cloud-api</module>
-        <module>framework-cloud-server</module>
-    </modules>
+    <artifactId>framework-gateway</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
