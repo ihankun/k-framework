@@ -1,6 +1,6 @@
-package io.ihankun.framework.core.ribbon;
+package io.ihankun.framework.gateway.ribbon;
 
-import io.ihankun.framework.core.ribbon.impl.EnvRibbonRouteStrategy;
+import io.ihankun.framework.gateway.ribbon.impl.EnvRibbonRouteStrategy;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;

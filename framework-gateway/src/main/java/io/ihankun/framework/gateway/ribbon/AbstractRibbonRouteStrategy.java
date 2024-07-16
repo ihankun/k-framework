@@ -1,4 +1,4 @@
-package io.ihankun.framework.core.ribbon;
+package io.ihankun.framework.gateway.ribbon;
 
 import io.ihankun.framework.core.context.LoginUserContext;
 import io.ihankun.framework.core.context.LoginUserInfo;

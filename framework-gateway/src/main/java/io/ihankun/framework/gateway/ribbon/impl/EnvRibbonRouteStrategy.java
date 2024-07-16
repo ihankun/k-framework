@@ -1,6 +1,6 @@
-package io.ihankun.framework.core.ribbon.impl;
+package io.ihankun.framework.gateway.ribbon.impl;
 
-import io.ihankun.framework.core.ribbon.*;
+import io.ihankun.framework.gateway.ribbon.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 
