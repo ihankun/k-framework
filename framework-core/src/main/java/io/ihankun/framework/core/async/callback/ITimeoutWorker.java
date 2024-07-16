@@ -1,8 +1,8 @@
 package io.ihankun.framework.core.async.callback;
 
 /**
- * @author hankun wrote on 2019-12-20
- * @version 1.0
+ * @author hankun
+ *
  */
 public interface ITimeoutWorker<T, V> extends IWorker<T, V> {
     /**

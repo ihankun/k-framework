@@ -1,6 +1,5 @@
 package io.ihankun.framework.spring.api.validator.group;
 
-
 import javax.validation.groups.Default;
 
 /**

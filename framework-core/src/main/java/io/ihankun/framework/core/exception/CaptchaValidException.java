@@ -3,6 +3,9 @@ package io.ihankun.framework.core.exception;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author hankun
+ */
 @Getter
 @Setter
 public class CaptchaValidException extends ImageCaptchaException{

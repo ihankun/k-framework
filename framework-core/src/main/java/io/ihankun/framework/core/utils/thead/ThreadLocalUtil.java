@@ -17,7 +17,7 @@ import java.util.function.Supplier;
  * ThreadLocalUtils.clear();<br>
  * </code>
  *
- * @author zhouhao
+ * @author hankun
  * @since 2.0
  */
 @SuppressWarnings("unchecked")

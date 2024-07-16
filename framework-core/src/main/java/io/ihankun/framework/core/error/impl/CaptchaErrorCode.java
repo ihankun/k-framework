@@ -4,6 +4,9 @@ import io.ihankun.framework.core.error.IErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * @author hankun
+ */
 @AllArgsConstructor
 @Getter
 public enum CaptchaErrorCode implements IErrorCode {

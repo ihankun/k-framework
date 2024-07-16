@@ -6,8 +6,8 @@ import io.ihankun.framework.core.async.wrapper.WorkerWrapper;
 import java.util.List;
 
 /**
- * @author hankun wrote on 2019-12-27
- * @version 1.0
+ * @author hankun
+ *
  */
 public class DefaultGroupCallback implements IGroupCallback {
     @Override

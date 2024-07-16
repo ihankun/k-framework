@@ -10,6 +10,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
 
+/**
+ * @author hankun
+ */
 @Configuration
 public class EncryptServiceImpl implements EncryptService {
 

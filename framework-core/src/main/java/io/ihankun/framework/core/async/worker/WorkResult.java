@@ -2,6 +2,8 @@ package io.ihankun.framework.core.async.worker;
 
 /**
  * 执行结果
+ *
+ * @author hankun
  */
 public class WorkResult<V> {
     /**

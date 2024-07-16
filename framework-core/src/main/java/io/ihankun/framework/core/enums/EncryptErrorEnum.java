@@ -4,6 +4,9 @@ import io.ihankun.framework.core.error.IErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * @author hankun
+ */
 @Getter
 @AllArgsConstructor
 public enum EncryptErrorEnum implements IErrorCode {
