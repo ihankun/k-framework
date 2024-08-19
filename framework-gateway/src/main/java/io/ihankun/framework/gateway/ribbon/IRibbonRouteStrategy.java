@@ -12,8 +12,8 @@ public interface IRibbonRouteStrategy {
      */
     ServiceInstanceWarp choose(String traceId,
                                    String serviceName,
-                                   String targetMark,
-                                   String domain,
+                                   String gray,
+                                   String mark,
                                    List<ServiceInstanceWarp> instanceList,
                                    ILoadBalance balancer,
                                    RibbonRouteStrategyConfigProperties config

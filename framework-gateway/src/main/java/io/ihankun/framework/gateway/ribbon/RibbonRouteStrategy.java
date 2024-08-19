@@ -27,7 +27,7 @@ public class RibbonRouteStrategy {
     /**
      * 执行筛选逻辑
      */
-    public ServiceInstanceWarp choose(String traceId, String serviceName, String targetMark, String domain, List<ServiceInstanceWarp> instanceList) {
+    public ServiceInstanceWarp choose(String traceId, String serviceName, String gray,String mark, List<ServiceInstanceWarp> instanceList) {
 
         RibbonRouteStrategyConfigProperties config = routeConfig.config();
 
@@ -35,7 +35,7 @@ public class RibbonRouteStrategy {
 
         strategy = new EnvRibbonRouteStrategy();
 
-        ServiceInstanceWarp instance = strategy.choose(traceId, serviceName, targetMark, domain, instanceList, balancer, config);
+        ServiceInstanceWarp instance = strategy.choose(traceId, serviceName, gray,mark, instanceList, balancer, config);
 
         return instance;
     }

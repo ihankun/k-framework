@@ -14,47 +14,46 @@ import java.util.List;
 public class EnvRibbonRouteStrategy extends AbstractRibbonRouteStrategy implements IRibbonRouteStrategy {
 
     @Override
-    public ServiceInstanceWarp choose(String traceId, String serviceName, String targetMark, String domain, List<ServiceInstanceWarp> instanceList, ILoadBalance balancer, RibbonRouteStrategyConfigProperties config) {
+    public ServiceInstanceWarp choose(String traceId, String serviceName, String gray, String mark, List<ServiceInstanceWarp> instanceList, ILoadBalance balancer, RibbonRouteStrategyConfigProperties config) {
 
-        log.debug("EnvRibbonRouteStrategy.choose.start,traceId={},serviceName={},targetMark={},domain={},", traceId, serviceName, targetMark, domain);
+        log.debug("EnvRibbonRouteStrategy.choose.start,traceId={},serviceName={},gray={},mark={}", traceId, serviceName, gray,mark);
         ServiceHolder holder = formatServiceInstanceMap(traceId, instanceList);
-        if("dev".equals(targetMark)) {
+        if("dev".equals(mark)) {
             return chooseDevService(traceId, serviceName, holder, config, balancer);
         }
 
-        return chooseAllService(traceId, serviceName, holder, config, balancer);
+        return chooseProdService(traceId, serviceName, holder, config, balancer);
     }
 
     /**
      * 筛选服务列表，形成对象
      */
-    private ServiceHolder formatServiceInstanceMap(String traceId, List<ServiceInstanceWarp> allKunServiceInstanceWarps) {
+    private ServiceHolder formatServiceInstanceMap(String traceId, List<ServiceInstanceWarp> allServiceInstanceWarps) {
 
         ServiceHolder holder = new ServiceHolder();
 
         // 获取所有被调用服务
-        if (CollectionUtils.isEmpty(allKunServiceInstanceWarps)) {
+        if (CollectionUtils.isEmpty(allServiceInstanceWarps)) {
             log.info("EnvRibbonRouteStrategy.fetchAllServiceInstances.null,traceId={}", traceId);
             return null;
         }
 
         //判定所有服务类型
-        for (ServiceInstanceWarp warp : allKunServiceInstanceWarps) {
+        for (ServiceInstanceWarp warp : allServiceInstanceWarps) {
             String markValue = warp.getMark();
             markValue = markValue == null ? "" : markValue;
-            switch (markValue.toLowerCase()) {
-                case "prod":
-                    holder.getProd().add(warp);
-                    break;
-                case "dev":
-                    holder.getDev().add(warp);
-                    break;
-                case "gray":
+
+            String grayalue = warp.getMark();
+            grayalue = grayalue == null ? "" : grayalue;
+
+            if("prod".equalsIgnoreCase(markValue)) {
+                if("true".equalsIgnoreCase(grayalue)) {
                     holder.getGray().add(warp);
-                    break;
-                default:
-                    holder.getEmpty().add(warp);
-                    break;
+                }else{
+                    holder.getProd().add(warp);
+                }
+            }else{
+                holder.getDev().add(warp);
             }
         }
 
@@ -66,9 +65,7 @@ public class EnvRibbonRouteStrategy extends AbstractRibbonRouteStrategy implemen
      */
     private ServiceInstanceWarp chooseProdService(String traceId, String serviceName, ServiceHolder holder, RibbonRouteStrategyConfigProperties config, ILoadBalance balancer) {
 
-        List<ServiceInstanceWarp> serviceList = new ArrayList<>();
-        serviceList.addAll(holder.getProd());
-        serviceList.addAll(holder.getGray());
+        List<ServiceInstanceWarp> serviceList = new ArrayList<>(holder.getProd());
 
         log.debug("EnvRibbonRouteStrategy.chooseProdService.start,serviceName={},prod.instance={},gray.instance={}",
                 serviceName,
