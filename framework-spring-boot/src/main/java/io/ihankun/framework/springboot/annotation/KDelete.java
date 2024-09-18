@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.api.annotation;
+package io.ihankun.framework.springboot.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +12,8 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@RequestMapping(method = RequestMethod.POST)
-public @interface KunPost {
+@RequestMapping(method = RequestMethod.DELETE)
+public @interface KDelete {
 
     @AliasFor(annotation = RequestMapping.class)
     String name() default "";

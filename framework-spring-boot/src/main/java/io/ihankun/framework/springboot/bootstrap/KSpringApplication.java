@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.server.bootstrap;
+package io.ihankun.framework.springboot.bootstrap;
 
 import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * @author hankun
  */
 @Slf4j
-public class KunSpringApplication {
+public class KSpringApplication {
     public static void run(Class<?> primarySource, String... args) {
         try {
             StopWatch watch = new StopWatch();

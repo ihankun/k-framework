@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.api.validator.group;
+package io.ihankun.framework.springboot.group;
 
 import javax.validation.groups.Default;
 

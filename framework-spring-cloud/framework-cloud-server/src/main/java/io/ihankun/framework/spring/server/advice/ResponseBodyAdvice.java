@@ -55,8 +55,8 @@ public class ResponseBodyAdvice implements org.springframework.web.servlet.mvc.m
             if (!StringUtils.isEmpty(TraceLogContext.get())) {
                 success.setTraceId(TraceLogContext.get());
             }
-            success.setService(service);
-            success.setLevel(ResponseLevelEnum.INFO.name().toLowerCase());
+            //success.setService(service);
+            //success.setLevel(ResponseLevelEnum.INFO.name().toLowerCase());
             return success;
         }
 
@@ -66,7 +66,7 @@ public class ResponseBodyAdvice implements org.springframework.web.servlet.mvc.m
                 if (!StringUtils.isEmpty(TraceLogContext.get())) {
                     result.setTraceId(TraceLogContext.get());
                 }
-                result.setService(service);
+                //result.setService(service);
                 return body;
             }
             return result.getData();
@@ -80,8 +80,8 @@ public class ResponseBodyAdvice implements org.springframework.web.servlet.mvc.m
                 if (!StringUtils.isEmpty(TraceLogContext.get())) {
                     error.setTraceId(TraceLogContext.get());
                 }
-                error.setService(service);
-                error.setLevel(ResponseLevelEnum.WARN.name().toLowerCase());
+                //error.setService(service);
+                //error.setLevel(ResponseLevelEnum.WARN.name().toLowerCase());
                 return error;
             }
         }
@@ -90,7 +90,7 @@ public class ResponseBodyAdvice implements org.springframework.web.servlet.mvc.m
         if (!StringUtils.isEmpty(TraceLogContext.get())) {
             success.setTraceId(TraceLogContext.get());
         }
-        success.setService(service);
+        //success.setService(service);
         return success;
     }
 }

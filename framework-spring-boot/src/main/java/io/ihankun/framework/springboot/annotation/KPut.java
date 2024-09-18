@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.api.annotation;
+package io.ihankun.framework.springboot.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @RequestMapping(method = RequestMethod.PUT)
-public @interface KunPut {
+public @interface KPut {
 
     @AliasFor(annotation = RequestMapping.class)
     String name() default "";

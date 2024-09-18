@@ -40,17 +40,20 @@ public class ResponseResult<T> implements Serializable {
     @ApiModelProperty("跟踪ID")
     private String traceId;
 
-    @ApiModelProperty("异常名称")
-    @Getter(onMethod = @__( @JsonIgnore))
-    private String exceptionName;
+    @ApiModelProperty("版本号")
+    private String version;
 
-    @ApiModelProperty("级别，正常返回为info,业务异常为warn,未捕获异常为error")
-    @Getter(onMethod = @__( @JsonIgnore))
-    private String level;
-
-    @ApiModelProperty("当前服务")
-    @Getter(onMethod = @__( @JsonIgnore))
-    private String service;
+//    @ApiModelProperty("异常名称")
+//    @Getter(onMethod = @__( @JsonIgnore))
+//    private String exceptionName;
+//
+//    @ApiModelProperty("级别，正常返回为info,业务异常为warn,未捕获异常为error")
+//    @Getter(onMethod = @__( @JsonIgnore))
+//    private String level;
+//
+//    @ApiModelProperty("当前服务")
+//    @Getter(onMethod = @__( @JsonIgnore))
+//    private String service;
 
     private static final String REPLACE_STR = "$";
     private static final String CODE_SPLIT = "@";
@@ -90,8 +93,8 @@ public class ResponseResult<T> implements Serializable {
                 msg = msg.replaceAll("\\$" + (i + 1), param);
             }
         }
-        result.setService(service);
-        result.setLevel(level.name().toLowerCase());
+        //result.setService(service);
+        //result.setLevel(level.name().toLowerCase());
         result.setMessage(msg);
         result.setData(data);
         return result;
@@ -118,7 +121,7 @@ public class ResponseResult<T> implements Serializable {
     }
 
     public ResponseResult setException(Throwable exception) {
-        this.exceptionName = exception.getClass().getName();
+        //this.exceptionName = exception.getClass().getName();
         return this;
     }
 

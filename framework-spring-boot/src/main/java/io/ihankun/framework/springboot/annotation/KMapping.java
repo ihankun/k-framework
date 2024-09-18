@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.api.annotation;
+package io.ihankun.framework.springboot.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.web.bind.annotation.Mapping;
@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 @Documented
 @Mapping
 @RequestMapping
-public @interface KunMapping {
+public @interface KMapping {
 
     @AliasFor(annotation = RequestMapping.class)
     String[] value() default {};
