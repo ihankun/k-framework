@@ -1,7 +1,7 @@
 package io.ihankun.framework.core.lunar.util;
 
 
-import io.ihankun.framework.core.lunar.Solar;
+import io.ihankun.framework.core.lunar.entity.Solar;
 
 /**
  * 寿星天文历工具

@@ -1,7 +1,7 @@
 package io.ihankun.framework.core.lunar.eightchar;
 
 
-import io.ihankun.framework.core.lunar.Lunar;
+import io.ihankun.framework.core.lunar.entity.Lunar;
 import io.ihankun.framework.core.lunar.util.LunarUtil;
 
 /**
