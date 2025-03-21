@@ -5,6 +5,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author hankun
+ */
 @Data
 @ConfigurationProperties(prefix = DefaultPassword.SECURITY)
 @Configuration

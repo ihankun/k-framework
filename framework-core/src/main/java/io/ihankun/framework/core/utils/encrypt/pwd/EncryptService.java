@@ -1,5 +1,8 @@
 package io.ihankun.framework.core.utils.encrypt.pwd;
 
+/**
+ * @author hankun
+ */
 public interface EncryptService {
 
     /**

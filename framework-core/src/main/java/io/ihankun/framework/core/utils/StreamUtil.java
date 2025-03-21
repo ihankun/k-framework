@@ -11,7 +11,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * Static utility methods related to {@code Stream} instances.
  *
- * @author Guava
+ * @author hankun
  */
 public class StreamUtil {
 

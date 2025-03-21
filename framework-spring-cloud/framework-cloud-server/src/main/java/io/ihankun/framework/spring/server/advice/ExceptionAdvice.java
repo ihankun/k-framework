@@ -119,8 +119,8 @@ public class ExceptionAdvice {
 
         ResponseResult result = ResponseResult.error(errorCode).setException(e);
         result.setTraceId(TraceLogContext.get());
-        result.setLevel(ResponseLevelEnum.WARN.name().toLowerCase());
-        result.setService(service);
+        //result.setLevel(ResponseLevelEnum.WARN.name().toLowerCase());
+        //result.setService(service);
         clearContext(request);
         return result;
     }
@@ -157,8 +157,8 @@ public class ExceptionAdvice {
         log.error("通用异常: stack info=", e);
         ResponseResult result = ResponseResult.error(AdviceErrorCode.OTHER_EX, e.getMessage()).setException(e);
         result.setTraceId(TraceLogContext.get());
-        result.setLevel(ResponseLevelEnum.ERROR.name().toLowerCase());
-        result.setService(service);
+        //result.setLevel(ResponseLevelEnum.ERROR.name().toLowerCase());
+        //result.setService(service);
         clearContext(request);
         return result;
     }

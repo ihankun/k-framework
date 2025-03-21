@@ -5,8 +5,8 @@ import io.ihankun.framework.core.async.wrapper.WorkerWrapper;
 
 /**
  * 对依赖的wrapper的封装
- * @author hankun wrote on 2019-12-20
- * @version 1.0
+ *
+ * @author hankun
  */
 public class DependWrapper {
     private WorkerWrapper<?, ?> dependWrapper;

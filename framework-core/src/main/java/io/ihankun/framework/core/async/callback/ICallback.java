@@ -7,7 +7,7 @@ import io.ihankun.framework.core.async.worker.WorkResult;
  * 每个执行单元执行完毕后，会回调该接口</p>
  * 需要监听执行结果的，实现该接口即可
  *
- * @author hankun wrote on 2019-11-19.
+ * @author hankun
  */
 @FunctionalInterface
 public interface ICallback<T, V> {

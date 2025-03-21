@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * @author hankun
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

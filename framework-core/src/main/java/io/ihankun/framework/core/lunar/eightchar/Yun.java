@@ -1,10 +1,10 @@
 package io.ihankun.framework.core.lunar.eightchar;
 
 
-import io.ihankun.framework.core.lunar.EightChar;
-import io.ihankun.framework.core.lunar.JieQi;
-import io.ihankun.framework.core.lunar.Lunar;
-import io.ihankun.framework.core.lunar.Solar;
+import io.ihankun.framework.core.lunar.entity.EightChar;
+import io.ihankun.framework.core.lunar.entity.JieQi;
+import io.ihankun.framework.core.lunar.entity.Lunar;
+import io.ihankun.framework.core.lunar.entity.Solar;
 import io.ihankun.framework.core.lunar.util.LunarUtil;
 
 /**

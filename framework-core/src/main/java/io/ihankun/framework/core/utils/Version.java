@@ -16,9 +16,6 @@ import org.springframework.lang.Nullable;
  * Version.of("v0.1").incomplete().eq("v0.1.2");   // true
  *
  * @author hankun
- * email: 596392912@qq.com
- * site:http://www.dreamlu.net
- * date 2015年7月9日下午10:48:39
  */
 public class Version {
 	private static final String DELIMITER = "\\.";

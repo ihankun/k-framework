@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 /**
  * 类入口，可以根据自己情况调整core线程的数量
- * @author hankun wrote on 2019-12-18
- * @version 1.0
+ *
+ * @author hankun
  */
 public class Async {
     /**

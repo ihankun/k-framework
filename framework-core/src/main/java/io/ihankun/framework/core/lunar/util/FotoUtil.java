@@ -1,7 +1,7 @@
 package io.ihankun.framework.core.lunar.util;
 
 
-import io.ihankun.framework.core.lunar.FotoFestival;
+import io.ihankun.framework.core.lunar.entity.FotoFestival;
 
 import java.util.*;
 

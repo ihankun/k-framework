@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 每个最小执行单元需要实现该接口
  *
- * @author hankun wrote on 2019-11-19.
+ * @author hankun 
  */
 @FunctionalInterface
 public interface IWorker<T, V> {
