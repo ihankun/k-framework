@@ -12,6 +12,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  * @author hankun
  */
@@ -33,7 +37,9 @@ public class NacosInfoHolder {
     public NacosDiscoveryProperties nacosProperties() {
         //更改服务详情中的元数据，增加服务注册时间
         NacosDiscoveryProperties properties = new NacosDiscoveryProperties();
-        properties.getMetadata().put("startup.time", DateUtils.getNowStr());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        df.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        properties.getMetadata().put("startup.time", df.format(new Date()));
         properties.getMetadata().put("version", ServerStateUtil.getVersion());
 
         // 根据启动的服务状态设置 mark 标记
