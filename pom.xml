@@ -353,12 +353,6 @@
 
             <dependency>
                 <groupId>io.ihankun.starter</groupId>
-                <artifactId>framework-captcha-starter</artifactId>
-                <version>${framework.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.ihankun.starter</groupId>
                 <artifactId>framework-captcha2-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
