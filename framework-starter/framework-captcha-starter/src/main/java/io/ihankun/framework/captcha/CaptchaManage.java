@@ -1,6 +1,6 @@
-package io.ihankun.framework.captcha.v2;
+package io.ihankun.framework.captcha;
 
-import io.ihankun.framework.captcha.v2.resource.ResourceInterface;
+import io.ihankun.framework.captcha.resource.ResourceInterface;
 
 /**
  * @classDesc: 功能描述:

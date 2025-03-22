@@ -1,8 +1,8 @@
-package io.ihankun.framework.captcha.v2;
+package io.ihankun.framework.captcha;
 
-import io.ihankun.framework.captcha.v2.generator.GeneratorInterface;
-import io.ihankun.framework.captcha.v2.generator.entity.CaptchaGeneratorVO;
-import io.ihankun.framework.captcha.v2.generator.impl.SliderGeneratorImpl;
+import io.ihankun.framework.captcha.generator.GeneratorInterface;
+import io.ihankun.framework.captcha.generator.entity.CaptchaGeneratorVO;
+import io.ihankun.framework.captcha.generator.impl.SliderGeneratorImpl;
 import lombok.extern.slf4j.Slf4j;
 
 /**

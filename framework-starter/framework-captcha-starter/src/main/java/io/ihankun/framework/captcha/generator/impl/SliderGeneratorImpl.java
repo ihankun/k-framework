@@ -1,19 +1,15 @@
-package io.ihankun.framework.captcha.v2.generator.impl;
+package io.ihankun.framework.captcha.generator.impl;
 
-import io.ihankun.framework.captcha.v2.generator.AbstractGenerator;
-import io.ihankun.framework.captcha.v2.generator.entity.CaptchaGeneratorVO;
+import io.ihankun.framework.captcha.generator.AbstractGenerator;
+import io.ihankun.framework.captcha.generator.entity.CaptchaGeneratorVO;
 import io.ihankun.framework.core.utils.captcha.CaptchaImageUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.InputStream;
 
 /**
  * @author hankun

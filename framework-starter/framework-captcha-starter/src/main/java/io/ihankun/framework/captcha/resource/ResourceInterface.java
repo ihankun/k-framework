@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha.v2.resource;
+package io.ihankun.framework.captcha.resource;
 
 
 /**

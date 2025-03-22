@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha.v2;
+package io.ihankun.framework.captcha;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;

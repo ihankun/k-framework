@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.ihankun.framework.captcha.v2.CaptchaAutoConfig
+  io.ihankun.framework.captcha.CaptchaAutoConfig

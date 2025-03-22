@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha.v2.generator.entity;
+package io.ihankun.framework.captcha.generator.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

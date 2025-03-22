@@ -1,6 +1,6 @@
-package io.ihankun.framework.captcha.v2.generator;
+package io.ihankun.framework.captcha.generator;
 
-import io.ihankun.framework.captcha.v2.generator.entity.CaptchaGeneratorVO;
+import io.ihankun.framework.captcha.generator.entity.CaptchaGeneratorVO;
 import io.ihankun.framework.core.utils.captcha.CaptchaImageUtils;
 import io.ihankun.framework.core.utils.image.ImgWriter;
 import lombok.SneakyThrows;

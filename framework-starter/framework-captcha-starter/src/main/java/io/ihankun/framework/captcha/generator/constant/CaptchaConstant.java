@@ -1,4 +1,4 @@
-package io.ihankun.framework.captcha.v2.generator.constant;
+package io.ihankun.framework.captcha.generator.constant;
 
 /**
  * @classDesc: 功能描述:
