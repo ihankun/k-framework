@@ -24,9 +24,9 @@ public class ResponseResult<T> implements Serializable {
     @ApiModelProperty("标记是否成功")
     private boolean success;
 
-    @ApiModelProperty("是否将返回值包装为ResponseResult")
-    @Getter(onMethod = @__( @JsonIgnore))
-    private boolean decorate = Boolean.TRUE;
+//    @ApiModelProperty("是否将返回值包装为ResponseResult")
+//    @Getter(onMethod = @__( @JsonIgnore))
+//    private boolean decorate = Boolean.TRUE;
 
     @ApiModelProperty("错误码")
     private String code;
