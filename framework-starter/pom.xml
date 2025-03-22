@@ -32,7 +32,7 @@
         <module>framework-job-starter</module>
         <module>framework-file-starter</module>
         <module>framework-db-starter</module>
-        <module>framework-captcha2-starter</module>
+        <module>framework-captcha-starter</module>
         <module>framework-cache-starter</module>
     </modules>
 
