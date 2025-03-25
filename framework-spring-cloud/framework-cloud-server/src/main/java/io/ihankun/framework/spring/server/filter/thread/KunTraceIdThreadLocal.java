@@ -4,7 +4,7 @@ import cn.hutool.core.lang.UUID;
 import feign.RequestTemplate;
 import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
-import io.ihankun.framework.spring.server.utils.RequestLogUtil;
+import io.ihankun.framework.springboot.utils.RequestLogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.skywalking.apm.toolkit.trace.TraceContext;
 import org.slf4j.MDC;

@@ -5,7 +5,7 @@
     <parent>
         <groupId>io.ihankun</groupId>
         <artifactId>framework-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </parent>
 
     <artifactId>framework-spring-boot</artifactId>
@@ -19,11 +19,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.ihankun</groupId>
-            <artifactId>framework-core</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <exclusions>
@@ -32,6 +27,21 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ihankun</groupId>
+            <artifactId>framework-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.ihankun.starter</groupId>
+            <artifactId>framework-log-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
         </dependency>
 
 
