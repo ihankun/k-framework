@@ -29,4 +29,9 @@ public class DataSourceType {
      * 应用数据源
      */
     public static final String APP = "app";
+
+    /**
+     * 应用数据源
+     */
+    public static final String AI = "ai";
 }

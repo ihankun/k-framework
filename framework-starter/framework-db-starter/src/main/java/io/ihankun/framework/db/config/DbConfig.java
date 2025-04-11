@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(value = "kun.database.config")
+@ConfigurationProperties(value = "spring.database.config")
 public class DbConfig {
     /**
      * 最大行数限制
