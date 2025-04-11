@@ -36,7 +36,7 @@ public class CommentInterceptor implements Interceptor {
 
         try {
 
-            boolean comment = config.isComment();
+            boolean comment = config.isFanTongFangComment();
             if (!comment) {
                 return invocation.proceed();
             }

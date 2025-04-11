@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.server.utils;
+package io.ihankun.framework.springboot.utils;
 
 import lombok.extern.slf4j.Slf4j;
 

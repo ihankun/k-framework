@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import io.ihankun.framework.core.context.GovernanceContext;
 import io.ihankun.framework.core.utils.date.DateUtils;
-import io.ihankun.framework.spring.server.utils.HttpConnectionUtil;
+import io.ihankun.framework.springboot.utils.HttpConnectionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.springframework.beans.factory.annotation.Value;

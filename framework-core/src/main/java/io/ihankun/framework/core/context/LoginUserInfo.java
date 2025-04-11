@@ -36,4 +36,7 @@ public class LoginUserInfo extends BaseEntity {
 
     @ApiModelProperty("机构ID")
     private Long orgId;
+
+    @ApiModelProperty("源ip")
+    private String host;
 }
