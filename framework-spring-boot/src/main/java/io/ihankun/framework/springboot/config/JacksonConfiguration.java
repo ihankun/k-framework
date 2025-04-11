@@ -1,4 +1,4 @@
-package io.ihankun.framework.spring.server.config;
+package io.ihankun.framework.springboot.config;
 
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.beans.factory.annotation.Value;

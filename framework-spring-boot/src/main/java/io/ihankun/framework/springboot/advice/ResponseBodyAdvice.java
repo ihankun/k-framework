@@ -62,13 +62,13 @@ public class ResponseBodyAdvice implements org.springframework.web.servlet.mvc.m
 
         if (body instanceof ResponseResult) {
             ResponseResult result = (ResponseResult) body;
-//            if (result.isDecorate()) {
-//                if (!StringUtils.isEmpty(TraceLogContext.get())) {
-//                    result.setTraceId(TraceLogContext.get());
-//                }
-//                //result.setService(service);
-//                return body;
-//            }
+            if (result.isDecorate()) {
+                if (!StringUtils.isEmpty(TraceLogContext.get())) {
+                    result.setTraceId(TraceLogContext.get());
+                }
+                //result.setService(service);
+                return body;
+            }
             return result.getData();
         }
 

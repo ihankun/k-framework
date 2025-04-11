@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.ihankun.framework.spring.server.SpringAutoConfiguration
+  io.ihankun.framework.spring.server.SpringCloudAutoConfiguration
