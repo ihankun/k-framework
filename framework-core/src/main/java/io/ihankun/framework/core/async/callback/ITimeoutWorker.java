@@ -1,4 +1,4 @@
-package io.ihankun.framework.commons.async.callback;
+package io.ihankun.framework.core.async.callback;
 
 /**
  * @author hankun

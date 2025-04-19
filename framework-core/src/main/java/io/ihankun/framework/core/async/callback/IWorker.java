@@ -1,6 +1,6 @@
-package io.ihankun.framework.commons.async.callback;
+package io.ihankun.framework.core.async.callback;
 
-import io.ihankun.framework.commons.async.wrapper.WorkerWrapper;
+import io.ihankun.framework.core.async.wrapper.WorkerWrapper;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package io.ihankun.framework.commons.async.worker;
+package io.ihankun.framework.core.async.worker;
 
 /**
  * 执行结果
