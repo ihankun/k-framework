@@ -12,12 +12,12 @@ import javax.annotation.PostConstruct;
  */
 @Slf4j
 @Configuration
-@ConfigurationProperties(prefix = "kun.common")
-@ComponentScan(basePackageClasses = CommonAutoConfiguration.class)
-public class CommonAutoConfiguration {
+@ConfigurationProperties(prefix = "kun.base")
+@ComponentScan(basePackageClasses = BaseAutoConfiguration.class)
+public class BaseAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        log.info("CommonAutoConfiguration.init");
+        log.info("BaseAutoConfiguration.init");
     }
 }
