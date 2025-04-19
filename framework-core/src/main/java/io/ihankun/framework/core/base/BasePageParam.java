@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
  * @author hankun
  */
 @Data
-public class BasePageParam extends BaseReq{
+public class BasePageParam extends BaseReq {
 
     private static final Integer PAGE_NO = 1;
     private static final Integer PAGE_SIZE = 10;

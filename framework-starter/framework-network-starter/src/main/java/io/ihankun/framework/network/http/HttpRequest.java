@@ -1,12 +1,12 @@
 package io.ihankun.framework.network.http;
 
+import io.ihankun.framework.commons.utils.JsonUtil;
 import io.ihankun.framework.core.retry.IRetry;
 import io.ihankun.framework.core.retry.SimpleRetry;
 import io.ihankun.framework.core.ssl.DisableValidationTrustManager;
 import io.ihankun.framework.core.ssl.TrustAllHostNames;
 import io.ihankun.framework.core.utils.Holder;
 import io.ihankun.framework.core.utils.exception.Exceptions;
-import io.ihankun.framework.core.utils.json.JsonUtil;
 import io.ihankun.framework.core.utils.string.StringPool;
 import okhttp3.*;
 import okhttp3.internal.Util;
@@ -197,27 +197,27 @@ public class HttpRequest {
 	}
 
 	public HttpRequest body(byte[] body) {
-		return body(RequestBody.create(body));
+		return body(RequestBody.create(null, body));
 	}
 
 	public HttpRequest body(byte[] body, MediaType contentType) {
-		return body(RequestBody.create(body, contentType));
+		return body(RequestBody.create(contentType, body));
 	}
 
 	public HttpRequest body(File body, MediaType contentType) {
-		return body(RequestBody.create(body, contentType));
+		return body(RequestBody.create(contentType, body));
 	}
 
 	public HttpRequest body(String body, MediaType contentType) {
-		return body(RequestBody.create(body, contentType));
+		return body(RequestBody.create(contentType, body));
 	}
 
 	public HttpRequest bodyString(String body) {
-		return body(RequestBody.create(body, APPLICATION_JSON));
+		return body(RequestBody.create(APPLICATION_JSON, body));
 	}
 
 	public HttpRequest bodyString(MediaType contentType, String body) {
-		return body(RequestBody.create(body, contentType));
+		return body(RequestBody.create(contentType, body));
 	}
 
 	public HttpRequest bodyJson(Object body) {

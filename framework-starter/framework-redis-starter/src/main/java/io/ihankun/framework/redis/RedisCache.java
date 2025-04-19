@@ -1,7 +1,7 @@
 package io.ihankun.framework.redis;
 
+import io.ihankun.framework.commons.utils.JsonUtil;
 import io.ihankun.framework.redis.key.CacheKey;
-import io.ihankun.framework.core.utils.json.JsonUtil;
 import io.ihankun.framework.core.utils.plus.CollectionUtil;
 import lombok.Getter;
 import org.springframework.data.domain.Range;
