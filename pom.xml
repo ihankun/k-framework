@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>3.1.0</version>
+    <version>3.1.1</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>3.1.0</framework.version>
+        <framework.version>3.1.1</framework.version>
 
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
@@ -34,6 +34,7 @@
         <batik.version>1.16</batik.version>
         <bouncycastle.version>1.72</bouncycastle.version>
         <commons-collections.version>4.1</commons-collections.version>
+        <commons-io.version>2.11.0</commons-io.version>
         <commons-net.version>3.8.0</commons-net.version>
         <curator.version>2.12.0</curator.version>
         <elastic.job.version>2.1.5</elastic.job.version>
@@ -176,6 +177,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>${commons-collections.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
 
         <dependency>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun</groupId>
         <artifactId>framework-parent</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
     </parent>
 
     <artifactId>framework-gateway</artifactId>
