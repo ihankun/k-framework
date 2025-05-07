@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>3.1.1</version>
+    <version>3.1.2</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>3.1.1</framework.version>
+        <framework.version>3.1.2</framework.version>
 
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
@@ -32,10 +32,10 @@
         <assertj.version>3.24.2</assertj.version>
         <aspectjweaver.version>1.9.20.1</aspectjweaver.version>
         <batik.version>1.16</batik.version>
-        <bouncycastle.version>1.72</bouncycastle.version>
+        <bouncycastle.version>1.75</bouncycastle.version>
         <commons-collections.version>4.1</commons-collections.version>
-        <commons-io.version>2.11.0</commons-io.version>
-        <commons-net.version>3.8.0</commons-net.version>
+        <commons-io.version>2.14.0</commons-io.version>
+        <commons-net.version>3.9.0</commons-net.version>
         <curator.version>2.12.0</curator.version>
         <elastic.job.version>2.1.5</elastic.job.version>
         <disruptor.version>3.4.2</disruptor.version>
@@ -44,7 +44,8 @@
         <fastjson.version>1.2.83</fastjson.version>
         <fop.version>2.8</fop.version>
         <freemarker.version>2.3.31</freemarker.version>
-        <guava.version>30.0-jre</guava.version>
+        <guava.version>32.0.1-jre</guava.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <hutool-all.version>5.8.27</hutool-all.version>
         <hystrix.version>2.2.2.RELEASE</hystrix.version>
         <jackson-databind.version>2.12.7.1</jackson-databind.version>
@@ -86,11 +87,11 @@
         <swagger.version>2.9.2</swagger.version>
         <swagger.bootstrap.ui.version>2.0.2</swagger.bootstrap.ui.version>
         <tabula.version>1.0.5</tabula.version>
-        <thymeleaf.version>3.1.0.RELEASE</thymeleaf.version>
+        <thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
         <tika.version>2.7.0</tika.version>
         <transmittable.version>2.14.2</transmittable.version>
         <vandeseer.easytable.version>0.8.5</vandeseer.easytable.version>
-        <xerces.version>2.9.1</xerces.version>
+        <xerces.version>2.12.2</xerces.version>
         <xmlbeans.version>3.1.0</xmlbeans.version>
         <xmlgraphics-commons.version>2.8</xmlgraphics-commons.version>
         <zxing.version>3.5.1</zxing.version>
@@ -230,6 +231,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
 
         <dependency>
