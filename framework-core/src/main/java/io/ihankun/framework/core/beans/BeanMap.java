@@ -1,5 +1,6 @@
 package io.ihankun.framework.core.beans;
 
+import lombok.Setter;
 import org.springframework.asm.ClassVisitor;
 import org.springframework.cglib.core.AbstractClassGenerator;
 import org.springframework.cglib.core.ReflectUtils;
@@ -41,8 +42,26 @@ public abstract class BeanMap extends org.springframework.cglib.beans.BeanMap {
 		private static final Source SOURCE = new Source(BeanMap.class.getName());
 
 		private Object bean;
-		private Class beanClass;
-		private int require;
+        /**
+         * -- SETTER --
+         *  Set the class of the bean that the generated map should support.
+         *  You must call either this method or
+         *  before
+         * .
+         *
+         * @param beanClass the class of the bean
+         */
+        @Setter
+        private Class beanClass;
+        /**
+         * -- SETTER --
+         *  Limit the properties reflected by the generated map.
+         *
+         * @param require any combination of {@link #REQUIRE_GETTER} and
+         * {@link #REQUIRE_SETTER}; default is zero (any property allowed)
+         */
+        @Setter
+        private int require;
 
 		public MicaGenerator() {
 			super(SOURCE);
@@ -62,25 +81,7 @@ public abstract class BeanMap extends org.springframework.cglib.beans.BeanMap {
 			}
 		}
 
-		/**
-		 * Set the class of the bean that the generated map should support.
-		 * You must call either this method or {@link #setBeanClass} before {@link #create}.
-		 * @param beanClass the class of the bean
-		 */
-		public void setBeanClass(Class beanClass) {
-			this.beanClass = beanClass;
-		}
-
-		/**
-		 * Limit the properties reflected by the generated map.
-		 * @param require any combination of {@link #REQUIRE_GETTER} and
-		 * {@link #REQUIRE_SETTER}; default is zero (any property allowed)
-		 */
-		public void setRequire(int require) {
-			this.require = require;
-		}
-
-		@Override
+        @Override
 		protected ClassLoader getDefaultClassLoader() {
 			return beanClass.getClassLoader();
 		}

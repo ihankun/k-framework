@@ -1,5 +1,7 @@
 package io.ihankun.framework.core.base;
 
+import lombok.Getter;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,7 @@ import java.io.Serializable;
  *
  * @author hankun
  */
+@Getter
 public class SortingField implements Serializable {
 
     /**
@@ -36,17 +39,9 @@ public class SortingField implements Serializable {
         this.order = order;
     }
 
-    public String getField() {
-        return field;
-    }
-
     public SortingField setField(String field) {
         this.field = field;
         return this;
-    }
-
-    public String getOrder() {
-        return order;
     }
 
     public SortingField setOrder(String order) {

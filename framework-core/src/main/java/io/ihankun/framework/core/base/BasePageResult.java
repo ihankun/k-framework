@@ -3,6 +3,7 @@ package io.ihankun.framework.core.base;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * @author hankun
  */
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @Data
 public class BasePageResult<T> extends BaseEntity {

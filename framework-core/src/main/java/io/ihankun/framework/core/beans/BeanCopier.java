@@ -4,6 +4,7 @@ import io.ihankun.framework.core.utils.bean.BeanUtil;
 import io.ihankun.framework.core.utils.plus.CollectionUtil;
 import io.ihankun.framework.core.utils.plus.ReflectUtil;
 import io.ihankun.framework.core.utils.string.StringUtil;
+import lombok.Setter;
 import org.springframework.asm.ClassVisitor;
 import org.springframework.asm.Label;
 import org.springframework.asm.Opcodes;
@@ -71,7 +72,8 @@ public abstract class BeanCopier {
 	 */
 	public abstract void copy(Object from, Object to, @Nullable Converter converter);
 
-	public static class Generator extends AbstractClassGenerator {
+	@Setter
+    public static class Generator extends AbstractClassGenerator {
 		private static final Source SOURCE = new Source(BeanCopier.class.getName());
 		private Class source;
 		private Class target;
@@ -82,28 +84,12 @@ public abstract class BeanCopier {
 			super(SOURCE);
 		}
 
-		public void setSource(Class source) {
-			this.source = source;
-		}
-
-		public void setTarget(Class target) {
-			this.target = target;
-		}
-
-		@Override
+        @Override
 		public void setNamePrefix(String namePrefix) {
 			super.setNamePrefix(namePrefix);
 		}
 
-		public void setUseConverter(boolean useConverter) {
-			this.useConverter = useConverter;
-		}
-
-		public void setNonNull(boolean nonNull) {
-			this.nonNull = nonNull;
-		}
-
-		@Override
+        @Override
 		protected ClassLoader getDefaultClassLoader() {
 			return target.getClassLoader();
 		}
