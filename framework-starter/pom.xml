@@ -34,6 +34,8 @@
         <module>framework-db-starter</module>
         <module>framework-captcha-starter</module>
         <module>framework-cache-starter</module>
+        <module>framework-ai-starter</module>
+        <module>framework-websocket-starter</module>
     </modules>
 
 </project>
