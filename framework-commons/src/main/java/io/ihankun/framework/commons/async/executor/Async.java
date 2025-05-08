@@ -1,9 +1,9 @@
-package io.ihankun.framework.core.async.executor;
+package io.ihankun.framework.commons.async.executor;
 
 
-import io.ihankun.framework.core.async.callback.DefaultGroupCallback;
-import io.ihankun.framework.core.async.callback.IGroupCallback;
-import io.ihankun.framework.core.async.wrapper.WorkerWrapper;
+import io.ihankun.framework.commons.async.callback.DefaultGroupCallback;
+import io.ihankun.framework.commons.async.callback.IGroupCallback;
+import io.ihankun.framework.commons.async.wrapper.WorkerWrapper;
 
 import java.util.*;
 import java.util.concurrent.*;

@@ -1,7 +1,7 @@
-package io.ihankun.framework.core.async.callback;
+package io.ihankun.framework.commons.async.callback;
 
 
-import io.ihankun.framework.core.async.worker.WorkResult;
+import io.ihankun.framework.commons.async.worker.WorkResult;
 
 /**
  * 默认回调类，如果不设置的话，会默认给这个回调

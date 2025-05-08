@@ -1,7 +1,7 @@
-package io.ihankun.framework.core.async.worker;
+package io.ihankun.framework.commons.async.worker;
 
 
-import io.ihankun.framework.core.async.wrapper.WorkerWrapper;
+import io.ihankun.framework.commons.async.wrapper.WorkerWrapper;
 
 /**
  * 对依赖的wrapper的封装

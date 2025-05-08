@@ -1,7 +1,7 @@
-package io.ihankun.framework.core.async.callback;
+package io.ihankun.framework.commons.async.callback;
 
 
-import io.ihankun.framework.core.async.worker.WorkResult;
+import io.ihankun.framework.commons.async.worker.WorkResult;
 
 /**
  * 每个执行单元执行完毕后，会回调该接口</p>
