@@ -36,4 +36,13 @@ public class LoginUserInfo extends BaseEntity {
 
     @ApiModelProperty("机构ID")
     private Long orgId;
+
+    @ApiModelProperty("源ip")
+    private String host;
+
+    @ApiModelProperty("发起请求的前端的应用名称")
+    private String systemName;
+
+    @ApiModelProperty("用户允许访问系统列表，英文逗号分隔")
+    private String allowSystems;
 }

@@ -25,7 +25,7 @@ public class ResponseResult<T> implements Serializable {
     private boolean success;
 
     @ApiModelProperty("是否将返回值包装为ResponseResult")
-    @Getter(onMethod = @__( @JsonIgnore))
+    @JsonIgnore
     private boolean decorate = Boolean.TRUE;
 
     @ApiModelProperty("错误码")
@@ -42,18 +42,6 @@ public class ResponseResult<T> implements Serializable {
 
     @ApiModelProperty("版本号")
     private String version;
-
-//    @ApiModelProperty("异常名称")
-//    @Getter(onMethod = @__( @JsonIgnore))
-//    private String exceptionName;
-//
-//    @ApiModelProperty("级别，正常返回为info,业务异常为warn,未捕获异常为error")
-//    @Getter(onMethod = @__( @JsonIgnore))
-//    private String level;
-//
-//    @ApiModelProperty("当前服务")
-//    @Getter(onMethod = @__( @JsonIgnore))
-//    private String service;
 
     private static final String REPLACE_STR = "$";
     private static final String CODE_SPLIT = "@";
@@ -93,8 +81,6 @@ public class ResponseResult<T> implements Serializable {
                 msg = msg.replaceAll("\\$" + (i + 1), param);
             }
         }
-        //result.setService(service);
-        //result.setLevel(level.name().toLowerCase());
         result.setMessage(msg);
         result.setData(data);
         return result;
@@ -208,7 +194,6 @@ public class ResponseResult<T> implements Serializable {
         return build(code, null, params);
     }
 
-
     /**
      * 返回熔断结果
      */
@@ -216,30 +201,4 @@ public class ResponseResult<T> implements Serializable {
         log.error("ResponseResult.fallback,e={}", throwable);
         return build(BaseErrorCode.FALLBACK, null, new String[]{throwable.getMessage()});
     }
-
-//    /**
-//     * 获取业务异常的ErrorCode
-//     */
-//    public IErrorCode convertErrorCode() {
-//        if (isBusinessException()) {
-//            String code = getCode();
-//            return new IErrorCode() {
-//                @Override
-//                public String prefix() {
-//                    return "BusinessExceptionErrorCode";
-//                }
-//
-//                @Override
-//                public String getCode() {
-//                    return code;
-//                }
-//
-//                @Override
-//                public String getMsg() {
-//                    return getMessage();
-//                }
-//            };
-//        }
-//        return convert();
-//    }
 }

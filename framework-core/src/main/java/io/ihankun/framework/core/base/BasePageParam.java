@@ -2,6 +2,7 @@ package io.ihankun.framework.core.base;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -10,8 +11,9 @@ import javax.validation.constraints.NotNull;
 /**
  * @author hankun
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class BasePageParam extends BaseReq{
+public class BasePageParam extends BaseReq {
 
     private static final Integer PAGE_NO = 1;
     private static final Integer PAGE_SIZE = 10;

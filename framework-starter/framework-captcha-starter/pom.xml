@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun</groupId>
         <artifactId>framework-starter</artifactId>
-        <version>3.0.0</version>
+        <version>3.2.1</version>
     </parent>
 
     <groupId>io.ihankun.starter</groupId>
@@ -20,28 +20,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.ihankun.starter</groupId>
-            <artifactId>framework-cache-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>io.ihankun</groupId>
             <artifactId>framework-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
 

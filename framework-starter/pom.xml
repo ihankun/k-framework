@@ -5,7 +5,7 @@
     <parent>
         <groupId>io.ihankun</groupId>
         <artifactId>framework-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.2.1</version>
     </parent>
 
     <artifactId>framework-starter</artifactId>
@@ -33,8 +33,9 @@
         <module>framework-file-starter</module>
         <module>framework-db-starter</module>
         <module>framework-captcha-starter</module>
-        <module>framework-captcha2-starter</module>
         <module>framework-cache-starter</module>
+        <module>framework-ai-starter</module>
+        <module>framework-websocket-starter</module>
     </modules>
 
 </project>

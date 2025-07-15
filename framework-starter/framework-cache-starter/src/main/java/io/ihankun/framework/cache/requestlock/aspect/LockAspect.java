@@ -8,7 +8,7 @@ import io.ihankun.framework.redis.key.ICacheKey;
 import io.ihankun.framework.redis.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.lock.LockCallback;
 import io.ihankun.framework.cache.lock.RedissonLock;
-import io.ihankun.framework.spring.api.LockKey;
+import io.ihankun.framework.springcloud.api.LockKey;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

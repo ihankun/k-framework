@@ -6,6 +6,7 @@ import io.ihankun.framework.core.context.LoginUserInfo;
 import io.ihankun.framework.core.optimistic.LockVersion;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Calendar;
@@ -14,6 +15,7 @@ import java.util.Date;
 /**
  * @author hankun
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class BasePO extends BaseEntity{
 

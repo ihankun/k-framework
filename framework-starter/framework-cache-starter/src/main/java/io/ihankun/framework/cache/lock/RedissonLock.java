@@ -37,12 +37,12 @@ public class RedissonLock {
     /**
      * 获取分布式锁最大等待时间（秒）
      */
-    public static final long LOCK_MAX_WAIT_SECTOND = 30;
+    public static final long LOCK_MAX_WAIT_SECOND = 30;
 
     /**
      * 获取锁后多久自动释放锁（秒）
      */
-    public static final long LOCK_MAX_LEASE_SECTOND = 60;
+    public static final long LOCK_MAX_LEASE_SECOND = 60;
 
     /**
      * Redisson客户端
@@ -59,7 +59,7 @@ public class RedissonLock {
      * @return 回调接口的返回值
      */
     public <T> T lock(String key, LockCallback<T> callback) {
-        return lock(key, LOCK_MAX_WAIT_SECTOND, LOCK_MAX_LEASE_SECTOND, TimeUnit.SECONDS, callback);
+        return lock(key, LOCK_MAX_WAIT_SECOND, LOCK_MAX_LEASE_SECOND, TimeUnit.SECONDS, callback);
     }
 
     /**
@@ -75,13 +75,19 @@ public class RedissonLock {
     public <T> T lock(String key, long waitTime, long leaseTime, TimeUnit timeUnit, LockCallback<T> callback) {
         String locKey = LOCK_KEY_PREFIX + key;
         LOC_KEY_THREAD_LOCAL.set(locKey);
+
         RLock rLock = RedissonClientHolder.ins().getRedissonClient().getLock(locKey);
         try {
-            boolean locked = rLock.tryLock(waitTime, leaseTime, timeUnit);
-
-            //加锁成功执行成功回调逻辑
-            if (locked) {
-                return callback.success();
+            if (rLock.tryLock(waitTime, leaseTime, timeUnit)) {
+                try {
+                    //加锁成功执行成功回调逻辑
+                    return callback.success();
+                } finally {
+                    //当前请求的线程是否是锁对象的持有者
+                    if (rLock.isHeldByCurrentThread()) {
+                        rLock.unlock();
+                    }
+                }
             }
 
             //加锁失败执行失败回调逻辑

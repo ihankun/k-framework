@@ -34,7 +34,7 @@ public class SqlUpdateInterceptor implements Interceptor {
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-        if (!config.isCheckSql()) {
+        if (!config.isUpdateTimeCheck()) {
             log.info("SqlUpdateInterceptor.intercept.does.not.check.sql!");
             return invocation.proceed();
         }

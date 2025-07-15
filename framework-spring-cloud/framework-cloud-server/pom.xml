@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.ihankun</groupId>
         <artifactId>framework-spring-cloud</artifactId>
-        <version>3.0.0</version>
+        <version>3.2.1</version>
     </parent>
 
     <artifactId>framework-cloud-server</artifactId>
@@ -37,7 +37,6 @@
             <groupId>io.ihankun.starter</groupId>
             <artifactId>framework-db-starter</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

@@ -30,12 +30,12 @@ public @interface Lock {
      *
      * @return
      */
-    long waitTime() default RedissonLock.LOCK_MAX_WAIT_SECTOND;
+    long waitTime() default RedissonLock.LOCK_MAX_WAIT_SECOND;
 
     /**
      * 获取锁后多久自动释放锁（秒）
      *
      * @return
      */
-    long leaseTime() default RedissonLock.LOCK_MAX_LEASE_SECTOND;
+    long leaseTime() default RedissonLock.LOCK_MAX_LEASE_SECOND;
 }

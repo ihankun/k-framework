@@ -48,12 +48,12 @@ public class MultipartFormBuilder {
 	}
 
 	public MultipartFormBuilder add(String name, @Nullable String filename, File file) {
-		RequestBody fileBody = RequestBody.create(file, null);
+		RequestBody fileBody = RequestBody.create(null, file);
 		return add(name, filename, fileBody);
 	}
 
 	public MultipartFormBuilder add(String name, @Nonnull String filename, byte[] bytes) {
-		RequestBody fileBody = RequestBody.create(bytes, null);
+		RequestBody fileBody = RequestBody.create(null, bytes);
 		return add(name, filename, fileBody);
 	}
 
