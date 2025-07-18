@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
  */
 @Slf4j
 @Configuration
-@ConfigurationProperties(prefix = "kun.commons")
+@ConfigurationProperties(prefix = "k.commons")
 @ComponentScan(basePackageClasses = CommonsAutoConfiguration.class)
 public class CommonsAutoConfiguration {
 

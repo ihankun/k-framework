@@ -24,10 +24,6 @@ public class RequestLogUtil {
 
     /**
      * 根据内容长度决定是否打印日志（防止打印超大请求内容时内存溢出）
-     *
-     * @param contentLength
-     * @param url
-     * @param body
      */
     public static void logWithContentLength(long contentLength, Object url, Object body) {
         //日志超长并且不是debug级别，则不打印日志详细内容
