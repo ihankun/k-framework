@@ -1,7 +1,7 @@
 package io.ihankun.framework.springboot.advice;
 
 import io.ihankun.framework.log.context.TraceLogContext;
-import io.ihankun.framework.springboot.utils.RequestLogUtil;
+import io.ihankun.framework.core.utils.log.RequestLog;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class LogRequestBodyAdvice extends RequestBodyAdviceAdapter {
         long contentLength = inputMessage.getHeaders().getContentLength();
         String url = MDC.get(TraceLogContext.REQUEST_URI);
         //根据 contentLength 和 日志级别 判断是否打印全量日志
-        RequestLogUtil.logWithContentLength(contentLength, url, body);
+        RequestLog.logWithContentLength(contentLength, url, body);
         return super.afterBodyRead(body, inputMessage, parameter, targetType, converterType);
     }
 }

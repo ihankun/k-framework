@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.ihankun.framework.core.enums.ResponseLevelEnum;
 import io.ihankun.framework.core.error.IErrorCode;
 import io.ihankun.framework.core.error.impl.BaseErrorCode;
+import io.ihankun.framework.core.exception.BusinessException;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.Getter;
@@ -42,6 +43,15 @@ public class ResponseResult<T> implements Serializable {
 
     @ApiModelProperty("版本号")
     private String version;
+
+//    @ApiModelProperty("级别，正常返回为info,业务异常为warn,未捕获异常为error")
+//    private String level;
+
+    @ApiModelProperty("当前服务")
+    private String service;
+
+//    @ApiModelProperty("异常名称")
+//    private String exceptionName;
 
     private static final String REPLACE_STR = "$";
     private static final String CODE_SPLIT = "@";
@@ -83,6 +93,8 @@ public class ResponseResult<T> implements Serializable {
         }
         result.setMessage(msg);
         result.setData(data);
+        result.setService(service);
+//        result.setLevel(level.name());
         return result;
     }
 
@@ -107,7 +119,7 @@ public class ResponseResult<T> implements Serializable {
     }
 
     public ResponseResult setException(Throwable exception) {
-        //this.exceptionName = exception.getClass().getName();
+//        this.exceptionName = exception.getClass().getName();
         return this;
     }
 

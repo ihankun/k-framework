@@ -1,7 +1,7 @@
 package io.ihankun.framework.commons.async.wrapper;
 
 import io.ihankun.framework.commons.async.callback.IWorker;
-import io.ihankun.framework.commons.async.exception.SkippedException;
+import io.ihankun.framework.core.exception.SkippedException;
 import io.ihankun.framework.commons.async.executor.timer.SystemClock;
 import io.ihankun.framework.commons.async.callback.DefaultCallback;
 import io.ihankun.framework.commons.async.callback.ICallback;
