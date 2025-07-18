@@ -4,7 +4,7 @@ import cn.hutool.core.lang.UUID;
 import feign.RequestTemplate;
 import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
-import io.ihankun.framework.springboot.utils.RequestLogUtil;
+import io.ihankun.framework.core.utils.log.RequestLog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.skywalking.apm.toolkit.trace.TraceContext;
 import org.slf4j.MDC;
@@ -90,11 +90,11 @@ public class KunTraceIdThreadLocal implements IKunThreadLocalFilter {
         String uri = String.valueOf(request.getRequestURI());
         //1、获取get请求参数
         if (GET.equals(request.getMethod())) {
-            RequestLogUtil.log("请求地址:{},请求参数：{}", uri, request.getQueryString());
+            RequestLog.log("请求地址:{},请求参数：{}", uri, request.getQueryString());
         }
         //2、post类型的请求,但是可能在url里传递参数
         if (POST.equals(request.getMethod()) && request.getQueryString() != null) {
-            RequestLogUtil.log("请求地址:{},请求参数：{}", uri, request.getQueryString());
+            RequestLog.log("请求地址:{},请求参数：{}", uri, request.getQueryString());
         }
     }
 

@@ -1,7 +1,7 @@
 package io.ihankun.framework.springboot.advice;
 
 import io.ihankun.framework.core.response.ResponseResult;
-import io.ihankun.framework.springboot.utils.RequestLogUtil;
+import io.ihankun.framework.core.utils.log.RequestLog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.MethodParameter;
@@ -28,7 +28,7 @@ public class LogResponseBodyAdvice implements org.springframework.web.servlet.mv
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         if (body instanceof ResponseResult) {
-            RequestLogUtil.log("请求地址:{},返回值:{}", request.getURI(), body);
+            RequestLog.log("请求地址:{},返回值:{}", request.getURI(), body);
         }
         return body;
     }
