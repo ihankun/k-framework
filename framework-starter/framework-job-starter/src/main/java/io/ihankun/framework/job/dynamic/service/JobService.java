@@ -20,6 +20,8 @@ import io.ihankun.framework.job.base.JobAttributeTag;
 import io.ihankun.framework.job.config.JobConfig;
 import io.ihankun.framework.job.dynamic.JsonUtils;
 import io.ihankun.framework.job.dynamic.bean.Job;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.cache.ChildData;
@@ -36,8 +38,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;

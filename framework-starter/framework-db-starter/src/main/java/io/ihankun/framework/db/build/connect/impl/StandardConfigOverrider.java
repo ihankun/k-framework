@@ -9,9 +9,9 @@ import io.ihankun.framework.db.build.connect.entity.ConnectionConfig;
 import io.ihankun.framework.db.build.connect.entity.DsOverriderConfig;
 import io.ihankun.framework.db.build.ds.DataSourceConfig;
 import io.ihankun.framework.db.build.entity.ConfigOverrideGroup;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.util.CollectionUtils;
 
-import javax.validation.constraints.NotNull;
 import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;

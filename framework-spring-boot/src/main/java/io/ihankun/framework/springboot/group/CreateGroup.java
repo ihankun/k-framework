@@ -1,6 +1,6 @@
 package io.ihankun.framework.springboot.group;
 
-import javax.validation.groups.Default;
+import jakarta.validation.groups.Default;
 
 /**
  * Validated Create group.

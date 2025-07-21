@@ -6,6 +6,7 @@ import io.ihankun.framework.core.context.LoginUserContext;
 import io.ihankun.framework.core.context.LoginUserInfo;
 import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import io.ihankun.framework.db.config.DbConfig;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.plugin.Interceptor;
@@ -14,7 +15,6 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.sql.Connection;
 

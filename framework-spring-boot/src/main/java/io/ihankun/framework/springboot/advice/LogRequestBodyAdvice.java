@@ -2,6 +2,7 @@ package io.ihankun.framework.springboot.advice;
 
 import io.ihankun.framework.log.context.TraceLogContext;
 import io.ihankun.framework.core.utils.log.RequestLog;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.RequestBodyAdviceAdapter;
 
-import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
 
 /**

@@ -6,28 +6,28 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>3.2.4</version>
     </parent>
 
     <groupId>io.ihankun</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>3.2.2</version>
+    <version>4.0.0</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
 
     <properties>
-        <java.version>11</java.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>3.2.2</framework.version>
+        <framework.version>4.0.0</framework.version>
 
-        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <spring-cloud.version>2021.0.0</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot.version>3.2.4</spring-boot.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.1.0</spring-cloud-alibaba.version>
 
         <assertj.version>3.24.2</assertj.version>
         <aspectjweaver.version>1.9.20.1</aspectjweaver.version>
@@ -40,14 +40,13 @@
         <elastic.job.version>2.1.5</elastic.job.version>
         <disruptor.version>3.4.2</disruptor.version>
         <dynamic-datasource.version>3.5.2</dynamic-datasource.version>
-        <druid.version>1.1.22</druid.version>
-
+        <druid.version>1.2.18</druid.version>
         <fastjson.version>1.2.83</fastjson.version>
         <fop.version>2.8</fop.version>
         <freemarker.version>2.3.31</freemarker.version>
         <guava.version>32.0.1-jre</guava.version>
         <httpclient.version>4.5.13</httpclient.version>
-        <hutool-all.version>5.8.27</hutool-all.version>
+        <hutool-all.version>5.8.39</hutool-all.version>
         <hystrix.version>2.2.2.RELEASE</hystrix.version>
         <jackson-databind.version>2.12.7.1</jackson-databind.version>
         <jnats.version>2.16.13</jnats.version>
@@ -55,7 +54,7 @@
         <jsoup.version>1.17.1</jsoup.version>
         <jsr311.version>1.1.1</jsr311.version>
         <jte.version>2.2.4</jte.version>
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <mapstruct.version>1.5.2.Final</mapstruct.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -83,7 +82,8 @@
         <skywalking.version>8.9.0</skywalking.version>
         <solon-api.version>2.5.11</solon-api.version>
         <spring-bootstrap.version>3.1.5</spring-bootstrap.version>
-        <spring-openfeign.version>3.1.1</spring-openfeign.version>
+        <spring-openfeign.version>4.1.0</spring-openfeign.version>
+        <springdoc.version>1.6.14</springdoc.version>
         <springfox-swagger.version>2.8.0</springfox-swagger.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger.bootstrap.ui.version>2.0.2</swagger.bootstrap.ui.version>
@@ -96,7 +96,6 @@
         <xmlbeans.version>3.1.0</xmlbeans.version>
         <xmlgraphics-commons.version>2.8</xmlgraphics-commons.version>
         <zxing.version>3.5.1</zxing.version>
-
     </properties>
 
     <modules>
@@ -124,6 +123,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
 
         <dependency>
@@ -262,7 +267,7 @@
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
-                <scope>runtime</scope>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
@@ -423,11 +428,11 @@
                 <version>${framework.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-context</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-context</artifactId>-->
+<!--                <version>${spring-cloud.version}</version>-->
+<!--            </dependency>-->
 
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -613,12 +618,28 @@
 
     <repositories>
         <repository>
+            <id>spring-milestones</id>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>maven-aliyun</id>
             <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
         </repository>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/releases</url>
+        </repository>
+        <repository>
+            <id>huaweicloud</id>
+            <url>https://repo.huaweicloud.com/repository/maven</url>
+        </repository>
+
     </repositories>
 
 </project>

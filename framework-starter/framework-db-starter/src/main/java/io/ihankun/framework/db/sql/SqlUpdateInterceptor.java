@@ -3,6 +3,7 @@ package io.ihankun.framework.db.sql;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
 import io.ihankun.framework.db.config.DbConfig;
 import io.ihankun.framework.db.exceptions.DbException;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
@@ -14,7 +15,6 @@ import org.apache.ibatis.reflection.SystemMetaObject;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.sql.Connection;
 import java.util.Properties;
 

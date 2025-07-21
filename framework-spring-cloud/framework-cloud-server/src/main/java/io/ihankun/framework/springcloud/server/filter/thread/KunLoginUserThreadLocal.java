@@ -4,11 +4,11 @@ import com.alibaba.fastjson.JSON;
 import feign.RequestTemplate;
 import io.ihankun.framework.core.context.LoginUserContext;
 import io.ihankun.framework.core.context.LoginUserInfo;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Base64;
 
 /**

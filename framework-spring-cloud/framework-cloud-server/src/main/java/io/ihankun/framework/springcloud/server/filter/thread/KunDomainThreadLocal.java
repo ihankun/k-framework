@@ -2,11 +2,11 @@ package io.ihankun.framework.springcloud.server.filter.thread;
 
 import feign.RequestTemplate;
 import io.ihankun.framework.core.context.DomainContext;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Base64;
 
 /**

@@ -3,9 +3,9 @@ package io.ihankun.framework.springcloud.api.validator.annotation;
 
 import io.ihankun.framework.springcloud.api.validator.CheckCaseValidator;
 import io.ihankun.framework.springcloud.api.validator.enums.CaseMode;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
 import java.lang.annotation.*;
 
 /**

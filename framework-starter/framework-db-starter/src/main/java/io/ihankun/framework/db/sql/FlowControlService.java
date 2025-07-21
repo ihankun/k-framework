@@ -4,13 +4,13 @@ import io.ihankun.framework.core.context.DomainContext;
 import io.ihankun.framework.db.config.FlowControlConfig;
 import io.ihankun.framework.db.config.FlowControlFilter;
 import io.ihankun.framework.db.events.SqlExecEvent;
+import jakarta.annotation.Resource;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

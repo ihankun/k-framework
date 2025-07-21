@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
 import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.db.events.SqlExecEvent;
 import io.ihankun.framework.db.exceptions.SqlFlowControlException;
+import jakarta.annotation.Resource;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
@@ -18,7 +19,6 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.sql.Connection;
 
 /**

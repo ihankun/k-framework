@@ -1,6 +1,8 @@
 package io.ihankun.framework.mongoplus.config;
 
 import com.mongodb.WriteConcern;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import io.ihankun.framework.mongoplus.property.AccountConfigProperties;
 import lombok.Data;
 import lombok.Setter;
@@ -10,9 +12,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.SimpleMongoClientDbFactory;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 
 import java.util.Map;
 import java.util.Objects;
@@ -39,7 +41,7 @@ public class MongoConfiguration {
     private Map<String, AccountConfigProperties> config;
 
     @Bean
-    MongoDbFactory mongoDbFactory() {
+    MongoDatabaseFactory mongoDbFactory() {
         if (StringUtils.isBlank(database)) {
             throw new RuntimeException("请配置spring.data.mongodb.database");
         }
@@ -56,7 +58,11 @@ public class MongoConfiguration {
         }
 
         uri = uri.replace("database", database);
-        return new SimpleMongoClientDbFactory(uri);
+
+        // ✅ 创建 MongoClient 实例
+        MongoClient mongoClient = MongoClients.create(uri);
+
+        return new SimpleMongoClientDatabaseFactory(mongoClient, database);
     }
 
     @Primary

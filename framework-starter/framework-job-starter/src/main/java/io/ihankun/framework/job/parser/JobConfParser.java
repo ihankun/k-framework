@@ -8,6 +8,7 @@ import io.ihankun.framework.job.config.JobControlConfig;
 import io.ihankun.framework.job.dynamic.bean.Job;
 import io.ihankun.framework.job.dynamic.service.JobService;
 import io.ihankun.framework.job.strategy.ServerListHolder;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.ApplicationArguments;
@@ -18,7 +19,6 @@ import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Map;

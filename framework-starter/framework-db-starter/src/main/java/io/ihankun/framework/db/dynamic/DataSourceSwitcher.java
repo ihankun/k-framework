@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;
 import com.baomidou.dynamic.datasource.ds.ItemDataSource;
 import io.ihankun.framework.core.event.DataSourceRefreshEvent;
+import jakarta.annotation.Resource;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -14,7 +15,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.net.URI;
 import java.util.List;
