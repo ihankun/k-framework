@@ -2,9 +2,6 @@
 <configuration>
     <!-- 第一全局参数信息 -->
     <Properties>
-        <!--          <Property name="LOG_PATTERN"> -->
-        <!--           {"appName": "${spring:spring.application.name}","time": "%date{yyyy-MM-dd HH:mm:ss.SSS}","level": "%level","pid": "%pid","thread": "%thread","class": "%logger","method": "%method","line": "%line","message": "%enc{%message}{JSON}","traceId":"%X{traceId}","orgId":"%X{orgId}","hospitalId":"%X{hospitalId}","hospitalName":"%X{hospitalName}","userId":"%X{userId}","userName":"%X{userName}","deptId":"%X{deptId}","deptName":"%X{deptName}","userSysId":"%X{userSysId}","systemId":"%X{systemId}","stackTrace":"%ex"}%n -->
-        <!--          </Property> -->
         <property name="LOG_PATTERN"
                   value="%d{ISO8601_OFFSET_DATE_TIME_HHCMM}{GMT+8} -- pid:%pid -- traceId:%X{traceId} -- [%thread] %-5level %logger{1.}.%M - %maxLen{%msg}{5120} %n"/>
         <property name="CONSOLE_LOG_PATTERN"
