@@ -74,7 +74,7 @@
         <pdfbox.version>2.0.27</pdfbox.version>
         <poi.version>4.1.1</poi.version>
         <postgresql.version>42.6.0</postgresql.version>
-        <redisson.version>3.18.0</redisson.version>
+        <redisson.version>3.23.2</redisson.version>
         <rocketmq.version>4.4.0</rocketmq.version>
         <seata.version>1.4.2</seata.version>
         <security.version>1.0.10.RELEASE</security.version>
