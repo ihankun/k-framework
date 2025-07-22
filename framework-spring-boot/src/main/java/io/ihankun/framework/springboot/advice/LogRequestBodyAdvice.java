@@ -2,10 +2,10 @@ package io.ihankun.framework.springboot.advice;
 
 import io.ihankun.framework.log.context.TraceLogContext;
 import io.ihankun.framework.core.utils.log.RequestLog;
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -21,8 +21,8 @@ import java.lang.reflect.Type;
 @ControllerAdvice
 public class LogRequestBodyAdvice extends RequestBodyAdviceAdapter {
 
-    @Autowired
-    HttpServletRequest httpServletRequest;
+//    @Resource
+//    HttpServletRequest httpServletRequest;
 
     @Override
     public boolean supports(MethodParameter methodParameter, Type type,

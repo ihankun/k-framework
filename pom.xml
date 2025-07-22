@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>4.0.0</framework.version>
+        <framework.version>4.0.1</framework.version>
 
         <spring-boot.version>3.2.4</spring-boot.version>
         <spring-cloud.version>2023.0.1</spring-cloud.version>
@@ -66,6 +66,7 @@
         <mybatis.version>3.0.3</mybatis.version>
         <mybatis-plus.version>3.5.9</mybatis-plus.version>
         <mysql.version>8.0.33</mysql.version>
+        <nacos.version>2023.0.1.0</nacos.version>
         <netty.version>4.1.86.Final</netty.version>
         <okhttp.version>4.12.0</okhttp.version>
         <openfeign.version>10.10.1</openfeign.version>
