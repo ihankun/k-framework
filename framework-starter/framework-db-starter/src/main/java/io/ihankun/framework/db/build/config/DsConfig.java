@@ -1,6 +1,6 @@
 package io.ihankun.framework.db.build.config;
 
-import com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig;
+import com.baomidou.dynamic.datasource.creator.druid.DruidConfig;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,6 +1,6 @@
 package io.ihankun.framework.db.build.druid.config;
 
-import io.ihankun.framework.db.build.druid.DruidConfig;
+import io.ihankun.framework.db.build.druid.KDruidConfig;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,9 +17,9 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(value = "kun.ds.druid")
 public class DsDruidConfig {
-    private List<DruidConfig> all = new ArrayList<>();
-    private List<DruidConfig> domains = new ArrayList<>();
-    private List<DruidConfig> services = new ArrayList<>();
-    private List<DruidConfig> sds = new ArrayList<>();
-    private List<DruidConfig> sus = new ArrayList<>();
+    private List<KDruidConfig> all = new ArrayList<>();
+    private List<KDruidConfig> domains = new ArrayList<>();
+    private List<KDruidConfig> services = new ArrayList<>();
+    private List<KDruidConfig> sds = new ArrayList<>();
+    private List<KDruidConfig> sus = new ArrayList<>();
 }

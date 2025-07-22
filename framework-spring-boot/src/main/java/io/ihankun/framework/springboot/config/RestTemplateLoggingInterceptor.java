@@ -101,13 +101,13 @@ public class RestTemplateLoggingInterceptor implements ClientHttpRequestIntercep
 
         @Override
         public HttpStatus getStatusCode() throws IOException {
-            return (HttpStatus) this.response.getStatusCode();
+            return HttpStatus.valueOf(this.response.getStatusCode().value());
         }
 
-        @Override
-        public int getRawStatusCode() throws IOException {
-            return this.response.getRawStatusCode();
-        }
+//        @Override
+//        public int getRawStatusCode() throws IOException {
+//            return this.response.getStatusCode().value();
+//        }
 
         @Override
         public String getStatusText() throws IOException {

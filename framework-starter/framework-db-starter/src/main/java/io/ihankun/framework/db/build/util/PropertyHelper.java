@@ -1,7 +1,7 @@
 package io.ihankun.framework.db.build.util;
 
-import com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DataSourceProperty;
-import com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig;
+import com.baomidou.dynamic.datasource.creator.DataSourceProperty;
+import com.baomidou.dynamic.datasource.creator.druid.DruidConfig;
 import io.ihankun.framework.db.build.connect.entity.ConnectionConfig;
 import org.springframework.beans.BeanUtils;
 

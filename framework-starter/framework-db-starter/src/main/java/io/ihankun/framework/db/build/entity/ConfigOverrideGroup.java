@@ -2,7 +2,7 @@ package io.ihankun.framework.db.build.entity;
 
 import io.ihankun.framework.db.build.connect.config.DsOverrideConfig;
 import io.ihankun.framework.db.build.connect.entity.DsOverriderConfig;
-import io.ihankun.framework.db.build.druid.DruidConfig;
+import io.ihankun.framework.db.build.druid.KDruidConfig;
 import io.ihankun.framework.db.build.druid.config.DsDruidConfig;
 import io.ihankun.framework.db.build.ds.DataSourceConfig;
 import lombok.AllArgsConstructor;
@@ -31,7 +31,7 @@ public enum ConfigOverrideGroup {
         }
 
         @Override
-        public List<DruidConfig> getDruidConfigList(DsDruidConfig config) {
+        public List<KDruidConfig> getDruidConfigList(DsDruidConfig config) {
             return config.getAll();
         }
 
@@ -53,7 +53,7 @@ public enum ConfigOverrideGroup {
         }
 
         @Override
-        public List<DruidConfig> getDruidConfigList(DsDruidConfig config) {
+        public List<KDruidConfig> getDruidConfigList(DsDruidConfig config) {
             return config.getDomains();
         }
     },
@@ -70,7 +70,7 @@ public enum ConfigOverrideGroup {
         }
 
         @Override
-        public List<DruidConfig> getDruidConfigList(DsDruidConfig config) {
+        public List<KDruidConfig> getDruidConfigList(DsDruidConfig config) {
             return config.getServices();
         }
     },
@@ -87,7 +87,7 @@ public enum ConfigOverrideGroup {
         }
 
         @Override
-        public List<DruidConfig> getDruidConfigList(DsDruidConfig config) {
+        public List<KDruidConfig> getDruidConfigList(DsDruidConfig config) {
             return config.getSds();
         }
     },
@@ -103,7 +103,7 @@ public enum ConfigOverrideGroup {
             return config.getSus();
         }
 
-        public List<DruidConfig> getDruidConfigList(DsDruidConfig config) {
+        public List<KDruidConfig> getDruidConfigList(DsDruidConfig config) {
             return config.getSus();
         }
     };
@@ -115,7 +115,7 @@ public enum ConfigOverrideGroup {
 
     public abstract List<DsOverriderConfig> getConfigList(DsOverrideConfig config);
 
-    public abstract List<DruidConfig> getDruidConfigList(DsDruidConfig config);
+    public abstract List<KDruidConfig> getDruidConfigList(DsDruidConfig config);
 
 
     public boolean matchGroup(DataSourceConfig dataSourceConfig, String groups) {

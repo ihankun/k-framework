@@ -1,10 +1,12 @@
 package io.ihankun.framework.db.build.druid;
 
+import com.baomidou.dynamic.datasource.creator.druid.DruidConfig;
 import io.ihankun.framework.db.build.config.DsConfig;
 import io.ihankun.framework.db.build.druid.config.DsDruidConfig;
 import io.ihankun.framework.db.build.ds.DataSourceConfig;
 import io.ihankun.framework.db.build.entity.ConfigOverrideGroup;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
@@ -32,13 +34,13 @@ public class DruidConfigBuilder {
         this.dsConfig = dsConfig;
     }
 
-    public com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig createDruidConfig(DataSourceConfig dataSourceConfig) {
-        com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig druidConfig = new com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig();
+    public DruidConfig createDruidConfig(DataSourceConfig dataSourceConfig) {
+        DruidConfig druidConfig = new DruidConfig();
         for (ConfigOverrideGroup group : ConfigOverrideGroup.values()) {
-            List<DruidConfig> druidConfigs = group.getDruidConfigList(dsDruidConfig);
-            if (!CollectionUtils.isEmpty(druidConfigs)) {
-                for (DruidConfig kunDruidConfig : druidConfigs) {
-                    combine(druidConfig, getConfig(kunDruidConfig, group, dataSourceConfig));
+            List<KDruidConfig> KDruidConfigs = group.getDruidConfigList(dsDruidConfig);
+            if (!CollectionUtils.isEmpty(KDruidConfigs)) {
+                for (KDruidConfig kunKDruidConfig : KDruidConfigs) {
+                    combine(druidConfig, getConfig(kunKDruidConfig, group, dataSourceConfig));
                 }
             }
         }
@@ -46,23 +48,23 @@ public class DruidConfigBuilder {
         return druidConfig;
     }
 
-    private com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig getConfig(DruidConfig druidConfig, ConfigOverrideGroup group,
-                                                                                                  DataSourceConfig dataSourceConfig) {
-        if (group.matchGroup(dataSourceConfig, druidConfig.getGroup())) {
-            return druidConfig;
+    private DruidConfig getConfig(KDruidConfig KDruidConfig, ConfigOverrideGroup group,
+                                                                                DataSourceConfig dataSourceConfig) {
+        if (group.matchGroup(dataSourceConfig, KDruidConfig.getGroup())) {
+            return KDruidConfig;
         }
         return null;
     }
 
-    private com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig loadOld(DataSourceConfig dataSourceConfig) {
-        Map<String, com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig> druid = dsConfig.getDruid().get(dataSourceConfig.getServiceName());
+    private DruidConfig loadOld(DataSourceConfig dataSourceConfig) {
+        Map<String, DruidConfig> druid = dsConfig.getDruid().get(dataSourceConfig.getServiceName());
         if (CollectionUtils.isEmpty(druid)) {
             return null;
         }
         return druid.get(dataSourceConfig.getUser());
     }
 
-    public static void combine(com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig config, com.baomidou.dynamic.datasource.spring.boot.autoconfigure.druid.DruidConfig overrideConfig) {
+    public static void combine(DruidConfig config, DruidConfig overrideConfig) {
         if (overrideConfig == null) {
             return;
         }
@@ -92,8 +94,11 @@ public class DruidConfigBuilder {
         if (!CollectionUtils.isEmpty(overrideConfig.getStat())) {
             config.getStat().putAll(overrideConfig.getStat());
         }
-        if (!CollectionUtils.isEmpty(overrideConfig.getProxyFilters())) {
-            config.getProxyFilters().addAll(overrideConfig.getProxyFilters());
+//        if (!CollectionUtils.isEmpty(overrideConfig.getProxyFilters())) {
+//            config.getProxyFilters().addAll(overrideConfig.getProxyFilters());
+//        }
+        if(StringUtils.isNotBlank(overrideConfig.getProxyFilters())) {
+            config.setProxyFilters(overrideConfig.getProxyFilters());
         }
         BeanUtils.copyProperties(overrideConfig, config, emptyNames.toArray(new String[0]));
     }

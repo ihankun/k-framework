@@ -1,6 +1,6 @@
 package io.ihankun.framework.db.dynamic;
 
-import com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DataSourceProperty;
+import com.baomidou.dynamic.datasource.creator.DataSourceProperty;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
