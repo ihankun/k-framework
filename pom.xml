@@ -11,7 +11,7 @@
 
     <groupId>io.ihankun</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>4.0.1</version>
+    <version>3.3.0</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>4.0.1</framework.version>
+        <framework.version>3.3.0</framework.version>
 
         <spring-boot.version>3.2.4</spring-boot.version>
         <spring-cloud.version>2023.0.1</spring-cloud.version>
