@@ -28,6 +28,7 @@ import io.ihankun.framework.mq.rocketmq.producer.strategy.impl.GgrayProducerSele
 import io.ihankun.framework.mq.rocketmq.producer.strategy.impl.GrayProducerSelectQueueStrategy;
 import io.ihankun.framework.mq.rocketmq.producer.strategy.impl.ProdProducerSelectQueueStrategy;
 import io.ihankun.framework.mq.rule.MqAccessRule;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.latency.MQFaultStrategy;
@@ -43,7 +44,6 @@ import org.slf4j.MDC;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.*;

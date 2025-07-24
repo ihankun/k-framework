@@ -28,12 +28,6 @@
     <appender name="FILE_ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
-                <!-- add 登录用户信息 -->
-<!--                <provider class="com.Kun.core.log.logstash.provider.LoginUserProvider">-->
-<!--                </provider>-->
-                <!-- add traceId field -->
-<!--                <provider class="com.Kun.core.log.logstash.provider.TraceIdProvider">-->
-<!--                </provider>-->
                 <pattern>
                     <pattern>
                         {

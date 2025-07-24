@@ -6,13 +6,13 @@ import com.alibaba.fastjson.JSONObject;
 import io.ihankun.framework.core.context.GovernanceContext;
 import io.ihankun.framework.core.utils.date.DateUtils;
 import io.ihankun.framework.springboot.utils.HttpConnectionUtil;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.springframework.beans.factory.annotation.Value;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;

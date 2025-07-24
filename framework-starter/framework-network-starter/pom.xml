@@ -6,15 +6,15 @@
     <parent>
         <groupId>io.ihankun</groupId>
         <artifactId>framework-starter</artifactId>
-        <version>3.2.2</version>
+        <version>3.3.0</version>
     </parent>
 
     <groupId>io.ihankun.starter</groupId>
     <artifactId>framework-network-starter</artifactId>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -29,18 +29,24 @@
             <artifactId>framework-commons</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>okhttp-bom</artifactId>-->
+<!--            <version>${okhttp.version}</version>-->
+<!--            <type>pom</type>-->
+<!--            <scope>import</scope>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
 <!--            <version>${okhttp.version}</version>-->
-            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
         </dependency>
 
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>logging-interceptor</artifactId>
 <!--            <version>${okhttp.version}</version>-->
-            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
         </dependency>
 
         <dependency>

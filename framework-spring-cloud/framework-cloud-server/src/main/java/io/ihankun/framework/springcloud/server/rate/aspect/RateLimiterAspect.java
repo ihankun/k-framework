@@ -6,6 +6,7 @@ import io.ihankun.framework.core.exception.BusinessException;
 import io.ihankun.framework.springcloud.server.rate.RateLimiterConfiguration;
 import io.ihankun.framework.springcloud.server.rate.annoation.RateLimiter;
 import io.ihankun.framework.springcloud.server.rate.annoation.RateLimiterType;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -15,7 +16,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

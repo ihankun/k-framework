@@ -3,6 +3,8 @@ package io.ihankun.framework.springcloud.server.nacos;
 import com.alibaba.cloud.nacos.NacosConfigManager;
 import com.alibaba.nacos.client.config.listener.impl.PropertiesListener;
 import io.ihankun.framework.core.nacos.INacosConfigChangeListener;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -13,8 +15,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.util.Map;
 import java.util.Properties;
 

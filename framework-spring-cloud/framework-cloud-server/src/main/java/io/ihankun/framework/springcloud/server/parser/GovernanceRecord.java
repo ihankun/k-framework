@@ -3,11 +3,11 @@ package io.ihankun.framework.springcloud.server.parser;
 import com.alibaba.fastjson.JSONObject;
 import io.ihankun.framework.core.context.GovernanceContext;
 import io.ihankun.framework.springboot.utils.HttpConnectionUtil;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;

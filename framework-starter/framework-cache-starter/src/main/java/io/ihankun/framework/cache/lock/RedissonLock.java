@@ -3,13 +3,13 @@ package io.ihankun.framework.cache.lock;
 import io.ihankun.framework.cache.error.RedissonLockErrorCode;
 import io.ihankun.framework.core.exception.BusinessException;
 import io.ihankun.framework.redis.holder.RedissonClientHolder;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**

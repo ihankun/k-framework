@@ -1,8 +1,8 @@
 package io.ihankun.framework.springcloud.server.filter.thread;
 
 import feign.RequestTemplate;
+import jakarta.servlet.http.HttpServletRequest;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author hankun

@@ -1,12 +1,12 @@
 package io.ihankun.framework.network.http;
 
 import cn.hutool.json.JSONUtil;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
 import java.util.Collections;
 import java.util.Map;
 

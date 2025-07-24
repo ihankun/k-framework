@@ -5,14 +5,13 @@ import feign.RequestTemplate;
 import io.ihankun.framework.core.id.IdGenerator;
 import io.ihankun.framework.log.context.TraceLogContext;
 import io.ihankun.framework.core.utils.log.RequestLog;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.skywalking.apm.toolkit.trace.TraceContext;
 import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author hankun

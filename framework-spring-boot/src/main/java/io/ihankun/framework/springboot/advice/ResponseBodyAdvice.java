@@ -4,6 +4,7 @@ import io.ihankun.framework.core.enums.ResponseLevelEnum;
 import io.ihankun.framework.core.error.impl.AdviceErrorCode;
 import io.ihankun.framework.core.response.ResponseResult;
 import io.ihankun.framework.log.context.TraceLogContext;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -16,7 +17,6 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;

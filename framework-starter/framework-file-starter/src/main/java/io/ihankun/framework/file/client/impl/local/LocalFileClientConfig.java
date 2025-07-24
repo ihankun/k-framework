@@ -1,10 +1,9 @@
 package io.ihankun.framework.file.client.impl.local;
 
 import io.ihankun.framework.file.client.FileClientConfig;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
-
-import javax.validation.constraints.NotEmpty;
 
 /**
  * 本地文件客户端的配置类

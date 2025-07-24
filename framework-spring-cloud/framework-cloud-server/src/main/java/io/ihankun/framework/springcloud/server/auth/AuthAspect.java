@@ -4,6 +4,8 @@ import com.google.common.base.Splitter;
 import io.ihankun.framework.core.context.LoginUserContext;
 import io.ihankun.framework.core.context.LoginUserInfo;
 import io.ihankun.framework.core.context.UpstreamInfoContext;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -21,8 +23,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.util.*;
 

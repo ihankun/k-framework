@@ -25,7 +25,6 @@ public class Log4j2EnvironmentPostProcessor implements EnvironmentPostProcessor 
             ResourceUtils.getURL(newValue);
         }
         catch (Exception ex) {
-            // NOTE: We can't use the logger here to report the problem
             System.err.println("Logging system failed to initialize using configuration from '" + newValue + "'");
             ex.printStackTrace(System.err);
             return;

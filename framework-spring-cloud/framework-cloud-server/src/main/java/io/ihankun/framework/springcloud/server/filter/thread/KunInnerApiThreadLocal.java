@@ -5,10 +5,9 @@ import feign.Target;
 import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import io.ihankun.framework.log.context.TraceLogApiInfoContext;
 import io.ihankun.framework.log.entity.ApiInfo;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author hankun

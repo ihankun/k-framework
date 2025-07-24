@@ -3,11 +3,10 @@ package io.ihankun.framework.file.client.impl.s3;
 import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.ihankun.framework.file.client.FileClientConfig;
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
-
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.NotNull;
 
 /**
  * S3 文件客户端的配置类

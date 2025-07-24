@@ -11,6 +11,8 @@ import io.ihankun.framework.mq.producer.IMqProducer;
 import io.ihankun.framework.mq.producer.impl.KafkaMqProducer;
 import io.ihankun.framework.mq.producer.impl.RocketMqProducer;
 import io.ihankun.framework.mq.rule.MqAccessRule;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -22,8 +24,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

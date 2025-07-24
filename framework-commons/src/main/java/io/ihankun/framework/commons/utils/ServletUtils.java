@@ -2,15 +2,15 @@ package io.ihankun.framework.commons.utils;
 
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.extra.servlet.ServletUtil;
+import cn.hutool.extra.servlet.JakartaServletUtil;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 
@@ -30,7 +30,7 @@ public class ServletUtils {
     @SuppressWarnings("deprecation") // 必须使用 APPLICATION_JSON_UTF8_VALUE，否则会乱码
     public static void writeJSON(HttpServletResponse response, Object object) {
         String content = JsonUtil.toJsonString(object);
-        ServletUtil.write(response, content, MediaType.APPLICATION_JSON_UTF8_VALUE);
+        JakartaServletUtil.write(response, content, MediaType.APPLICATION_JSON_UTF8_VALUE);
     }
 
     /**
@@ -84,7 +84,7 @@ public class ServletUtils {
         if (request == null) {
             return null;
         }
-        return ServletUtil.getClientIP(request);
+        return JakartaServletUtil.getClientIP(request);
     }
 
     public static boolean isJsonRequest(ServletRequest request) {

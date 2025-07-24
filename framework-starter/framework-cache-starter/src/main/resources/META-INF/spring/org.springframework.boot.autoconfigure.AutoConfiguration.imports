@@ -1,0 +1,3 @@
+io.ihankun.framework.cache.RedisAutoConfiguration
+io.ihankun.framework.cache.RedisCacheAutoConfiguration
+io.ihankun.framework.cache.LockAutoConfiguration

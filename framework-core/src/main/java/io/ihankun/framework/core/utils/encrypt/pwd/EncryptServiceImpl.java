@@ -2,13 +2,12 @@ package io.ihankun.framework.core.utils.encrypt.pwd;
 
 import io.ihankun.framework.core.enums.EncryptErrorEnum;
 import io.ihankun.framework.core.exception.BusinessException;
+import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import javax.annotation.Resource;
 
 /**
  * @author hankun

@@ -2,6 +2,8 @@ package io.ihankun.framework.springcloud.server.filter;
 
 import io.ihankun.framework.core.utils.spring.SpringHelpers;
 import io.ihankun.framework.springcloud.server.filter.thread.IKunThreadLocalFilter;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -10,8 +12,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Comparator;
 
 /**

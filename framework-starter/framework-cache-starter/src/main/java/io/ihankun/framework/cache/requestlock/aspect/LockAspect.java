@@ -9,6 +9,7 @@ import io.ihankun.framework.redis.key.impl.OrgCacheKey;
 import io.ihankun.framework.cache.lock.LockCallback;
 import io.ihankun.framework.cache.lock.RedissonLock;
 import io.ihankun.framework.springcloud.api.LockKey;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -20,7 +21,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
