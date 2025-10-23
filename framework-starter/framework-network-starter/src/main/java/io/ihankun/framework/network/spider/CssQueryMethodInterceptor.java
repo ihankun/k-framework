@@ -2,6 +2,7 @@ package io.ihankun.framework.network.spider;
 
 import io.ihankun.framework.core.utils.ConvertUtil;
 import io.ihankun.framework.core.utils.string.StringUtil;
+import jakarta.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.TextNode;
@@ -14,7 +15,6 @@ import org.springframework.core.ResolvableType;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.util.ReflectionUtils;
 
-import javax.annotation.Nullable;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

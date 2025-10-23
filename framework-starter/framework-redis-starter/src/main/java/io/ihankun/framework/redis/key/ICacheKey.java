@@ -2,9 +2,9 @@ package io.ihankun.framework.redis.key;
 
 import io.ihankun.framework.core.utils.string.StringPool;
 import io.ihankun.framework.core.utils.string.StringUtil;
+import jakarta.annotation.Nullable;
 import org.springframework.util.ObjectUtils;
 
-import javax.annotation.Nullable;
 import java.time.Duration;
 
 /**

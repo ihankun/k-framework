@@ -1,8 +1,8 @@
 package io.ihankun.framework.network.http;
 
+import jakarta.annotation.Nonnull;
 import okhttp3.logging.HttpLoggingInterceptor;
 
-import javax.annotation.Nonnull;
 
 /**
  * OkHttp console log.

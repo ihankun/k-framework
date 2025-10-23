@@ -4,9 +4,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.type.CollectionLikeType;
 import io.ihankun.framework.commons.utils.JsonUtil;
+import jakarta.annotation.Nullable;
 import okhttp3.*;
 
-import javax.annotation.Nullable;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.charset.Charset;
