@@ -24,7 +24,7 @@
     <appenders>
         <!-- trace日志,服务引入kun-middle-base-log后，
         代码中使用例如 log.info(xxx)时，会调用TraceLogConsoleLog4j2Appender将日志发送到kafka中
-        代码实现在kun-middle-base-log模块`中class="com.ihankun.his.base.log.api.appender.TraceLogConsoleLog4j2Appender"。
+        代码实现在kun-middle-base-log模块`中class="com.hankun.his.base.log.api.appender.TraceLogConsoleLog4j2Appender"。
         -->
 <!--        <TraceKafkaAppender name="TRACE"/>-->
 
@@ -67,7 +67,7 @@
         <logger name="com.alibaba.nacos.client.config.impl" level="WARN"/>
         <logger name="com.alibaba.druid.pool" level="WARN"/>
         <logger name="org.apache.kafka" level="OFF"/>
-        <logger name="io.ihankun" level="DEBUG"/>
+        <logger name="io.hankun" level="DEBUG"/>
         <logger name="com.alibaba.nacos.client.naming" level="WARN"/>
         <logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
         <logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"/>

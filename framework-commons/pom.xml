@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.ihankun</groupId>
+        <groupId>io.hankun</groupId>
         <artifactId>framework-parent</artifactId>
-        <version>3.3.0</version>
+        <version>3.4.0</version>
     </parent>
 
     <artifactId>framework-commons</artifactId>
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.ihankun</groupId>
+            <groupId>io.hankun</groupId>
             <artifactId>framework-core</artifactId>
         </dependency>
 

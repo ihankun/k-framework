@@ -1,4 +1,4 @@
 org.springframework.boot.env.EnvironmentPostProcessor=\
-  io.ihankun.framework.log.config.Log4j2EnvironmentPostProcessor
+  io.hankun.framework.log.config.Log4j2EnvironmentPostProcessor
 org.springframework.context.ApplicationContextInitializer=\
-  io.ihankun.framework.log.config.SpringEnvironmentLookup
+  io.hankun.framework.log.config.SpringEnvironmentLookup

@@ -9,9 +9,9 @@
         <version>3.2.4</version>
     </parent>
 
-    <groupId>io.ihankun</groupId>
+    <groupId>io.hankun</groupId>
     <artifactId>framework-parent</artifactId>
-    <version>3.3.0</version>
+    <version>3.4.0</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>${project.artifactId}</description>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <framework.version>3.3.0</framework.version>
+        <framework.version>3.4.0</framework.version>
 
         <spring-boot.version>3.2.4</spring-boot.version>
         <spring-cloud.version>2023.0.1</spring-cloud.version>
@@ -287,145 +287,145 @@
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-core</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-commons</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-redis-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-log-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-token-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-sso-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-poi-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-pdf-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-mq-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-network-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-mongo-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-job-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-file-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-db</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-captcha-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-cache-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-ai-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun.starter</groupId>
+                <groupId>io.hankun.starter</groupId>
                 <artifactId>framework-websocket-starter</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-spring-cloud</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-cloud-api</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-cloud-server</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-spring-boot</artifactId>
                 <version>${framework.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>io.ihankun</groupId>
+                <groupId>io.hankun</groupId>
                 <artifactId>framework-gateway</artifactId>
                 <version>${framework.version}</version>
             </dependency>
