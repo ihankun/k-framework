@@ -110,7 +110,7 @@
     <logger name="com.alibaba.nacos.client.config.impl" level="WARN"/>
     <logger name="com.alibaba.druid.pool" level="WARN"/>
     <logger name="org.apache.kafka" level="OFF"/>
-    <logger name="com.ihankun" level="DEBUG"/>
+    <logger name="com.hankun" level="DEBUG"/>
     <logger name="com.alibaba.nacos.client.naming" level="WARN"/>
     <logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
     <logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"/>

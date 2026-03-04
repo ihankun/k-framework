@@ -1,0 +1,41 @@
+package io.hankun.framework.springboot.advice;
+
+import io.hankun.framework.log.context.TraceLogContext;
+import io.hankun.framework.core.utils.log.RequestLog;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
+import org.springframework.core.MethodParameter;
+import org.springframework.http.HttpInputMessage;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.servlet.mvc.method.annotation.RequestBodyAdviceAdapter;
+
+import java.lang.reflect.Type;
+
+/**
+ * @author hankun
+ */
+@Slf4j
+@ControllerAdvice
+public class LogRequestBodyAdvice extends RequestBodyAdviceAdapter {
+
+//    @Resource
+//    HttpServletRequest httpServletRequest;
+
+    @Override
+    public boolean supports(MethodParameter methodParameter, Type type,
+                            Class<? extends HttpMessageConverter<?>> aClass) {
+        return true;
+    }
+
+    @Override
+    public Object afterBodyRead(Object body, HttpInputMessage inputMessage,
+                                MethodParameter parameter, Type targetType,
+                                Class<? extends HttpMessageConverter<?>> converterType) {
+        long contentLength = inputMessage.getHeaders().getContentLength();
+        String url = MDC.get(TraceLogContext.REQUEST_URI);
+        //根据 contentLength 和 日志级别 判断是否打印全量日志
+        RequestLog.logWithContentLength(contentLength, url, body);
+        return super.afterBodyRead(body, inputMessage, parameter, targetType, converterType);
+    }
+}
