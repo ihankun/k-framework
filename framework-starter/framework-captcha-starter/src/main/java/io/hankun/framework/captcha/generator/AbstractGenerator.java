@@ -17,7 +17,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * @classDesc: 功能描述:
  * @author: hankun
  * @date: 2024/4/11 18:13
- * @copyright 众阳健康
  */
 @Slf4j
 public abstract class AbstractGenerator implements GeneratorInterface {
