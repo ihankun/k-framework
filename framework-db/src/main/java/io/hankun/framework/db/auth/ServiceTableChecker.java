@@ -1,8 +1,8 @@
 //package io.hankun.framework.db.auth;
 //
 //
-//import io.hankun.framework.core.context.UpstreamInfo;
-//import io.hankun.framework.core.context.UpstreamInfoContext;
+//import io.hankun.framework.core.context.upstream.UpstreamInfo;
+//import io.hankun.framework.core.context.upstream.UpstreamInfoContext;
 //import io.hankun.framework.core.invocation.InvocationCollector;
 //import io.hankun.framework.core.invocation.InvocationTableChecker;
 //import io.hankun.framework.core.invocation.entity.ServiceTableRule;

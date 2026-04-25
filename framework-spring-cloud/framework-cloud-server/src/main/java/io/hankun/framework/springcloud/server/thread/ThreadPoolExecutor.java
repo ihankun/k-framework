@@ -1,7 +1,7 @@
 package io.hankun.framework.springcloud.server.thread;
 
-import io.hankun.framework.core.context.DomainContext;
-import io.hankun.framework.core.context.LoginUserContext;
+import io.hankun.framework.core.context.sys.DomainContext;
+import io.hankun.framework.core.context.user.LoginUserContext;
 import io.hankun.framework.core.id.IdGenerator;
 import io.hankun.framework.springcloud.server.utils.ThreadContextHolder;
 import lombok.extern.slf4j.Slf4j;

@@ -7,7 +7,7 @@ import io.hankun.framework.redis.key.ICacheKey;
 import io.hankun.framework.redis.key.impl.OrgCacheKey;
 import io.hankun.framework.cache.requestlock.annotation.RequestLock;
 import io.hankun.framework.core.base.BaseService;
-import io.hankun.framework.core.context.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserContext;
 import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;

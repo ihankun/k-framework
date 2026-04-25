@@ -1,7 +1,7 @@
 package io.hankun.framework.springcloud.server.filter.thread;
 
 import feign.RequestTemplate;
-import io.hankun.framework.core.context.GrayContext;
+import io.hankun.framework.core.context.sys.GrayContext;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

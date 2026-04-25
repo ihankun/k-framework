@@ -1,6 +1,6 @@
 package io.hankun.framework.core.invocation;
 
-import io.hankun.framework.core.context.UpstreamInfo;
+import io.hankun.framework.core.context.upstream.UpstreamInfo;
 
 /**
  * @author hankun

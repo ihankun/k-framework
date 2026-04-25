@@ -2,7 +2,7 @@ package io.hankun.framework.job.dataflow;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
-import io.hankun.framework.core.context.GrayContext;
+import io.hankun.framework.core.context.sys.GrayContext;
 import io.hankun.framework.core.id.IdGenerator;
 import io.hankun.framework.log.context.TraceLogContext;
 import lombok.extern.slf4j.Slf4j;

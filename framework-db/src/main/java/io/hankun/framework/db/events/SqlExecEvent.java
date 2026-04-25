@@ -1,6 +1,6 @@
 package io.hankun.framework.db.events;
 
-import io.hankun.framework.core.context.DomainContext;
+import io.hankun.framework.core.context.sys.DomainContext;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 

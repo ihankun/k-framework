@@ -1,7 +1,7 @@
 package io.hankun.framework.core.base;
 
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 
 /**
  * @author hankun

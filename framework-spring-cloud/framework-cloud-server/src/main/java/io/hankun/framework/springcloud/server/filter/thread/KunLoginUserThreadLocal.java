@@ -2,8 +2,8 @@ package io.hankun.framework.springcloud.server.filter.thread;
 
 import com.alibaba.fastjson.JSON;
 import feign.RequestTemplate;
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

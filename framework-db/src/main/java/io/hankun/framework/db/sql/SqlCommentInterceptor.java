@@ -1,8 +1,8 @@
 //package io.hankun.framework.db.sql;
 //
-//import io.hankun.framework.core.context.DomainContext;
-//import io.hankun.framework.core.context.LoginUserContext;
-//import io.hankun.framework.core.context.LoginUserInfo;
+//import io.hankun.framework.core.context.sys.DomainContext;
+//import io.hankun.framework.core.context.login.LoginUserContext;
+//import io.hankun.framework.core.context.login.LoginUserInfo;
 //import io.hankun.framework.core.utils.spring.SpringHelpers;
 //import io.hankun.framework.db.config.DbConfig;
 //import lombok.extern.slf4j.Slf4j;

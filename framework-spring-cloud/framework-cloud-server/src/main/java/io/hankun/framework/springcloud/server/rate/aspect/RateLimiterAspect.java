@@ -1,7 +1,7 @@
 package io.hankun.framework.springcloud.server.rate.aspect;
 
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.springcloud.server.rate.RateLimiterConfiguration;
 import io.hankun.framework.springcloud.server.rate.annoation.RateLimiter;

@@ -2,7 +2,7 @@ package io.hankun.framework.springcloud.server.parser;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import io.hankun.framework.core.context.GovernanceContext;
+import io.hankun.framework.core.context.sys.GovernanceContext;
 import io.hankun.framework.springboot.utils.HttpConnectionUtil;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;

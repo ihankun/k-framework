@@ -1,7 +1,7 @@
 package io.hankun.framework.gateway.ribbon;
 
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 

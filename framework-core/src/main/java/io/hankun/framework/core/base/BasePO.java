@@ -1,8 +1,8 @@
 package io.hankun.framework.core.base;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import io.hankun.framework.core.optimistic.LockVersion;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

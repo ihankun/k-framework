@@ -3,7 +3,7 @@ package io.hankun.framework.redis.key;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import io.hankun.framework.redis.config.RedisConfigProperties;
-import io.hankun.framework.core.context.DomainContext;
+import io.hankun.framework.core.context.sys.DomainContext;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
 import io.hankun.framework.core.utils.string.StringPool;
