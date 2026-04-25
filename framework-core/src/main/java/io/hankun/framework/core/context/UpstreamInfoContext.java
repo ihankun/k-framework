@@ -2,10 +2,11 @@ package io.hankun.framework.core.context;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.core.NamedThreadLocal;
-import org.springframework.util.Base64Utils;
+//import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /**
  * @author hankun
@@ -84,14 +85,14 @@ public class UpstreamInfoContext {
         if (upstreamInfo == null) {
             return null;
         }
-        return Base64Utils.encodeToString(JSON.toJSONString(upstreamInfo).getBytes(StandardCharsets.UTF_8));
+        return Base64.getEncoder().encodeToString(JSON.toJSONString(upstreamInfo).getBytes(StandardCharsets.UTF_8));
     }
 
     public static UpstreamInfo build(String base64String) {
         if (StringUtils.isEmpty(base64String)) {
             return null;
         }
-        return JSON.parseObject(new String(Base64Utils.decodeFromString(base64String), StandardCharsets.UTF_8),
+        return JSON.parseObject(new String(Base64.getDecoder().decode(base64String), StandardCharsets.UTF_8),
                 UpstreamInfo.class);
     }
 
