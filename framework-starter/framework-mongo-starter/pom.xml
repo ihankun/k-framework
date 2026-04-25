@@ -6,38 +6,41 @@
     <parent>
         <groupId>io.hankun</groupId>
         <artifactId>framework-starter</artifactId>
-        <version>3.4.0</version>
+        <version>3.6.0</version>
     </parent>
 
     <groupId>io.hankun.starter</groupId>
     <artifactId>framework-mongo-starter</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-
-
         <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-core</artifactId>
-            <version>${mongodb.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>${mongodb.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.mongodb</groupId>-->
+<!--            <artifactId>mongodb-driver-core</artifactId>-->
+<!--            <version>${mongodb.version}</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>bson</artifactId>
-            <version>${mongodb.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.mongodb</groupId>-->
+<!--            <artifactId>mongodb-driver-sync</artifactId>-->
+<!--            <version>${mongodb.version}</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.mongodb</groupId>-->
+<!--            <artifactId>bson</artifactId>-->
+<!--            <version>${mongodb.version}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -56,16 +59,16 @@
             <artifactId>spring-tx</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-mongodb</artifactId>-->
 <!--            <exclusions>-->
 <!--                <exclusion>-->
 <!--                    <groupId>org.mongodb</groupId>-->
 <!--                    <artifactId>mongodb-driver</artifactId>-->
 <!--                </exclusion>-->
 <!--            </exclusions>-->
-        </dependency>
+<!--        </dependency>-->
 
 <!--        <dependency>-->
 <!--            <groupId>org.mongodb</groupId>-->
