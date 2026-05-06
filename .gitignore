@@ -38,3 +38,6 @@ build/
 /out/
 
 /logs/
+
+### ai
+.claude
