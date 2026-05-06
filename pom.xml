@@ -82,6 +82,7 @@
         <netty.version>4.1.86.Final</netty.version>
         <okhttp.version>4.12.0</okhttp.version>
         <openfeign.version>10.10.1</openfeign.version>
+        <org.jetbrains.annotations.version>26.0.2</org.jetbrains.annotations.version>
         <pagehelper.version>5.3.1</pagehelper.version>
         <pagehelper-spring.version>1.4.2</pagehelper-spring.version>
         <pdfbox.version>2.0.27</pdfbox.version>
@@ -99,6 +100,7 @@
         <skywalking.version>8.9.0</skywalking.version>
         <solon-api.version>2.5.11</solon-api.version>
         <spring-ai.version>1.0.2</spring-ai.version>
+        <spring-ai-alibaba.version>1.0.0.4</spring-ai-alibaba.version>
         <spring-bootstrap.version>3.1.5</spring-bootstrap.version>
         <spring-cloud-openfeign.version>4.3.0</spring-cloud-openfeign.version>
         <spring-openfeign.version>4.1.0</spring-openfeign.version>
@@ -129,6 +131,7 @@
         <module>framework-gateway</module>
         <module>framework-commons</module>
         <module>framework-db</module>
+        <module>framework-ai</module>
     </modules>
 
     <dependencies>
@@ -458,6 +461,72 @@
                 <version>${framework.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.hankun</groupId>
+                <artifactId>framework-ai</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-common</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-context</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-mcp</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-mem</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-model</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-scene</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-store</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-tools</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-agent-api</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.hankun.ai</groupId>
+                <artifactId>ai-agent</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
 <!--            <dependency>-->
 <!--                <groupId>org.springframework.cloud</groupId>-->
 <!--                <artifactId>spring-cloud-context</artifactId>-->
@@ -564,6 +633,52 @@
 <!--                <artifactId>okhttp</artifactId>-->
 <!--                <version>${okhttp.version}</version>-->
 <!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-bom</artifactId>
+                <version>${spring-ai-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dashscope-sdk-java</artifactId>
+                <version>${dashscope-sdk-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>${commons-math3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${org.jetbrains.annotations.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
