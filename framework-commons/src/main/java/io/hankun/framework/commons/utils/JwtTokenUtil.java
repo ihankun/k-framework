@@ -1,7 +1,7 @@
 package io.hankun.framework.commons.utils;
 
 import com.alibaba.fastjson.JSON;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.jwt.JwtHelper;
 import org.springframework.security.jwt.crypto.sign.MacSigner;

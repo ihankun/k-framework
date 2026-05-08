@@ -3,7 +3,7 @@ package io.hankun.framework.mq.message;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import lombok.Data;
 
 import java.io.Serializable;

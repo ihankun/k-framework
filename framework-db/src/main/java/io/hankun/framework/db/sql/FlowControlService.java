@@ -1,6 +1,6 @@
 package io.hankun.framework.db.sql;
 
-import io.hankun.framework.core.context.DomainContext;
+import io.hankun.framework.core.context.sys.DomainContext;
 import io.hankun.framework.db.config.FlowControlConfig;
 import io.hankun.framework.db.config.FlowControlFilter;
 import io.hankun.framework.db.events.SqlExecEvent;

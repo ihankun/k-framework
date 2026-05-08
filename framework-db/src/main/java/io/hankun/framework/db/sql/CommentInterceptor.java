@@ -2,8 +2,8 @@ package io.hankun.framework.db.sql;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
 import io.hankun.framework.db.config.DbConfig;
 import jakarta.annotation.Resource;

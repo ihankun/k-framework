@@ -25,8 +25,6 @@ public class SnowflakeUpperGenerator implements IdGeneratorInterface {
      */
     private final long maxServiceId = -1L ^ (-1L << serviceIdBits);
     private final long serviceId;
-
-
     /**
      * 机器id所占的位数
      **/
@@ -36,15 +34,11 @@ public class SnowflakeUpperGenerator implements IdGeneratorInterface {
      */
     private final long maxWorkerId = -1L ^ (-1L << workerIdBits);
     private final long workerId;
-
-
     /**
      * 序列在id中占的位数
      **/
     private final long sequenceBits = 7L;
     private final long sequenceMask = -1L ^ (-1L << sequenceBits);
-
-
     /**
      * 开始时间戳（2018年1月1日）
      **/
@@ -61,8 +55,6 @@ public class SnowflakeUpperGenerator implements IdGeneratorInterface {
      * 随机生成器
      **/
     private static volatile Random random = new Random();
-
-
     /**
      * 机器id左移位数
      **/

@@ -1,9 +1,9 @@
 package io.hankun.framework.springcloud.server.auth;
 
 import com.google.common.base.Splitter;
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
-import io.hankun.framework.core.context.UpstreamInfoContext;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
+import io.hankun.framework.core.context.upstream.UpstreamInfoContext;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

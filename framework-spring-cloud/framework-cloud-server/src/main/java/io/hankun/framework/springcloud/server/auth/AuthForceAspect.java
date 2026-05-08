@@ -1,6 +1,6 @@
 package io.hankun.framework.springcloud.server.auth;
 
-import io.hankun.framework.core.context.UpstreamInfoContext;
+import io.hankun.framework.core.context.upstream.UpstreamInfoContext;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

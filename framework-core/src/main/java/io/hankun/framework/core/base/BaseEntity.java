@@ -1,8 +1,8 @@
 package io.hankun.framework.core.base;
 
 import com.alibaba.fastjson.JSON;
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;

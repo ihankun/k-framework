@@ -1,0 +1,2 @@
+io.hankun.framework.powerjob.autoconfig.PowerJobAkkaConfigurationPatcher
+io.hankun.framework.powerjob.autoconfig.DynamicAppNameEnvironmentPostProcessor

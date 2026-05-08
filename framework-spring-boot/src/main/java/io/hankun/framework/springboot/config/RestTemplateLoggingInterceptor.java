@@ -1,9 +1,9 @@
 package io.hankun.framework.springboot.config;
 
-import io.hankun.framework.core.context.DomainContext;
-import io.hankun.framework.core.context.GrayContext;
-import io.hankun.framework.core.context.LoginUserContext;
-import io.hankun.framework.core.context.LoginUserInfo;
+import io.hankun.framework.core.context.sys.DomainContext;
+import io.hankun.framework.core.context.sys.GrayContext;
+import io.hankun.framework.core.context.user.LoginUserContext;
+import io.hankun.framework.core.context.user.LoginUserInfo;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
 import io.hankun.framework.log.context.TraceLogContext;
 import lombok.extern.slf4j.Slf4j;

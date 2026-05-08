@@ -1,6 +1,6 @@
 package io.hankun.framework.mq.producer.impl;
 
-import io.hankun.framework.core.context.DomainContext;
+import io.hankun.framework.core.context.sys.DomainContext;
 import io.hankun.framework.core.id.IdGenerator;
 import io.hankun.framework.mq.config.MqProperties;
 import io.hankun.framework.mq.constants.MqSendResult;

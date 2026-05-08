@@ -3,7 +3,7 @@ package io.hankun.framework.job.dataflow;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.dataflow.DataflowJob;
 import com.google.common.collect.Lists;
-import io.hankun.framework.core.context.GrayContext;
+import io.hankun.framework.core.context.sys.GrayContext;
 import io.hankun.framework.core.id.IdGenerator;
 import io.hankun.framework.job.dynamic.JobThread;
 import io.hankun.framework.log.context.TraceLogContext;

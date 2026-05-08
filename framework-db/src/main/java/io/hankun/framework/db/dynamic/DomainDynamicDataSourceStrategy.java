@@ -2,9 +2,9 @@
 //
 //import com.baomidou.dynamic.datasource.ds.ItemDataSource;
 //import com.baomidou.dynamic.datasource.strategy.DynamicDataSourceStrategy;
-//import io.hankun.framework.core.context.DomainContext;
-//import io.hankun.framework.core.context.LoginUserContext;
-//import io.hankun.framework.core.context.LoginUserInfo;
+//import io.hankun.framework.core.context.sys.DomainContext;
+//import io.hankun.framework.core.context.login.LoginUserContext;
+//import io.hankun.framework.core.context.login.LoginUserInfo;
 //import io.hankun.framework.core.utils.spring.SpringHelpers;
 //import lombok.extern.slf4j.Slf4j;
 //import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
