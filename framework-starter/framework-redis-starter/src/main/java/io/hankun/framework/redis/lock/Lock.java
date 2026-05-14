@@ -1,4 +1,4 @@
-package io.hankun.framework.cache.requestlock.annotation;
+package io.hankun.framework.redis.lock;
 
 
 import io.hankun.framework.cache.lock.RedissonLock;

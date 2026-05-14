@@ -1,7 +1,8 @@
-package io.hankun.framework.cache.ratelimiter;
+package io.hankun.framework.redis.ratelimiter;
 
 import io.hankun.framework.core.utils.string.CharPool;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.RedisScript;
@@ -15,6 +16,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author dream.lu
  */
+@Slf4j
 @RequiredArgsConstructor
 public class RedisRateLimiterClient implements RateLimiterClient {
 	/**
@@ -48,7 +50,11 @@ public class RedisRateLimiterClient implements RateLimiterClient {
 		long ttlMillis = timeUnit.toMillis(ttl);
 		// 执行命令
 		Long result = this.redisTemplate.execute(this.script, keys, Long.toString(max), Long.toString(ttlMillis));
-		return result != null && result != FAIL_CODE;
+		boolean allowed = result != null && result != FAIL_CODE;
+		if (!allowed) {
+			log.warn("Rate limit exceeded, key={}, max={}, ttl={} {}", key, max, ttl, timeUnit.name().toLowerCase());
+		}
+		return allowed;
 	}
 
 	private static String getApplicationName(Environment environment) {

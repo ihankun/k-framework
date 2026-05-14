@@ -1,20 +1,14 @@
 package io.hankun.framework.redis.key;
 
-import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
-import io.hankun.framework.redis.config.RedisConfigProperties;
 import io.hankun.framework.core.context.sys.DomainContext;
-import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
-import io.hankun.framework.core.utils.string.StringPool;
 import io.hankun.framework.redis.config.RedisDomainIgnoreProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
-
-import static io.hankun.framework.redis.error.CacheErrorCodeEnum.DOMAIN_NOT_FIND;
 
 /**
  * @author hankun

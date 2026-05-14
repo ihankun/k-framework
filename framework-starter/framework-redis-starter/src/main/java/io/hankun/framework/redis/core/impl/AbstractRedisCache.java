@@ -1,7 +1,7 @@
 package io.hankun.framework.redis.core.impl;
 
 import com.alibaba.fastjson.JSON;
-import io.hankun.framework.redis.config.RedisConfigProperties;
+import io.hankun.framework.redis.config.RedisSizeProperties;
 import io.hankun.framework.redis.enums.RedisDataType;
 import io.hankun.framework.redis.enums.RedisSizeControlMode;
 import io.hankun.framework.redis.holder.RedisTemplateHolder;
@@ -50,7 +50,7 @@ public abstract class AbstractRedisCache {
      * @return boolean
      */
     public boolean batchDel(Collection<? extends CacheKey> keys) {
-        int batchSize = SpringHelpers.context().getBean(RedisConfigProperties.class).getBatchSize();
+        int batchSize = SpringHelpers.context().getBean(RedisSizeProperties.class).getBatchSize();
         List<? extends List<? extends CacheKey>> split = split(keys, batchSize);
         try {
             split.forEach(batchList -> {
@@ -83,7 +83,7 @@ public abstract class AbstractRedisCache {
      * 获取最大过期时间
      */
     protected long getMaxExpireTime() {
-        RedisConfigProperties config = SpringHelpers.context().getBean(RedisConfigProperties.class);
+        RedisSizeProperties config = SpringHelpers.context().getBean(RedisSizeProperties.class);
         return config.getMaxExpireTime();
     }
 
@@ -99,11 +99,11 @@ public abstract class AbstractRedisCache {
             return;
         }
 
-        RedisConfigProperties config = null;
+        RedisSizeProperties config = null;
         RuntimeException controlException = null;
         try {
             //获取配置
-            config = SpringHelpers.context().getBean(RedisConfigProperties.class);
+            config = SpringHelpers.context().getBean(RedisSizeProperties.class);
 
             //是否开启，默认关闭状态
             boolean controlEnable = config.isEnable();
@@ -128,7 +128,7 @@ public abstract class AbstractRedisCache {
     /**
      * 大小限制
      */
-    private void sizeControl(RedisConfigProperties config, String key, Object value, Long expire, TimeUnit timeUnit) {
+    private void sizeControl(RedisSizeProperties config, String key, Object value, Long expire, TimeUnit timeUnit) {
         //未设置过期时间
         if (expire == null || timeUnit == null) {
             throw BusinessException.build(NOT_SET_EXPIRE_TIME, key);

@@ -2,7 +2,7 @@ package io.hankun.framework.cache.resolver;
 
 import io.hankun.framework.core.utils.string.CharPool;
 import io.hankun.framework.core.utils.string.StringUtil;
-import io.hankun.framework.redis.config.RedisConfigProperties;
+import io.hankun.framework.redis.config.RedisSizeProperties;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
  */
 @RequiredArgsConstructor
 public class DefaultRedisKeyResolver implements RedisKeyResolver {
-	private final RedisConfigProperties properties;
+	private final RedisSizeProperties properties;
 
 	@Override
 	public String resolve(String key) {

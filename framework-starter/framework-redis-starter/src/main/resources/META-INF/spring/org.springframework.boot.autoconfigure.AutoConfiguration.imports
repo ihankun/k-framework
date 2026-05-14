@@ -1,1 +1,2 @@
 io.hankun.framework.redis.CacheAutoConfiguration
+io.hankun.framework.redis.config.RateLimiterAutoConfiguration

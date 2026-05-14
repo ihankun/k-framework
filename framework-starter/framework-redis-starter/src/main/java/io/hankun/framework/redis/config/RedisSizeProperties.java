@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,7 +20,7 @@ import java.util.Map;
 @Configuration
 @ConfigurationProperties(prefix = "k.redis.size.limit")
 @RefreshScope
-public class RedisConfigProperties {
+public class RedisSizeProperties {
 
     public static final String PREFIX = "redis";
 
@@ -114,7 +113,7 @@ public class RedisConfigProperties {
     @Getter
     @Setter
     public static class Stream {
-        public static final String PREFIX = RedisConfigProperties.PREFIX + ".stream";
+        public static final String PREFIX = RedisSizeProperties.PREFIX + ".stream";
         /**
          * 是否开启 stream
          */

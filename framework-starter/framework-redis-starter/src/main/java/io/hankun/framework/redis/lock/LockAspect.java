@@ -1,13 +1,10 @@
-package io.hankun.framework.cache.requestlock.aspect;
+package io.hankun.framework.redis.lock;
 
-import io.hankun.framework.cache.requestlock.annotation.Lock;
 import io.hankun.framework.core.base.BaseService;
 import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.redis.key.CacheKey;
 import io.hankun.framework.redis.key.impl.OrgCacheKey;
-import io.hankun.framework.cache.lock.LockCallback;
-import io.hankun.framework.cache.lock.RedissonLock;
 import io.hankun.framework.springcloud.api.LockKey;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +46,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
     @Resource
     private RedissonLock redissonLock;
 
-    @Around("@annotation(io.hankun.framework.cache.requestlock.annotation.Lock)")
+    @Around("@annotation(io.hankun.framework.redis.lock.Lock)")
     public Object around(ProceedingJoinPoint point) {
         MethodSignature methodSignature = (MethodSignature) point.getSignature();
         Method method = methodSignature.getMethod();

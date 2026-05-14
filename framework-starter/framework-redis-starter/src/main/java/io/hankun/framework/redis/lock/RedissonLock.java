@@ -1,10 +1,9 @@
-package io.hankun.framework.cache.lock;
+package io.hankun.framework.redis.lock;
 
-import io.hankun.framework.cache.error.RedissonLockErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
+import io.hankun.framework.redis.error.RedissonLockErrorCode;
 import io.hankun.framework.redis.holder.RedissonClientHolder;
 import jakarta.annotation.PostConstruct;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
@@ -13,6 +12,9 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Redisson分布式锁组件
+ * 提供基于Redisson的分布式锁能力，支持自动加锁、释放锁、异常处理
+ *
  * @author hankun
  */
 @Slf4j
@@ -21,7 +23,7 @@ public class RedissonLock {
 
     @PostConstruct
     public void init() {
-        log.info("init RedissonLock");
+        log.info("RedissonLock init success");
     }
 
     /**
@@ -45,14 +47,7 @@ public class RedissonLock {
     public static final long LOCK_MAX_LEASE_SECOND = 60;
 
     /**
-     * Redisson客户端
-     */
-    @Resource
-    private RedissonClient redissonClient;
-
-
-    /**
-     * 获取分布式锁
+     * 获取分布式锁（使用默认等待时间和租约时间）
      *
      * @param key      分布式锁key
      * @param callback 获取锁后的回调
@@ -63,7 +58,7 @@ public class RedissonLock {
     }
 
     /**
-     * 获取分布式锁
+     * 获取分布式锁（自定义等待时间和租约时间）
      *
      * @param key       分布式锁key
      * @param waitTime  获取锁时最长等待时间
@@ -76,24 +71,25 @@ public class RedissonLock {
         String locKey = LOCK_KEY_PREFIX + key;
         LOC_KEY_THREAD_LOCAL.set(locKey);
 
-        RLock rLock = RedissonClientHolder.ins().getRedissonClient().getLock(locKey);
+        RedissonClient redissonClient = RedissonClientHolder.ins().getRedissonClient();
+        RLock rLock = redissonClient.getLock(locKey);
         try {
             if (rLock.tryLock(waitTime, leaseTime, timeUnit)) {
                 try {
-                    //加锁成功执行成功回调逻辑
+                    // 加锁成功执行成功回调逻辑
                     return callback.success();
                 } finally {
-                    //当前请求的线程是否是锁对象的持有者
+                    // 当前请求的线程是否是锁对象的持有者
                     if (rLock.isHeldByCurrentThread()) {
                         rLock.unlock();
                     }
                 }
             }
 
-            //加锁失败执行失败回调逻辑
+            // 加锁失败执行失败回调逻辑
             return callback.fail();
         } catch (InterruptedException e) {
-            log.error("获取分布式锁时出现异常，lockKey = {},errorMsg = {}, error stack = {}", locKey, e.getMessage(), e);
+            log.error("获取分布式锁时出现异常，lockKey = {}, errorMsg = {}, error stack = {}", locKey, e.getMessage(), e);
             Thread.currentThread().interrupt();
             throw BusinessException.build(RedissonLockErrorCode.GET_REDISSON_EX, e.getMessage());
         } finally {
@@ -104,6 +100,9 @@ public class RedissonLock {
         }
     }
 
+    /**
+     * 获取当前线程的锁key（用于日志和异常追踪）
+     */
     public static String get() {
         return LOC_KEY_THREAD_LOCAL.get();
     }

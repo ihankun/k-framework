@@ -1,4 +1,4 @@
-package io.hankun.framework.cache.ratelimiter;
+package io.hankun.framework.redis.ratelimiter;
 
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;

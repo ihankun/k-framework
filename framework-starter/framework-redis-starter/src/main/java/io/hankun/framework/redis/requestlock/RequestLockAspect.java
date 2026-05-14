@@ -1,15 +1,14 @@
-package io.hankun.framework.cache.requestlock.aspect;
+package io.hankun.framework.redis.requestlock;
 
 import com.alibaba.fastjson.JSON;
-import io.hankun.framework.redis.CacheBuilder;
-import io.hankun.framework.redis.CacheManager;
-import io.hankun.framework.redis.key.CacheKey;
-import io.hankun.framework.redis.key.impl.OrgCacheKey;
-import io.hankun.framework.cache.requestlock.annotation.RequestLock;
 import io.hankun.framework.core.base.BaseService;
 import io.hankun.framework.core.context.user.LoginUserContext;
 import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
+import io.hankun.framework.redis.CacheBuilder;
+import io.hankun.framework.redis.CacheManager;
+import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.impl.OrgCacheKey;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -29,6 +28,9 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 防重复提交AOP切面
+ * 拦截带有 @RequestLock 注解的方法，防止重复提交
+ *
  * @author hankun
  */
 @Component
@@ -60,19 +62,17 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
     /**
      * 缓存管理器
      */
-//    @Resource
     private CacheManager<String, String> cacheManager = CacheBuilder.build();
 
-    @Pointcut("@annotation(io.hankun.framework.cache.requestlock.annotation.RequestLock)")
+    @Pointcut("@annotation(io.hankun.framework.redis.requestlock.RequestLock)")
     public void lockPointcut() {
-
     }
 
     @Around("lockPointcut()")
     public Object around(ProceedingJoinPoint point) {
         CacheKey lockKey = getOrgCacheKey(point);
 
-        //如果其他线程正在执行的话，抛出异常信息
+        // 如果其他线程正在执行的话，抛出异常信息
         if (!cacheManager.string().setIfAbsent(lockKey, BigDecimal.ZERO.toString(), TIMEOUT, TIMEOUT_UNIT)) {
             throw BusinessException.build(getErrorCode(point));
         }
@@ -83,17 +83,16 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
         } catch (Throwable throwable) {
             throw new RuntimeException(throwable);
         } finally {
-            //最后清空缓存
+            // 最后清空缓存
             cacheManager.string().del(lockKey);
         }
     }
 
-
     /**
      * 获取请求锁的key
      *
-     * @param point
-     * @return
+     * @param point 切点
+     * @return 缓存key
      */
     private CacheKey getOrgCacheKey(ProceedingJoinPoint point) {
         StringBuilder sb = new StringBuilder()
@@ -106,11 +105,10 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
     /**
      * 根据注解信息生成ErrorCode信息
      *
-     * @param point
-     * @return
+     * @param point 切点
+     * @return 错误码
      */
     private IErrorCode getErrorCode(ProceedingJoinPoint point) {
-
         MethodSignature methodSignature = (MethodSignature) point.getSignature();
         Method method = methodSignature.getMethod();
         String value = method.getAnnotation(RequestLock.class).value();
