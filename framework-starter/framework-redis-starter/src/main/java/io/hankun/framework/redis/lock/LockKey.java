@@ -1,4 +1,4 @@
-package io.hankun.framework.springcloud.api;
+package io.hankun.framework.redis.lock;
 
 /**
  * @author hankun

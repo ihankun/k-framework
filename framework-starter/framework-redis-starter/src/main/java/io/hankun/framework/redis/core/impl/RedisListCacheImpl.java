@@ -2,7 +2,7 @@ package io.hankun.framework.redis.core.impl;
 
 import io.hankun.framework.redis.core.type.ListCache;
 import io.hankun.framework.redis.enums.RedisDataType;
-import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.ListOperations;
 
@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
 public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCache<V> {
 
     @Override
-    public List<V> pop(CacheKey cacheKey, int size) {
+    public List<V> pop(ICacheKey ICacheKey, int size) {
         try {
-            String key = cacheKey.get();
+            String key = ICacheKey.get();
             List<V> list = new ArrayList<>();
             while (size != 0) {
                 V pop = (V) getRedisTemplate().opsForList().leftPop(key);
@@ -34,13 +34,13 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public boolean add(CacheKey cacheKey, V value) {
-        return add(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
+    public boolean add(ICacheKey ICacheKey, V value) {
+        return add(ICacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
     }
 
     @Override
-    public boolean add(CacheKey cacheKey, V value, Long expire, TimeUnit timeUnit) {
-        String key = cacheKey.get();
+    public boolean add(ICacheKey ICacheKey, V value, Long expire, TimeUnit timeUnit) {
+        String key = ICacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
             getRedisTemplate().opsForList().leftPush(key, value);
@@ -53,9 +53,9 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public boolean remove(CacheKey cacheKey, V value) {
+    public boolean remove(ICacheKey ICacheKey, V value) {
         try {
-            getRedisTemplate().opsForList().remove(cacheKey.get(), 1, value);
+            getRedisTemplate().opsForList().remove(ICacheKey.get(), 1, value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -64,8 +64,8 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public boolean save(CacheKey cacheKey, List<V> values, Long expire) {
-        String key = cacheKey.get();
+    public boolean save(ICacheKey ICacheKey, List<V> values, Long expire) {
+        String key = ICacheKey.get();
         validate(key, values, expire, TimeUnit.SECONDS);
         try {
             getRedisTemplate().opsForList().leftPushAll(key, values);
@@ -78,16 +78,16 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public List<V> get(CacheKey cacheKey) {
-        String key = cacheKey.get();
+    public List<V> get(ICacheKey ICacheKey) {
+        String key = ICacheKey.get();
         ListOperations<String, V> ops = getRedisTemplate().opsForList();
         return ops.range(key, 0, ops.size(key));
     }
 
     @Override
-    public boolean del(CacheKey cacheKey) {
+    public boolean del(ICacheKey ICacheKey) {
         try {
-            getRedisTemplate().delete(cacheKey.get());
+            getRedisTemplate().delete(ICacheKey.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -96,13 +96,13 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public boolean update(CacheKey cacheKey, List<V> value) {
-        return update(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
+    public boolean update(ICacheKey ICacheKey, List<V> value) {
+        return update(ICacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
     }
 
     @Override
-    public boolean update(CacheKey cacheKey, List<V> value, Long expire, TimeUnit timeUnit) {
-        String key = cacheKey.get();
+    public boolean update(ICacheKey ICacheKey, List<V> value, Long expire, TimeUnit timeUnit) {
+        String key = ICacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
             getRedisTemplate().delete(key);
@@ -116,9 +116,9 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public boolean expire(CacheKey cacheKey, Long expire) {
+    public boolean expire(ICacheKey ICacheKey, Long expire) {
         try {
-            getRedisTemplate().expire(cacheKey.get(), expire, TimeUnit.SECONDS);
+            getRedisTemplate().expire(ICacheKey.get(), expire, TimeUnit.SECONDS);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -127,9 +127,9 @@ public class RedisListCacheImpl <V> extends AbstractRedisCache implements ListCa
     }
 
     @Override
-    public boolean exits(CacheKey cacheKey) {
+    public boolean exits(ICacheKey ICacheKey) {
         try {
-            Long size = getRedisTemplate().opsForList().size(cacheKey.get());
+            Long size = getRedisTemplate().opsForList().size(ICacheKey.get());
             if (size == null || size == 0) {
                 return false;
             }

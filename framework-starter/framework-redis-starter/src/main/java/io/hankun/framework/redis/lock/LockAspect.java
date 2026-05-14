@@ -3,9 +3,8 @@ package io.hankun.framework.redis.lock;
 import io.hankun.framework.core.base.BaseService;
 import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
-import io.hankun.framework.redis.key.CacheKey;
-import io.hankun.framework.redis.key.impl.OrgCacheKey;
-import io.hankun.framework.springcloud.api.LockKey;
+import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.impl.OrgICacheKey;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -108,7 +107,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
      * @param point
      * @return
      */
-    private CacheKey getOrgCacheKey(ProceedingJoinPoint point) {
+    private ICacheKey getOrgCacheKey(ProceedingJoinPoint point) {
         LockKey lockKey = getLockKey(point);
         if (lockKey == null) {
             throw BusinessException.build(getExceptionErrorCode("未实现" + LockKey.class.getName() + "接口"));
@@ -116,7 +115,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
         if (StringUtils.isEmpty(lockKey.getLockKey())) {
             throw BusinessException.build(getExceptionErrorCode(LockKey.class.getName() + "接口，getLockKey()不能为空"));
         }
-        return OrgCacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(lockKey.getLockKey());
+        return OrgICacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(lockKey.getLockKey());
     }
 
     /**

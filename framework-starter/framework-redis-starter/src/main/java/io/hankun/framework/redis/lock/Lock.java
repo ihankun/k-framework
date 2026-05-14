@@ -1,8 +1,6 @@
 package io.hankun.framework.redis.lock;
 
 
-import io.hankun.framework.cache.lock.RedissonLock;
-
 import java.lang.annotation.*;
 
 /**

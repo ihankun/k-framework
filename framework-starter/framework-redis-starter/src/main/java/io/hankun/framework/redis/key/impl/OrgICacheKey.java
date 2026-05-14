@@ -1,13 +1,13 @@
 package io.hankun.framework.redis.key.impl;
 
 import io.hankun.framework.redis.key.AbstractCacheKey;
-import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
 import io.hankun.framework.core.utils.string.StringPool;
 
 /**
  * @author hankun
  */
-public class OrgCacheKey extends AbstractCacheKey implements CacheKey {
+public class OrgICacheKey extends AbstractCacheKey implements ICacheKey {
 
     private final String businessCode;
 
@@ -15,20 +15,20 @@ public class OrgCacheKey extends AbstractCacheKey implements CacheKey {
 
     private String key;
 
-    public OrgCacheKey(String businessCode) {
+    public OrgICacheKey(String businessCode) {
         this.businessCode = businessCode;
     }
 
-    public static OrgCacheKey build(String businessCode) {
-        return new OrgCacheKey(businessCode);
+    public static OrgICacheKey build(String businessCode) {
+        return new OrgICacheKey(businessCode);
     }
 
-    public OrgCacheKey orgId(String orgId) {
+    public OrgICacheKey orgId(String orgId) {
         this.orgId = orgId;
         return this;
     }
 
-    public OrgCacheKey key(String key) {
+    public OrgICacheKey key(String key) {
         this.key = key;
         return this;
     }

@@ -1,7 +1,7 @@
 package io.hankun.framework.redis.core.type;
 
 
-import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,61 +14,61 @@ public interface ListCache<V> {
     /**
      * 保存
      */
-    boolean save(CacheKey key, List<V> value, Long expire);
+    boolean save(ICacheKey key, List<V> value, Long expire);
 
     /**
      * 获取所有缓存数据
      */
-    List<V> get(CacheKey key);
+    List<V> get(ICacheKey key);
 
     /**
      * 删除缓存
      */
-    boolean del(CacheKey key);
+    boolean del(ICacheKey key);
 
     /**
      * 更新缓存
      *
-     * @param cacheKey
+     * @param ICacheKey
      * @param value
      * @return
      */
-    boolean update(CacheKey cacheKey, List<V> value);
+    boolean update(ICacheKey ICacheKey, List<V> value);
 
     /**
      * 更新缓存
      */
-    boolean update(CacheKey key, List<V> value, Long expire, TimeUnit timeUnit);
+    boolean update(ICacheKey key, List<V> value, Long expire, TimeUnit timeUnit);
 
     /**
      * 修改过期时间
      */
-    boolean expire(CacheKey key, Long expire);
+    boolean expire(ICacheKey key, Long expire);
 
     /**
      * 缓存是否存在
      */
-    boolean exits(CacheKey key);
+    boolean exits(ICacheKey key);
 
     //---------- 通用方法结束 ----------//
 
     /**
      * 弹出所有元素
      */
-    List<V> pop(CacheKey key, int size);
+    List<V> pop(ICacheKey key, int size);
 
     /**
      * 追加元素
      */
-    boolean add(CacheKey cacheKey, V value);
+    boolean add(ICacheKey ICacheKey, V value);
 
     /**
      * 追加元素
      */
-    boolean add(CacheKey key, V value, Long expire, TimeUnit timeUnit);
+    boolean add(ICacheKey key, V value, Long expire, TimeUnit timeUnit);
 
     /**
      * 移除元素
      */
-    boolean remove(CacheKey key, V value);
+    boolean remove(ICacheKey key, V value);
 }

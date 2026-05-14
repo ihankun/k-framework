@@ -1,6 +1,6 @@
 package io.hankun.framework.redis.core.type;
 
-import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -13,83 +13,83 @@ public interface MapCache<K, V> {
     /**
      * 保存
      */
-    boolean save(CacheKey key, Map<K, V> value, Long expire);
+    boolean save(ICacheKey key, Map<K, V> value, Long expire);
 
     /**
      * 获取所有缓存数据
      */
-    Map<K, V> get(CacheKey key);
+    Map<K, V> get(ICacheKey key);
 
     /**
      * 删除缓存
      */
-    boolean del(CacheKey key);
+    boolean del(ICacheKey key);
 
     /**
      * 删除Map中的某些元素
      */
-    long delRawHashKeys(CacheKey cacheKey, Object... hashKeys);
+    long delRawHashKeys(ICacheKey ICacheKey, Object... hashKeys);
 
     /**
      * 更新缓存
      * 默认超时时间3天
      */
-    boolean update(CacheKey cacheKey, Map<K, V> value);
+    boolean update(ICacheKey ICacheKey, Map<K, V> value);
 
     /**
      * 更新缓存
      */
-    boolean update(CacheKey key, Map<K, V> value, Long expire, TimeUnit timeUnit);
+    boolean update(ICacheKey key, Map<K, V> value, Long expire, TimeUnit timeUnit);
 
     /**
      * 修改过期时间
      */
-    boolean expire(CacheKey key, Long expire);
+    boolean expire(ICacheKey key, Long expire);
 
     /**
      * 缓存是否存在
      */
-    boolean exits(CacheKey key);
+    boolean exits(ICacheKey key);
 
     //---------- 通用方法结束 ----------//
 
     /**
      * 得到某个实体
      */
-    V getValue(CacheKey key, K mapKey);
+    V getValue(ICacheKey key, K mapKey);
 
     /**
      * 新增元素
      */
-    boolean put(CacheKey cacheKey, K mapKey, V value);
+    boolean put(ICacheKey ICacheKey, K mapKey, V value);
 
     /**
      * 新增元素
      */
-    boolean put(CacheKey key, K mapKey, V value, Long expire, TimeUnit timeUnit);
+    boolean put(ICacheKey key, K mapKey, V value, Long expire, TimeUnit timeUnit);
 
     /**
      * 插入全部
      */
-    boolean putAll(CacheKey cacheKey, Map<K, V> map);
+    boolean putAll(ICacheKey ICacheKey, Map<K, V> map);
 
     /**
      * 插入全部
      */
-    boolean putAll(CacheKey cacheKey, Map<K, V> map, Long expire, TimeUnit timeUnit);
+    boolean putAll(ICacheKey ICacheKey, Map<K, V> map, Long expire, TimeUnit timeUnit);
 
     /**
      * 移除元素
      */
-    boolean remove(CacheKey key, K mapKey);
+    boolean remove(ICacheKey key, K mapKey);
 
     /**
      * 元素数量
      */
-    Long size(CacheKey key);
+    Long size(ICacheKey key);
 
     /**
      * 新增元素，不存在即添加
      */
-    boolean putIfAbsent(CacheKey cacheKey, K mapKey, V value, Long expire, TimeUnit timeUnit);
+    boolean putIfAbsent(ICacheKey ICacheKey, K mapKey, V value, Long expire, TimeUnit timeUnit);
 }

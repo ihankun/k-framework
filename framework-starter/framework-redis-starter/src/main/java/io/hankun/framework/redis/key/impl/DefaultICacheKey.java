@@ -1,27 +1,27 @@
 package io.hankun.framework.redis.key.impl;
 
 import io.hankun.framework.redis.key.AbstractCacheKey;
-import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
 import io.hankun.framework.core.utils.string.StringPool;
 
 /**
  * @author hankun
  */
-public class DefaultCacheKey extends AbstractCacheKey implements CacheKey {
+public class DefaultICacheKey extends AbstractCacheKey implements ICacheKey {
 
     private final String businessCode;
 
     private String key;
 
-    public DefaultCacheKey(String businessCode) {
+    public DefaultICacheKey(String businessCode) {
         this.businessCode = businessCode;
     }
 
-    public static DefaultCacheKey build(String businessCode) {
-        return new DefaultCacheKey(businessCode);
+    public static DefaultICacheKey build(String businessCode) {
+        return new DefaultICacheKey(businessCode);
     }
 
-    public DefaultCacheKey key(String key) {
+    public DefaultICacheKey key(String key) {
         this.key = key;
         return this;
     }

@@ -5,7 +5,7 @@ import io.hankun.framework.redis.config.RedisSizeProperties;
 import io.hankun.framework.redis.enums.RedisDataType;
 import io.hankun.framework.redis.enums.RedisSizeControlMode;
 import io.hankun.framework.redis.holder.RedisTemplateHolder;
-import io.hankun.framework.redis.key.CacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
 import lombok.extern.slf4j.Slf4j;
@@ -49,12 +49,12 @@ public abstract class AbstractRedisCache {
      * @param keys 缓存key集合
      * @return boolean
      */
-    public boolean batchDel(Collection<? extends CacheKey> keys) {
+    public boolean batchDel(Collection<? extends ICacheKey> keys) {
         int batchSize = SpringHelpers.context().getBean(RedisSizeProperties.class).getBatchSize();
-        List<? extends List<? extends CacheKey>> split = split(keys, batchSize);
+        List<? extends List<? extends ICacheKey>> split = split(keys, batchSize);
         try {
             split.forEach(batchList -> {
-                List<String> collect = batchList.stream().map(CacheKey::get).collect(Collectors.toList());
+                List<String> collect = batchList.stream().map(ICacheKey::get).collect(Collectors.toList());
                 getRedisTemplate().delete(collect);
             });
         } catch (Exception e) {

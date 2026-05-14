@@ -7,8 +7,8 @@ import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.redis.CacheBuilder;
 import io.hankun.framework.redis.CacheManager;
-import io.hankun.framework.redis.key.CacheKey;
-import io.hankun.framework.redis.key.impl.OrgCacheKey;
+import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.impl.OrgICacheKey;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -70,7 +70,7 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
 
     @Around("lockPointcut()")
     public Object around(ProceedingJoinPoint point) {
-        CacheKey lockKey = getOrgCacheKey(point);
+        ICacheKey lockKey = getOrgCacheKey(point);
 
         // 如果其他线程正在执行的话，抛出异常信息
         if (!cacheManager.string().setIfAbsent(lockKey, BigDecimal.ZERO.toString(), TIMEOUT, TIMEOUT_UNIT)) {
@@ -94,12 +94,12 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
      * @param point 切点
      * @return 缓存key
      */
-    private CacheKey getOrgCacheKey(ProceedingJoinPoint point) {
+    private ICacheKey getOrgCacheKey(ProceedingJoinPoint point) {
         StringBuilder sb = new StringBuilder()
                 .append(point.getSignature().toLongString())
                 .append(JSON.toJSONString(Arrays.toString(point.getArgs())))
                 .append(LoginUserContext.get());
-        return OrgCacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(DigestUtils.md5DigestAsHex(sb.toString().getBytes()));
+        return OrgICacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(DigestUtils.md5DigestAsHex(sb.toString().getBytes()));
     }
 
     /**
