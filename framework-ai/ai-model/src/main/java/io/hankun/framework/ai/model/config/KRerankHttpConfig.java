@@ -9,15 +9,15 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @description:
- * @className: MsunRerankHttpConfig
+ * @className: KAiModelAutoConfiguration
  * @createAt: 2025/7/4 11:34
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.rerank.http")
-public class MsunRerankHttpConfig {
+@ConfigurationProperties(prefix = "k.ai.rerank.http")
+public class KRerankHttpConfig {
 
     private String baseUrl;
 

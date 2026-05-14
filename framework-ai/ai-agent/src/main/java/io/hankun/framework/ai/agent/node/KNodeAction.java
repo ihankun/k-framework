@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @description:
- * @className: MsunNodeAction
+ * @className: KNodeAction
  * @createAt: 2025/10/23 15:48
  * @author: hankun
  */

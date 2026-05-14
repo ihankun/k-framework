@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @description:
- * @className: MsunAiHttpConfig
+ * @className: KAiHttpConfig
  * @createAt: 2025/5/28 17:11
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.http")
+@ConfigurationProperties(prefix = "k.ai.http")
 public class KAiHttpConfig {
     private String gatewayUrl;
     private String systemId;
@@ -29,7 +29,7 @@ public class KAiHttpConfig {
     @NestedConfigurationProperty
     private HttpConfig client = new HttpConfig();
 
-    private String nacosAddress = "http://nacos.chis.msunsoft.com:8848/";
+    private String nacosAddress = "http://localhost:8848/";
     private String nacosUser = "nacos";
     private String nacosPassword = "nacos";
     private String clusterName = "DEFAULT";

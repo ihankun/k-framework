@@ -23,6 +23,6 @@ public class ToolCallAutoConfiguration {
     @Bean("toolProxyCallingManager")
     ToolCallingManager toolCallingManager(ToolCallingManager toolCallingManager,
                                           List<ToolCallingInterceptor> toolCallingInterceptors) {
-        return new MsunToolCallingManager(toolCallingManager, toolCallingInterceptors);
+        return new KToolCallingManager(toolCallingManager, toolCallingInterceptors);
     }
 }

@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.store.config;
 
-import io.hankun.framework.ai.model.MsunModelManager;
+import io.hankun.framework.ai.model.KModelManager;
 import io.micrometer.observation.ObservationRegistry;
 import io.milvus.client.MilvusServiceClient;
 import io.milvus.param.ConnectParam;
@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @description:
- * @className: MsunClientConfiguration
+ * @className: KClientConfiguration
  * @createAt: 2025/6/4 10:19
  * @author: hankun
  */
@@ -90,11 +90,11 @@ public class KClientConfiguration {
     }
 
     @Bean
-    public MilvusVectorStore vectorStore(MilvusServiceClient milvusClient, MsunModelManager msunModelManager,
+    public MilvusVectorStore vectorStore(MilvusServiceClient milvusClient, KModelManager kModelManager,
                                          MilvusVectorStoreProperties properties, BatchingStrategy batchingStrategy,
                                          ObjectProvider<ObservationRegistry> observationRegistry,
                                          ObjectProvider<VectorStoreObservationConvention> customObservationConvention) {
-        EmbeddingModel embeddingModel = msunModelManager.getEmbeddingModel();
+        EmbeddingModel embeddingModel = kModelManager.getEmbeddingModel();
         float[] sampleEmbedding = embeddingModel.embed("test");
         log.info("Embedding dimension: {}", sampleEmbedding.length);
         return MilvusVectorStore.builder(milvusClient, embeddingModel)

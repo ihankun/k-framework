@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.tools.client;
 
-import io.hankun.framework.ai.model.MsunModelManager;
+import io.hankun.framework.ai.model.KModelManager;
 import io.hankun.framework.ai.tools.advisors.KAdvisorManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -17,22 +17,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class ChatClientService {
 
-    private final MsunModelManager msunModelManager;
+    private final KModelManager kModelManager;
 
     private final KAdvisorManager kAdvisorManager;
 
-    public ChatClientService(MsunModelManager msunModelManager,
+    public ChatClientService(KModelManager kModelManager,
                              KAdvisorManager kAdvisorManager) {
-        this.msunModelManager = msunModelManager;
+        this.kModelManager = kModelManager;
         this.kAdvisorManager = kAdvisorManager;
     }
 
     public ChatModel buildChatModel(String group) {
-        return msunModelManager.getChatModel(group);
+        return kModelManager.getChatModel(group);
     }
 
     public ChatClient buildChatClient(String group, ClientConfig config) {
-        return buildChatClient(msunModelManager.getChatModel(group), config);
+        return buildChatClient(kModelManager.getChatModel(group), config);
     }
 
 

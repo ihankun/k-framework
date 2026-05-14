@@ -188,7 +188,7 @@ public class KCallExecutor implements Closeable {
             KContextHolder.set(kContext);
             audioSink = Sinks.many().unicast().onBackpressureBuffer();
             Flux<KAsrResult> makeRounds = kMessageAudioService.asr(sessionId, asrMark(), audioSink.asFlux());
-            Flux<KAsrResult> textFlux = makeRounds.filter(msunAsrResult -> msunAsrResult.type().equals(KAsrApi.DELTA));
+            Flux<KAsrResult> textFlux = makeRounds.filter(asrResult -> asrResult.type().equals(KAsrApi.DELTA));
             textFlux.subscribe(result -> {
                 try {
                     KContextHolder.set(kContext);

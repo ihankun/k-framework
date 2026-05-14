@@ -5,8 +5,8 @@ import com.alibaba.cloud.ai.document.DocumentWithScore;
 import com.alibaba.cloud.ai.model.RerankModel;
 import com.alibaba.cloud.ai.model.RerankRequest;
 import com.alibaba.cloud.ai.model.RerankResponse;
-import io.hankun.framework.ai.model.rerank.MsunDocumentWithScore;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KDocumentWithScore;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import io.hankun.framework.ai.tools.trace.TraceContext;
 import io.hankun.framework.ai.tools.trace.TraceContextHolder;
 import org.springframework.ai.chat.metadata.Usage;
@@ -23,7 +23,7 @@ import java.util.List;
  * @author: hankun
  */
 @Component
-public class AliRerankService implements MsunRerankModel {
+public class AliRerankService implements KRerankModel {
 
     public static final String MODEL_NAME = "gte-rerank-v2";
     private final RerankModel rerankModel;
@@ -32,13 +32,13 @@ public class AliRerankService implements MsunRerankModel {
         this.rerankModel = rerankModel;
     }
 
-    public List<MsunDocumentWithScore> rerank(String query, List<Document> documents, int topN) {
+    public List<KDocumentWithScore> rerank(String query, List<Document> documents, int topN) {
         RerankResponse response = rerankModel.call(new RerankRequest(query, documents, DashScopeRerankOptions.builder()
                 .withModel(MODEL_NAME).withTopN(topN).build()));
         List<DocumentWithScore> documentWithScores = response.getResults();
-        List<MsunDocumentWithScore> result = new ArrayList<>(documentWithScores.size());
+        List<KDocumentWithScore> result = new ArrayList<>(documentWithScores.size());
         for (DocumentWithScore documentWithScore : documentWithScores) {
-            result.add(new MsunDocumentWithScore(documentWithScore.getOutput(), documentWithScore.getScore()));
+            result.add(new KDocumentWithScore(documentWithScore.getOutput(), documentWithScore.getScore()));
         }
         TraceContext traceContext = TraceContextHolder.peek();
         if (traceContext != null) {

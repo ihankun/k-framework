@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunNacosClient
+ * @className: KNacosClient
  * @createAt: 2025/6/5 16:51
  * @author: hankun
  */

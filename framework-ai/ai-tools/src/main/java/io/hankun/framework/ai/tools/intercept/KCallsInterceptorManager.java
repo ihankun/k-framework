@@ -4,7 +4,6 @@ import io.hankun.framework.ai.mcp.entity.ToolKey;
 import io.hankun.framework.ai.mcp.interceptor.ToolInterceptor;
 import io.hankun.framework.ai.mcp.app.KHttpToolCallback;
 import io.hankun.framework.ai.mcp.app.ToolCallbackBuildService;
-import io.hankun.framework.ai.tools.intercept.msun.MsunFunctionInterceptor;
 import org.springframework.ai.chat.model.ToolContext;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.stereotype.Component;
@@ -15,22 +14,22 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunCallsInterceptorManager
+ * @className: KCallsInterceptorManager
  * @createAt: 2025/6/25 14:54
  * @author: hankun
  */
 @Component
-public class MsunCallsInterceptorManager implements ToolInterceptor {
+public class KCallsInterceptorManager implements ToolInterceptor {
 
-    private final Map<ToolKey, MsunFunctionInterceptor> msunFunctionInterceptors = new HashMap<>();
+    private final Map<ToolKey, KFunctionInterceptor> functionInterceptors = new HashMap<>();
 
     private final ToolCallbackBuildService toolCallbackBuildService;
 
-    public MsunCallsInterceptorManager(List<MsunFunctionInterceptor> msunFunctionInterceptors,
-                                       ToolCallbackBuildService toolCallbackBuildService) {
+    public KCallsInterceptorManager(List<KFunctionInterceptor> kFunctionInterceptors,
+                                    ToolCallbackBuildService toolCallbackBuildService) {
         this.toolCallbackBuildService = toolCallbackBuildService;
-        for (MsunFunctionInterceptor msunFunctionInterceptor : msunFunctionInterceptors) {
-            this.msunFunctionInterceptors.put(msunFunctionInterceptor.functionName(), msunFunctionInterceptor);
+        for (KFunctionInterceptor kFunctionInterceptor : kFunctionInterceptors) {
+            this.functionInterceptors.put(kFunctionInterceptor.functionName(), kFunctionInterceptor);
         }
     }
 
@@ -43,7 +42,7 @@ public class MsunCallsInterceptorManager implements ToolInterceptor {
     public String intercept(String toolInput, ToolContext tooContext, ToolCallback toolCallback) {
         String toolName = toolCallback.getToolDefinition().name();
         ToolKey toolKey = toolCallbackBuildService.getByShortName(toolName);
-        MsunFunctionInterceptor interceptor = msunFunctionInterceptors.get(toolKey);
+        KFunctionInterceptor interceptor = functionInterceptors.get(toolKey);
         if (interceptor != null) {
             return interceptor.intercept(toolInput, tooContext, toolCallback);
         }

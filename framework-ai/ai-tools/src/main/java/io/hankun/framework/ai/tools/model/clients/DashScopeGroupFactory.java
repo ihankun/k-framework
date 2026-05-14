@@ -8,7 +8,7 @@ import com.alibaba.cloud.ai.dashscope.rerank.DashScopeRerankModel;
 import com.alibaba.cloud.ai.dashscope.rerank.DashScopeRerankOptions;
 import io.hankun.framework.ai.model.clients.ModelGroupFactory;
 import io.hankun.framework.ai.model.config.ModelGroupConfig;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import io.hankun.framework.ai.tools.model.rerank.AliRerankService;
 import io.micrometer.observation.ObservationRegistry;
 import org.springframework.ai.chat.model.ChatModel;
@@ -78,7 +78,7 @@ public class DashScopeGroupFactory extends ModelGroupFactory {
     }
 
     @Override
-    public MsunRerankModel createMsunRerankModel(ModelGroupConfig config) {
+    public KRerankModel createRerankModel(ModelGroupConfig config) {
         DashScopeApi api = DashScopeApi.builder()
                 .baseUrl(config.getBaseUrl())
                 .apiKey(config.getApiKey())

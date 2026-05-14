@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @description:
- * @className: MsunTtsImpl
+ * @className: KTtsImpl
  * @createAt: 2025/7/24 10:42
  * @author: hankun
  */
@@ -136,8 +136,8 @@ public class KTtsImpl extends AbstractClientApi<String, KAudioData> implements K
         return audioCacheService.getCache(text, audioInfo);
     }
 
-    public void onReceive(AudioResult msunAudioData) {
-        if (msunAudioData.finish()) {
+    public void onReceive(AudioResult audioData) {
+        if (audioData.finish()) {
             if (stream) {
                 //流式，如果输入结束，收到服务端的finish标签，发送end，结束会话
                 if (finishSend) {
@@ -147,7 +147,7 @@ public class KTtsImpl extends AbstractClientApi<String, KAudioData> implements K
             } else {
                 //非流式，收到服务端的finish标签，发送end，index+1，发送下一条消息
                 //如果所有消息都已发送，结束会话
-                resultSink.tryEmitNext(KAudioData.ofEnd(finishCounter.get(), msunAudioData.text()));
+                resultSink.tryEmitNext(KAudioData.ofEnd(finishCounter.get(), audioData.text()));
                 int index = finishCounter.incrementAndGet();
                 List<String> cached = cachedAudio.get(index);
                 //缓存中存在音频，发送缓存的音频
@@ -173,9 +173,9 @@ public class KTtsImpl extends AbstractClientApi<String, KAudioData> implements K
                 checkStop();
             }
         } else {
-            resultSink.tryEmitNext(KAudioData.ofAudio(finishCounter.get(), msunAudioData.text()));
+            resultSink.tryEmitNext(KAudioData.ofAudio(finishCounter.get(), audioData.text()));
             newAudio.computeIfAbsent(finishCounter.get(), k -> new ArrayList<>())
-                    .add(msunAudioData.text());
+                    .add(audioData.text());
         }
     }
 

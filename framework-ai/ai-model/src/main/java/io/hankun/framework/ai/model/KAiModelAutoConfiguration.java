@@ -1,4 +1,4 @@
-package io.hankun.framework.ai.store;
+package io.hankun.framework.ai.model;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -7,16 +7,16 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @description:
- * @className: MsunAiStoreApplication
- * @createAt: 2025/10/16 10:20
+ * @className: KAiModelAutoConfiguration
+ * @createAt: 2025/7/16 10:34
  * @author: hankun
  */
 @Slf4j
 @AutoConfiguration
-@ComponentScan(basePackageClasses = {MsunAiStoreApplication.class})
-public class MsunAiStoreApplication {
+@ComponentScan(basePackageClasses = {KAiModelAutoConfiguration.class})
+public class KAiModelAutoConfiguration {
     @PostConstruct
     public void init() {
-        log.info("MsunAiStoreApplication init");
+        log.info("KAiModelAutoConfiguration.init.start");
     }
 }

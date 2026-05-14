@@ -14,13 +14,13 @@ import org.springframework.stereotype.Component;
 
 /**
  * @description:
- * @className: MsunToolCallbackCache
+ * @className: KToolCallbackCache
  * @createAt: 2025/8/28 09:39
  * @author: hankun
  */
 @Slf4j
 @Component
-public class MsunToolCallbackCache {
+public class KToolCallbackCache {
 
     private final Cache<String, ToolCallback> toolCallbackCache;
 
@@ -28,7 +28,7 @@ public class MsunToolCallbackCache {
     private final ToolCallbackBuildService toolCallbackBuildService;
 
 
-    public MsunToolCallbackCache(ToolCallbackBuildService toolCallbackBuildService) {
+    public KToolCallbackCache(ToolCallbackBuildService toolCallbackBuildService) {
         this.toolCallbackCache = Caffeine.newBuilder()
                 .maximumSize(2000)
                 .build();

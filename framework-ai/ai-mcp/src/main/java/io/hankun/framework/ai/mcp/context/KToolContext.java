@@ -80,7 +80,7 @@ public class KToolContext {
 
     @Override
     public String toString() {
-        return "MsunToolContext{" +
+        return "ToolContext{" +
                 "context=" + context +
                 '}';
     }

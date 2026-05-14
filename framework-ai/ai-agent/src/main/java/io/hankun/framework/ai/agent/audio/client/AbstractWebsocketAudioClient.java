@@ -68,7 +68,7 @@ public abstract class AbstractWebsocketAudioClient extends AbstractAudioClient {
             webSocketHttpHeaders.add(entry.getKey(), entry.getValue());
         }
         session = webSocketClient.execute(
-                new MsunWebSocketHandler(),
+                new KWebSocketHandler(),
                 webSocketHttpHeaders,
                 url
         ).get();
@@ -114,7 +114,7 @@ public abstract class AbstractWebsocketAudioClient extends AbstractAudioClient {
 
     public abstract void onReceive(String message);
 
-    public class MsunWebSocketHandler extends AbstractWebSocketHandler {
+    public class KWebSocketHandler extends AbstractWebSocketHandler {
 
         private final StringBuilder partialMessage = new StringBuilder();
 

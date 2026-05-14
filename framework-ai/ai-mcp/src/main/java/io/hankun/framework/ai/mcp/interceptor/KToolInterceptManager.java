@@ -12,18 +12,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @description:
- * @className: MsunToolInterceptManager
+ * @className: KToolInterceptManager
  * @createAt: 2025/6/5 13:38
  * @author: hankun
  */
 @Component
-public class MsunToolInterceptManager {
+public class KToolInterceptManager {
 
     private final Map<Class<? extends ToolCallback>, List<ToolInterceptor>> interceptorCache;
 
     private final List<ToolInterceptor> allInterceptors;
 
-    public MsunToolInterceptManager(List<ToolInterceptor> interceptorProvider) {
+    public KToolInterceptManager(List<ToolInterceptor> interceptorProvider) {
         this.interceptorCache = new ConcurrentHashMap<>();
         this.allInterceptors = interceptorProvider;
     }

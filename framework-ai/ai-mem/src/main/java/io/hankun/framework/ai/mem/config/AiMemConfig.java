@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.mem")
+@ConfigurationProperties(prefix = "k.ai.mem")
 public class AiMemConfig {
     private String collectName = "aiMem";
     private Integer summaryTopK = 5;

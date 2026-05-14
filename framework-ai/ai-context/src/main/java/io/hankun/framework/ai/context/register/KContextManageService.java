@@ -7,21 +7,21 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunContextManageService
+ * @className: KContextManageService
  * @createAt: 2025/12/25 14:51
  * @author: hankun
  */
-public class MsunContextManageService {
+public class KContextManageService {
 
     private final Map<Class<?>, ContextBuilder> builderMap = new HashMap<>();
 
 
     public void build(Class<? extends IContext> context) {
-        MsunContextRegister msunContextRegister = context.getAnnotation(MsunContextRegister.class);
-        if (msunContextRegister == null) {
+        KContextRegister kContextRegister = context.getAnnotation(KContextRegister.class);
+        if (kContextRegister == null) {
             return;
         }
-        ContextBuilder builder = builderMap.get(msunContextRegister.builder());
+        ContextBuilder builder = builderMap.get(kContextRegister.builder());
 
 
     }

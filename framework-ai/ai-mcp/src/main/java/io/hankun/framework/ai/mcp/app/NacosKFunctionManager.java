@@ -28,13 +28,13 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @description:
- * @className: NacosMsunFunctionManager
+ * @className: NacosKFunctionManager
  * @createAt: 2025/6/5 17:20
  * @author: hankun
  */
 @Slf4j
 @ConditionalOnProperty(
-        prefix = "msun.ai.mcp",
+        prefix = "k.ai.mcp",
         name = {"registerType"},
         havingValue = "nacos",
         matchIfMissing = true
@@ -71,7 +71,7 @@ public class NacosKFunctionManager extends KFunctionManager {
     private void fresh() {
         lock.lock();
         try {
-            for (String serviceName : kAiMcpConfig.getMsunServices()) {
+            for (String serviceName : kAiMcpConfig.getServices()) {
                 try {
                     freshService(serviceName);
                 } catch (Throwable e) {
@@ -143,17 +143,6 @@ public class NacosKFunctionManager extends KFunctionManager {
                 HttpResult httpResult = kHttpClient.call(request, true);
                 if (!httpResult.success()) {
                     log.error("服务{}的灰度【{}】刷新失败，原因：{}", serviceName, getString(serviceInfo), httpResult.message());
-//                    MsunFunctionList empty = new MsunFunctionList();
-//                    empty.setServiceName(serviceInfo.serviceName());
-//                    empty.setGrayMark(serviceInfo.grayMark());
-//                    empty.setVersion(serviceInfo.serviceVersion());
-//                    empty.setStartTime(serviceInfo.serviceStartTime());
-//                    empty.setFunctions(new ArrayList<>());
-//                    MsunFunctionList old = functions.put(serviceInfo.grayMark(), empty);
-//                    if (old != null) {
-//                        removeEvent(old);
-//                    }
-//                    addEvent(empty);
                     continue;
                 }
                 String result = httpResult.data();

@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author luqianqi
- * @title: ModelHistoryController
- * @projectName msun-parent-2.0
- * @description: TODO
+ * @author hankun
  * @date 2025/11/1711:19
  */
 @RestController

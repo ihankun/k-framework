@@ -55,10 +55,10 @@ public class FunctionController {
     }
 
     @GetMapping("/list")
-    public List<KFunctionList> listMsunFunctions(@RequestParam(value = "gray", required = false) String gray,
+    public List<KFunctionList> listFunctions(@RequestParam(value = "gray", required = false) String gray,
                                                  @RequestParam(value = "serviceName", required = false) String serviceName) {
-        log.info("listMsunFunctions gray:{},serviceName:{}", gray, serviceName);
-        return functionManager.listMsunFunctions(gray, serviceName);
+        log.info("listFunctions gray:{},serviceName:{}", gray, serviceName);
+        return functionManager.listFunctions(gray, serviceName);
     }
 
     @GetMapping("/listDef")

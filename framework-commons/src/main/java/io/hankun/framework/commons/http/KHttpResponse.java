@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 
 /**
  * @description:
- * @className: MsunHttpResponse
+ * @className: KHttpResponse
  * @createAt: 2026/1/4 14:11
  * @author: hankun
  */
@@ -48,7 +48,7 @@ public record KHttpResponse<T>(boolean success,
         }
     }
 
-    public static <T> KHttpResponse<T> ofMsun(ResponseEntity<ResponseResult<T>> responseEntity) {
+    public static <T> KHttpResponse<T> ofK(ResponseEntity<ResponseResult<T>> responseEntity) {
         if (responseEntity == null) {
             return KHttpResponse.fail("无响应体", "");
         }
@@ -64,7 +64,7 @@ public record KHttpResponse<T>(boolean success,
                 return KHttpResponse.fail("无响应体", responseEntity.getHeaders().getFirst("traceId"));
             }
         } else {
-            return KHttpResponse.fail("请求云健康接口失败：" + responseEntity.getStatusCode(), responseEntity.getHeaders().getFirst("traceId"));
+            return KHttpResponse.fail("请求接口失败：" + responseEntity.getStatusCode(), responseEntity.getHeaders().getFirst("traceId"));
         }
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @description:
- * @className: MsunChatService
+ * @className: KChatService
  * @createAt: 2025/7/2 11:08
  * @author: hankun
  */

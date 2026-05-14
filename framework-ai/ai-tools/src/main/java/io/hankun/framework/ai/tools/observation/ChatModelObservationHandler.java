@@ -38,7 +38,7 @@ public class ChatModelObservationHandler implements ObservationHandler<ChatModel
         //非流式 start->end->toolCall->start->end
         //流式 start->toolCall->start->end->end
         //流式下，toolCall返回后，缺失上下文
-        //需要依赖@{com.msun.core.ai.tools.trace.aspect.TraceToolCallingInterceptor}解决问题
+        //需要依赖@{TraceToolCallingInterceptor}解决问题
         CurrentId currentId = CurrentIdHolder.getCurrentId();
         if (currentId == null) {
             return;

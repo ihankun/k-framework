@@ -35,7 +35,7 @@ public abstract class KFunctionManager {
 
     public Map<String, List<KFunction>> listAll() {
         Map<String, List<KFunction>> resultMap = new HashMap<>();
-        for (String service : kAiMcpConfig.getMsunServices()) {
+        for (String service : kAiMcpConfig.getServices()) {
             Map<String, KFunctionList> functionListMap = getFunctionsByServiceName(service);
             if (functionListMap == null) {
                 continue;
@@ -62,7 +62,7 @@ public abstract class KFunctionManager {
         if ("false".equals(gray)) {
             gray = "";
         }
-        for (String service : kAiMcpConfig.getMsunServices()) {
+        for (String service : kAiMcpConfig.getServices()) {
             Map<String, KFunctionList> functionListMap = getFunctionsByServiceName(service);
             if (functionListMap == null) {
                 continue;
@@ -86,14 +86,14 @@ public abstract class KFunctionManager {
         collect.sort(Comparator.comparing(KFunction::getSchema)
                 .thenComparing(KFunction::getName)
                 .thenComparing(KFunction::getServiceName));
-        log.debug("execute RedisMsunFunctionManager.list: {}", collect);
+        log.debug("execute RedisFunctionManager.list: {}", collect);
         return collect;
     }
 
-    public List<KFunctionList> listMsunFunctions(String grayMark, String serviceName) {
+    public List<KFunctionList> listFunctions(String grayMark, String serviceName) {
         List<KFunctionList> result = new ArrayList<>();
-        for (String service : kAiMcpConfig.getMsunServices()) {
-            log.info("execute RedisMsunFunctionManager.listMsunFunctions service: {}, grayMark: {}", service, grayMark);
+        for (String service : kAiMcpConfig.getServices()) {
+            log.info("execute RedisFunctionManager.listFunctions service: {}, grayMark: {}", service, grayMark);
             if (serviceName != null) {
                 if (!serviceName.equals(service)) {
                     continue;
@@ -116,12 +116,12 @@ public abstract class KFunctionManager {
                 }
             }
         }
-        log.info("execute RedisMsunFunctionManager.listMsunFunctions: {}", result.size());
+        log.info("execute RedisFunctionManager.listFunctions: {}", result.size());
         return result;
     }
 
     public void remove(String serviceName, String grayMark) {
-        for (String service : kAiMcpConfig.getMsunServices()) {
+        for (String service : kAiMcpConfig.getServices()) {
             if (serviceName != null) {
                 if (!serviceName.equals(service)) {
                     continue;

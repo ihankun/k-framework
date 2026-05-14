@@ -2,7 +2,7 @@ package io.hankun.framework.ai.tools.model.clients;
 
 import io.hankun.framework.ai.model.clients.ModelGroupFactory;
 import io.hankun.framework.ai.model.config.ModelGroupConfig;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import io.micrometer.observation.ObservationRegistry;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.observation.ChatModelObservationConvention;
@@ -70,7 +70,7 @@ public class OpenAiGroupFactory extends ModelGroupFactory {
     }
 
     @Override
-    public MsunRerankModel createMsunRerankModel(ModelGroupConfig config) {
+    public KRerankModel createRerankModel(ModelGroupConfig config) {
         return null;
     }
 }

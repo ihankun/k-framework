@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.mcp.interceptor.aspect;
 
-import io.hankun.framework.ai.mcp.interceptor.MsunToolInterceptManager;
+import io.hankun.framework.ai.mcp.interceptor.KToolInterceptManager;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,10 +17,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ToolInterceptAspect {
 
-    private final MsunToolInterceptManager msunToolInterceptManager;
+    private final KToolInterceptManager kToolInterceptManager;
 
-    public ToolInterceptAspect(MsunToolInterceptManager msunToolInterceptManager) {
-        this.msunToolInterceptManager = msunToolInterceptManager;
+    public ToolInterceptAspect(KToolInterceptManager kToolInterceptManager) {
+        this.kToolInterceptManager = kToolInterceptManager;
     }
 
     @Around("execution(* org.springframework.ai.tool.ToolCallbackProvider.getToolCallbacks(..))")
@@ -32,7 +32,7 @@ public class ToolInterceptAspect {
             ToolCallback[] modifiedCallbacks = new ToolCallback[originCallbacks.length];
             for (int i = 0; i < originCallbacks.length; i++) {
                 ToolCallback originCallback = originCallbacks[i];
-                modifiedCallbacks[i] = msunToolInterceptManager.addIntercept(originCallback);
+                modifiedCallbacks[i] = kToolInterceptManager.addIntercept(originCallback);
             }
             return modifiedCallbacks;
         } else {

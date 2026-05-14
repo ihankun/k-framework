@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunConnectorConfig
+ * @className: KConnectorConfig
  * @createAt: 2026/1/4 11:15
  * @author: hankun
  */

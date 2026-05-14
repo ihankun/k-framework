@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.mcp.app;
 
 import io.hankun.framework.ai.mcp.entity.ToolKey;
-import io.hankun.framework.ai.mcp.local.MsunToolCallbackCache;
+import io.hankun.framework.ai.mcp.local.KToolCallbackCache;
 import io.hankun.framework.ai.mcp.app.entity.KFunction;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.ai.tool.ToolCallback;
@@ -24,10 +24,10 @@ public class KToolCallbackProvider implements ToolCallbackProvider {
 
     private final KFunctionManager functionManager;
 
-    private final MsunToolCallbackCache toolCallbackCache;
+    private final KToolCallbackCache toolCallbackCache;
 
     public KToolCallbackProvider(KFunctionManager functionManager,
-                                 MsunToolCallbackCache toolCallbackCache) {
+                                 KToolCallbackCache toolCallbackCache) {
         this.functionManager = functionManager;
         this.toolCallbackCache = toolCallbackCache;
     }

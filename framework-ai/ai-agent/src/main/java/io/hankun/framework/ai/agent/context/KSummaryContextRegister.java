@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * @description:
- * @className: MsunSummaryContextRegister
+ * @className: KSummaryContextRegister
  * @createAt: 2025/12/5 14:42
  * @author: hankun
  */
 @Component
-public class MsunSummaryContextRegister implements NoBuildContextRegister<MemSummaryContext> {
+public class KSummaryContextRegister implements NoBuildContextRegister<MemSummaryContext> {
     @NotNull
     @Override
     public ContextLifecycle lifecycle() {

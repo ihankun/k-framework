@@ -7,12 +7,12 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * @description:
- * @className: MsunContextRegister
+ * @className: KContextRegister
  * @createAt: 2025/12/22 09:08
  * @author: hankun
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MsunContextRegister {
+public @interface KContextRegister {
 
     ContextLifecycle lifecycle() default ContextLifecycle.MESSAGE_IN_AGENT;
 

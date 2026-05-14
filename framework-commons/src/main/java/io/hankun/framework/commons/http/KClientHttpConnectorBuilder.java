@@ -4,7 +4,7 @@ import org.springframework.http.client.reactive.ClientHttpConnector;
 
 /**
  * @description:
- * @className: MsunClientHttpConnectorBuilder
+ * @className: KClientHttpConnectorBuilder
  * @createAt: 2026/1/4 11:09
  * @author: hankun
  */

@@ -20,12 +20,12 @@ import java.util.function.Consumer;
 
 /**
  * @description:
- * @className: MsunLoadBalanceCaller
+ * @className: KLoadBalanceCaller
  * @createAt: 2026/1/4 14:05
  * @author: hankun
  */
 @Slf4j
-@ConditionalOnBooleanProperty(name = "msun.ai.http.enableLoadBalance", matchIfMissing = true)
+@ConditionalOnBooleanProperty(name = "k.ai.http.enableLoadBalance", matchIfMissing = true)
 @Component
 public class KLoadBalanceCaller implements IKHttpCaller {
 
@@ -55,7 +55,7 @@ public class KLoadBalanceCaller implements IKHttpCaller {
             }
         }).toEntity(new ParameterizedTypeReference<>() {
         });
-        Mono<KHttpResponse<Object>> mono = entity.map(KHttpResponse::ofMsun);
+        Mono<KHttpResponse<Object>> mono = entity.map(KHttpResponse::ofK);
         return HttpResult.of(mono.block());
     }
 

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @description:
- * @className: MsunAiSceneApplication
+ * @className: KAiSceneApplication
  * @createAt: 2025/10/16 10:45
  * @author: hankun
  */
@@ -18,7 +18,7 @@ public class KAiSceneApplication {
 
     @PostConstruct
     public void init() {
-        log.info("MsunAiSceneApplication init");
+        log.info("KAiSceneApplication init");
     }
 
 }

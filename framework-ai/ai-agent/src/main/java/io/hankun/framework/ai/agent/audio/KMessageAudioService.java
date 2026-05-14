@@ -17,7 +17,7 @@ import java.util.function.Function;
 
 /**
  * @description:
- * @className: MsunMessageAudioService
+ * @className: KMessageAudioService
  * @createAt: 2025/11/12 17:17
  * @author: hankun
  */

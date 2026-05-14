@@ -9,22 +9,22 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @description:
- * @className: MsunContextManager
+ * @className: KContextManager
  * @createAt: 2025/11/26 14:55
  * @author: hankun
  */
 @Component
 public class KContextManager {
 
-    private final Map<String, KContext> msunContextMap = new ConcurrentHashMap<>();
+    private final Map<String, KContext> contextMap = new ConcurrentHashMap<>();
 
 
     public KContext get(String key) {
-        return msunContextMap.get(key);
+        return contextMap.get(key);
     }
 
     public void put(String key, KContext kContext) {
-        msunContextMap.put(key, kContext);
+        contextMap.put(key, kContext);
     }
 
 
@@ -37,6 +37,6 @@ public class KContextManager {
     }
 
     public void remove(String key) {
-        msunContextMap.remove(key);
+        contextMap.remove(key);
     }
 }

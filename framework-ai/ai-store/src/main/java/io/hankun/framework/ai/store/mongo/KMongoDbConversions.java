@@ -20,13 +20,13 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunMongoDbConversions
+ * @className: KMongoDbConversions
  * @createAt: 2025/10/15 13:57
  * @author: hankun
  */
 @Component
-public class MsunMongoDbConversions extends MongoCustomConversions {
-    public MsunMongoDbConversions() {
+public class KMongoDbConversions extends MongoCustomConversions {
+    public KMongoDbConversions() {
         super(List.of(new MessageReadConverter(), new MessageWriteConverter()));
     }
 

@@ -5,10 +5,8 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @author luqianqi
+ * @author hankun
  * @title: SceneNodeInfoAndMatch
- * @projectName msun-emr-ai-zyemr
- * @description: TODO
  * @date 2025/9/1111:52
  */
 @Data

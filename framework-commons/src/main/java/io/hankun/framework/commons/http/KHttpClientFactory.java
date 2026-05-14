@@ -4,7 +4,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 /**
  * @description:
- * @className: MsunHttpClientFactory
+ * @className: KHttpClientFactory
  * @createAt: 2025/12/22 16:32
  * @author: hankun
  */

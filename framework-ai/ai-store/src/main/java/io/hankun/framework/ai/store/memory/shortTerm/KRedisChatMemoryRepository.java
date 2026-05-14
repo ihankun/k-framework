@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunRedisChatMemoryRepository
+ * @className: KRedisChatMemoryRepository
  * @createAt: 2025/6/5 08:56
  * @author: hankun
  */

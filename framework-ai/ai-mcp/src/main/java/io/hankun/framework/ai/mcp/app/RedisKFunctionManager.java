@@ -15,13 +15,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @description:
- * @className: RedisMsunFunctionManager
+ * @className: RedisKFunctionManager
  * @createAt: 2025/5/29 09:19
  * @author: hankun
  */
 @Slf4j
 @ConditionalOnProperty(
-        prefix = "msun.ai.mcp",
+        prefix = "k.ai.mcp",
         name = {"registerType"},
         havingValue = "redis",
         matchIfMissing = false
@@ -40,7 +40,7 @@ public class RedisKFunctionManager extends KFunctionManager {
     }
 
     public RMap<String, KFunctionList> getFunctionListMap(String serviceName) {
-        return functionMap.computeIfAbsent(serviceName, key -> redissonClient.getLocalCachedMap("ai-msun-functions:" +
+        return functionMap.computeIfAbsent(serviceName, key -> redissonClient.getLocalCachedMap("ai-functions:" +
                         kAiMcpConfig.getRedisPrefix() + key,
                 LocalCachedMapOptions.<String, KFunctionList>defaults()
                         .cacheSize(500)));

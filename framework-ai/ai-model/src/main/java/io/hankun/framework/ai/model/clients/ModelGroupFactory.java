@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.model.clients;
 
 import io.hankun.framework.ai.model.config.ModelGroupConfig;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import io.micrometer.observation.ObservationRegistry;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.observation.ChatModelObservationConvention;
@@ -43,6 +43,6 @@ public abstract class ModelGroupFactory {
 
     public abstract EmbeddingModel createEmbeddingModel(ModelGroupConfig config);
 
-    public abstract MsunRerankModel createMsunRerankModel(ModelGroupConfig config);
+    public abstract KRerankModel createRerankModel(ModelGroupConfig config);
 
 }

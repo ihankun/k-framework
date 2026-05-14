@@ -2,10 +2,10 @@ package io.hankun.framework.ai.model;
 
 import io.hankun.framework.ai.model.clients.ModelGroupManageService;
 import io.hankun.framework.ai.model.config.ModelGroupConfig;
-import io.hankun.framework.ai.model.config.MsunAiModelConfig;
-import io.hankun.framework.ai.model.interceptors.MsunRerankModelProxy;
+import io.hankun.framework.ai.model.config.KAiModelConfig;
+import io.hankun.framework.ai.model.interceptors.KRerankModelProxy;
 import io.hankun.framework.ai.model.interceptors.RerankInterceptor;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.embedding.EmbeddingModel;
@@ -18,32 +18,32 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunModelManager
+ * @className: KModelManager
  * @createAt: 2025/6/13 16:39
  * @author: hankun
  */
 @Slf4j
 @Component
-public class MsunModelManager {
+public class KModelManager {
 
-    private final MsunAiModelConfig msunAiModelConfig;
+    private final KAiModelConfig kAiModelConfig;
 
     private final ModelGroupManageService modelGroupManageService;
 
     private final List<RerankInterceptor> soredRerankInterceptors;
 
 
-    public MsunModelManager(MsunAiModelConfig msunAiModelConfig,
-                            ModelGroupManageService modelGroupManageService,
-                            List<RerankInterceptor> rerankInterceptors) {
-        this.msunAiModelConfig = msunAiModelConfig;
+    public KModelManager(KAiModelConfig kAiModelConfig,
+                         ModelGroupManageService modelGroupManageService,
+                         List<RerankInterceptor> rerankInterceptors) {
+        this.kAiModelConfig = kAiModelConfig;
         this.modelGroupManageService = modelGroupManageService;
         this.soredRerankInterceptors = new ArrayList<>(rerankInterceptors);
         soredRerankInterceptors.sort((o1, o2) -> o2.getOrder() - o1.getOrder());
     }
 
     private ModelGroupConfig getModelGroupConfig(String model) {
-        for (ModelGroupConfig modelGroupConfig : msunAiModelConfig.getModelGroups()) {
+        for (ModelGroupConfig modelGroupConfig : kAiModelConfig.getModelGroups()) {
             if (CollectionUtils.isEmpty(modelGroupConfig.getModels())) {
                 continue;
             }
@@ -58,7 +58,7 @@ public class MsunModelManager {
 
     public ChatModel getChatModel(String model) {
         if (ObjectUtils.isEmpty(model)) {
-            model = msunAiModelConfig.getDefChat();
+            model = kAiModelConfig.getDefChat();
         }
         ModelGroupConfig modelGroupConfig = getModelGroupConfig(model);
         return modelGroupManageService.create(modelGroupConfig);
@@ -66,7 +66,7 @@ public class MsunModelManager {
 
     public EmbeddingModel getEmbeddingModel(String model) {
         if (ObjectUtils.isEmpty(model)) {
-            model = msunAiModelConfig.getDefEmbedding();
+            model = kAiModelConfig.getDefEmbedding();
         }
         ModelGroupConfig modelGroupConfig = getModelGroupConfig(model);
         return modelGroupManageService.createEmbeddingModel(modelGroupConfig);
@@ -76,22 +76,22 @@ public class MsunModelManager {
         return getEmbeddingModel(null);
     }
 
-    public MsunRerankModel getRerankModel(String model) {
+    public KRerankModel getRerankModel(String model) {
         if (ObjectUtils.isEmpty(model)) {
-            model = msunAiModelConfig.getDefRerank();
+            model = kAiModelConfig.getDefRerank();
         }
         ModelGroupConfig modelGroupConfig = getModelGroupConfig(model);
-        MsunRerankModel msunRerankModel = modelGroupManageService.createMsunRerankModel(modelGroupConfig);
+        KRerankModel kRerankModel = modelGroupManageService.createRerankModel(modelGroupConfig);
         if (!CollectionUtils.isEmpty(soredRerankInterceptors)) {
             for (RerankInterceptor interceptor : soredRerankInterceptors) {
-                msunRerankModel = new MsunRerankModelProxy(msunRerankModel, interceptor);
+                kRerankModel = new KRerankModelProxy(kRerankModel, interceptor);
             }
         }
-        return msunRerankModel;
+        return kRerankModel;
     }
 
-    public MsunRerankModel getRerankModel() {
-        if (msunAiModelConfig.getEnableRerank() == null || !msunAiModelConfig.getEnableRerank()) {
+    public KRerankModel getRerankModel() {
+        if (kAiModelConfig.getEnableRerank() == null || !kAiModelConfig.getEnableRerank()) {
             return null;
         }
         return getRerankModel(null);

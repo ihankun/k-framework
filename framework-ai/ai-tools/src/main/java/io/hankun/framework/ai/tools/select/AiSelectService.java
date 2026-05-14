@@ -1,8 +1,8 @@
 package io.hankun.framework.ai.tools.select;
 
-import io.hankun.framework.ai.model.MsunModelManager;
-import io.hankun.framework.ai.model.rerank.MsunDocumentWithScore;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.KModelManager;
+import io.hankun.framework.ai.model.rerank.KDocumentWithScore;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import io.hankun.framework.ai.tools.advisors.AdvisorConfig;
 import io.hankun.framework.ai.tools.client.ClientConfig;
 import io.hankun.framework.ai.tools.client.KChatRequest;
@@ -28,18 +28,18 @@ import java.util.*;
 @Component
 public class AiSelectService {
 
-    private final MsunModelManager msunModelManager;
+    private final KModelManager kModelManager;
 
     private final KChatRequest kChatRequest;
 
-    public AiSelectService(MsunModelManager msunModelManager,
+    public AiSelectService(KModelManager kModelManager,
                            KChatService kChatService) {
-        this.msunModelManager = msunModelManager;
+        this.kModelManager = kModelManager;
         this.kChatRequest = kChatService.buildRequest(new ClientConfig(AdvisorConfig.buildSimple()));
     }
 
-    public MsunRerankModel getRerankModel() {
-        return msunModelManager.getRerankModel();
+    public KRerankModel getRerankModel() {
+        return kModelManager.getRerankModel();
     }
 
 
@@ -131,10 +131,10 @@ public class AiSelectService {
                                                                                     List<Document> documents,
                                                                                     Map<String, SelectOptionInfo<T>> selectOptionInfoMap,
                                                                                     SelectOptionInfo<T> notFind) {
-        MsunRerankModel rerankModel = getRerankModel();
-        List<MsunDocumentWithScore> rerankResults = rerankModel.rerank(query, documents, config.getRerankTopK());
+        KRerankModel rerankModel = getRerankModel();
+        List<KDocumentWithScore> rerankResults = rerankModel.rerank(query, documents, config.getRerankTopK());
         List<SelectOptionInfo<T>> results = new ArrayList<>(config.getRerankTopK());
-        for (MsunDocumentWithScore document : rerankResults) {
+        for (KDocumentWithScore document : rerankResults) {
             SelectOptionInfo<T> selectOptionInfo = selectOptionInfoMap.get(document.document().getId());
             if (document.score() > config.getDirectChooseThreshold()) {
                 log.info("【ai选择】rerank匹配，选项评分高于命中阈值，query={}，rerankInfo={},score={},threshold={}",

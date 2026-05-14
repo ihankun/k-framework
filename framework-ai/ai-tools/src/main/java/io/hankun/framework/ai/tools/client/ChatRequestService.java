@@ -49,7 +49,7 @@ public class ChatRequestService {
                                                             KToolContext context, KToolCallbackFetchFilter filter,
                                                             List<ToolMetaUpdateInfo> updateInfos) {
         if (context == null) {
-            throw new IllegalArgumentException("MsunToolContext cannot be null");
+            throw new IllegalArgumentException("ToolContext cannot be null");
         }
         return callWithTools(chatClient, prompt, context, updateInfos, kToolCallbackManager.buildTools(filter));
     }
@@ -63,7 +63,7 @@ public class ChatRequestService {
                                                             KToolContext context, Collection<ToolKey> tools,
                                                             List<ToolMetaUpdateInfo> updateInfos) {
         if (context == null) {
-            throw new IllegalArgumentException("MsunToolContext cannot be null");
+            throw new IllegalArgumentException("ToolContext cannot be null");
         }
         List<ToolCallback> toolCallbacks;
         if (CollectionUtils.isEmpty(tools)) {

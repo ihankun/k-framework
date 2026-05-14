@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunMessageDeserializer
+ * @className: KMessageDeserializer
  * @createAt: 2025/7/1 17:57
  * @author: hankun
  */

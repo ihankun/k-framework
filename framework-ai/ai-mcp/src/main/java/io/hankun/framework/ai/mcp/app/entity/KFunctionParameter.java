@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @description:
- * @className: MsunFunctionParameter
+ * @className: KFunctionParameter
  * @createAt: 2025/5/28 17:12
  * @author: hankun
  */

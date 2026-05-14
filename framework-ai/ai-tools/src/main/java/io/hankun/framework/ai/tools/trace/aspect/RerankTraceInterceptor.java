@@ -4,8 +4,8 @@ import io.hankun.framework.ai.common.context.CurrentIdHolder;
 import io.hankun.framework.ai.common.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.model.interceptors.RerankInterceptor;
-import io.hankun.framework.ai.model.rerank.MsunDocumentWithScore;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KDocumentWithScore;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import io.hankun.framework.ai.store.history.context.ModelRecordContext;
 import io.hankun.framework.ai.store.history.detail.RerankRecord;
 import io.hankun.framework.ai.tools.contexts.ContextAccessHolder;
@@ -28,7 +28,7 @@ import java.util.List;
 public class RerankTraceInterceptor implements RerankInterceptor {
 
     @Override
-    public List<MsunDocumentWithScore> rerank(MsunRerankModel rerankModel, String query, List<Document> documents, int topN) {
+    public List<KDocumentWithScore> rerank(KRerankModel rerankModel, String query, List<Document> documents, int topN) {
         CurrentId currentId = CurrentIdHolder.getCurrentId();
         if (currentId == null) {
             return rerankModel.rerank(query, documents, topN);
@@ -41,8 +41,8 @@ public class RerankTraceInterceptor implements RerankInterceptor {
         RerankRecord rerankRecord = RerankRecord.of(currentId, query, topN);
         TraceContext traceContext = TraceContextHolder.create(rerankRecord, modelRecordContext.mapConfig());
         modelRecordContext.add(rerankRecord, traceContext.meta());
-        List<MsunDocumentWithScore> result = rerankModel.rerank(query, documents, topN);
-        for (MsunDocumentWithScore documentWithScore : result) {
+        List<KDocumentWithScore> result = rerankModel.rerank(query, documents, topN);
+        for (KDocumentWithScore documentWithScore : result) {
             rerankRecord.addResult(documentWithScore.document().getText(), documentWithScore.score());
         }
         try {

@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunAudioData
+ * @className: KAudioData
  * @createAt: 2025/7/23 09:42
  * @author: hankun
  */
@@ -42,7 +42,7 @@ public record KAudioData(long timestamp, Integer index, String audio, String tex
     @Override
     public String toString() {
         int audioLength = audio == null ? 0 : audio.length();
-        return "MsunAudioData{" +
+        return "AudioData{" +
                 "timestamp=" + timestamp +
                 ", index=" + index +
                 ", audioLength='" + audioLength + '\'' +

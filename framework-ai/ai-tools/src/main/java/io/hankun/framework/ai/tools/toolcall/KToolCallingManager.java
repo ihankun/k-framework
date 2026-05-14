@@ -17,18 +17,18 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunToolCallingManager
+ * @className: KToolCallingManager
  * @createAt: 2025/10/20 08:58
  * @author: hankun
  */
-public class MsunToolCallingManager implements ToolCallingManager {
+public class KToolCallingManager implements ToolCallingManager {
 
     private final ToolCallingManager toolCallingManager;
 
     private final List<ToolCallingInterceptor> toolCallingInterceptors;
 
-    public MsunToolCallingManager(ToolCallingManager toolCallingManager,
-                                  List<ToolCallingInterceptor> toolCallingInterceptors) {
+    public KToolCallingManager(ToolCallingManager toolCallingManager,
+                               List<ToolCallingInterceptor> toolCallingInterceptors) {
         this.toolCallingManager = toolCallingManager;
         this.toolCallingInterceptors = new ArrayList<>(toolCallingInterceptors);
         this.toolCallingInterceptors.sort(Comparator.comparingInt(Ordered::getOrder));

@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 
 /**
  * @description:
- * @className: MsunAsrImpl
+ * @className: KAsrImpl
  * @createAt: 2025/12/16 14:57
  * @author: hankun
  */
@@ -25,9 +25,9 @@ public class KAsrImpl extends AbstractClientApi<ByteBuffer, KAsrResult> implemen
     }
 
     @Override
-    public void onReceive(AudioResult msunAudioData) {
-        resultSink.tryEmitNext(KAsrResult.of(msunAudioData.text(), msunAudioData.type(), false));
-        if (msunAudioData.finish()) {
+    public void onReceive(AudioResult audioData) {
+        resultSink.tryEmitNext(KAsrResult.of(audioData.text(), audioData.type(), false));
+        if (audioData.finish()) {
             stop();
         }
     }

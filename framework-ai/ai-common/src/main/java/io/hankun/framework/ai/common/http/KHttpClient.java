@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 
 /**
  * @description:
- * @className: MsunHttpClient
+ * @className: KHttpClient
  * @createAt: 2025/6/4 16:35
  * @author: hankun
  */

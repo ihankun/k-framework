@@ -9,15 +9,15 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunAiModelConfig
+ * @className: KAiModelConfig
  * @createAt: 2025/7/3 09:50
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.model")
-public class MsunAiModelConfig {
+@ConfigurationProperties(prefix = "k.ai.model")
+public class KAiModelConfig {
     private Boolean enableRerank = false;
     private String defChat;
     private String defEmbedding;

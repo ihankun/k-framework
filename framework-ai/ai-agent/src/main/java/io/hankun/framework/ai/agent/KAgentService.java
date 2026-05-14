@@ -52,7 +52,7 @@ public class KAgentService {
     public KAgent getKAgent(String agentCode) {
         KAgent agent = agentLoadService.getAgent(agentCode);
         if (agent == null) {
-            throw new IllegalArgumentException("未找到对应的MsunAgent");
+            throw new IllegalArgumentException("未找到对应的Agent");
         }
         return agent;
     }
@@ -132,7 +132,7 @@ public class KAgentService {
         for (String node : graphNodeInfo.getNodes()) {
             Class<? extends KNodeAction> nodeType = kAgent.getKNodeActionMap().get(node);
             if (nodeType == null) {
-                throw new IllegalArgumentException("未找到对应的MsunNodeAction");
+                throw new IllegalArgumentException("未找到对应的NodeAction");
             }
             nodes.add(new GraphData.Node(node, ClassUtil.classToString(nodeType)));
         }

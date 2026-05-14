@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @description:
- * @className: MsunRedisHolder
+ * @className: KRedisHolder
  * @createAt: 2025/8/1 14:15
  * @author: hankun
  */

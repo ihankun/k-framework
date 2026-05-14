@@ -21,6 +21,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class KAiAgentApplication {
     @PostConstruct
     public void init() {
-        log.info("MsunAiAgentApplication init");
+        log.info("KAiAgentApplication init");
     }
 }

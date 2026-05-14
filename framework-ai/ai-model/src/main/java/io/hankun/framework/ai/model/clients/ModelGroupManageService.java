@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.model.clients;
 
 import io.hankun.framework.ai.model.config.ModelGroupConfig;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.stereotype.Component;
@@ -45,8 +45,8 @@ public class ModelGroupManageService {
         return modelGroupFactory.createEmbeddingModel(config);
     }
 
-    public MsunRerankModel createMsunRerankModel(ModelGroupConfig config) {
+    public KRerankModel createRerankModel(ModelGroupConfig config) {
         ModelGroupFactory modelGroupFactory = getModelGroupFactory(config.getProtocol());
-        return modelGroupFactory.createMsunRerankModel(config);
+        return modelGroupFactory.createRerankModel(config);
     }
 }

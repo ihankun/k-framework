@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunChatOptions
+ * @className: KChatOptions
  * @createAt: 2025/7/17 11:26
  * @author: hankun
  */

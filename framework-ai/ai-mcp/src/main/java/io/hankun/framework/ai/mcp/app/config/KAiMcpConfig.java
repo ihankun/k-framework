@@ -12,14 +12,14 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunAiMcpConfig
+ * @className: KAiMcpConfig
  * @createAt: 2025/6/5 14:21
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.mcp.msun")
+@ConfigurationProperties(prefix = "k.ai.mcp")
 public class KAiMcpConfig {
 
     private String registerType = "nacos";
@@ -28,7 +28,7 @@ public class KAiMcpConfig {
 
     private String defGray;
 
-    private List<String> msunServices = new ArrayList<>();
+    private List<String> services = new ArrayList<>();
 
     private Map<String, String> path = new HashMap<>();
 

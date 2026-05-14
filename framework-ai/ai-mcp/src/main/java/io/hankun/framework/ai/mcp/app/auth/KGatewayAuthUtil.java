@@ -11,7 +11,7 @@ import java.util.Base64;
 
 /**
  * @description:
- * @className: MsunGatewayAuthUtil
+ * @className: KGatewayAuthUtil
  * @createAt: 2025/5/28 14:36
  * @author: hankun
  */

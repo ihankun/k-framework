@@ -8,13 +8,13 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunHttpRerankVo
+ * @className: KHttpRerankVo
  * @createAt: 2025/7/7 10:12
  * @author: hankun
  */
 @NoArgsConstructor
 @Data
-public class MsunHttpRerankVo {
+public class KHttpRerankVo {
 
     private String id;
 

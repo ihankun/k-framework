@@ -7,13 +7,13 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunHttpRerankDto
+ * @className: KHttpRerankDto
  * @createAt: 2025/7/7 10:12
  * @author: hankun
  */
 @NoArgsConstructor
 @Data
-public class MsunHttpRerankDto {
+public class KHttpRerankDto {
     private String model;
     private String query;
     private List<String> documents;

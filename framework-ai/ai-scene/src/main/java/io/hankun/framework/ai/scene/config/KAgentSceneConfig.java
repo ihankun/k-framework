@@ -7,14 +7,14 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @description:
- * @className: MsunAgentSceneConfig
+ * @className: KAgentSceneConfig
  * @createAt: 2025/9/5 08:46
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.agent.scene")
+@ConfigurationProperties(prefix = "k.ai.agent.scene")
 public class KAgentSceneConfig {
 
     private Boolean enableRerank = true;

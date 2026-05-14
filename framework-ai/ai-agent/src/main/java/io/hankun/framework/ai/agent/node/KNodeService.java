@@ -25,7 +25,7 @@ import java.util.Map;
 
 /**
  * @description:
- * @className: MsunNodeService
+ * @className: KNodeService
  * @createAt: 2025/10/21 10:06
  * @author: hankun
  */
@@ -37,14 +37,14 @@ public class KNodeService {
 
     private final KChatService kChatService;
 
-    private final KChatOptionsBuildService msunOptionsBuildService;
+    private final KChatOptionsBuildService kOptionsBuildService;
 
     public KNodeService(ModelContextManageService modelContextManageService,
                         KChatService kChatService,
-                        KChatOptionsBuildService msunOptionsBuildService) {
+                        KChatOptionsBuildService kOptionsBuildService) {
         this.modelContextManageService = modelContextManageService;
         this.kChatService = kChatService;
-        this.msunOptionsBuildService = msunOptionsBuildService;
+        this.kOptionsBuildService = kOptionsBuildService;
     }
 
     public PromptInfo getPrompt(ActionConfig config) {
@@ -64,7 +64,7 @@ public class KNodeService {
     }
 
     public ChatOptions buildOptions(Class<? extends ChatModel> modelType, KChatOptions options) {
-        return msunOptionsBuildService.buildByModel(modelType, options);
+        return kOptionsBuildService.buildByModel(modelType, options);
     }
 
     public LlmCall.Builder buildLlmCallBuilder(CurrentId currentId, ActionConfig config,

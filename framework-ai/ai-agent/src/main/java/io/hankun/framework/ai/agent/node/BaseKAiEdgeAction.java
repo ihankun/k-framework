@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @description:
- * @className: BaseMsunAiEdgeAction
+ * @className: BaseKAiEdgeAction
  * @createAt: 2025/10/24 10:23
  * @author: hankun
  */

@@ -7,14 +7,14 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @description:
- * @className: MsunAiStoreConfig
+ * @className: KAiStoreConfig
  * @createAt: 2025/10/16 16:24
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.ai.store")
+@ConfigurationProperties(prefix = "k.ai.store")
 public class KAiStoreConfig {
 
     private Integer memoryExpireTimeHours = 24;

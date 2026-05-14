@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 
 /**
  * @description:
- * @className: MsunAsrApi
+ * @className: KAsrApi
  * @createAt: 2025/12/16 14:56
  * @author: hankun
  */

@@ -34,7 +34,7 @@ public class LocalToolProvider implements ToolCallbackProvider, ApplicationConte
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        Collection<Object> beans = applicationContext.getBeansWithAnnotation(MsunLocalTool.class).values();
+        Collection<Object> beans = applicationContext.getBeansWithAnnotation(KLocalTool.class).values();
         for (Object bean : beans) {
             methodToolCallbackProviders.add(MethodToolCallbackProvider.builder()
                     .toolObjects(bean).build());

@@ -296,10 +296,10 @@ public class KAgent {
         }
 
         public Builder addNode(String nodeId,
-                               Class<? extends KNodeAction> msunNodeAction,
+                               Class<? extends KNodeAction> nodeAction,
                                ActionConfig actionConfig) {
             graphNodeInfo.addNode(nodeId);
-            kNodeActionMap.put(nodeId, msunNodeAction);
+            kNodeActionMap.put(nodeId, nodeAction);
             configMap.put(nodeId, buildConfig(nodeId, actionConfig));
             return this;
         }

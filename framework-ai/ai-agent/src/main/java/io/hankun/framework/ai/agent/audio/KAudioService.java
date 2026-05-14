@@ -17,7 +17,7 @@ import java.nio.ByteBuffer;
 
 /**
  * @description:
- * @className: MsunAudioService
+ * @className: KAudioService
  * @createAt: 2025/7/23 09:41
  * @author: hankun
  */

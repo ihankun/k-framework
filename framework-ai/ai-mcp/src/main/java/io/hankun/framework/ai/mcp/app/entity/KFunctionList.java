@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunFunctionList
+ * @className: KFunctionList
  * @createAt: 2025/5/29 09:10
  * @author: hankun
  */

@@ -20,7 +20,7 @@ import java.util.function.Function;
 
 /**
  * @description:
- * @className: MsunWebClient
+ * @className: KWebClient
  * @createAt: 2025/12/2 08:32
  * @author: hankun
  */
@@ -71,7 +71,7 @@ public record KWebClient(WebClient webClient) {
                                                             ParameterizedTypeReference<ResponseResult<T>> responseType) {
         Mono<ResponseEntity<ResponseResult<T>>> entity = get(url, params)
                 .toEntity(responseType);
-        return entity.map(KHttpResponse::ofMsun);
+        return entity.map(KHttpResponse::ofK);
     }
 
     public WebClient.@NotNull ResponseSpec get(String url, Map<String, Object> params) {
@@ -145,7 +145,7 @@ public record KWebClient(WebClient webClient) {
                                                              ParameterizedTypeReference<ResponseResult<T>> responseType) {
         Mono<ResponseEntity<ResponseResult<T>>> entity = post(url, requestBody)
                 .toEntity(responseType);
-        return entity.map(KHttpResponse::ofMsun);
+        return entity.map(KHttpResponse::ofK);
     }
 
     public <T> Flux<T> postFlux(String url, Object requestBody, ParameterizedTypeReference<T> responseType) {

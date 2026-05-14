@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @description:
- * @className: MsunChatRequest
+ * @className: KChatRequest
  * @createAt: 2025/7/2 11:13
  * @author: hankun
  */

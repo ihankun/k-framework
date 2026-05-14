@@ -12,14 +12,14 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @description:
- * @className: MsunAudioConfig
+ * @className: KAudioConfig
  * @createAt: 2025/7/23 10:00
  * @author: hankun
  */
 @Data
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "msun.audio")
+@ConfigurationProperties(prefix = "k.audio")
 public class KAudioConfig {
 
     private String type = TtsType.K.getCode();

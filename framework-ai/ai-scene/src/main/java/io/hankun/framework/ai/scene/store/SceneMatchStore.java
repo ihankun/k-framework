@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.scene.store;
 
-import io.hankun.framework.ai.model.MsunModelManager;
+import io.hankun.framework.ai.model.KModelManager;
 import io.hankun.framework.ai.scene.entity.SceneMatch;
 import io.hankun.framework.ai.store.vector.AbstractKvStore;
 import io.milvus.client.MilvusServiceClient;
@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SceneMatchStore extends AbstractKvStore<SceneMatch> {
 
-    protected SceneMatchStore(MilvusServiceClient milvusClient, MsunModelManager msunModelManager) {
-        super(milvusClient, msunModelManager.getEmbeddingModel());
+    protected SceneMatchStore(MilvusServiceClient milvusClient, KModelManager kModelManager) {
+        super(milvusClient, kModelManager.getEmbeddingModel());
     }
 
     @Override

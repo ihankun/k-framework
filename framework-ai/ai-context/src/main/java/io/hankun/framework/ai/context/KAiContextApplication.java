@@ -1,4 +1,4 @@
-package io.hankun.framework.ai.tools;
+package io.hankun.framework.ai.context;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -7,17 +7,17 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @description:
- * @className: MsunAiToolsApplication
- * @createAt: 2025/10/16 13:35
+ * @className: KAiContextApplication
+ * @createAt: 2025/10/16 10:45
  * @author: hankun
  */
 @Slf4j
 @AutoConfiguration
-@ComponentScan(basePackageClasses = {MsunAiToolsApplication.class})
-public class MsunAiToolsApplication {
+@ComponentScan(basePackageClasses = {KAiContextApplication.class})
+public class KAiContextApplication {
 
     @PostConstruct
     public void init() {
-        log.info("MsunAiToolsApplication init");
+        log.info("KAiContextApplication init");
     }
 }

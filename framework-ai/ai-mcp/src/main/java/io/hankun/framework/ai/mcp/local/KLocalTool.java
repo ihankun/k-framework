@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * @description:
- * @className: MsunLocalTool
+ * @className: KLocalTool
  * @createAt: 2025/10/13 15:35
  * @author: hankun
  */
@@ -14,5 +14,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Indexed
-public @interface MsunLocalTool {
+public @interface KLocalTool {
 }

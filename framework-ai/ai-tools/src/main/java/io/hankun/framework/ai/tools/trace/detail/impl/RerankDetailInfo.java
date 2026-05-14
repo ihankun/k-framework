@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.tools.trace.detail.impl;
 
-import io.hankun.framework.ai.model.rerank.MsunDocumentWithScore;
+import io.hankun.framework.ai.model.rerank.KDocumentWithScore;
 import io.hankun.framework.ai.tools.trace.detail.BaseDetailInfo;
 import io.hankun.framework.ai.tools.trace.detail.DetailLevel;
 import io.hankun.framework.ai.tools.trace.detail.DetailType;
@@ -32,7 +32,7 @@ public class RerankDetailInfo extends BaseDetailInfo {
 
     private int topN;
 
-    private List<MsunDocumentWithScore> result;
+    private List<KDocumentWithScore> result;
 
     public RerankDetailInfo(String conversationId, DetailLevel level) {
         super(DetailType.RE_RANK, conversationId, level);
@@ -54,7 +54,7 @@ public class RerankDetailInfo extends BaseDetailInfo {
         }
     }
 
-    public void setResult(List<MsunDocumentWithScore> result) {
+    public void setResult(List<KDocumentWithScore> result) {
         if (detailLevel.detailThan(DetailLevel.BASE)) {
             this.result = result;
         }

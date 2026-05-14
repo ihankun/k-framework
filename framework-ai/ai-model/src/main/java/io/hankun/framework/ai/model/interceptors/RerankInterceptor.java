@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.model.interceptors;
 
-import io.hankun.framework.ai.model.rerank.MsunDocumentWithScore;
-import io.hankun.framework.ai.model.rerank.MsunRerankModel;
+import io.hankun.framework.ai.model.rerank.KDocumentWithScore;
+import io.hankun.framework.ai.model.rerank.KRerankModel;
 import org.springframework.ai.document.Document;
 import org.springframework.core.Ordered;
 
@@ -15,5 +15,5 @@ import java.util.List;
  */
 public interface RerankInterceptor extends Ordered {
 
-    List<MsunDocumentWithScore> rerank(MsunRerankModel rerankModel, String query, List<Document> documents, int topN);
+    List<KDocumentWithScore> rerank(KRerankModel rerankModel, String query, List<Document> documents, int topN);
 }

@@ -31,8 +31,8 @@ public enum AsrType {
 
     ALI("ali") {
         @Override
-        public KAsrApi buildAsrApi(KAudioConfig msunAsrConfig, String sessionId, String scene) {
-            return new AliAsrImpl(msunAsrConfig);
+        public KAsrApi buildAsrApi(KAudioConfig asrConfig, String sessionId, String scene) {
+            return new AliAsrImpl(asrConfig);
         }
     },
 
@@ -40,7 +40,7 @@ public enum AsrType {
     private final String code;
 
 
-    public abstract KAsrApi buildAsrApi(KAudioConfig msunAsrConfig, String sessionId, String scene);
+    public abstract KAsrApi buildAsrApi(KAudioConfig asrConfig, String sessionId, String scene);
 
 
     public static AsrType getByCode(String code) {
