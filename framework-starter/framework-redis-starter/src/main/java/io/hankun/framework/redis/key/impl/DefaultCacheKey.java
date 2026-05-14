@@ -1,13 +1,13 @@
 package io.hankun.framework.redis.key.impl;
 
 import io.hankun.framework.redis.key.AbstractCacheKey;
-import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.CacheKey;
 import io.hankun.framework.core.utils.string.StringPool;
 
 /**
  * @author hankun
  */
-public class DefaultCacheKey extends AbstractCacheKey implements ICacheKey {
+public class DefaultCacheKey extends AbstractCacheKey implements CacheKey {
 
     private final String businessCode;
 

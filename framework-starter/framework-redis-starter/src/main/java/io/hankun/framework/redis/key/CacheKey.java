@@ -1,35 +1,63 @@
 package io.hankun.framework.redis.key;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-import org.springframework.lang.Nullable;
+import io.hankun.framework.core.utils.string.StringPool;
+import io.hankun.framework.core.utils.string.StringUtil;
+import jakarta.annotation.Nullable;
+import org.springframework.util.ObjectUtils;
 
 import java.time.Duration;
 
 /**
- * cache key 封装
- *
  * @author hankun
  */
-@Getter
-@ToString
-@RequiredArgsConstructor
-public class CacheKey {
+public interface CacheKey {
 
-	/**
-	 * redis key
-	 */
-	private final String key;
+    /**
+     * 获取key
+     */
+    String get();
 
-	/**
-	 * 超时时间 秒
-	 */
-	@Nullable
-	private final Duration expire;
+    /**
+     * 获取前缀
+     *
+     * @return key 前缀
+     */
+    String getPrefix();
 
-	public CacheKey(String key) {
-		this(key, null);
-	}
+    /**
+     * 超时时间
+     *
+     * @return 超时时间
+     */
+    @Nullable
+    default Duration getExpire() {
+        return null;
+    }
 
+    /**
+     * 组装 cache key
+     *
+     * @param suffix 参数
+     * @return cache key
+     */
+    default String getKeyStr(Object... suffix) {
+        String prefix = this.getPrefix();
+        // 拼接参数
+        if (ObjectUtils.isEmpty(suffix)) {
+            return prefix;
+        }
+        return prefix.concat(StringUtil.join(suffix, StringPool.COLON));
+    }
+
+    /**
+     * 组装 cache key
+     *
+     * @param suffix 参数
+     * @return cache key
+     */
+    default CacheKey getKey(Object... suffix) {
+        String key = this.getKeyStr(suffix);
+        Duration expire = this.getExpire();
+        return expire == null ? new CacheKey(key) : new CacheKey(key, expire);
+    }
 }

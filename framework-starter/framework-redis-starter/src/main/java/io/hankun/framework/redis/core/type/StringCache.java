@@ -1,6 +1,6 @@
 package io.hankun.framework.redis.core.type;
 
-import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.CacheKey;
 
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
@@ -13,67 +13,67 @@ public interface StringCache {
     /**
      * 保存
      */
-    boolean save(ICacheKey key, String value, Long expire);
+    boolean save(CacheKey key, String value, Long expire);
 
     /**
      * 如果为空设置值，并返回true；如果已经存在的话直接返回false
      */
-    boolean setIfAbsent(ICacheKey cacheKey, String value);
+    boolean setIfAbsent(CacheKey cacheKey, String value);
 
     /**
      * 如果为空设置值，并返回true；如果已经存在的话直接返回false
      */
-    boolean setIfAbsent(ICacheKey key, String value, long timeout, TimeUnit unit);
+    boolean setIfAbsent(CacheKey key, String value, long timeout, TimeUnit unit);
 
     /**
      * 保存
      */
-    boolean save(ICacheKey key, String value, Long expire, TimeUnit timeUnit);
+    boolean save(CacheKey key, String value, Long expire, TimeUnit timeUnit);
 
     /**
      * 获取所有缓存数据
      */
-    String get(ICacheKey key);
+    String get(CacheKey key);
 
     /**
      * 删除缓存
      */
-    boolean del(ICacheKey key);
+    boolean del(CacheKey key);
 
     /**
      * 批量删除
      */
-    boolean batchDel(Collection<? extends ICacheKey> keys);
+    boolean batchDel(Collection<? extends CacheKey> keys);
 
     /**
      * 更新缓存
      */
-    boolean update(ICacheKey cacheKey, String value);
+    boolean update(CacheKey cacheKey, String value);
 
     /**
      * 更新缓存
      */
-    boolean update(ICacheKey key, String value, Long expire, TimeUnit timeUnit);
+    boolean update(CacheKey key, String value, Long expire, TimeUnit timeUnit);
 
     /**
      * 修改过期时间
      */
-    boolean expire(ICacheKey key, Long expire);
+    boolean expire(CacheKey key, Long expire);
 
     /**
      * 缓存是否存在
      */
-    boolean exits(ICacheKey key);
+    boolean exits(CacheKey key);
 
     //---------- 通用方法结束 ----------//
 
     /**
      * 原子自增或自减
      */
-    Long atomic(ICacheKey cacheKey, Long num);
+    Long atomic(CacheKey cacheKey, Long num);
 
     /**
      * 原子自增或自减
      */
-    Long atomic(ICacheKey key, Long num,Long expire,TimeUnit timeUnit);
+    Long atomic(CacheKey key, Long num, Long expire, TimeUnit timeUnit);
 }

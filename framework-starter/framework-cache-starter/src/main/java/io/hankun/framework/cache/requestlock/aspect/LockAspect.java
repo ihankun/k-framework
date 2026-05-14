@@ -4,7 +4,7 @@ import io.hankun.framework.cache.requestlock.annotation.Lock;
 import io.hankun.framework.core.base.BaseService;
 import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
-import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.CacheKey;
 import io.hankun.framework.redis.key.impl.OrgCacheKey;
 import io.hankun.framework.cache.lock.LockCallback;
 import io.hankun.framework.cache.lock.RedissonLock;
@@ -111,7 +111,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
      * @param point
      * @return
      */
-    private ICacheKey getOrgCacheKey(ProceedingJoinPoint point) {
+    private CacheKey getOrgCacheKey(ProceedingJoinPoint point) {
         LockKey lockKey = getLockKey(point);
         if (lockKey == null) {
             throw BusinessException.build(getExceptionErrorCode("未实现" + LockKey.class.getName() + "接口"));

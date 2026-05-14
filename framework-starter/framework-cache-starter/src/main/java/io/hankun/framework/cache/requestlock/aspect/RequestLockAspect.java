@@ -3,7 +3,7 @@ package io.hankun.framework.cache.requestlock.aspect;
 import com.alibaba.fastjson.JSON;
 import io.hankun.framework.redis.CacheBuilder;
 import io.hankun.framework.redis.CacheManager;
-import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.CacheKey;
 import io.hankun.framework.redis.key.impl.OrgCacheKey;
 import io.hankun.framework.cache.requestlock.annotation.RequestLock;
 import io.hankun.framework.core.base.BaseService;
@@ -70,7 +70,7 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
 
     @Around("lockPointcut()")
     public Object around(ProceedingJoinPoint point) {
-        ICacheKey lockKey = getOrgCacheKey(point);
+        CacheKey lockKey = getOrgCacheKey(point);
 
         //如果其他线程正在执行的话，抛出异常信息
         if (!cacheManager.string().setIfAbsent(lockKey, BigDecimal.ZERO.toString(), TIMEOUT, TIMEOUT_UNIT)) {
@@ -95,7 +95,7 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
      * @param point
      * @return
      */
-    private ICacheKey getOrgCacheKey(ProceedingJoinPoint point) {
+    private CacheKey getOrgCacheKey(ProceedingJoinPoint point) {
         StringBuilder sb = new StringBuilder()
                 .append(point.getSignature().toLongString())
                 .append(JSON.toJSONString(Arrays.toString(point.getArgs())))

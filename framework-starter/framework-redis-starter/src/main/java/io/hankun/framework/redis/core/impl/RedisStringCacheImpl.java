@@ -2,7 +2,7 @@ package io.hankun.framework.redis.core.impl;
 
 import io.hankun.framework.redis.core.type.StringCache;
 import io.hankun.framework.redis.enums.RedisDataType;
-import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.CacheKey;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -15,17 +15,17 @@ import java.util.concurrent.TimeUnit;
 public class RedisStringCacheImpl extends AbstractRedisCache implements StringCache {
 
     @Override
-    public boolean save(ICacheKey cacheKey, String value, Long expire) {
+    public boolean save(CacheKey cacheKey, String value, Long expire) {
         return save(cacheKey, value, expire, TimeUnit.SECONDS);
     }
 
     @Override
-    public boolean setIfAbsent(ICacheKey cacheKey, String value) {
+    public boolean setIfAbsent(CacheKey cacheKey, String value) {
         return setIfAbsent(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
     }
 
     @Override
-    public boolean setIfAbsent(ICacheKey cacheKey, String value, long timeout, TimeUnit unit) {
+    public boolean setIfAbsent(CacheKey cacheKey, String value, long timeout, TimeUnit unit) {
         String key = cacheKey.get();
         validate(key, value, timeout, unit);
         return getRedisTemplate().opsForValue().setIfAbsent(key, value, timeout, unit);
@@ -41,7 +41,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
      * @return 是否设置成功
      */
     @Override
-    public boolean save(ICacheKey cacheKey, String value, Long expire, TimeUnit timeUnit) {
+    public boolean save(CacheKey cacheKey, String value, Long expire, TimeUnit timeUnit) {
         String key = cacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
@@ -54,13 +54,13 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public String get(ICacheKey cacheKey) {
+    public String get(CacheKey cacheKey) {
         Object value = getRedisTemplate().opsForValue().get(cacheKey.get());
         return value == null ? null : value.toString();
     }
 
     @Override
-    public boolean del(ICacheKey cacheKey) {
+    public boolean del(CacheKey cacheKey) {
         try {
             getRedisTemplate().delete(cacheKey.get());
         } catch (Exception e) {
@@ -71,12 +71,12 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean update(ICacheKey cacheKey, String value) {
+    public boolean update(CacheKey cacheKey, String value) {
         return update(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
     }
 
     @Override
-    public boolean update(ICacheKey cacheKey, String value, Long expire, TimeUnit timeUnit) {
+    public boolean update(CacheKey cacheKey, String value, Long expire, TimeUnit timeUnit) {
         String key = cacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
@@ -89,7 +89,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean expire(ICacheKey cacheKey, Long expire) {
+    public boolean expire(CacheKey cacheKey, Long expire) {
         String key = cacheKey.get();
         try {
             getRedisTemplate().expire(key, expire, TimeUnit.SECONDS);
@@ -101,7 +101,7 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean exits(ICacheKey cacheKey) {
+    public boolean exits(CacheKey cacheKey) {
         try {
             Object value = getRedisTemplate().opsForValue().get(cacheKey.get());
             return !ObjectUtils.isEmpty(value);
@@ -112,12 +112,12 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public Long atomic(ICacheKey cacheKey, Long num) {
+    public Long atomic(CacheKey cacheKey, Long num) {
         return atomic(cacheKey, num, getMaxExpireTime(), TimeUnit.MINUTES);
     }
 
     @Override
-    public Long atomic(ICacheKey cacheKey, Long num, Long expire, TimeUnit timeUnit) {
+    public Long atomic(CacheKey cacheKey, Long num, Long expire, TimeUnit timeUnit) {
         if (num == 0) {
             return null;
         }

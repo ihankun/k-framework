@@ -1,6 +1,6 @@
 package io.hankun.framework.redis.core.type;
 
-import io.hankun.framework.redis.key.ICacheKey;
+import io.hankun.framework.redis.key.CacheKey;
 
 import java.util.List;
 import java.util.Set;
@@ -14,77 +14,77 @@ public interface SetCache<V> {
     /**
      * 保存
      */
-    boolean save(ICacheKey key, Set<V> value, Long expire);
+    boolean save(CacheKey key, Set<V> value, Long expire);
 
     /**
      * 获取所有缓存数据
      */
-    Set<V> get(ICacheKey key);
+    Set<V> get(CacheKey key);
 
     /**
      * 删除缓存
      */
-    boolean del(ICacheKey key);
+    boolean del(CacheKey key);
 
     /**
      * 更新缓存
      */
-    boolean update(ICacheKey cacheKey, Set<V> value);
+    boolean update(CacheKey cacheKey, Set<V> value);
 
     /**
      * 更新缓存
      */
-    boolean update(ICacheKey key, Set<V> value, Long expire, TimeUnit timeUnit);
+    boolean update(CacheKey key, Set<V> value, Long expire, TimeUnit timeUnit);
 
     /**
      * 修改过期时间
      */
-    boolean expire(ICacheKey key, Long expire);
+    boolean expire(CacheKey key, Long expire);
 
     /**
      * 缓存是否存在
      */
-    boolean exits(ICacheKey key);
+    boolean exits(CacheKey key);
 
     //---------- 通用方法结束 ----------//
 
     /**
      * 弹出元素
      */
-    List<String> pop(ICacheKey key, int size);
+    List<String> pop(CacheKey key, int size);
 
     /**
      * 是否包含某个元素
      */
-    boolean contain(ICacheKey key, V value);
+    boolean contain(CacheKey key, V value);
 
     /**
      * 插入元素
      */
-    boolean put(ICacheKey cacheKey, V value);
+    boolean put(CacheKey cacheKey, V value);
 
     /**
      * 插入元素
      */
-    boolean put(ICacheKey key, V value, Long expire, TimeUnit timeUnit);
+    boolean put(CacheKey key, V value, Long expire, TimeUnit timeUnit);
 
     /**
      * 插入全部元素
      */
-    boolean putAll(ICacheKey cacheKey, Set<V> values);
+    boolean putAll(CacheKey cacheKey, Set<V> values);
 
     /**
      * 插入全部元素
      */
-    boolean putAll(ICacheKey key, Set<V> values, Long expire, TimeUnit timeUnit);
+    boolean putAll(CacheKey key, Set<V> values, Long expire, TimeUnit timeUnit);
 
     /**
      * 移除元素
      */
-    boolean remove(ICacheKey key, V value);
+    boolean remove(CacheKey key, V value);
 
     /**
      * 元素个数
      */
-    Long size(ICacheKey key);
+    Long size(CacheKey key);
 }
