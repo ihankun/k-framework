@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.victools.jsonschema.generator.SchemaVersion;
-import io.hankun.framework.ai.common.redis.KRedisHolder;
+import io.hankun.framework.ai.core.redis.KRedisHolder;
 import io.hankun.framework.ai.mcp.entity.ToolKey;
 import io.hankun.framework.ai.mcp.app.entity.KFunction;
 import io.hankun.framework.ai.mcp.app.entity.KFunctionParameter;

@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.mcp.app.caller.impl;
 
-import io.hankun.framework.ai.common.entity.HttpResult;
+import io.hankun.framework.ai.core.entity.HttpResult;
 import io.hankun.framework.ai.mcp.app.caller.IKHttpCaller;
 import io.hankun.framework.commons.http.KHttpClientFactory;
 import io.hankun.framework.commons.http.KHttpResponse;

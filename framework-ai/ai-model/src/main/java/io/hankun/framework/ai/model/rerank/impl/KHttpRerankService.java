@@ -1,8 +1,8 @@
 package io.hankun.framework.ai.model.rerank.impl;
 
 import com.alibaba.fastjson2.JSON;
-import io.hankun.framework.ai.common.entity.HttpResult;
-import io.hankun.framework.ai.common.http.KHttpClient;
+import io.hankun.framework.ai.core.entity.HttpResult;
+import io.hankun.framework.ai.core.http.KHttpClient;
 import io.hankun.framework.ai.model.config.KRerankHttpConfig;
 import io.hankun.framework.ai.model.rerank.KDocumentWithScore;
 import io.hankun.framework.ai.model.rerank.KRerankModel;

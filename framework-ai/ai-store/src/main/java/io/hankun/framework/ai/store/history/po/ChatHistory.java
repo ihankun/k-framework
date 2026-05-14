@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.store.history.po;
 
-import io.hankun.framework.ai.common.record.ChatRecord;
+import io.hankun.framework.ai.core.record.ChatRecord;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

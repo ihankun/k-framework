@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.entity;
 
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

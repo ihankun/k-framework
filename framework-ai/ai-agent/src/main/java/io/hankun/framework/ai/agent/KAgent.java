@@ -23,7 +23,7 @@ import io.hankun.framework.ai.agent.graph.GraphBuildService;
 import io.hankun.framework.ai.agent.graph.KeyType;
 import io.hankun.framework.ai.agent.node.*;
 import io.hankun.framework.ai.agent.node.config.ActionConfig;
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 import io.hankun.framework.ai.context.entity.InputParams;
 import io.hankun.framework.ai.store.history.context.ChatRecordContext;
 import io.hankun.framework.ai.store.history.context.ModelRecordContext;

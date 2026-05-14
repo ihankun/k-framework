@@ -1,8 +1,8 @@
 package io.hankun.framework.ai.mcp.app.caller.impl;
 
-import io.hankun.framework.ai.common.entity.HttpResult;
-import io.hankun.framework.ai.common.http.KHttpClient;
-import io.hankun.framework.ai.common.util.PathUtil;
+import io.hankun.framework.ai.core.entity.HttpResult;
+import io.hankun.framework.ai.core.http.KHttpClient;
+import io.hankun.framework.ai.core.util.PathUtil;
 import io.hankun.framework.ai.mcp.app.auth.KGatewayAuthUtil;
 import io.hankun.framework.ai.mcp.app.caller.IKHttpCaller;
 import io.hankun.framework.ai.mcp.app.config.KAiHttpConfig;

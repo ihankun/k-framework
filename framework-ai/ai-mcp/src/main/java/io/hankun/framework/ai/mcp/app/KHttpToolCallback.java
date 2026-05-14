@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.mcp.app;
 
-import io.hankun.framework.ai.common.entity.HttpResult;
+import io.hankun.framework.ai.core.entity.HttpResult;
 import io.hankun.framework.ai.mcp.context.ToolCallContextHolder;
 import io.hankun.framework.ai.mcp.entity.HttpResultInfo;
 import io.hankun.framework.core.context.sys.DomainContext;

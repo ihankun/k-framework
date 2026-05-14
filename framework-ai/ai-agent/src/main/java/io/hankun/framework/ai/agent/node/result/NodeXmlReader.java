@@ -2,7 +2,7 @@ package io.hankun.framework.ai.agent.node.result;
 
 import io.hankun.framework.ai.agent.entity.DataWithMeta;
 import io.hankun.framework.ai.agent.util.FluxXmlSplitter;
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import reactor.core.publisher.Flux;
 
 /**

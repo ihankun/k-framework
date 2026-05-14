@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.store.history.vo;
 
-import io.hankun.framework.ai.common.record.ChatRecord;
+import io.hankun.framework.ai.core.record.ChatRecord;
 import io.hankun.framework.ai.store.history.po.ChatHistory;
 
 import java.util.ArrayList;

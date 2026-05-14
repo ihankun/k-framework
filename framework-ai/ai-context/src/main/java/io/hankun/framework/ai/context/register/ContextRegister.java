@@ -1,11 +1,11 @@
 package io.hankun.framework.ai.context.register;
 
-import io.hankun.framework.ai.common.context.IContext;
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.session.OperateStatus;
-import io.hankun.framework.ai.common.session.SessionStatus;
-import io.hankun.framework.ai.common.session.node.TaskNodeStatus;
-import io.hankun.framework.ai.common.session.task.TaskExecStatus;
+import io.hankun.framework.ai.core.context.IContext;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.session.OperateStatus;
+import io.hankun.framework.ai.core.session.SessionStatus;
+import io.hankun.framework.ai.core.session.node.TaskNodeStatus;
+import io.hankun.framework.ai.core.session.task.TaskExecStatus;
 import io.hankun.framework.ai.context.entity.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

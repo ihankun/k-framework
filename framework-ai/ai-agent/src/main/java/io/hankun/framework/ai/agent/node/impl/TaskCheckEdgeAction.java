@@ -3,7 +3,7 @@ package io.hankun.framework.ai.agent.node.impl;
 import io.hankun.framework.ai.agent.node.KEdgeAction;
 import io.hankun.framework.ai.agent.node.NodeOutput;
 import io.hankun.framework.ai.agent.task.StatusManageService;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.InputParams;
 import org.jetbrains.annotations.NotNull;

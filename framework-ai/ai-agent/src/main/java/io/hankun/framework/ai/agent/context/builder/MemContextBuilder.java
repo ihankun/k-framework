@@ -2,7 +2,7 @@ package io.hankun.framework.ai.agent.context.builder;
 
 import com.alibaba.fastjson2.JSON;
 import io.hankun.framework.ai.agent.context.MemContext;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.model.ModelContextDataBuilder;
 import io.hankun.framework.ai.context.model.UserContextDataBuilder;

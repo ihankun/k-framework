@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.store.mongo;
 
 import com.alibaba.fastjson2.JSON;
-import io.hankun.framework.ai.common.record.IDetailRecord;
+import io.hankun.framework.ai.core.record.IDetailRecord;
 import io.hankun.framework.ai.store.history.detail.ChatModelRecord;
 import io.hankun.framework.ai.store.history.detail.EmbeddingRecord;
 import io.hankun.framework.ai.store.history.detail.RerankRecord;

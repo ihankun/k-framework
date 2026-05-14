@@ -2,7 +2,7 @@ package io.hankun.framework.ai.agent.def;
 
 import io.hankun.framework.ai.agent.def.entity.AgentParams;
 import io.hankun.framework.ai.agent.node.NodeOutput;
-import io.hankun.framework.ai.common.session.task.TaskExecStatus;
+import io.hankun.framework.ai.core.session.task.TaskExecStatus;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 
 /**

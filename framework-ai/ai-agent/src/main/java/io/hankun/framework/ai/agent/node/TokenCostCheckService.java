@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.agent.node;
 
-import io.hankun.framework.ai.common.record.DetailMeta;
-import io.hankun.framework.ai.common.record.RecordHolder;
+import io.hankun.framework.ai.core.record.DetailMeta;
+import io.hankun.framework.ai.core.record.RecordHolder;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.store.history.context.ModelRecordContext;
 import io.hankun.framework.ai.store.history.detail.ChatModelRecord;

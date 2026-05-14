@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.store.history.detail;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.record.IDetailRecord;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.record.IDetailRecord;
 
 import java.util.ArrayList;
 import java.util.List;

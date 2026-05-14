@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.agent.sub;
 
 import io.hankun.framework.ai.agent.config.TaskExecConfig;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.InputParams;
 import io.hankun.framework.ai.context.model.ModelContextDataBuilder;

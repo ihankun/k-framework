@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context;
 
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 import io.hankun.framework.ai.context.entity.ContextDesc;
 import io.hankun.framework.ai.context.model.ModelContextBuilder;
 import io.hankun.framework.ai.context.model.ModelContextManageService;

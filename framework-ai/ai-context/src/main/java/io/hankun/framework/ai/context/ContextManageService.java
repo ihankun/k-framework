@@ -1,13 +1,13 @@
 package io.hankun.framework.ai.context;
 
-import io.hankun.framework.ai.common.context.CurrentIdHolder;
-import io.hankun.framework.ai.common.context.IContext;
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.session.OperateStatus;
-import io.hankun.framework.ai.common.session.SessionStatus;
-import io.hankun.framework.ai.common.session.node.TaskNodeStatus;
-import io.hankun.framework.ai.common.session.task.TaskExecStatus;
-import io.hankun.framework.ai.common.util.TopologicalSort;
+import io.hankun.framework.ai.core.context.CurrentIdHolder;
+import io.hankun.framework.ai.core.context.IContext;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.session.OperateStatus;
+import io.hankun.framework.ai.core.session.SessionStatus;
+import io.hankun.framework.ai.core.session.node.TaskNodeStatus;
+import io.hankun.framework.ai.core.session.task.TaskExecStatus;
+import io.hankun.framework.ai.core.util.TopologicalSort;
 import io.hankun.framework.ai.context.entity.*;
 import io.hankun.framework.ai.context.register.ContextRegister;
 import io.hankun.framework.ai.context.store.ContextStore;

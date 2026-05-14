@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.model;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;

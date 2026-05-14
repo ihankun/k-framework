@@ -2,9 +2,9 @@ package io.hankun.framework.ai.mcp.app.nacos.v1;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson2.util.DateUtils;
-import io.hankun.framework.ai.common.entity.ServiceInfo;
-import io.hankun.framework.ai.common.http.KHttpClient;
-import io.hankun.framework.ai.common.util.PathUtil;
+import io.hankun.framework.ai.core.entity.ServiceInfo;
+import io.hankun.framework.ai.core.http.KHttpClient;
+import io.hankun.framework.ai.core.util.PathUtil;
 import io.hankun.framework.ai.mcp.app.config.KAiHttpConfig;
 import okhttp3.Request;
 import org.springframework.stereotype.Component;

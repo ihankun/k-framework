@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.store.history.context;
 
-import io.hankun.framework.ai.common.context.IContext;
-import io.hankun.framework.ai.common.record.ChatRecord;
+import io.hankun.framework.ai.core.context.IContext;
+import io.hankun.framework.ai.core.record.ChatRecord;
 
 import java.util.List;
 

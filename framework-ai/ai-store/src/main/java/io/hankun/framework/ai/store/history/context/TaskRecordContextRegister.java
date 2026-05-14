@@ -1,9 +1,9 @@
 package io.hankun.framework.ai.store.history.context;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.record.TaskRecord;
-import io.hankun.framework.ai.common.session.OperateStatus;
-import io.hankun.framework.ai.common.session.SessionStatus;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.record.TaskRecord;
+import io.hankun.framework.ai.core.session.OperateStatus;
+import io.hankun.framework.ai.core.session.SessionStatus;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.ContextData;
 import io.hankun.framework.ai.context.entity.ContextLifecycle;

@@ -4,7 +4,7 @@ import io.hankun.framework.ai.agent.KAgent;
 import io.hankun.framework.ai.agent.exec.AgentGraph;
 import io.hankun.framework.ai.agent.node.config.ActionConfig;
 import io.hankun.framework.ai.agent.node.config.ReplyConfig;
-import io.hankun.framework.ai.common.session.task.MapConfig;
+import io.hankun.framework.ai.core.session.task.MapConfig;
 import io.hankun.framework.ai.context.entity.CallerInfo;
 import io.hankun.framework.ai.context.entity.InputParams;
 

@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>io.hankun.ai</groupId>
-            <artifactId>ai-common</artifactId>
+            <artifactId>ai-core</artifactId>
         </dependency>
     </dependencies>
 

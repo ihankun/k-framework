@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.agent.context;
 
-import io.hankun.framework.ai.common.context.IContext;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.context.IContext;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.store.history.context.ModelRecordContext;
 import io.hankun.framework.ai.store.memory.shortTerm.MessageConvertor;

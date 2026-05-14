@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.agent.entity;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.util.CollectionUtils;
 

@@ -14,7 +14,7 @@
     <modules>
         <module>ai-agent</module>
         <module>ai-agent-api</module>
-        <module>ai-common</module>
+        <module>ai-core</module>
         <module>ai-context</module>
         <module>ai-mcp</module>
         <module>ai-mem</module>

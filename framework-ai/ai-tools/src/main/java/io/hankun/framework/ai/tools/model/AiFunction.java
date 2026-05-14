@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.tools.model;
 
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import io.hankun.framework.ai.tools.advisors.AdvisorConfig;
 import io.hankun.framework.ai.tools.client.KChatRequest;
 import io.hankun.framework.commons.context.KContextHolder;

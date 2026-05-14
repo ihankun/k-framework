@@ -5,7 +5,7 @@ import io.hankun.framework.ai.agent.api.AgentLoader;
 import io.hankun.framework.ai.agent.api.entity.AgentDesc;
 import io.hankun.framework.ai.agent.api.entity.AgentExtendPrompt;
 import io.hankun.framework.ai.agent.api.entity.AgentStructInfo;
-import io.hankun.framework.ai.common.config.KCommConfig;
+import io.hankun.framework.ai.core.config.KCommConfig;
 import io.hankun.framework.ai.model.prompt.PromptInfo;
 import io.hankun.framework.core.utils.spring.ServerStateUtil;
 import jakarta.annotation.PostConstruct;

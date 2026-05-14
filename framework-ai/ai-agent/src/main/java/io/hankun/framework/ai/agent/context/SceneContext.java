@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.agent.context;
 
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.Nullable;

@@ -6,7 +6,7 @@ import io.hankun.framework.ai.agent.node.BaseKAiNodeAction;
 import io.hankun.framework.ai.agent.node.KNodeService;
 import io.hankun.framework.ai.agent.node.NodeOutput;
 import io.hankun.framework.ai.agent.node.entity.KNodeResult;
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.InputParams;
 import io.hankun.framework.ai.mem.AiMemService;

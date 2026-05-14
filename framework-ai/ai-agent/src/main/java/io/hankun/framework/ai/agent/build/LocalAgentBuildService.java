@@ -6,7 +6,7 @@ import io.hankun.framework.ai.agent.config.KNodeConfig;
 import io.hankun.framework.ai.agent.graph.GraphBuildService;
 import io.hankun.framework.ai.agent.node.KNodeManageService;
 import io.hankun.framework.ai.agent.node.config.ActionConfig;
-import io.hankun.framework.ai.common.config.KCommConfig;
+import io.hankun.framework.ai.core.config.KCommConfig;
 import io.hankun.framework.ai.model.prompt.PromptInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.store.history.repository;
 
-import io.hankun.framework.ai.common.record.ChatRecord;
-import io.hankun.framework.ai.common.record.TaskRecord;
+import io.hankun.framework.ai.core.record.ChatRecord;
+import io.hankun.framework.ai.core.record.TaskRecord;
 import io.hankun.framework.ai.store.history.po.ChatHistory;
 import io.hankun.framework.ai.store.history.po.SessionInfo;
 import io.hankun.framework.ai.store.history.po.TaskHistory;

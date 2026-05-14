@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.store.memory.shortTerm;
 
-import io.hankun.framework.ai.common.redis.KRedisHolder;
+import io.hankun.framework.ai.core.redis.KRedisHolder;
 import io.hankun.framework.ai.store.config.KAiStoreConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;

@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.tools.trace;
 
-import io.hankun.framework.ai.common.record.DetailMeta;
-import io.hankun.framework.ai.common.session.task.MapConfig;
+import io.hankun.framework.ai.core.record.DetailMeta;
+import io.hankun.framework.ai.core.session.task.MapConfig;
 import io.hankun.framework.ai.store.history.detail.ChatModelRecord;
 import io.hankun.framework.commons.utils.ContextUtil;
 import org.springframework.ai.chat.messages.Message;

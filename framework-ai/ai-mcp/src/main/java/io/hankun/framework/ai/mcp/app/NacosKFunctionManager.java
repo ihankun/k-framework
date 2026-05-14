@@ -1,10 +1,10 @@
 package io.hankun.framework.ai.mcp.app;
 
 import com.alibaba.fastjson2.JSON;
-import io.hankun.framework.ai.common.entity.HttpResult;
-import io.hankun.framework.ai.common.entity.ServiceInfo;
-import io.hankun.framework.ai.common.http.KHttpClient;
-import io.hankun.framework.ai.common.util.PathUtil;
+import io.hankun.framework.ai.core.entity.HttpResult;
+import io.hankun.framework.ai.core.entity.ServiceInfo;
+import io.hankun.framework.ai.core.http.KHttpClient;
+import io.hankun.framework.ai.core.util.PathUtil;
 import io.hankun.framework.ai.mcp.app.config.KAiHttpConfig;
 import io.hankun.framework.ai.mcp.app.config.KAiMcpConfig;
 import io.hankun.framework.ai.mcp.app.entity.KFunction;

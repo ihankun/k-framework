@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.store;
 
-import io.hankun.framework.ai.common.redis.KRedisHolder;
+import io.hankun.framework.ai.core.redis.KRedisHolder;
 import org.jetbrains.annotations.NotNull;
 import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;

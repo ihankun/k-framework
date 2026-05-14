@@ -1,9 +1,9 @@
 package io.hankun.framework.ai.mem.mem0;
 
 import com.alibaba.fastjson2.JSON;
-import io.hankun.framework.ai.common.entity.HttpResult;
-import io.hankun.framework.ai.common.http.HttpConfig;
-import io.hankun.framework.ai.common.http.KHttpClient;
+import io.hankun.framework.ai.core.entity.HttpResult;
+import io.hankun.framework.ai.core.http.HttpConfig;
+import io.hankun.framework.ai.core.http.KHttpClient;
 import io.hankun.framework.ai.mem.mem0.entity.MemCreateDto;
 import io.hankun.framework.ai.mem.mem0.entity.MemSearchDto;
 import lombok.extern.slf4j.Slf4j;

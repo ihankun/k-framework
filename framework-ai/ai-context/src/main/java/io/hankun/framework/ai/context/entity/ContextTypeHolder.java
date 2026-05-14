@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.entity;
 
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 import org.jetbrains.annotations.NotNull;
 
 /**

@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.mcp.app.nacos;
 
-import io.hankun.framework.ai.common.entity.ServiceInfo;
+import io.hankun.framework.ai.core.entity.ServiceInfo;
 import io.hankun.framework.ai.mcp.app.config.KAiHttpConfig;
 import io.hankun.framework.ai.mcp.app.nacos.v1.KV1Client;
 import lombok.extern.slf4j.Slf4j;

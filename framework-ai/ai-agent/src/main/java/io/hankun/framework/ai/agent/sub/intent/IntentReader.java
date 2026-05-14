@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.agent.sub.intent;
 
 import com.alibaba.fastjson2.JSON;
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.LinkedMultiValueMap;

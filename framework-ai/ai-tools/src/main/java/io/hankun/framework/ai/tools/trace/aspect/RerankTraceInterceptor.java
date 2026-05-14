@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.tools.trace.aspect;
 
-import io.hankun.framework.ai.common.context.CurrentIdHolder;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.context.CurrentIdHolder;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.model.interceptors.RerankInterceptor;
 import io.hankun.framework.ai.model.rerank.KDocumentWithScore;

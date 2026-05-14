@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.mcp.app.caller;
 
-import io.hankun.framework.ai.common.entity.HttpResult;
+import io.hankun.framework.ai.core.entity.HttpResult;
 
 import java.util.Map;
 

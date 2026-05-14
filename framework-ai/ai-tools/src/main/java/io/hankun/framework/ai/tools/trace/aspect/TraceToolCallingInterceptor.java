@@ -1,8 +1,8 @@
 package io.hankun.framework.ai.tools.trace.aspect;
 
-import io.hankun.framework.ai.common.context.CurrentIdHolder;
-import io.hankun.framework.ai.common.context.KContextManager;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.context.CurrentIdHolder;
+import io.hankun.framework.ai.core.context.KContextManager;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.mcp.context.KToolContext;
 import io.hankun.framework.ai.store.history.context.ModelRecordContext;

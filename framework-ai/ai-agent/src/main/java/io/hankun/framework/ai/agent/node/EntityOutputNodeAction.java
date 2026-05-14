@@ -3,7 +3,7 @@ package io.hankun.framework.ai.agent.node;
 import io.hankun.framework.ai.agent.exceptions.KAiException;
 import io.hankun.framework.ai.agent.llm.LlmCall;
 import io.hankun.framework.ai.agent.node.entity.KNodeResult;
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.InputParams;
 import org.jetbrains.annotations.NotNull;

@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.tools.trace;
 
-import io.hankun.framework.ai.common.record.IDetailRecord;
-import io.hankun.framework.ai.common.session.task.MapConfig;
+import io.hankun.framework.ai.core.record.IDetailRecord;
+import io.hankun.framework.ai.core.session.task.MapConfig;
 import io.hankun.framework.commons.context.KContextHolder;
 import org.jetbrains.annotations.Nullable;
 

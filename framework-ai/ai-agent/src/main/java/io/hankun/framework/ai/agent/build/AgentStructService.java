@@ -8,7 +8,7 @@ import io.hankun.framework.ai.agent.graph.GraphBuildService;
 import io.hankun.framework.ai.agent.graph.KeyType;
 import io.hankun.framework.ai.agent.node.*;
 import io.hankun.framework.ai.agent.node.config.ActionConfig;
-import io.hankun.framework.ai.common.util.ClassUtil;
+import io.hankun.framework.ai.core.util.ClassUtil;
 import io.hankun.framework.ai.context.ContextService;
 import io.hankun.framework.ai.context.model.ModelContextManageService;
 import io.hankun.framework.ai.model.prompt.PromptInfo;

@@ -1,10 +1,10 @@
 package io.hankun.framework.ai.store.history.context;
 
-import io.hankun.framework.ai.common.context.IContext;
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.record.IDetailRecord;
-import io.hankun.framework.ai.common.record.RecordHolder;
-import io.hankun.framework.ai.common.session.task.MapConfig;
+import io.hankun.framework.ai.core.context.IContext;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.record.IDetailRecord;
+import io.hankun.framework.ai.core.record.RecordHolder;
+import io.hankun.framework.ai.core.session.task.MapConfig;
 import io.hankun.framework.ai.store.history.detail.ChatModelRecord;
 import io.hankun.framework.ai.store.history.detail.EmbeddingRecord;
 import io.hankun.framework.ai.store.history.detail.RerankRecord;

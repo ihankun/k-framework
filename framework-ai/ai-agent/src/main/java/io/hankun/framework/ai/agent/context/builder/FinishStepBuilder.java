@@ -2,7 +2,7 @@ package io.hankun.framework.ai.agent.context.builder;
 
 import io.hankun.framework.ai.agent.context.SceneContext;
 import io.hankun.framework.ai.agent.context.SceneStepResult;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.model.ModelContextDataBuilder;
 import org.jetbrains.annotations.NotNull;

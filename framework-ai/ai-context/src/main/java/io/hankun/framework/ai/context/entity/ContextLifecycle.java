@@ -1,8 +1,8 @@
 package io.hankun.framework.ai.context.entity;
 
-import io.hankun.framework.ai.common.session.OperateStatus;
-import io.hankun.framework.ai.common.session.SessionStatus;
-import io.hankun.framework.ai.common.session.task.TaskExecStatus;
+import io.hankun.framework.ai.core.session.OperateStatus;
+import io.hankun.framework.ai.core.session.SessionStatus;
+import io.hankun.framework.ai.core.session.task.TaskExecStatus;
 import io.hankun.framework.ai.context.register.RegisterTime;
 import io.hankun.framework.ai.context.store.ContextStoreType;
 import lombok.AllArgsConstructor;

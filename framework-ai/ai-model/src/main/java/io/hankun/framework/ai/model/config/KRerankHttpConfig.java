@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.model.config;
 
-import io.hankun.framework.ai.common.http.HttpConfig;
+import io.hankun.framework.ai.core.http.HttpConfig;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;

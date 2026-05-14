@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.agent.task;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.session.task.TaskExecStatus;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.session.task.TaskExecStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

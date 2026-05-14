@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.agent.node;
 
-import io.hankun.framework.ai.common.record.TaskNodeRecord;
+import io.hankun.framework.ai.core.record.TaskNodeRecord;
 import io.hankun.framework.commons.context.KContextHolder;
 
 /**

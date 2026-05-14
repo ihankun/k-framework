@@ -2,8 +2,8 @@ package io.hankun.framework.ai.agent.node;
 
 import io.hankun.framework.ai.agent.node.config.ActionConfig;
 import io.hankun.framework.ai.agent.node.config.ActionConfigHolder;
-import io.hankun.framework.ai.common.context.CurrentIdHolder;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.context.CurrentIdHolder;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import org.springframework.aop.support.AopUtils;
 
 /**

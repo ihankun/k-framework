@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.register;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.ContextLifecycle;
 import io.hankun.framework.ai.context.entity.InputParams;

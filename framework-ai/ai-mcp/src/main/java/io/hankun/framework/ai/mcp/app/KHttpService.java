@@ -1,8 +1,8 @@
 package io.hankun.framework.ai.mcp.app;
 
 import com.alibaba.fastjson.JSON;
-import io.hankun.framework.ai.common.context.CurrentIdHolder;
-import io.hankun.framework.ai.common.entity.HttpResult;
+import io.hankun.framework.ai.core.context.CurrentIdHolder;
+import io.hankun.framework.ai.core.entity.HttpResult;
 import io.hankun.framework.ai.mcp.app.caller.IKHttpCaller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package io.hankun.framework.ai.store.history.po;
 
-import io.hankun.framework.ai.common.record.IDetailRecord;
-import io.hankun.framework.ai.common.record.RecordHolder;
+import io.hankun.framework.ai.core.record.IDetailRecord;
+import io.hankun.framework.ai.core.record.RecordHolder;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

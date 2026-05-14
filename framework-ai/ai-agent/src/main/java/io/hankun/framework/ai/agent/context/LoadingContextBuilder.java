@@ -2,8 +2,8 @@ package io.hankun.framework.ai.agent.context;
 
 import io.hankun.framework.ai.agent.config.TaskExecConfig;
 import io.hankun.framework.ai.agent.node.config.ActionConfig;
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.session.OperateStatus;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.session.OperateStatus;
 import io.hankun.framework.ai.context.entity.ContextAccess;
 import io.hankun.framework.ai.context.entity.InputParams;
 import io.hankun.framework.ai.context.events.OperateEventListener;

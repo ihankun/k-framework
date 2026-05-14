@@ -9,7 +9,7 @@ import io.hankun.framework.ai.agent.audio.entity.AudioResult;
 import io.hankun.framework.ai.agent.audio.tts.KTtsApi;
 import io.hankun.framework.ai.agent.audio.tts.cache.AudioCacheService;
 import io.hankun.framework.ai.agent.audio.tts.entity.TtsConfig;
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;

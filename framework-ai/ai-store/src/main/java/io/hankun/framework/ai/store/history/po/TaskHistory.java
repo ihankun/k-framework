@@ -1,9 +1,9 @@
 package io.hankun.framework.ai.store.history.po;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
-import io.hankun.framework.ai.common.record.TaskNodeRecord;
-import io.hankun.framework.ai.common.record.TaskRecord;
-import io.hankun.framework.ai.common.session.task.TaskExecStatus;
+import io.hankun.framework.ai.core.entity.CurrentId;
+import io.hankun.framework.ai.core.record.TaskNodeRecord;
+import io.hankun.framework.ai.core.record.TaskRecord;
+import io.hankun.framework.ai.core.session.task.TaskExecStatus;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

@@ -4,7 +4,7 @@ import com.alibaba.cloud.ai.graph.OverAllState;
 import com.alibaba.fastjson2.JSON;
 import io.hankun.framework.ai.agent.entity.DataWithMeta;
 import io.hankun.framework.ai.agent.node.entity.DataWithMetaContext;
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import io.hankun.framework.ai.context.entity.InputParams;
 
 import java.util.List;

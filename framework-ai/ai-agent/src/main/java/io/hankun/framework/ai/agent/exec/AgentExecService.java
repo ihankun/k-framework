@@ -4,7 +4,7 @@ import io.hankun.framework.ai.agent.KAgent;
 import io.hankun.framework.ai.agent.build.AgentLoadService;
 import io.hankun.framework.ai.agent.graph.GraphExecService;
 import io.hankun.framework.ai.agent.task.StatusManageService;
-import io.hankun.framework.ai.common.redis.KRedisHolder;
+import io.hankun.framework.ai.core.redis.KRedisHolder;
 import io.hankun.framework.ai.context.ContextManageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

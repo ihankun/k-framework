@@ -9,7 +9,7 @@ import io.hankun.framework.ai.agent.entity.DataWithMeta;
 import io.hankun.framework.ai.agent.entity.NodeResultData;
 import io.hankun.framework.ai.agent.task.StatusManageService;
 import io.hankun.framework.ai.agent.task.TaskStatusData;
-import io.hankun.framework.ai.common.util.FluxUtil;
+import io.hankun.framework.ai.core.util.FluxUtil;
 import io.hankun.framework.ai.mcp.context.KToolContext;
 import io.hankun.framework.commons.context.KContext;
 import io.hankun.framework.commons.context.KContextHolder;

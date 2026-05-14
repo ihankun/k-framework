@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.tools.contexts;
 
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 
 import java.time.LocalDateTime;
 

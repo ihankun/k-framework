@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.agent.context;
 
-import io.hankun.framework.ai.common.context.IContext;
+import io.hankun.framework.ai.core.context.IContext;
 import io.hankun.framework.ai.mem.entity.MemDataVo;
 
 import java.util.ArrayList;

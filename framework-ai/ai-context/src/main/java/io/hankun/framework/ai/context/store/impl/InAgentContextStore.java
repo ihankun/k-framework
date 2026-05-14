@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.store.impl;
 
-import io.hankun.framework.ai.common.redis.KRedisHolder;
+import io.hankun.framework.ai.core.redis.KRedisHolder;
 import io.hankun.framework.ai.context.store.ContextStore;
 import io.hankun.framework.ai.context.store.ContextStoreType;
 import org.springframework.stereotype.Component;

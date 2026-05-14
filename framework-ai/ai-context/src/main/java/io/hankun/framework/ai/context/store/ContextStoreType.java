@@ -1,6 +1,6 @@
 package io.hankun.framework.ai.context.store;
 
-import io.hankun.framework.ai.common.entity.CurrentId;
+import io.hankun.framework.ai.core.entity.CurrentId;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
