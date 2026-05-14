@@ -1,9 +1,9 @@
-package io.hankun.framework.cache.pubsub;
+package io.hankun.framework.redis.pubsub;
 
 import java.lang.annotation.*;
 
 /**
- * 基于 Redisson 的消息监听器
+ * 基于 redis 的消息监听器
  *
  * @author hankun
  */

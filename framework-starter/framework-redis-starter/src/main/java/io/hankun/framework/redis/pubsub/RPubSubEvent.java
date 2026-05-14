@@ -1,5 +1,4 @@
-package io.hankun.framework.cache.pubsub;
-
+package io.hankun.framework.redis.pubsub;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

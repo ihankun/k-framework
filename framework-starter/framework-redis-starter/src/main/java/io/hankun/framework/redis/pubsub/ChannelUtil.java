@@ -1,4 +1,4 @@
-package io.hankun.framework.cache.pubsub;
+package io.hankun.framework.redis.pubsub;
 
 import io.hankun.framework.core.utils.string.CharPool;
 import lombok.experimental.UtilityClass;
@@ -12,7 +12,7 @@ import org.springframework.data.redis.listener.Topic;
  * @author hankun
  */
 @UtilityClass
-class ChannelUtil {
+public class ChannelUtil {
 
 	/**
 	 * 获取 pub sub topic

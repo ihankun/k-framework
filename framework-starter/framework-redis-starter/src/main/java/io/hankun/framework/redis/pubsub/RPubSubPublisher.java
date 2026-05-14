@@ -1,7 +1,7 @@
-package io.hankun.framework.cache.pubsub;
+package io.hankun.framework.redis.pubsub;
 
 /**
- * 基于 Redisson 的消息发布器
+ * 基于 redis 的消息发布器
  *
  * @author hankun
  */

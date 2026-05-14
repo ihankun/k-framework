@@ -1,4 +1,4 @@
-package io.hankun.framework.cache.pubsub;
+package io.hankun.framework.redis.pubsub;
 
 import io.hankun.framework.core.utils.plus.ReflectUtil;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ import org.springframework.util.ReflectionUtils;
 import java.lang.reflect.Method;
 
 /**
- * Redisson 监听器
+ * redis pub/sub 监听器检测器
  *
  * @author hankun
  */
@@ -61,5 +61,4 @@ public class RPubSubListenerDetector implements BeanPostProcessor {
 			ReflectUtil.invokeMethod(method, bean, topicEvent);
 		}
 	}
-
 }

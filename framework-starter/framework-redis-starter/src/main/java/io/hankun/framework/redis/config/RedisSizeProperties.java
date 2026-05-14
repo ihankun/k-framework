@@ -68,10 +68,10 @@ public class RedisSizeProperties {
      */
     private KeyExpiredEvent keyExpiredEvent = new KeyExpiredEvent();
 
-    /**
-     * 限流配置
-     */
-    private RateLimiter rateLimiter = new RateLimiter();
+//    /**
+//     * 限流配置
+//     */
+//    private RateLimiter rateLimiter = new RateLimiter();
 
     /**
      * stream
@@ -101,14 +101,14 @@ public class RedisSizeProperties {
         boolean enable = false;
     }
 
-    @Getter
-    @Setter
-    public static class RateLimiter {
-        /**
-         * 是否开启 RateLimiter
-         */
-        boolean enable = false;
-    }
+//    @Getter
+//    @Setter
+//    public static class RateLimiter {
+//        /**
+//         * 是否开启 RateLimiter
+//         */
+//        boolean enable = false;
+//    }
 
     @Getter
     @Setter
