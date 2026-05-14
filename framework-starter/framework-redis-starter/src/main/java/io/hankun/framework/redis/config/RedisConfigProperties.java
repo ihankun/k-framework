@@ -19,26 +19,40 @@ import java.util.Map;
  */
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "redis.config")
+@ConfigurationProperties(prefix = "k.redis.size.limit")
 @RefreshScope
 public class RedisConfigProperties {
 
     public static final String PREFIX = "redis";
 
-    /**
-     * 域名前缀开关,默认关闭
-     */
-    private boolean domainPrefixEnable = false;
+//    /**
+//     * 域名前缀开关,默认关闭
+//     */
+//    private boolean domainPrefixEnable = false;
+
+//    public RedisConfigProperties() {
+//        this.sizeControlMap = new HashMap<>();
+//        sizeControlMap.put(RedisDataType.STRING, 1024 * 1024);
+//        sizeControlMap.put(RedisDataType.SET, 5000);
+//        sizeControlMap.put(RedisDataType.LIST, 5000);
+//        sizeControlMap.put(RedisDataType.MAP, 5000);
+//        sizeControlMap.put(RedisDataType.ZSET, 5000);
+//    }
 
     /**
      * 大小限制开关,默认开启
      */
-    private boolean sizeControlEnable = true;
+    private boolean enable = false;
 
     /**
      * 大小限制模式，默认记录模式
      */
-    private RedisSizeControlMode sizeControlMode = RedisSizeControlMode.RECORD;
+    private RedisSizeControlMode mode = RedisSizeControlMode.RECORD;
+
+//    /**
+//     * 字符串类型最大限制
+//     */
+//    private final Map<RedisDataType, Integer> sizeControlMap;
 
     /**
      * redis key 前缀
@@ -139,13 +153,18 @@ public class RedisConfigProperties {
      */
     private Integer maxKeySize = 256;
 
-    /**
-     * 忽略域名前缀的key集合
-     */
-    private List<String> ignoreDomainPrefixKeys;
+//    /**
+//     * 忽略域名前缀的key集合
+//     */
+//    private List<String> ignoreDomainPrefixKeys;
 
     /**
      * 最大失效时间，分钟，默认3天=3*24*60
      */
     private Integer maxExpireTime = 4320;
+
+    /**
+     * redis批处理大小
+     */
+    private int batchSize = 100;
 }

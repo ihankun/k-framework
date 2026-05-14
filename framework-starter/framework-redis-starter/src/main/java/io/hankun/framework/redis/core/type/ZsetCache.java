@@ -21,6 +21,21 @@ public interface ZsetCache<V> {
     Set<ZSetOperations.TypedTuple<V>> rangeWithScores(ICacheKey key, long begin, long size);
 
     /**
+     * 指定分数范围内的所有元素及其分数
+     */
+    Set<ZSetOperations.TypedTuple<V>> rangeByScoreWithScores(ICacheKey cacheKey, double min, double max);
+
+    /**
+     * 分页查询 指定分数范围内的所有元素及其分数
+     */
+    Set<ZSetOperations.TypedTuple<V>> rangeByScoreWithScores(ICacheKey cacheKey, double min, double max, long offset, long count);
+
+    /**
+     * 删除指定分数范围内的元素
+     */
+    Long removeRangeByScore(ICacheKey cacheKey, double min, double max);
+
+    /**
      * 删除元素
      */
     Long remove(ICacheKey key,V value);
@@ -28,7 +43,7 @@ public interface ZsetCache<V> {
     /**
      * 删除
      */
-    Boolean del(ICacheKey key);
+    Boolean delete(ICacheKey key);
 
     /**
      * 获取元素个数

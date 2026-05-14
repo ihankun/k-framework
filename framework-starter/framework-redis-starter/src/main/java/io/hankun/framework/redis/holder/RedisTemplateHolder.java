@@ -4,41 +4,54 @@ import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 /**
  * @author hankun
  */
 public class RedisTemplateHolder {
 
-    private static class RedisTemplateHolderHolder{
-        private static final RedisTemplateHolder INSTANCE = new RedisTemplateHolder();
-    }
+    private static final AtomicReference<RedisTemplateHolder> INSTANCE = new AtomicReference<>();
 
-    private volatile RedisTemplate redisTemplate;
+    private final AtomicReference<RedisTemplate> redisTemplate = new AtomicReference<>();
 
     private RedisTemplateHolder() {}
 
     public static RedisTemplateHolder ins() {
-        return RedisTemplateHolderHolder.INSTANCE;
+        RedisTemplateHolder currentInstance = INSTANCE.get();
+        if (currentInstance == null) {
+            synchronized (RedisTemplateHolder.class) {
+                currentInstance = INSTANCE.get();
+                if (currentInstance == null) {
+                    currentInstance = new RedisTemplateHolder();
+                    INSTANCE.set(currentInstance);
+                }
+            }
+        }
+        return currentInstance;
     }
 
     public RedisTemplate getRedisTemplate() {
-        if (redisTemplate == null) {
+        RedisTemplate localInstance = redisTemplate.get();
+        if (localInstance == null) {
             synchronized (RedisTemplateHolder.class) {
-                if (redisTemplate == null) {
+                localInstance = redisTemplate.get();
+                if (localInstance == null) {
                     RedisTemplate template = SpringHelpers.context().getBean("redisTemplate", RedisTemplate.class);
                     FastJsonRedisSerializer<Object> serializer = new FastJsonRedisSerializer<>(Object.class);
                     template.setKeySerializer(serializer);
                     template.setValueSerializer(serializer);
                     template.setHashKeySerializer(serializer);
                     template.setHashValueSerializer(serializer);
-                    redisTemplate = template;
+                    redisTemplate.set(template);
+                    localInstance = template;
                 }
             }
         }
-        return redisTemplate;
+        return localInstance;
     }
 
     public static void setRedisTemplate(RedisTemplate<Object, Object> redisTemplate) {
-        RedisTemplateHolder.ins().redisTemplate = redisTemplate;
+        ins().redisTemplate.set(redisTemplate);
     }
 }

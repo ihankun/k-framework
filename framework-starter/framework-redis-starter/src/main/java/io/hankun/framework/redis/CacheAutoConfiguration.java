@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @Configuration
-@ConfigurationProperties(prefix = "kun.redis")
+@ConfigurationProperties(prefix = "k.redis")
 @ComponentScan(basePackageClasses = CacheAutoConfiguration.class)
 public class CacheAutoConfiguration {
 

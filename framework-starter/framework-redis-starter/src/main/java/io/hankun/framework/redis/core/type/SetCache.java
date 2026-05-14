@@ -29,6 +29,11 @@ public interface SetCache<V> {
     /**
      * 更新缓存
      */
+    boolean update(ICacheKey cacheKey, Set<V> value);
+
+    /**
+     * 更新缓存
+     */
     boolean update(ICacheKey key, Set<V> value, Long expire, TimeUnit timeUnit);
 
     /**
@@ -56,7 +61,17 @@ public interface SetCache<V> {
     /**
      * 插入元素
      */
+    boolean put(ICacheKey cacheKey, V value);
+
+    /**
+     * 插入元素
+     */
     boolean put(ICacheKey key, V value, Long expire, TimeUnit timeUnit);
+
+    /**
+     * 插入全部元素
+     */
+    boolean putAll(ICacheKey cacheKey, Set<V> values);
 
     /**
      * 插入全部元素

@@ -28,6 +28,15 @@ public interface ListCache<V> {
 
     /**
      * 更新缓存
+     *
+     * @param cacheKey
+     * @param value
+     * @return
+     */
+    boolean update(ICacheKey cacheKey, List<V> value);
+
+    /**
+     * 更新缓存
      */
     boolean update(ICacheKey key, List<V> value, Long expire, TimeUnit timeUnit);
 
@@ -47,6 +56,11 @@ public interface ListCache<V> {
      * 弹出所有元素
      */
     List<V> pop(ICacheKey key, int size);
+
+    /**
+     * 追加元素
+     */
+    boolean add(ICacheKey cacheKey, V value);
 
     /**
      * 追加元素

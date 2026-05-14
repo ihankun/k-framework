@@ -16,9 +16,9 @@ import java.util.concurrent.TimeUnit;
 public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache<V> {
 
     @Override
-    public List<String> pop(ICacheKey key, int size) {
+    public List<String> pop(ICacheKey cacheKey, int size) {
         try {
-            return (List<String>) getRedisTemplate().opsForSet().pop(key.get(), size);
+            return (List<String>) getRedisTemplate().opsForSet().pop(cacheKey.get(), size);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -26,9 +26,10 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean contain(ICacheKey key, V value) {
+    public boolean contain(ICacheKey cacheKey, V value) {
         try {
-            return getRedisTemplate().opsForSet().members(key.get()).contains(value);
+            Set<String> members = getRedisTemplate().opsForSet().members(cacheKey.get());
+            return members != null && members.contains(value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -36,11 +37,17 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean put(ICacheKey key, V value, Long expire, TimeUnit timeUnit) {
+    public boolean put(ICacheKey cacheKey, V value) {
+        return put(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
+    }
+
+    @Override
+    public boolean put(ICacheKey cacheKey, V value, Long expire, TimeUnit timeUnit) {
+        String key = cacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
-            getRedisTemplate().opsForSet().add(key.get(), value);
-            getRedisTemplate().expire(key.get(), expire, timeUnit);
+            getRedisTemplate().opsForSet().add(key, value);
+            getRedisTemplate().expire(key, expire, timeUnit);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -49,13 +56,19 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean putAll(ICacheKey key, Set<V> values, Long expire, TimeUnit timeUnit) {
+    public boolean putAll(ICacheKey cacheKey, Set<V> values) {
+        return putAll(cacheKey, values, getMaxExpireTime(), TimeUnit.MINUTES);
+    }
+
+    @Override
+    public boolean putAll(ICacheKey cacheKey, Set<V> values, Long expire, TimeUnit timeUnit) {
+        String key = cacheKey.get();
         validate(key, values, expire, timeUnit);
         try {
             values.forEach(item -> {
-                getRedisTemplate().opsForSet().add(key.get(), item);
+                getRedisTemplate().opsForSet().add(key, item);
             });
-            getRedisTemplate().expire(key.get(), expire, timeUnit);
+            getRedisTemplate().expire(key, expire, timeUnit);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -64,9 +77,9 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean remove(ICacheKey key, V value) {
+    public boolean remove(ICacheKey cacheKey, V value) {
         try {
-            getRedisTemplate().opsForSet().remove(key.get(), value);
+            getRedisTemplate().opsForSet().remove(cacheKey.get(), value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -75,9 +88,9 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public Long size(ICacheKey key) {
+    public Long size(ICacheKey cacheKey) {
         try {
-            return getRedisTemplate().opsForSet().size(key.get());
+            return getRedisTemplate().opsForSet().size(cacheKey.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return 0L;
@@ -85,18 +98,13 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    protected RedisDataType dataType() {
-        return RedisDataType.SET;
-    }
-
-    @Override
-    public boolean save(ICacheKey key, Set<V> value, Long expire) {
-        validate(key, value,expire,TimeUnit.SECONDS);
+    public boolean save(ICacheKey cacheKey, Set<V> value, Long expire) {
+        String key = cacheKey.get();
+        validate(key, value, expire, TimeUnit.SECONDS);
         try {
             String[] array = value.toArray(new String[0]);
-            getRedisTemplate().opsForSet().add(key.get(), array);
-            expire(key, expire);
-
+            getRedisTemplate().opsForSet().add(key, array);
+            getRedisTemplate().expire(key, expire, TimeUnit.SECONDS);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -105,9 +113,9 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public Set<V> get(ICacheKey key) {
+    public Set<V> get(ICacheKey cacheKey) {
         try {
-            return (Set<V>) getRedisTemplate().opsForSet().members(key.get());
+            return (Set<V>) getRedisTemplate().opsForSet().members(cacheKey.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -115,9 +123,9 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean del(ICacheKey key) {
+    public boolean del(ICacheKey cacheKey) {
         try {
-            getRedisTemplate().delete(key.get());
+            getRedisTemplate().delete(cacheKey.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -126,11 +134,17 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean update(ICacheKey key, Set<V> value, Long expire, TimeUnit timeUnit) {
-        validate(key, value,expire,timeUnit);
+    public boolean update(ICacheKey cacheKey, Set<V> value) {
+        return update(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
+    }
+
+    @Override
+    public boolean update(ICacheKey cacheKey, Set<V> value, Long expire, TimeUnit timeUnit) {
+        String key = cacheKey.get();
+        validate(key, value, expire, timeUnit);
         try {
-            value.forEach(item -> getRedisTemplate().opsForSet().add(key.get(), item));
-            getRedisTemplate().expire(key.get(),expire,timeUnit);
+            value.forEach(item -> getRedisTemplate().opsForSet().add(key, item));
+            getRedisTemplate().expire(key, expire, timeUnit);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -139,10 +153,9 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean expire(ICacheKey key, Long expire) {
-        validate(key, null,expire,TimeUnit.SECONDS);
+    public boolean expire(ICacheKey cacheKey, Long expire) {
         try {
-            getRedisTemplate().expire(key.get(), expire, TimeUnit.SECONDS);
+            getRedisTemplate().expire(cacheKey.get(), expire, TimeUnit.SECONDS);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -151,9 +164,9 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
     }
 
     @Override
-    public boolean exits(ICacheKey key) {
+    public boolean exits(ICacheKey cacheKey) {
         try {
-            Long size = getRedisTemplate().opsForSet().size(key.get());
+            Long size = getRedisTemplate().opsForSet().size(cacheKey.get());
             if (size == null || size == 0) {
                 return false;
             }
@@ -162,5 +175,20 @@ public class RedisSetCacheImpl<V> extends AbstractRedisCache implements SetCache
             return false;
         }
         return true;
+    }
+
+    @Override
+    protected long getSizeInternal(String key) {
+        try {
+            return getRedisTemplate().opsForSet().size(key);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return 0L;
+    }
+
+    @Override
+    protected RedisDataType dataType() {
+        return RedisDataType.SET;
     }
 }

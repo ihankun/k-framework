@@ -15,30 +15,37 @@ import java.util.concurrent.TimeUnit;
 public class RedisStringCacheImpl extends AbstractRedisCache implements StringCache {
 
     @Override
-    public boolean save(ICacheKey key, String value, Long expire) {
-        return save(key, value, expire, TimeUnit.SECONDS);
+    public boolean save(ICacheKey cacheKey, String value, Long expire) {
+        return save(cacheKey, value, expire, TimeUnit.SECONDS);
     }
 
     @Override
-    public boolean setIfAbsent(ICacheKey key, String value, long timeout, TimeUnit unit) {
+    public boolean setIfAbsent(ICacheKey cacheKey, String value) {
+        return setIfAbsent(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
+    }
+
+    @Override
+    public boolean setIfAbsent(ICacheKey cacheKey, String value, long timeout, TimeUnit unit) {
+        String key = cacheKey.get();
         validate(key, value, timeout, unit);
-        return getRedisTemplate().opsForValue().setIfAbsent(key.get(), value, timeout, unit);
+        return getRedisTemplate().opsForValue().setIfAbsent(key, value, timeout, unit);
     }
 
     /**
      * 保存
      *
-     * @param key      缓存key
+     * @param cacheKey 缓存key
      * @param value    缓存value
      * @param expire   过期时间
      * @param timeUnit 过期时间单位
      * @return 是否设置成功
      */
     @Override
-    public boolean save(ICacheKey key, String value, Long expire, TimeUnit timeUnit) {
+    public boolean save(ICacheKey cacheKey, String value, Long expire, TimeUnit timeUnit) {
+        String key = cacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
-            getRedisTemplate().opsForValue().set(key.get(), value, expire, timeUnit);
+            getRedisTemplate().opsForValue().set(key, value, expire, timeUnit);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -47,15 +54,15 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public String get(ICacheKey key) {
-        Object value = getRedisTemplate().opsForValue().get(key.get());
+    public String get(ICacheKey cacheKey) {
+        Object value = getRedisTemplate().opsForValue().get(cacheKey.get());
         return value == null ? null : value.toString();
     }
 
     @Override
-    public boolean del(ICacheKey key) {
+    public boolean del(ICacheKey cacheKey) {
         try {
-            getRedisTemplate().delete(key.get());
+            getRedisTemplate().delete(cacheKey.get());
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -64,10 +71,16 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean update(ICacheKey key, String value, Long expire, TimeUnit timeUnit) {
+    public boolean update(ICacheKey cacheKey, String value) {
+        return update(cacheKey, value, getMaxExpireTime(), TimeUnit.MINUTES);
+    }
+
+    @Override
+    public boolean update(ICacheKey cacheKey, String value, Long expire, TimeUnit timeUnit) {
+        String key = cacheKey.get();
         validate(key, value, expire, timeUnit);
         try {
-            getRedisTemplate().opsForValue().set(key.get(), value, expire, timeUnit);
+            getRedisTemplate().opsForValue().set(key, value, expire, timeUnit);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -76,10 +89,10 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean expire(ICacheKey key, Long expire) {
-        validate(key, null, expire, TimeUnit.SECONDS);
+    public boolean expire(ICacheKey cacheKey, Long expire) {
+        String key = cacheKey.get();
         try {
-            getRedisTemplate().expire(key.get(), expire, TimeUnit.SECONDS);
+            getRedisTemplate().expire(key, expire, TimeUnit.SECONDS);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return false;
@@ -88,9 +101,9 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public boolean exits(ICacheKey key) {
+    public boolean exits(ICacheKey cacheKey) {
         try {
-            Object value = getRedisTemplate().opsForValue().get(key.get());
+            Object value = getRedisTemplate().opsForValue().get(cacheKey.get());
             return !ObjectUtils.isEmpty(value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -99,25 +112,28 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    public Long atomic(ICacheKey key, Long num, Long expire, TimeUnit timeUnit) {
+    public Long atomic(ICacheKey cacheKey, Long num) {
+        return atomic(cacheKey, num, getMaxExpireTime(), TimeUnit.MINUTES);
+    }
+
+    @Override
+    public Long atomic(ICacheKey cacheKey, Long num, Long expire, TimeUnit timeUnit) {
+        if (num == 0) {
+            return null;
+        }
+
+        String key = cacheKey.get();
         validate(key, num, expire, timeUnit);
         try {
-
-            if (num == 0) {
-                return null;
-            }
-
             if (num > 0) {
-                Long increment = getRedisTemplate().opsForValue().increment(key.get(), num);
-                getRedisTemplate().expire(key.get(), getMaxExpireTime(), TimeUnit.DAYS);
+                Long increment = getRedisTemplate().opsForValue().increment(key, num);
+                getRedisTemplate().expire(key, getMaxExpireTime(), TimeUnit.MINUTES);
                 return increment;
             }
 
-
-            Long decrement = getRedisTemplate().opsForValue().decrement(key.get(), Math.abs(num));
-            getRedisTemplate().expire(key.get(), getMaxExpireTime(), TimeUnit.DAYS);
+            Long decrement = getRedisTemplate().opsForValue().decrement(key, Math.abs(num));
+            getRedisTemplate().expire(key, getMaxExpireTime(), TimeUnit.MINUTES);
             return decrement;
-
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return null;
@@ -125,11 +141,11 @@ public class RedisStringCacheImpl extends AbstractRedisCache implements StringCa
     }
 
     @Override
-    protected Long size(ICacheKey key) {
+    protected long getSizeInternal(String key) {
         try {
-            return getRedisTemplate().opsForValue().size(key.get());
+            return getRedisTemplate().opsForValue().size(key);
         } catch (Exception e) {
-            log.error("string 获取大小失败", e);
+            log.error(e.getMessage(), e);
         }
         return 0L;
     }

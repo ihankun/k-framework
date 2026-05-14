@@ -26,6 +26,17 @@ public interface MapCache<K, V> {
     boolean del(ICacheKey key);
 
     /**
+     * 删除Map中的某些元素
+     */
+    long delRawHashKeys(ICacheKey cacheKey, Object... hashKeys);
+
+    /**
+     * 更新缓存
+     * 默认超时时间3天
+     */
+    boolean update(ICacheKey cacheKey, Map<K, V> value);
+
+    /**
      * 更新缓存
      */
     boolean update(ICacheKey key, Map<K, V> value, Long expire, TimeUnit timeUnit);
@@ -50,13 +61,27 @@ public interface MapCache<K, V> {
     /**
      * 新增元素
      */
+    boolean put(ICacheKey cacheKey, K mapKey, V value);
+
+    /**
+     * 新增元素
+     */
     boolean put(ICacheKey key, K mapKey, V value, Long expire, TimeUnit timeUnit);
+
+    /**
+     * 插入全部
+     */
+    boolean putAll(ICacheKey cacheKey, Map<K, V> map);
+
+    /**
+     * 插入全部
+     */
+    boolean putAll(ICacheKey cacheKey, Map<K, V> map, Long expire, TimeUnit timeUnit);
 
     /**
      * 移除元素
      */
     boolean remove(ICacheKey key, K mapKey);
-
 
     /**
      * 元素数量
@@ -64,7 +89,7 @@ public interface MapCache<K, V> {
     Long size(ICacheKey key);
 
     /**
-     * 插入全部
+     * 新增元素，不存在即添加
      */
-    boolean putAll(ICacheKey key, Map<K, V> map,Long expire,TimeUnit timeUnit);
+    boolean putIfAbsent(ICacheKey cacheKey, K mapKey, V value, Long expire, TimeUnit timeUnit);
 }

@@ -3,6 +3,7 @@ package io.hankun.framework.redis.core.impl;
 import io.hankun.framework.redis.core.type.ZsetCache;
 import io.hankun.framework.redis.enums.RedisDataType;
 import io.hankun.framework.redis.key.ICacheKey;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.ZSetOperations;
 
 import java.util.Set;
@@ -10,38 +11,61 @@ import java.util.Set;
 /**
  * @author hankun
  */
+@Slf4j
 public class RedisZsetCacheImpl<V> extends AbstractRedisCache implements ZsetCache<V> {
 
     @Override
-    public Boolean add(ICacheKey key, V value, double score) {
-        return getRedisTemplate().opsForZSet().add(key.get(),value,score);
+    public Boolean add(ICacheKey cacheKey, V value, double score) {
+        return getRedisTemplate().opsForZSet().add(cacheKey.get(), value, score);
     }
 
     @Override
-    public Set<ZSetOperations.TypedTuple<V>> rangeWithScores(ICacheKey key, long begin, long size) {
-        return getRedisTemplate().opsForZSet().rangeWithScores(key.get(),begin,size);
+    public Set<ZSetOperations.TypedTuple<V>> rangeWithScores(ICacheKey cacheKey, long begin, long size) {
+        return getRedisTemplate().opsForZSet().rangeWithScores(cacheKey.get(), begin, size);
     }
 
     @Override
-    public Long remove(ICacheKey key, V value) {
-        return getRedisTemplate().opsForZSet().remove(key.get(),value);
+    public Set<ZSetOperations.TypedTuple<V>> rangeByScoreWithScores(ICacheKey cacheKey, double min, double max) {
+        return getRedisTemplate().opsForZSet().rangeByScoreWithScores(cacheKey.get(), min, max);
     }
 
     @Override
-    public Boolean del(ICacheKey key) {
-        return getRedisTemplate().delete(key.get());
+    public Set<ZSetOperations.TypedTuple<V>> rangeByScoreWithScores(ICacheKey cacheKey, double min, double max, long offset, long count) {
+        return getRedisTemplate().opsForZSet().rangeByScoreWithScores(cacheKey.get(), min, max, offset, count);
     }
 
     @Override
-    public Long size(ICacheKey key) {
-        return getRedisTemplate().opsForZSet().size(key.get());
+    public Long removeRangeByScore(ICacheKey cacheKey, double min, double max) {
+        return getRedisTemplate().opsForZSet().removeRangeByScore(cacheKey.get(), min, max);
+    }
+
+    @Override
+    public Long remove(ICacheKey cacheKey, V value) {
+        return getRedisTemplate().opsForZSet().remove(cacheKey.get(), value);
+    }
+
+    @Override
+    public Boolean delete(ICacheKey cacheKey) {
+        return getRedisTemplate().delete(cacheKey.get());
+    }
+
+    @Override
+    public Long size(ICacheKey cacheKey) {
+        return getRedisTemplate().opsForZSet().size(cacheKey.get());
+    }
+
+    @Override
+    protected long getSizeInternal(String key) {
+        try {
+            return getRedisTemplate().opsForZSet().size(key);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return 0L;
     }
 
     @Override
     protected RedisDataType dataType() {
         return RedisDataType.ZSET;
     }
-
-
-
 }

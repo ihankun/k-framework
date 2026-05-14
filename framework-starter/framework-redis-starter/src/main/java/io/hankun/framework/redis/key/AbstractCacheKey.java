@@ -7,6 +7,10 @@ import io.hankun.framework.core.context.sys.DomainContext;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.core.utils.spring.SpringHelpers;
 import io.hankun.framework.core.utils.string.StringPool;
+import io.hankun.framework.redis.config.RedisDomainIgnoreProperties;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.AntPathMatcher;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -15,7 +19,20 @@ import static io.hankun.framework.redis.error.CacheErrorCodeEnum.DOMAIN_NOT_FIND
 /**
  * @author hankun
  */
+@Slf4j
 public abstract class AbstractCacheKey {
+
+    protected static final String SPLIT = ":";
+
+    public static RedisDomainIgnoreProperties redisDomainIgnoreProperties;
+
+    public RedisDomainIgnoreProperties getRedisDomainIgnoreProperties() {
+        if (redisDomainIgnoreProperties == null) {
+            redisDomainIgnoreProperties = SpringHelpers.context().getBean(RedisDomainIgnoreProperties.class);
+        }
+
+        return redisDomainIgnoreProperties;
+    }
 
     /**
      * 获取key的统一前缀
@@ -23,26 +40,46 @@ public abstract class AbstractCacheKey {
      * @param originKey 原始业务组装的Key
      */
     protected String domainFormatKey(String originKey) {
+        //获取域名,如果域名为空，则报错处理
+        String domain = DomainContext.get();
+        if (StrUtil.isEmpty(domain)) {
+            log.debug("AbstractCacheKey.formatKey.get.null.error key={}", originKey);
+            return originKey;
+        }
 
-        RedisConfigProperties config = SpringHelpers.context().getBean(RedisConfigProperties.class);
+        RedisDomainIgnoreProperties config = getRedisDomainIgnoreProperties();
+
+        if (null == config) {
+            log.debug("AbstractCacheKey.formatKey.getIgnoreIsolationDomainConfig.null.error key={}", originKey);
+            return originKey;
+        }
 
         //未开启状态，则不进行前缀设置
-        if (!config.isDomainPrefixEnable()) {
+        if (!config.isEnable()) {
             return originKey;
         }
 
         //忽略规则不为空,且匹配存在忽略的key值
-        List<String> ignoreDomainPrefixKeys = config.getIgnoreDomainPrefixKeys();
-        if (CollectionUtil.isNotEmpty(ignoreDomainPrefixKeys) && ignoreDomainPrefixKeys.contains(originKey)) {
+        String domainPrefix = domain.substring(0, domain.indexOf(".com"));
+        List<String> domains = config.getDomains();
+        if ((!CollectionUtils.isEmpty(domains)) && domains.contains(domainPrefix)) {
             return originKey;
         }
 
-        //获取域名,如果域名为空，则报错处理
-        String domain = DomainContext.get();
-        if (StrUtil.isEmpty(domain)) {
-            throw BusinessException.build(DOMAIN_NOT_FIND, originKey);
+        List<String> keys = config.getKeys();
+        if (!CollectionUtils.isEmpty(keys)) {
+            if (keys.contains(originKey)) {
+                return originKey;
+            }
+
+            AntPathMatcher pathMatcher = new AntPathMatcher();
+            for (String key : keys) {
+                if (pathMatcher.match(key, originKey)) {
+                    return originKey;
+                }
+            }
         }
 
-        return domain + StringPool.COLON + originKey;
+        return domainPrefix + SPLIT + originKey;
     }
 }

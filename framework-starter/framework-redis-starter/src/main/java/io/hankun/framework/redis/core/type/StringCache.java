@@ -2,6 +2,7 @@ package io.hankun.framework.redis.core.type;
 
 import io.hankun.framework.redis.key.ICacheKey;
 
+import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -13,6 +14,11 @@ public interface StringCache {
      * 保存
      */
     boolean save(ICacheKey key, String value, Long expire);
+
+    /**
+     * 如果为空设置值，并返回true；如果已经存在的话直接返回false
+     */
+    boolean setIfAbsent(ICacheKey cacheKey, String value);
 
     /**
      * 如果为空设置值，并返回true；如果已经存在的话直接返回false
@@ -35,6 +41,16 @@ public interface StringCache {
     boolean del(ICacheKey key);
 
     /**
+     * 批量删除
+     */
+    boolean batchDel(Collection<? extends ICacheKey> keys);
+
+    /**
+     * 更新缓存
+     */
+    boolean update(ICacheKey cacheKey, String value);
+
+    /**
      * 更新缓存
      */
     boolean update(ICacheKey key, String value, Long expire, TimeUnit timeUnit);
@@ -50,6 +66,11 @@ public interface StringCache {
     boolean exits(ICacheKey key);
 
     //---------- 通用方法结束 ----------//
+
+    /**
+     * 原子自增或自减
+     */
+    Long atomic(ICacheKey cacheKey, Long num);
 
     /**
      * 原子自增或自减
