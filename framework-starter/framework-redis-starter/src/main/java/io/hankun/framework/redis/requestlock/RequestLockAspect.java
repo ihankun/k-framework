@@ -8,7 +8,7 @@ import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.redis.CacheBuilder;
 import io.hankun.framework.redis.CacheManager;
 import io.hankun.framework.redis.key.ICacheKey;
-import io.hankun.framework.redis.key.impl.OrgICacheKey;
+import io.hankun.framework.redis.key.impl.OrgCacheKey;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -99,7 +99,7 @@ public class RequestLockAspect implements BaseService, Ordered, PriorityOrdered 
                 .append(point.getSignature().toLongString())
                 .append(JSON.toJSONString(Arrays.toString(point.getArgs())))
                 .append(LoginUserContext.get());
-        return OrgICacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(DigestUtils.md5DigestAsHex(sb.toString().getBytes()));
+        return OrgCacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(DigestUtils.md5DigestAsHex(sb.toString().getBytes()));
     }
 
     /**

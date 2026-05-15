@@ -1,3 +1,4 @@
 io.hankun.framework.redis.CacheAutoConfiguration
+io.hankun.framework.redis.cache.RedisCacheAutoConfiguration
 io.hankun.framework.redis.config.RateLimiterAutoConfiguration
 io.hankun.framework.redis.config.PubSubAutoConfiguration

@@ -7,7 +7,7 @@ import io.hankun.framework.core.utils.string.StringPool;
 /**
  * @author hankun
  */
-public class OrgICacheKey extends AbstractCacheKey implements ICacheKey {
+public class OrgCacheKey extends AbstractCacheKey implements ICacheKey {
 
     private final String businessCode;
 
@@ -15,20 +15,20 @@ public class OrgICacheKey extends AbstractCacheKey implements ICacheKey {
 
     private String key;
 
-    public OrgICacheKey(String businessCode) {
+    public OrgCacheKey(String businessCode) {
         this.businessCode = businessCode;
     }
 
-    public static OrgICacheKey build(String businessCode) {
-        return new OrgICacheKey(businessCode);
+    public static OrgCacheKey build(String businessCode) {
+        return new OrgCacheKey(businessCode);
     }
 
-    public OrgICacheKey orgId(String orgId) {
+    public OrgCacheKey orgId(String orgId) {
         this.orgId = orgId;
         return this;
     }
 
-    public OrgICacheKey key(String key) {
+    public OrgCacheKey key(String key) {
         this.key = key;
         return this;
     }

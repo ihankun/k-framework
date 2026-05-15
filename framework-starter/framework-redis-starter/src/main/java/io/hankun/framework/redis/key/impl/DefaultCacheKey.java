@@ -7,21 +7,21 @@ import io.hankun.framework.core.utils.string.StringPool;
 /**
  * @author hankun
  */
-public class DefaultICacheKey extends AbstractCacheKey implements ICacheKey {
+public class DefaultCacheKey extends AbstractCacheKey implements ICacheKey {
 
     private final String businessCode;
 
     private String key;
 
-    public DefaultICacheKey(String businessCode) {
+    public DefaultCacheKey(String businessCode) {
         this.businessCode = businessCode;
     }
 
-    public static DefaultICacheKey build(String businessCode) {
-        return new DefaultICacheKey(businessCode);
+    public static DefaultCacheKey build(String businessCode) {
+        return new DefaultCacheKey(businessCode);
     }
 
-    public DefaultICacheKey key(String key) {
+    public DefaultCacheKey key(String key) {
         this.key = key;
         return this;
     }

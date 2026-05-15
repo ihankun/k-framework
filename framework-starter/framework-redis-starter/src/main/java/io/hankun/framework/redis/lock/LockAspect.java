@@ -4,7 +4,7 @@ import io.hankun.framework.core.base.BaseService;
 import io.hankun.framework.core.error.IErrorCode;
 import io.hankun.framework.core.exception.BusinessException;
 import io.hankun.framework.redis.key.ICacheKey;
-import io.hankun.framework.redis.key.impl.OrgICacheKey;
+import io.hankun.framework.redis.key.impl.OrgCacheKey;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -115,7 +115,7 @@ public class LockAspect implements BaseService, Ordered, PriorityOrdered {
         if (StringUtils.isEmpty(lockKey.getLockKey())) {
             throw BusinessException.build(getExceptionErrorCode(LockKey.class.getName() + "接口，getLockKey()不能为空"));
         }
-        return OrgICacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(lockKey.getLockKey());
+        return OrgCacheKey.build(DEFAULT_PREFIX).orgId(String.valueOf(getOrgId())).key(lockKey.getLockKey());
     }
 
     /**

@@ -36,6 +36,7 @@
         <module>framework-dify-starter</module>
         <module>framework-websocket-starter</module>
         <module>framework-powerjob-starter</module>
+        <module>framework-nat-starter</module>
     </modules>
 
 </project>
