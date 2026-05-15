@@ -9,12 +9,31 @@
         <version>3.7.2</version>
     </parent>
 
-    <artifactId>framework-nat-starter</artifactId>
+    <groupId>io.hankun.starter</groupId>
+    <artifactId>framework-nats-starter</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.hankun</groupId>
+            <artifactId>framework-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.hankun</groupId>
+            <artifactId>framework-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.nats</groupId>
+            <artifactId>jnats</artifactId>
+            <version>${jnats.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

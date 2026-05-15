@@ -402,6 +402,12 @@
             </dependency>
 
             <dependency>
+                <groupId>io.hankun.starter</groupId>
+                <artifactId>framework-nats-starter</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>io.hankun</groupId>
                 <artifactId>framework-db</artifactId>
                 <version>${framework.version}</version>
