@@ -1,4 +1,0 @@
-redis.CacheAutoConfiguration
-redis.cache.RedisCacheAutoConfiguration
-redis.config.RateLimiterAutoConfiguration
-redis.config.PubSubAutoConfiguration
